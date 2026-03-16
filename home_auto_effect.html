@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home_style_auto_effect.css">
+    <title>Home</title>
+</head>
+
+<style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .main-navbar {
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    .main-navbar a {
+      float: right;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    .dropdown {
+      float: right;
+      overflow: hidden;
+    }
+    
+    .dropdown .dropbtn {
+      font-size: 16px;  
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+    
+    .main-navbar a:hover, .dropdown:hover .dropbtn {
+      background-color: red;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    #showcase {
+        background: url('./UI Design Case study images/uid home page bg image.jpeg') no-repeat center center/cover;
+        height: 675px;
+        position: relative;
+        
+        
+    }
+    
+    #showcase .showcase-content {
+        color: #fff;
+        text-align: center;
+        padding-top: 250px ;
+    }
+    
+    #showcase .showcase-content h1 {
+        font-size: 60px;
+        line-height: 1.2em;
+    }
+
+    .current {
+        background-color: red;
+    }
+
+
+    </style>
+
+<body>
+    <header>
+        <!-- <div class="main-navbar">
+          <a href="contact.html">Contact</a> 
+          <a href="add_to_cart.html">Add to favorites</a>
+          <a href="recipe_cards.html" target="_blank">Recipes by States</a>  -->
+            <!-- <a href="#FAQ">FAQ</a> -->
+            <!-- <a href="#Reviews">Reviews</a> -->
+            <!-- <div class="dropdown">
+              <button class="dropbtn">Recipes
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="andhra_recipe.html" target="_blank">Pulihora</a>
+                <a href="arunachal_recipe.html" target="_blank" >Bamboo Shoots</a>
+                <a href="assam_recipe.html" target="_blank" >Duck Curry</a>
+                <a href="bihar_recipe.html" target="_blank" >Litti Chokha</a>
+                <a href="chhatt_recipe.html" target="_blank" >Muthia</a>
+                <a href="#" target="_blank">Misal Pav</a>
+                <a href="#" target="_blank">Bisi Bele Bath</a>
+              </div>
+            </div>  -->
+            <!-- <a href="_new_all_states.html">Food by States</a> 
+            <a href="home_auto_effect.html" class="current">Home</a>  -->
+            <!-- <div class="dropdown">
+              <button class="dropbtn">Food by states
+                <i class="fa fa-caret-down"></i>
+              </button>
+              </div> -->
+            <!-- </div>  
+          </div> -->
+
+
+          <nav id="navbar">
+            <div class="container">
+                <h1 class="logo"><a href="index.html">CIBUS</a> </h1>
+                <ul>
+                  <li> <a href="home_auto_effect.html" class="current">Home</a></li>
+                  <li>  <a href="_new_all_states.html">Food by States</a> </li>
+                  <li><a href="recipe_cards.html" target="_blank">Recipes by States</a></li>
+                  <li><a href="add_to_cart.html">Add to favorites</a></li>
+                    <li><a href="contact.html">Contact</a> </li>
+                </ul>
+            </div>
+        </nav>
+
+            
+            <div id="main-showcase">
+                <div class="container">
+                    <div class="main-showcase-content">
+                        <h1> Cibus </h1>
+                        <p class>Please hover over the links to know more about Indian Cuisine</p>
+                    </div>
+                </div>
+            </div>
+    </header>
+
+    <footer id="main-footer">
+        <p> Cibus &copy; 2022,All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

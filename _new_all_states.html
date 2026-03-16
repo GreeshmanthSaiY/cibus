@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .outer{
+                background-attachment:scroll;
+background-clip:border-box;
+/* background-color:rgb(239, 239, 239); */
+/* background-color: #efd1d1; */
+background-color: #d9ead3;
+background-color: #e2efdd;
+background-image:none;
+background-origin:padding-box;
+background-size:auto;
+box-sizing:border-box;
+display:block;
+height:19000px;
+width:1507.8px;
+            }
+            .content-section{     
+background-size:cover;
+display:block;
+padding-top:120px;
+position:relative;
+            }
+            .content-wrap-double{
+                box-sizing:border-box;
+display:block;
+height:676.8px;
+position:relative;
+width:154.8px;
+z-index:3;
+            }
+            .container{
+                box-sizing:border-box;
+display:block;
+height:676.8px;
+margin-left:122.4px;
+margin-right:122.4px;
+max-width:720px;
+padding-left:15px;
+padding-right:15px;
+width:720px;
+            }
+            .row-flex{
+                align-items:center;
+box-sizing:border-box;
+display:flex;
+flex-wrap:wrap;
+height:676.8px;
+line-height:27.2px;
+margin-left:-15px;
+margin-right:-15px;
+position:relative;
+width:720px;
+            }
+            .col{
+                box-sizing:border-box;
+color:rgb(0, 0, 0);
+display:flex;
+flex-basis:auto;
+flex-direction:column;
+flex-grow:0;
+flex-shrink:1;
+float:left;
+font-family:"Miller Display", Georgia, serif;
+font-size:16px;
+height:696.8px;
+left:660px;
+line-height:27.2px;
+min-height:1px;
+padding-left:20px;
+padding-right:15px;
+position:relative;
+text-size-adjust:100%;
+width:400px;
+-webkit-font-smoothing:antialiased;
+            }
+            .wrapper-double{
+                box-sizing:border-box;
+color:rgb(0, 0, 0);
+display:block;
+font-family:"Miller Display", Georgia, serif;
+font-size:16px;
+line-height:27.2px;
+text-size-adjust:100%;
+            }
+            .col-image{
+                box-sizing:border-box;
+display:flex;
+flex-basis :auto;
+flex-direction:column;
+flex-grow:0;
+flex-shrink:1;
+float:left;
+height:194.062px;
+padding-left:15px;
+padding-right:15px;
+position:relative;
+right:300px;
+width:360px;
+            }
+            .image{
+                box-sizing:border-box;
+color:rgb(0, 0, 0);
+display:flex;
+flex-basis:auto;
+flex-direction:column;
+float:left;
+height:524.062px;
+padding-left :15px;
+padding-right:15px;
+position:relative;
+width:500px;
+left:400px;
+bottom: 580px;
+            }
+            .col1{
+                box-sizing:border-box;
+color :rgb(0, 0, 0);
+display :flex;
+flex-basis:auto;
+flex-direction:column;
+flex-grow:0;
+flex-shrink:1;
+float:left;
+left:140px;
+font-family:"Miller Display", Georgia, serif;
+font-size:16px;
+height:221.537px;
+line-height:27.2px;
+min-height:1px;
+padding-left:15px;
+padding-right:15px;
+bottom: 170px;
+position:relative;
+text-size-adjust :100%;
+width:390px;
+-webkit-font-smoothing:antialiased;
+            }
+            .col-image1{
+                box-sizing:border-box;
+display:flex;
+flex-basis:auto;
+flex-direction:column;
+flex-grow:0;
+flex-shrink:3;
+float:left;
+height:194.062px;
+margin-left :59.9875px;
+padding-left :15px;
+padding-right :15px;
+left:460px;
+bottom: 360px;
+position:relative;
+            }
+            .image1{
+                box-sizing:border-box;
+display :block;
+height:194.062px;
+left:700px;
+bottom: 580px;
+            }
+            * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      html,body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          line-height: 1.7em;
+          scroll-behavior: smooth;
+      }
+
+      h1, h2, h3 {
+          padding-bottom: 20px;
+      }
+
+      p {
+          margin: 10px 0;
+      }
+
+      .bg-dark {
+          background: #333;
+          color: #fff;
+      }
+      .text-primary {
+          color: #f7c08a;
+      }
+ 
+.bg-image {
+  background-image: url("https://thumbs.dreamstime.com/b/indian-food-curry-butter-chicken-palak-paneer-chiken-tikka-biryani-vegetable-curry-papad-dal-palak-sabji-jira-alu-rice-138550014.jpg");
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-text {
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0, 0.4);
+  color: white;
+  font-weight: bold;
+   border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+      .start{
+    position: absolute;
+  bottom: -30%;
+  left: 380px;
+  font-size: 30px;
+  font-family: Playfair Display;
+  color: crimson;
+}
+.start-a{
+    position: absolute;
+  bottom: -36.5%;
+  left: 400px;
+  font-size: 50px;
+  font-family: Playfair Display;
+  color: crimson;
+}
+.start-b{
+    position: absolute;
+  bottom: -40.5%;
+  left: 400px;
+  font-size: 30px;
+  color: rgb(220, 20, 60);
+  font-family: Oswald;
+}
+.start-c{
+    position: absolute;
+  bottom: -45.1%;
+  left: 400px;
+  font-size: 30px;
+  font-family: Playfair Display;
+  color: crimson;
+}
+.start-d{
+    position: absolute;
+  bottom: -51%;
+  left: 400px;
+  font-size: 50px;
+  font-family: Playfair Display;
+  color: crimson;
+}
+.start-e{
+    position: absolute;
+  bottom: -56%;
+  left: 390px;
+  font-size: 30px;
+  font-family: Playfair Display;
+  color: crimson;
+}
+.img-a{
+  position: absolute;
+  bottom: -650px;
+  left: 53%;
+}
+#showcase {
+    background: url('./images/top-2.jpg') no-repeat center center/cover;
+    /* filter: blur(8px);
+    -webkit-filter: blur(8px); */
+     height: 100%; 
+    height:575px;
+    position: relative;   
+}
+.showcase-content {
+    color: #fff;
+    text-align: center;
+    padding-top: 90px ;
+    
+}
+.content {
+    background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0, 0.4);
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+    
+}
+.main-navbar {
+      overflow: hidden;
+      background-color: #333;
+    }   
+    .main-navbar a {
+      float: right;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    .main-navbar a:hover, .dropdown:hover .dropbtn {
+      background-color: red;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }                                  
+    .current {
+        background-color: red;
+    }
+        </style>
+    </head>
+    <body>
+        <div class="main-navbar">
+            <!-- <a href="#FAQ">FAQ</a> -->
+            <!-- <a href="#Reviews">Reviews</a> -->
+            <a href="contact.html">Contact</a> 
+          <a href="add_to_cart.html">Add to favorites</a>
+          <a href="recipe_cards.html" target="_blank">Recipes by States</a>
+            <!-- <div class="dropdown">
+              <button class="dropbtn">Recipes
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="andhra_recipe.html" target="_blank">Pulihora</a>
+                <a href="arunachal_recipe.html" target="_blank" >Bamboo Shoots</a>
+                <a href="assam_recipe.html" target="_blank" >Duck Curry</a>
+                <a href="bihar_recipe.html" target="_blank" >Litti Chokha</a>
+                <a href="chhatt_recipe.html" target="_blank" >Muthia</a>
+                <a href="#" target="_blank">Misal Pav</a>
+                <a href="#" target="_blank">Bisi Bele Bath</a>
+              </div>
+            </div>  -->
+            <a href="_new_all_states.html" class="current">Food by States</a> 
+            <a href="home_auto_effect.html">Home</a> 
+            <!-- <div class="dropdown">
+              <button class="dropbtn">Food by states
+                <i class="fa fa-caret-down"></i>
+              </button>
+              </div> -->
+            </div>  
+          </div>
+    
+    
+        <div id="showcase">
+            <div class="container">
+                <div class="showcase-content">
+                    <!-- <h1 class="text-primary">Welcome to the page!</h1> -->
+                    <div class="content">
+                    <p class="lead"> <h2 style="font-size:20px">If I were asked under sky the human mind has<br>most fully developed some of its choicest gifts, has<br>most deeply pondered on the greatest problems of<br>life, and has found solutions, I should point to India<br>- Max Mueller</h2>
+                        <h1>One Step to Making a Good Start</h1></p></div>
+                </div>
+            </div>
+        </div>
+    
+        <pre>
+            <div class="start" style="font-size: 250%;">"STRESSED </div>
+            <h5><div class="start-a">when</div></h5>
+            <div class="start-b">spelled in</div>
+            <div class="start-c">reverse</div>
+            <h5><div class="start-d">says</div></h5>
+            <div class="start-e" style="font-size: 250%;">DESSERTS" </div>
+        </pre>
+
+        <div class="img-a">
+            <!-- <img src = "https://global.discourse-cdn.com/envato/original/3X/2/6/26b0ede9648e23432810826e6e9eebecc90975d1.jpg" 
+            usemap = "#image-map" align = "right" width="400px" height="500px"> -->
+
+            <img src = "/WhatsApp Image 2022-04-25 at 4.21.45 PM.jpeg" usemap = "#image-map" align = "right" >
+        </div>
+            <map name = "image-map">
+                <map name="image-map">
+                    <area target="_self" alt="Karnataka" title="Karnataka" href="#karnataka" coords="119,515,124,479,147,471,172,449,186,438,189,458,186,470,188,485,180,493,177,507,172,519,178,528,182,533,191,539,199,539,206,550,198,558,188,567,187,576,178,585,166,587,158,587,150,582,139,573,133,561,128,551,126,536" shape="poly">
+                    <area target="_self" alt="Uttar Pradesh" title="Uttar Pradesh" href="#uttar pradesh" coords="202,169,194,169,189,176,188,185,188,196,192,207,194,217,195,229,202,233,198,237,206,242,218,245,225,259,217,276,210,282,210,289,217,297,210,296,226,281,237,279,244,279,255,281,265,282,275,282,291,288,294,293,301,303,314,301,306,305,308,289,310,277,321,273,326,267,322,254,320,242" shape="poly">
+                    <area target="_self" alt="Kerala" title="Kerala" href="#kerala" coords="131,562,132,575,139,586,149,602,153,619,158,637,165,652,173,659,174,665,181,637,169,615,178,621,154,584" shape="poly">
+                    <area target="_self" alt="Madhya Pradesh" title="Madhya Pradesh" href="#madhya pradesh" coords="129,357,138,364,158,366,166,372,174,364,184,361,191,365,210,362,202,365,228,360,239,364,218,365,254,366,262,354,266,345,280,337,284,327,276,318,287,312,300,306,289,295,268,283,251,281,225,283,228,301,206,305,202,287,210,273,216,255,204,252,187,261,175,268,191,277,191,285,185,287,184,301,178,310,162,311,150,300,142,293,135,319,123,341" shape="poly">
+                    <area target="_self" alt="Manipur" title="Manipur" href="#manipur" coords="512,296,526,295,534,299,542,269,536,261,521,262,514,268,510,281" shape="poly">
+                    <area target="_self" alt="Maharashtra" title="Maharashtra" href="#maharashtra" coords="106,492,98,457,90,407,90,390,101,393,112,384,124,364,111,368,126,352,139,364,149,368,159,369,173,365,185,362,194,369,206,368,216,368,227,368,241,368,248,370,253,378,251,390,250,402,255,412,250,418,246,426,238,408,212,404,199,413,196,421,194,428,180,436,171,452,118,488" shape="poly">
+                    <area target="_self" alt="Andhra Pradesh" title="" href="#andhra pradesh" coords="222,508,259,488" shape="rect">
+                    <area target="_self" alt="Andhra Pradesh" title="" href="#andhra pradesh" coords="216,522,32" shape="circle">
+                    <area target="_self" alt="Andhra Pradesh" title="" href="#andhra pradesh" coords="280,476,232,497" shape="rect">
+                    <area target="_self" alt="Assam" title="" href="#assam" coords="442,257,519,234" shape="rect">
+                    <area target="_self" alt="Assam" title="" href="#assam" coords="517,241,12" shape="circle">
+                    <area target="_self" alt="Assam" title="" href="#assam" coords="531,228,10" shape="circle">
+                    <area target="_self" alt="Assam" title="" href="#assam" coords="548,217,11" shape="circle">
+                    <area target="_self" alt="Arunachal Pradesh" title="" href="#arunachal pradesh" coords="499,203,574,180" shape="rect">
+                    <area target="_self" alt="Arunachal Pradesh" title="" href="#Arunachal pradesh" coords="501,197,34" shape="circle">
+                    <area target="_self" alt="Chhattisgarh" title="" href="#chhattisgarh" coords="258,402,291,371" shape="rect">
+                    <area target="_self" alt="Chhattisgarh" title="" href="#chhattisgarh" coords="287,362,25" shape="circle">
+                    <area target="_self" alt="Chhattisgarh" title="" href="#chhattisgarh" coords="306,335,22" shape="circle">
+                    <area target="_self" alt="Chhattisgarh" title="" href="#chhattisgarh" coords="256,436,288,402" shape="rect">
+                    <area target="_self" alt="Bihar" title="" href="#bihar" coords="323,293,396,250" shape="rect">
+        
+                    <area target="" alt="meghalaya" title="meghalaya" href="#meghalaya" coords="485,272,493,273,501,268,496,261,488,253,480,253,476,258,466,261,454,259,447,261,442,266,443,272,453,276" shape="poly">
+        
+                    <area target="" alt="mizoram" title="mizoram" href="#mizoram" coords="506,339,512,341,516,335,513,322,520,314,518,301,510,292,501,291,496,298,496,310" shape="poly">
+        
+                    <area target="" alt="nagaland" title="nagaland" href="#nagaland" coords="521,264,524,258,530,259,538,257,545,256,548,243,549,231,540,228,532,236,528,240" shape="poly">
+        
+        
+                    <area target="" alt="odhisa" title="odhisa" href="#odisha" coords="379,395,385,389,388,376,388,363,396,360,388,350,376,346,368,345,365,350,356,350,348,350,343,342,336,346,327,343,321,350,315,358,313,370,305,373,296,380,294,389,297,398,302,402,296,403,293,416,293,408,291,422,288,427,283,442,307,428,370,400,356,406,352,412,343,416,335,422,328,419,316,422,349,415,297,431,305,432" shape="poly">
+        
+        
+                    <area target="" alt="punjab" title="punjab" href="#punjab" coords="160,120,152,123,146,127,140,130,140,138,138,146,133,155,127,160,127,167,131,172,138,172,146,173,152,177,160,176,167,175,182,164,177,152,169,146" shape="poly">
+        
+        
+                    <area target="" alt="" title="" href="#goa" coords="112,505,112,511,117,504,117,496,109,495" shape="poly">
+        
+        
+                    <area target="_self" alt="gujarat" title="gujarat" href="#Gujarat" coords="67,344,52" shape="circle">
+        
+                    
+                    <area target="_self" alt="gujarat" title="gujarat" href="#gujarat" coords="3,330,81,294" shape="rect">
+            
+                    <area target="_self" alt="haryana" title="haryana" href="#haryana " coords="156,190,167,214,186,170,175,181,142,183,186,214,181,188,191,169" shape="poly">
+            
+                    <area target="_self" alt="himachal pradesh" title="himachal pradesh" href="#himachal" coords="185,129,18" shape="circle">
+            
+                    <area target="_self" alt="himachal pradesh" title="himachal pradesh" href="#himachal" coords="187,148,205,122,212,141,193,158,179,108,167,123,173,108,214,126,217,138,212,141" shape="poly">
+            
+                    <area target="_self" alt="jharkand" title="jharkand" href="#jharkand" coords="337,329,400,294,319,304,340,342,372,334,356,344,360,345,388,303,401,283,356,344" shape="poly">
+            
+                    <area target="_self" alt="jharkand" title="jharkand" href="#jharkand" coords="350,325,16" shape="circle">
+        
+                    <area target="_self" alt="Rajasthan" title="Rajasthan" href="#rajasthan" coords="124,326,102,296,60,286,34,230,56,216,81,218,101,194,125,169,138,188,154,198,166,216,175,216,189,227,200,246,174,269,175,277,188,278,177,287,181,296,177,303,161,304,156,309,148,284,138,290,136,301,136,311,133,321" shape="poly">
+           
+                    <area target="_self" alt="Sikkim" title="Sikkim" href="#sikkim" coords="406,213,422,234" shape="rect">
+            
+                    <area target="_self" alt="Tamil Nadu" title="Tamil Nadu" href="#tamil_Nadu" coords="178,668,181,636,180,617,169,603,165,587,183,586,193,580,190,570,200,562,206,567,213,559,222,557,239,551,250,548,246,561,236,615,222,634,217,643,198,659,186,671" shape="poly">
+            
+                    <area target="_self" alt="Telangana" title="Telangana" href="#telangana" coords="188,491,192,452,199,419,213,404,230,407,240,410,238,431,247,432,260,435,263,444,271,448,277,452,263,463,240,472,223,485,201,491,213,491,200,491" shape="poly">
+            
+                    <area target="_self" alt="Tripura" title="Tripura" href="#tripura" coords="491,287,474,303,480,320,488,313,495,299" shape="poly">
+            
+                    <area target="_self" alt="Uttarakhand" title="Uttarakhand" href="#uttarkhand" coords="198,165,207,149,228,145,238,152,251,161,259,167,248,190,244,196,229,198,215,179,203,184" shape="poly">
+            
+                    <area target="_self" alt="West Bengal" title="West Bengal" href="#west bengal" coords="431,254,442,241,426,237,409,235,409,243,406,262,402,278,402,286,399,303,394,313,410,326,379,313,370,319,370,328,382,338,394,342,384,344,394,353,402,354,417,354,430,356,424,325,420,312,420,301,411,289,415,281,425,276,418,272,414,261,424,253" shape="poly">
+        
+                </map>
+            </map>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <marquee >(click on each state in the map to scroll to the respective states)</marquee>
+            <br>
+        <section class="outer">
+            <div class="content-section">
+                <div class="content-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col">
+                                <h3 id="maharashtra">1) Misal Pav - Maharashtra</h3>
+                                <p>
+                                    Misal Pav is quintessentially from Pune and is one of the most popular Maharashtrian breakfast, snack or even brunch. 
+                          It is a street food popularly found in Mumbai. 
+                          It has a spicy and tangy lentil curry which is made with moth beans and is served with Pav bread. 
+                          At times, it is eaten with yoghurt to lessen the spice. 
+                          Although it is a breakfast food but Maharashtrians enjoy it at time of the day.
+                          Some spices like Goda Masala, Kokum, Tamarind and Coconut are essential ingredients in the Maharashtrian kitchen. 
+                          Maharashtrian cuisine is considered to be very diverse as the flavours and spice levels differ in different parts of the state.
+                                </p>
+                            </div>
+                            <div class="col-image">
+                                <div class="image">
+                                    <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/misal-pav.jpg" alt="misal pav" 
+                                    width="500">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col1">
+                                <div class="wrapper-double">
+                                    <h3 id="karnataka">2) Bisi Bela Bath - Karnataka</h3>
+                                    <p>
+                                        Bisi bele bath is a delicious complete and healthy meal of rice, lentils and vegetables. 
+                                        It is one of the most popular traditional dish from the Karnataka cuisine. 
+                                        Bisi Bele Bath is a dish in which the sambar dal and rice are cooked together with tamarind and spice powders. 
+                                        The Bisi bele bath masala is a special spice blend that gives a lot of depth and flavor to this dish.
+                                        The dish has a distinct coconut flavour and is available at any restaurant in Bangalore. 
+                                        The recipe is a complicated one that involves many vegetables and flavours but the dish is a must-try.
+                                    </p>
+                                </div>
+                                <div class="col-image1">
+                                    <div class="image1">
+                                        <img src="https://www.indianveggiedelight.com/wp-content/uploads/2020/06/bisibelebath_1-768x1024.webp" 
+                                        alt="bisi bela bath" width="450" height="350">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col">
+                                <h3 id="kerala">3) Apam - Kerala</h3>
+                                <p>
+                                    Appam is a type of pancake made with fermented rice batter and coconut milk. 
+                                    The origin of Appam is disputed and potential sources of origin might be Sri Lanka or the southern tip of India. 
+                                    It is a common food in Sri Lanka and the Indian state of Kerala where it is eaten most frequently for breakfast or dinner.
+                                    It is a kind of dosa recipe or a pancake native to the kerala cuisine which is mainly prepared from fermented premixed rice and coconut batter. 
+                                    Appam (also known as “palappam”) are tasty, lacy and fluffy pancakes or hoppers from the Kerala cuisine that are made from ground, fermented rice and coconut batter.                                    
+                                </p>
+                            </div>
+                            <div class="col-image">
+                                <div class="image">
+                                    <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/appam.jpg" alt="apam" 
+                                    width="500">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col1">
+                                <div class="wrapper-double">
+                                    <h3 id="madhya pradesh">4)Bhutte Ka Kees - Madhya Pradesh</h3>
+                                    <p>
+                                        Bhutte Ka Kees is an easy and delicious recipe which you can cook for your tea time break. 
+                                        This recipe is a street food in Indore, but is also made in households very often. 
+                                        Easy to make and delicious to taste, this recipe can be prepared in less than 30 minutes.
+                                        A delicious, easy and quick street food from Indore, Bhutte Ka Kees is basically corn cooked with spices and simmered in milk 
+                                        which makes it an unusual vegetable dish Bhutta or Bhutte means corn in Hindi.
+                                         Kees means grated. So the name of the dish Bhutte ka kees literally translates into 'grated corn snack'. 
+                                        A favorite snack is the whole roasted corn with salt and lemon.
+                                    </p>
+                                </div>
+                                <div class="col-image1">
+                                    <div class="image1">
+                                        <img src="data:image/jpeg;base64,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" 
+                                        alt="bhutte ka kees" width="450" height="350">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col">
+                                <h3 id="manipur">5) Kangshoi - Manipur</h3>
+                                <p>
+                                    Kangshoi is a soupy stew of seasonal vegetables, coarsely chopped onions or spring onion, dried or fried fish pieces and water.
+                                    This dish is very popular in Manipur. 
+                                    It is a vegetable stew. 
+                                    It consists of seasonal vegetables that are boiled and flavoured with sliced onions, cloves, salt, garlic, maroi and a bit of ginger. 
+                                    This stew is served with rice or fish and is supposed to be consumed piping hot. 
+                                    In a nutshell, the people of Manipur eat rice, fish, leafy vegetables, etc.
+                                     Also, they grow their vegetables in their gardens or farms and breed their fishes in their backyard ponds.
+                                </p>
+                            </div>
+                            <div class="col-image">
+                                <div class="image">
+                                    <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/appam.jpg" alt="apam" 
+                                    width="500">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col1">
+                                <div class="wrapper-double">
+                                    <h3 id="uttar pradesh">6)Tunde Ke Kebab - Uttar Pradesh</h3>
+                                    <p>
+                                        Tunde Ke Kebab also known as Buffalo meat galouti kebab is a dish made out of minced meat which is popular in Lucknow, India. 
+                                        The tender Tunday kebabs of Lucknow are famous for their savoury and melt in your mouth flavour. 
+                                        These Kebabs are made from lamb or buffalo meat with more than a 100 spices are added to give it it's a unique flavour. 
+                                        The bawarchis (royal chefs) of the Nawabs of Lucknow, had pioneered the cooking style known popularly as ‘Dum Pukht’. 
+                                        The food is cooked for many hours under a low-flame to pack in all the rich earthy flavours and aromatic spices. 
+                                        This method of cooking is unique to Lucknow.
+                                    </p>
+                                </div>
+                                <div class="col-image1">
+                                    <div class="image1">
+                                        <img src="https://www.indianveggiedelight.com/wp-content/uploads/2020/06/bisibelebath_1-768x1024.webp" 
+                                        alt="bisi bela bath" width="450" height="350">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col">
+                                <h3 id="goa">7) Fish curry - Goa</h3>
+                                <p>
+                                    This fish curry comes to you by way of Goa, a little pocket of Indian paradise that's all about the sun, 
+                                    surf, sand and excellent seafood!
+                                    the ingredients for preaparing the curry include Kashmiri chilli,Fenugreek,Tumeric,Coriander, cumin and 
+                                    ground cloves,Fresh garlic and ginger,Tamarind,Black mustard seeds,Chilli powder,Sugar,Coconut milk,
+                                    tomato pulp and its paste.the main ingredient fish-You can use virtually any fish in this curry.Delicate-textured white fish the simple steps include-Curry paste first,Blitz until the onion is 
+                                    puree,Cook off the curry paste,Cook off tomato paste,Add coconut milk,Simmer for 5 minutes,add fish,Garnish .
+                                    finally it is ready and to be served with ur taste.
+                                </p>
+                            </div>
+                            <div class="col-image">
+                                <div class="image">
+                                    <img src="https://media.istockphoto.com/photos/macher-jhol-in-black-bowl-on-dark-slate-table-top-indian-cuisine-picture-id1295772368?k=20&m=1295772368&s=612x612&w=0&h=39YuGDvqQEIrLae4Idux7Iw3tIWje8fu2rq1di_QuQ4=" 
+                                    alt="fish curry" width="500">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col1">
+                                <div class="wrapper-double">
+                                    <h3 id="gujarat">8)Dhokla - Gujarat</h3>
+                                    <p>
+                                        Dhokla is an authentic snack which has originated from the state of Gujarat. 
+                                        This traditional food item is prepared out of gram flour and chana dal. 
+                                        Plus it is a reasonably easy recipe which can be prepared quickly within half an hour. 
+                                        Dhokla coupled with some chilli paste and chutney makes for the perfect snack to enjoy with friends over gossiping sessions.
+                                        It is usually served with deep fried chillies and chutney made from coriander. 
+                                        It is garnished with coriander and often with grated coconut.
+                                    </p>
+                                </div>
+                                <div class="col-image1">
+                                    <div class="image1">
+                                        <img src="https://geekrobocook.com/wp-content/uploads/2021/02/Dhokla-Gujarati-Dish.jpg" 
+                                        alt="dhokla" width="450" height="350">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col">
+                                <h3 id="haryana">9) Bajre Ki Khichdi - Haryana</h3>
+                                <p>
+                                    Bajre ki Khichdi is famous alll over north india but haryana has its own name Haryanvi Bajra Khichdi 
+                                    and haryana has very own style of doing it,Khichdi is almost found in every state of india but 
+                                    instead of rice bajre is used in this type of kitchidi which makes its unique from the rest.
+                                    Khichri is had almost throughout the country. However, what makes Haryana Khichri so popular is that instead of rice, Bajara is used.
+                                    For preparing bajara khichri, bajara is soaked overnight. Then Moong daal and bajara are washed together and 
+                                    cooked in a pressure cooker along with spices.
+                                    Thus this recipe is recommended to all especially to those who do not wish to have rice.
+                                </p>
+                            </div>
+                            <div class="col-image">
+                                <div class="image">
+                                    <img src="data:image/jpeg;base64,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" 
+                                    alt="Bajre Ki khichdi" 
+                                    width="450" height="300">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col1">
+                                <div class="wrapper-double">
+                                    <h3 id="himachal">10) Dham - Himachal</h3>
+                                    <p>
+                                        Dham is a traditional vegetarian festive meal of the Indian state of Himachal Pradesh.
+                                        Thali is very special these days because it consits of all type of foods with all type 
+                                        of flavours which make 9 out of 10 people love thali especially himachal pradesh thali 
+                                        is very unique which may take top 5 places of indian thali.At various known restaurants 
+                                        of Himachal Pradesh, this dish is prepared by ‘Botis,’ special chefs.
+                                        To enjoy the luscious taste of this dish, make sure you visit Himachal during festivities.
+                                    </p>
+                                </div>
+                                <div class="col-image1">
+                                    <div class="ima ge1">
+                                        <img src="https://i0.wp.com/travelshoebum.com/wp-content/uploads/2018/01/img_1652-2.jpg?resize=1000%2C1333&ssl=1" 
+                                        alt="Dham" width="450" height="340">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col">
+                                <h3 id="jharkand">11) Dhooska - Jharkand</h3>
+                                <p>
+                                    Dhooska or Dushka is a popular deep fried snack eaten all over Jharkhand.
+                                    It is one of the most popular dish and is a part of every home.
+                                     It is usually consumed as breakfast which is served with traditional Ghughni.
+                                     It can be said as simple sauce.
+                                    Even though its rarely found in restarunts but it is a must try dish.
+                                    However deep fried snacks are very famous among people
+                                    Dhooska or Dushka is a popular deep fried snack eaten all over Jharkhand.
+                                    It is one of the most popular dish and is a part of every home. 
+                                    It is usually consumed as breakfast which is served with traditional Ghughni.It can be said as simple sauce.
+                                    Even though its rarely found in restarunts but it is a must try dish.However deep fried snacks are very famous among people
+                                </p>
+                            </div>
+                            <div class="col-image">
+                                <div class="image">
+                                    <img src="https://img-global.cpcdn.com/recipes/4732548aa2202681/680x482cq70/%E0%A4%A7%E0%A4%B8%E0%A4%95-dhooska-recipe-in-hindi-%E0%A4%B0%E0%A4%B8%E0%A4%AA-%E0%A4%AE%E0%A4%96%E0%A4%AF-%E0%A4%A4%E0%A4%B8%E0%A4%B5%E0%A4%B0.jpg"
+                                    alt="Dhooska" width="500">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col1">
+                                <div class="wrapper-double">
+                                    <h3 id="andra pradesh">12) Pulihora - Andra Pradesh</h3>
+                                    <p>
+                                        An exotic version of tamarind rice, also known as Chitrannam, 
+                                        is enriched with spicy flavours to give it a sour and salty taste at the same time. 
+                                        One of the main ingredients is tamarind along with curry leaves, tomatoes, and mustard seeds. 
+                                        Pulihora finds its place in kitchens often during festivities and special gatherings. 
+                                        Try the authentic tamarind rice to get a taste of real Andhra cuisine.
+                                        The pulihora is prepared with kokum, tamarind, lemon or green mango as main souring ingrident, 
+                                        along with blend of spices, lentils, peanuts and jaggery cooked in oil and mixed with cooked rice along with fried curry leaves. 
+                                        It remains fresh till two days.
+                                    </p>
+                                </div>
+                                <div class="col-image1">
+                                    <div class="image1">
+                                        <img src="https://vismaifood.com/storage/app/uploads/public/be1/3f7/bc1/thumb__700_0_0_0_auto.jpg" 
+                                        alt="Pulihora" width="450" height="330">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col">
+                                <h3 id="assam">13) Duck Meat Curry - Assam</h3>
+                                <p>
+                                    Duck meat is a prized ingredient in Assam. Various styles of curry with this protein as the primary 
+                                    ingredient are prepared across Assam, most notably for special occasions. 
+                                    The preparation with Ash Gourd is the most loved but other styles such as with lentils, sesame seeds
+                                    or even with pumpkin are quite popular too.This is a speciality of the Tai Ahom community of Upper Assam. 
+                                    Duck meat is special for them and they cook it particularly for important guests. 
+                                </p>
+                            </div>
+                            <div class="col-image">
+                                <div class="image">
+                                    <img src="https://static.toiimg.com/photo/60448550.cms" 
+                                    alt="Duck Meat Curry" 
+                                    width="450" height="300">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col1">
+                                <div class="wrapper-double">
+                                    <h3 id="arunachal pradesh">14) Bamboo Shoots - Arunachal pradesh</h3>
+                                    <p>
+                                        Bamboo shoot is widely eaten through all the North Eastern States because of its delicate flavour and is 
+                                        a chief component of food in Arunachal Pradesh. The delicious bamboo shoots are used in the dishes of boiled vegetables, cooked meat, pickles and chutneys.
+                                        Bamboo shoots have sweet and sour flavor and prepared by using mustard seeds and garlic. 
+                                        It is a special dish in Arunachal Pradesh cuisine.
+
+                                    </p>
+                                </div>
+                                <div class="col-image1">
+                                    <div class="image1">
+                                        <img src="https://www.crazymasalafood.com/wp-content/images/Bamboo-Shoot.jpg" 
+                                        alt="bisi bela bath" width="450" height="300">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col">
+                                <h3 id="bihar">15) Litti-Chokha - Bihar</h3>
+                                <p>
+                                    The preparation with Ash Gourd is the most loved but other styles such as with lentils, sesame seeds or even with pumpkin are quite popular too.
+                                    The lip-smacking taste of Litti Chokha, savoured by one and all, needs no introduction. 
+                                    It is your grand welcome to the food of Bihar, in all its ghee-dripping glory. 
+                                    It consists of wheat and sattu with spices, kneaded into round spicy balls, dipped in ghee. 
+                                    The texture of Litti along with the crunchy crust makes it a foodie’s delight. 
+                                    Chokha is prepared by mashing boiled vegetables (most common being potatoes, brinjal, tomatoes), 
+                                    adding spices and chopped onion, garlic etc and served with Litti as a complimentary delicacy.
+                                </p>
+                            </div>
+                            <div class="col-image">
+                                <div class="image">
+                                    <img src="https://www.holidify.com/blog/wp-content/uploads/2015/09/Litti_chokha_dipped_in_Ghee.jpg" alt="litti chokha" 
+                                    width="500">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col1">
+                                <div class="wrapper-double">
+                                    <h3 id="chhattisgarh">16) Muthia - Chhattisgarh</h3>
+                                    <p>
+                                        These are tasty and delicious steamed dumplings which are prepared in Chhattisgarh. 
+                                        This food is generally served as breakfast during the winter season in the rural areas of Chhattisgarh. 
+                                        Muthia is prepared with rice batter and is beautifully garnished with coriander leaves and sesame seeds. 
+                                        The reason why this snack is not fried but steamed is that it retains the original value of its ingredients. 
+                                        Muthia is popular in Gujarat cuisine as a snack but is widely also loved in Chhattisgarh as breakfast and is finger licking delicious.
+                                    </p>
+                                </div>
+                                <div class="col-image1">
+                                    <div class="image1">
+                                        <img src="https://www.holidify.com/blog/wp-content/uploads/2016/09/muthia.jpg" 
+                                        alt="Muthia" width="500" height="350">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col">
+                                <h3 id="meghalaya">17) Jadoh - Meghalaya</h3>
+                                <p>
+                                    Jadoh is a very popular dish among the Khasi community of Meghalaya. It is especially appetising because of its rich and unique colour. 
+                                    Jadoh is basically red rice, cooked with generous amounts of pork meat. Sometimes, it is also cooked with chicken or fish. 
+                                    A mix of green chillies, onions, ginger, turmeric, black pepper and bay leaves is made, then pieces 
+                                    of pork are added and fried off, after which the red rice is added and cooked off. 
+                                    The addition of turmeric imparts the rice its rich yellow colour and an aromatic flavour. 
+                                    For those willing to be more adventurous, Jadoh can also be cooked in pork blood. 
+                                    If you love pork, this is a dish not to be missed.
+                                </p>
+                            </div>
+                            <div class="col-image">
+                                <div class="image">
+                                    <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/jadoh.jpg" alt="Jadoh" 
+                                    width="500">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col1">
+                                <div class="wrapper-double">
+                                    <h3 id="mizoram">18) Misa Mach Poora - Mizoram</h3>
+                                    <p>
+                                        Misa Mach Poora is a mouth-watering side dish. It is grilled shrimp cooked in mustard oil, lemon juice, orange zest and assorted spices.
+                                        Apart from these dishes, what you must also try while in Mizoram, are their two popular drinks. 
+                                        One of them is Zu, or the local tea which they like to drink with almost every meal. 
+                                        The second is the Lubrusca grape wine, which is another favourite among the locals.
+                                        If you happen to visit beautiful Mizoram anytime soon, don't forget to eat and drink any or all of these items, to your heart’s content.
+                                    </p>
+                                </div>
+                                <div class="col-image1">
+                                    <div class="image1">
+                                        <img src="https://www.holidify.com/images/cmsuploads/compressed/33900074338_663bd54ef8_o_20191216115548.jpg" 
+                                        alt="Misa Mach Poora" width="450" height="350">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col">
+                                <h3 id="nagaland">19) Pork with Bamboo Shoot - Nagaland</h3>
+                                <p>
+                                    Pork with bamboo shoots is simply a dish that is cooked with dry bamboo shoots, loads of chilies and herbs. 
+                                    This dish tastes heavenly with boiled rice.Bamboo shoot is an important ingredient in almost the whole of the North Eastern part of India. 
+                                    It is mainly used in pork preparation. The Bamboo shoot is used in both dried and fermented form. 
+                                    It gives a little sour flavour to the dishes. 
+                                    Some of the popular dishes are that use Bamboo shoot as an important ingredient are: Pork with Bamboo shoot, Fish with Bamboo shoot
+                                </p>
+                            </div>
+                            <div class="col-image">
+                                <div class="image">
+                                    <img src="https://www.holidify.com/images/cmsuploads/compressed/nature-white-leaf-isolated-bowl-dish-561380-pxhere.com_20200120140909.jpg" alt="pork with Bamboo Shoot" 
+                                    width="500">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col1">
+                                <div class="wrapper-double">
+                                    <h3 id="odhisa">20) Chenna Poda - Odhisa</h3>
+                                    <p>
+                                        Odisha's very own cheesecake! The one sweet that Odisha is famous for - Chhena Poda, also known to be Lord Jagannath's favourite 
+                                        sweet and is often offered to him at the Puri Temple. The lingering taste of burnt home-made cottage cheese and semolina 
+                                        combined with sugar syrup simply blow away your mind. This rare dessert is baked for several hours until it becomes red 
+                                        and the caramelised sugar brings out the distinct flavour of Chhena Poda. 
+                                        Being sold in almost every nook and corner, this dish is simple, easy and absolutely delicious.
+                                    </p>
+                                </div>
+                                <div class="col-image1">
+                                    <div class="image1">
+                                        <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/chenna-poda.jpg" 
+                                        alt="Chenna Poda" width="520" height="350">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col">
+                                <h3 id="punjab">21) Makki Di Roti & Sarson Da Saag - Punjab</h3>
+                                <p>
+                                    Makki di Roti and Sarson da Saag make for the staple food in North India especially in the state of Punjab. 
+                                    This traditional Indian dish may not look very enticing at first, but it has an authentic flavour to it, and it is rich in nutritive value. 
+                                    Makki di Roti is a corn meal Indian bread that tastes fabulous with 'Sarson saag' - mustard green and a glass of lassi. 
+                                    The dish is regarded as the traditional way to prepare saag and is usually served with makki di roti literally (unleavened cornbread). 
+                                    It can be topped with either Makkhan (unprocessed white butter or processed yellow butter) or more traditionally with ghee.
+                                </p>
+                            </div>
+                            <div class="col-image">
+                                <div class="image">
+                                    <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/makki-de-roti.jpg" alt="pork with Bamboo Shoot" 
+                                    width="500">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col1">
+                                <div class="wrapper-double">
+                                    <h3 id="rajasthan">22) Dal Bati Churma - Rajasthan</h3>
+                                    <p>
+                                        Dal Bati Churma is a traditional Rajasthani treat with the spicy dal with the sweet churma along with deep fried crunchy batis.
+                                        This famous Rajasthani dish needs no introduction. Dal bati churma is synonymous to Rajasthan; known for its crunchy batis, 
+                                        dipped in ghee along with spicy daal and sweet churma. 
+                                        This delicious dish is prepared using various dals such as Chana dal, mung dal, Urad dal etc.
+                                    </p>
+                                </div>
+                                <div class="col-image1">
+                                    <div class="image1">
+                                        <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/dal-baati-churma.jpg" 
+                                        alt="Dal Bati Churma" width="420" height="300">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col">
+                                <h3 id="sikkim">23) Momo - Sikkim</h3>
+                                <p>
+                                    Momos, who doesn't love momos? Sikkim and Momos are complementary to one another. 
+                                    Sikkim is the place that is going to serve you the best momos you'll ever taste in your life. 
+                                    Believed to be of Tibetan origin and modulated by the Nepalese cuisine the momos are the lifeline of Sikkim. 
+                                    Momo is a small package of steamed bun with some fillings. Momo typically consists of two parts - the cover and the filling. 
+                                    The cover is made of dough made of white flour and water. Sometimes yeast or baking soda is also added to the dough to enhance the texture of the momos. 
+                                    Originally these momos were made with ground meat fillings, but over the years a lot of modifications have been made that have made dumplings even better.
+                                </p>
+                            </div>
+                            <div class="col-image">
+                                <div class="image">
+                                    <img src="https://www.holidify.com/images/cmsuploads/articles/447.jpg" alt="momo" 
+                                    width="500">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col1">
+                                <div class="wrapper-double">
+                                    <h3 id="telangana">24) Biryani - Telangana</h3>
+                                    <p>
+                                        Thanks to the major influence of Nizams in the state, Hyderabadi Biryani has come to be known worldwide as one of India’s jeweled food items. 
+                                        It is of two types; Kachchi gosht ki biryani and Pakki biryani. 
+                                        Marinated meat is cooked in layers of rice in a big handi which is covered with flat dough that eventually rises due to heat; 
+                                        indicating that the biryani is ready to be devoured.
+                                        Telangana Cuisine is typically spicy and ingredients such as tamarind, sesame seeds, red chillies and asafoetida 
+                                        are widely used in a variety of vegetarian and non-vegetarian dishes. Roselle is a staple item used in making curries and pickles.
+                                    </p>
+                                </div>
+                                <div class="col-image1">
+                                    <div class="image1">
+                                        <img src="https://www.holidify.com/blog/wp-content/uploads/2016/10/India_food.jpg" 
+                                        alt="bisi bela bath" width="450" height="350">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col">
+                                <h3 id="tripura">25) Chakwi - Tripura</h3>
+                                <p>
+                                    Chakhwi is a delicious main course dish in Tripura. 
+                                    Tripura, one of the seven sister hills of north-east India and surrounded by Bangladesh from three sides lies peacefully in its own cocoon.
+                                    But, the culture and rich food of Tripura speaks for itself.
+                                    This amazing dish is mainly prepared with pork and chicken since most of the Tripura cuisines are based on meat. 
+                                    Also, most of the Tripuri dishes are made of less oil. Bamboo shoot is another primary ingredient of this traditional dish, Chakhwi.
+                                </p>
+                            </div>
+                            <div class="col-image">
+                                <div class="image">
+                                    <img src="https://www.holidify.com/images/cmsuploads/compressed/Labong_with_tinapa_Bamboo_shoots_in_smoked_fish_with_tomato_sauce_1_20200120134840.jpg" alt="Chakwi" 
+                                    width="500">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col1">
+                                <div class="wrapper-double">
+                                    <h3 id="west bengal">26) Kosha Mangsho - West Bengal</h3>
+                                    <p>
+                                        Kosha Mangsho is a traditional dish prepared of Mutton (Goat meat) in every Bengali house. 
+                                        This dish of mutton with some thick curry is high on spices and richness. 
+                                        This Spicy Bengali Mutton Curry aka Kosha Mangsho is a perfect lunch recipe that would be loved by all. 
+                                        Velvety gravy with juicy pieces of meat served with maida luchi (pooris), full of flavors from the mutton, spices and mustard oil.
+                                        This dish is made with mutton and spices such as cloves, cinnamon, onion and garlic are used. 
+                                        This excellent recipe is full of the aroma and sweetness that is surely going to trigger your taste buds.
+
+                                    </p>
+                                </div>
+                                <div class="col-image1">
+                                    <div class="image1">
+                                        <img src="https://www.holidify.com/images/cmsuploads/compressed/shutterstock_501548590_20200117171630.jpg" 
+                                        alt="Kosha Mangsho" width="450" height="350">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col">
+                                <h3 id="uttarkhand">27) Kafuli - Uttarakhand</h3>
+                                <p>
+                                    This dish is a boon for all the diet-conscious people out there. 
+                                    Yes, it is actually that nutritious. Kafuli is a dish that all the locals of Uttarakhand swear by. 
+                                    It is basically primarily prepared of Spinach and fenugreek leaves, which even the doctors, prescribe. 
+                                    It is an exotic dish, prepared in an iron kadhai, and complemented by hot steaming rice. 
+                                    It is the most nourishing and health-conscious dish you will come across in the State.
+                                </p>
+                            </div>
+                            <div class="col-image">
+                                <div class="image">
+                                    <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/misal-pav.jpg" alt="misal pav" 
+                                    width="500">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-wrap-double">
+                    <div class="container">
+                        <div class="row-flex">
+                            <div class="col1">
+                                <div class="wrapper-double">
+                                    <h3 id="tamil nadu">28) Pongal - Tamil Nadu</h3>
+                                    <p>
+                                        This is a staple meal during every auspicious festival of Tamil Nadu. 
+                                        Besides the rice and sweet milk, the dish is cooked with ingredients like cardamom, green gram, raisins and cashew nuts. 
+                                        According to the traditional beliefs, Pongal is cooked in open space in the sunlight, as it is dedicated to the sun god. 
+                                        The dish has two variants- one that's sweet another that's savoury which is served on banana leaves.
+                                    </p>
+                                </div>
+                                <div class="col-image1">
+                                    <div class="image1">
+                                        <img src="https://static.toiimg.com/photo/msid-67417662/67417662.jpg?1717606" 
+                                        alt="Pongal" width="450" height="350">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

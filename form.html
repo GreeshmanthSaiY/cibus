@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/form_style.css">
+    <script>
+        function confirmEmail(p1, p2) {
+            if (p1.value != p2.value || p1.value == '' || p2.value == '') {
+                p2.setCustomValidity('Passwords Do Not Match');
+            } 
+            else {
+                p2.setCustomValidity('');
+            }
+        }
+        function validateAndSubmit() {
+            if (confirmEmail(p1,p2) == false) {
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="background"></div>
+    
+        <div class="container">
+            <div class="form-wrap">
+                <h2>Sign Up</h2>
+                <p>You're just a step away!</p>
+            
+            
+            <form action="home_auto_effect.html" onsubmit="return validateAndSubmit()">
+                <div class="form-entries">
+                    <label for="name"> First Name</label>
+                    <input type="text" id="name" placeholder="Enter your First Name" required> 
+                </div>
+                <div class="form-entries">
+                    <label for="name2"> Last Name</label>
+                    <input type="text" id="name2" placeholder="Enter your Last Name" required> 
+                </div>
+                <div class="form-entries">
+                    <label for="Email">Email Id</label>
+                    <input type="email" id="Email" pattern = "[a-z0-9._]+@[a-z0-9.]+\.com" placeholder="Enter your Email Id" required> 
+                </div>
+                <div class="form-entries">
+                    <label for="password">Password</label>
+                    <input type="password" id="p1" placeholder="Enter your Password" required> 
+                </div>
+                <div class="form-entries">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="p2" placeholder="Confirm your Password" required> 
+                </div>
+
+                <button type="Submit" class="btn" onclick="validateAndSubmit()">Submit</button>
+                <button type="Reset" class="btn">Reset</button>
+                <p class="button-text">By signing in, you agree to our <a href="#">Terms and Conditions</a> and our <a href="#"> Privacy Policy</a></p>
+                </form>
+                
+            </div>
+        </div>
+
+</body>
+</html>

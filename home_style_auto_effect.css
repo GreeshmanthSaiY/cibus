@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+h1,h2 {
+    padding-bottom: 20px;
+}
+
+.container {
+    margin: auto;
+    overflow: auto;
+    padding: 0px 20px;
+}
+
+#navbar {
+    background: black;
+    color: #fff;
+    overflow: auto;
+    opacity: 0.8;
+}
+
+#navbar a {
+    color: #fff;
+}
+
+#navbar h1 {
+    float: left;
+    padding-top: 20px;
+}
+
+#navbar ul {
+    list-style: none;
+    float: right;
+}
+
+#navbar ul li {
+    float: left;
+}
+
+#navbar ul li a {
+    display: block;
+    padding: 20px;
+    text-align: center;
+}
+
+#navbar ul li a:hover {
+    background: black;
+    color: #f7c08a;
+}
+
+#main-showcase {
+    background: url('ezgif.com-gif-maker4.gif') no-repeat center center/cover;
+    height: 675px;
+    /* position: relative; */
+    
+    
+}
+
+#main-showcase .main-showcase-content {
+    color: #ebc4a7;
+    text-align: center;
+    padding-top: 250px ;
+}
+
+#main-showcase .main-showcase-content h1 {
+    font-size: 60px;
+    line-height: 1.2em;
+}
+
+/* Footer */
+#main-footer {
+    text-align: center;
+    background: #444;
+    color: #fff;
+    padding: 20px;
+}
