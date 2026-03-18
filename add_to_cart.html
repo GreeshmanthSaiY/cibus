@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/e5225e29f1.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="mobile.css"
+    />
+    <!-- <link srel="shortcut icon" type="image/x-icon" href="favicon.ico" /> -->
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    <!-- <link rel=“icon” href=”favicon.ico” type=“image/x-icon”> -->
+    <link srel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <title>CIBUS | Traditional Foods</title>
+    <style>
+      :root {
+    --primary-color: #c72727;
+    --secondary-color: #f99500;
+    --light-color: #f3f3f3;
+    --dark-color: #333;
+    --max-width: 1100px;
+}
+
+.category {
+    --sports-color: #f99500;
+    --ent-color: #a66bbe;
+    --tech-color: #009cff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+    background: var(--light-color);
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+p{
+  margin: 0.5rem;
+}
+
+img {
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Staatliches' ,cursive;
+    margin-bottom: 0.55rem;
+    line-height: 1.3;
+}
+
+/* Utility */
+.container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
+.category {
+    display: inline-block;
+    color: #fff;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    padding: 0.4rem 0.6rem;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+}
+
+.category-sports {background: var(--sports-color);}
+.category-ent {background: var(--ent-color);}
+.category-tech {background: var(--tech-color);}
+
+.btn {
+    display: inline-block;
+    border: none;
+    background: var(--dark-color);
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+}
+
+.btn-light {background: var(--light-color);}
+.btn-primary {background: var(--primary-color);}
+.btn-secondary {background: var(--secondary-color);}
+
+.btn-block{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.btn:hover {
+    opacity: 0.9;
+}
+
+.card {
+    background: #fff;
+    padding: 1rem;
+}
+
+.bg-dark {
+    background: var(--dark-color);
+    color: #fff;
+}
+.bg-primary {
+    background: var(--primary-color);
+    color: #fff;
+}
+.bg-secondary {
+    background: var(--secondary-color);
+    color: #fff;
+}
+
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark a,
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary a,
+.bg-secondary h1,
+.bg-secondary h2,
+.bg-secondary h3,
+.bg-secondary a {
+    color: #fff;
+}
+
+.py-1 { padding: 1.5rem 0;}
+.py-2 { padding: 2rem 0;}
+.py-3 { padding: 3rem 0;}
+.p-1 { padding: 1.5rem 0;}
+.p-2 { padding: 2rem 0;}
+.p-3 { padding: 3rem 0;}
+
+.l-heading {
+    font-size: 3rem;
+}
+
+.list li {
+    padding: 0.5rem;
+    border-bottom: #555 dotted 1px;
+    width: 90%;
+}
+
+.list li a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Inner Page Container */
+.page-container {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  margin: 2rem 0;
+  grid-gap: 1.5rem;
+}
+
+.page-container > *:first-child {
+    grid-row: 1 / span 6;
+}
+
+/* Navigation */
+#main-nav {
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+#main-nav .container {
+    display: grid;
+    grid-template-columns: 6fr 3fr 2fr;
+    padding: 1rem;
+    align-items: center;
+}
+
+#main-nav .logo {
+    width: 180px;
+}
+
+#main-nav ul {
+    justify-self: end;
+    display: flex;
+}
+
+#main-nav ul li a {
+    padding: 0.75rem;
+    font-weight: bold;
+}
+
+#main-nav ul li a.current {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+#main-nav ul li a:hover {
+    background: var(--light-color);
+    color: var(--dark-color);
+}
+
+#main-nav .social {
+    justify-self: center;
+}
+
+#main-nav .social i {
+    color: #777;
+    margin-right: 0.5rem;
+}
+
+/* Showcase */
+#showcase {
+    color: #fff;
+    background: #333;
+    padding: 2rem;
+    position: relative;
+}
+
+#showcase:before {
+    content: '';
+    background: url('https://img5.goodfon.com/wallpaper/nbig/2/3f/makarony-bliudo-lapsha-temnyi-fon-eda-pomidory-skovoroda.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+#showcase .showcase-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+#showcase .showcase-content {
+    z-index: 1;
+}
+
+#showcase .showcase-content p {
+    margin-bottom: 1rem;
+}
+
+/* Home Articles */
+#home-articles .articles-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+#home-articles .articles-container > *:first-child{
+grid-column: 2 / span 2;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-gap: 1rem;
+grid-column: 1 / span 2;
+}
+
+#home-articles .articles-container > *:last-child {
+    grid-column: 2 / span 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    align-items: center;
+}
+
+#article .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eee;
+    padding: 0.5rem;
+}
+
+#article .meta .category {
+    margin-top: 0.4rem;
+}
+
+/* footer */
+#main-footer {
+    background: var(--dark-color);
+    color: #fff;
+}
+
+#main-footer img {
+    width: 150px;
+}
+
+#main-footer a {
+    color: #fff;
+}
+
+#main-footer .footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5rem;
+}
+
+#main-footer .footer-container > *:last-child {
+    background: #444;
+    grid-column: 1 / span 4;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+#main-footer .footer-container input[type='email'] {
+    width: 90%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#main-footer .footer-container input[type='submit']{
+    width: 90%;
+}
+.cart-button {
+    position: relative;
+    padding: 10px;
+    width: 200px;
+    height: 60px;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    background-color: #009cff;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .cart-button span {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+     transform: translate(-50%, -50%);
+    font-size: 1.2em;
+    color: #fff;
+  }
+  
+  .cart-button span.add-to-cart {
+    opacity: 1;
+  }
+  
+  .cart-button span.added {
+    opacity: 0;
+  }
+  
+  .cart-button .cart-icon {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: -10%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+  }
+  
+  .cart-button .cart-item {
+    position: absolute;
+    z-index: 3;
+    top: -20%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2em;
+  }
+  
+  .cart-button.clicked .cart-icon {
+    animation: cart 1.5s ease-in-out forwards;
+  }
+  
+  .cart-button.clicked .cart-item {
+    animation: box 1.5s ease-in-out forwards;
+  }
+  
+  .cart-button.clicked span.add-to-cart {
+    animation: add 1.5s ease-in-out forwards;
+  }
+  
+  .cart-button.clicked span.added {
+    animation: added 1.5s ease-in-out forwards;
+  }
+  
+  @keyframes cart {
+    0% {
+      left: -10%;
+    }
+    40%, 60% {
+      left: 50%;
+    }
+    100% {
+      left: 110%;
+    }
+  }
+  
+  @keyframes box {
+    0%, 40% {
+      top: -20%;
+    }
+    60% {
+      top: 40%;
+      left: 52%;
+    }
+    100% {
+      top: 40%;
+      left: 112%;
+    }
+  }
+  
+  @keyframes add {
+    0% {
+      opacity: 1;
+    }
+    20%, 100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes added {
+    0%, 80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+    </style>
+  </head>
+  <body>
+    <nav id="main-nav">
+      <div class="container">
+        <!-- <img  alt="CIBUS|Traditional Foods" class="logo" /> -->
+        <h3 class="logo"> CIBUS | Traditional Foods </h3>
+        <div class="social">
+          <a href="https://facebook.com" target="_blank"
+            ><i class="fab fa-facebook fa-2x"></i
+          ></a>
+          <a href="https://twitter.com" target="_blank"
+            ><i class="fab fa-twitter fa-2x"></i
+          ></a>
+          <a href="https://youtube.com" target="_blank"
+            ><i class="fab fa-youtube fa-2x"></i
+          ></a>
+          <a href="https://instagram.com" target="_blank"
+            ><i class="fab fa-instagram fa-2x"></i
+          ></a>
+        </div>
+        <ul>
+          <li><a href="home_auto_effect.html">Home</a></li>
+          <li><a href="recipe_cards.html">Recipes</a></li>
+          <li><a href="add_to_cart.html" class="current">Cart</a></li>
+          <li><a href="_new_all_states.html">Food</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Showcase -->
+    <header id="showcase">
+      <div class="container">
+        <div class="showcase-container">
+          <div class="showcase-content">
+            <p>
+              <h1>Live To Eat !</h1>     
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- home articles -->
+    <section id="home-articles" class="py-2">
+      <div class="container">
+        <h2>Recipes</h2>
+        <div class="articles-container">
+          <article class="card">
+            <img src="https://www.indianveggiedelight.com/wp-content/uploads/2020/06/bisibelebath_1-768x1024.webp" alt=""/>
+            <div>
+              <div class="category category-ent">Karnataka</div>
+              <h3>
+                <a href="article.html">Bisi Bele Bath</a>
+              </h3>
+              <p>
+                Bisi bele bhath or Bisi Bele Huliyanna is a spicy, rice-based dish with origins in the state of Karnataka, India.
+                It is said to have originated in the Mysore Palace and from there spread across the state of Karnataka.
+        Bisi Bele Bath is a dish in which the sambar dal and rice are cooked together with tamarind and spice powders.
+              </p>
+              <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+            </div>
+          </article>
+          <article class="card bg-dark">
+            <img src="https://i.ytimg.com/vi/EFkHsgQVGsw/maxresdefault.jpg" alt="">
+            <div class="category category-sports">Madhya Pradesh</div>
+            <h3>
+              <a href="article.html">Bhutte Ka Kees</a>
+            </h3>
+            <p>
+              Bhutte Ka Kees is an easy and delicious recipe which you can cook for your tea time break.This recipe is a street food in Indore, but is also made in households very often.</p>
+               <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+            </article>
+          <article class="card">
+              <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/appam.jpg" alt="">
+            <div class="category category-tech">Kerala</div>
+            <h3>
+              <a href="article.html">Appam</a>
+            </h3>
+            <p>
+              Appam is a type of pancake made with fermented rice batter and coconut milk.
+            </p>
+             <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+          </article>
+          <article class="card">
+            <div class="category category-sports">Manipur</div>
+            <h3>
+              <a href="article.html">Kangshoi</a>
+            </h3>
+            <p>
+              Kangshoi is a soupy stew of seasonal vegetables, coarsely chopped onions or spring onion, dried or fried fish pieces and water.
+            </p>
+            <img src="https://okcredit-blog-images-prod.storage.googleapis.com/2021/03/manipurfood1-1.jpg" alt="">
+             <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+          </article>
+          <article class="card">
+            <img src="https://images.herzindagi.info/image/2019/May/tunday-kabab.jpg" alt="">
+          <div class="category category-tech">Uttar Pradesh</div>
+          <h3>
+            <a href="article.html">Tunde Ke Kebab</a>
+          </h3>
+          <p>
+            Tunde Ke Kebab also known as Buffalo meat galouti kebab is a dish made out of minced meat which is popular in Lucknow, India.
+          </p>
+          <button class="cart-button">
+            <span class="add-to-cart">Add To Favourites</span>
+            <span class="added">Added</span>
+            <i class="fas fa-shopping-cart cart-icon"></i>
+            <i class="fas fa-box cart-item"></i>
+          </button>
+        </article>
+        <article class="card bg-primary">
+          <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/misal-pav.jpg" alt="A Picture"  ><br>
+
+            <div class="category category-sports">Maharashtra</div>
+            <h3>
+              <a href="article.html">Misal Pav</a>
+            </h3>
+            <p>
+              Misal pav is a popular street food in Maharashtra. A great breakfast recipe that includes a curry made of sprouts,
+      topped with finely chopped onions, tomatoes and "farsan"(fried savory mixture) and lime juice served pav,
+       heated on the pan with a hint of butter.
+            </p>
+             <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+          </article>
+          <article class="card">
+            <div>
+              <div class="category category-ent">Punjab</div>
+              <h3>
+                <a href="article.html">Makki Di Roti</a>
+              </h3>
+              <p>
+                Makki di Roti and Sarson da Saag make for the staple food in North India especially in the state of Punjab.
+                This traditional Indian dish may not look very enticing at first, but it has an authentic flavour to it, and it is rich in nutritive value.
+                Makki di Roti is a corn meal Indian bread that tastes fabulous with 'Sarson saag' - mustard green and a glass of lassi.
+              </p>
+            </div>
+              <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/makki-de-roti.jpg" alt="" />
+               <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+          </article>
+          <article class="card bg-dark">
+            <img src="https://media.istockphoto.com/photos/macher-jhol-in-black-bowl-on-dark-slate-table-top-indian-cuisine-picture-id1295772368?k=20&m=1295772368&s=612x612&w=0&h=39YuGDvqQEIrLae4Idux7Iw3tIWje8fu2rq1di_QuQ4=" alt="">
+            <div class="category category-sports">Goa</div>
+            <h3>
+              <a href="article.html">Fish Curry</a>
+            </h3>
+            <p>
+              This fish curry comes to you by way of Goa, a little pocket of Indian paradise that's all about the sun, surf, sand and excellent seafood! With a deeply aromatic tomato and coconut based sauce, Goan Fish Curry calls for a good handful of spices but once you start cooking, it's done in 20 minutes.
+              </p>
+               <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+          </article>
+          <article class="card">
+            <img src="https://geekrobocook.com/wp-content/uploads/2021/02/Dhokla-Gujarati-Dish.jpg" alt="">
+            <div class="category category-sports">Gujarat</div>
+            <h3>
+              <a href="article.html">Dhokla</a>
+            </h3>
+            <p>
+              An all-purpose Indian snack that's appropriate for breakfast or for snack, dhokla is a steamed cake from the Gujarat region. It reveals savory, sweet and spicy flavors, with a soft and spongy texture.
+              </p>
+               <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+          </article>
+          <article class="card bg-dark">
+            <div class="category category-sports">Haryana</div>
+            <h3>
+              <a href="article.html">Bajre Ki Khichdi</a>
+            </h3>
+            <p>
+              Bajra khichdi is a warming and nutritious khichdi made during winters. Its also a staple food in the regions of Rajasthan and haryana. In this bajra khichdi recipe only bajra and moong dal is used along with a few spices and herbs.</p>
+              <img src="https://images1.livehindustan.com/uploadimage/library/2018/09/29/16_9/16_9_1/bajra_khichdi_1538206303.jpg " alt="">
+               <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+            </article>
+          <article class="card bg-primary">
+            <img src="https://c8.alamy.com/zooms/6/ef49acc4bdde4b20a25ece0bc9f699ed/2h8beat.jpg" alt="">
+            <div class="category category-sports">Himachal Pradesh</div>
+            <h3>
+              <a href="article.html">Dham</a>
+            </h3>
+            <p>
+              Dham is a traditional vegetarian festive meal of the Indian state of Himachal Pradesh. It is a mid-day meal prepared on auspicious occasions , festivals , weddings, and other religious functions.  
+            </p>
+             <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+          </article>
+          <article class="card">
+            <img src="  https://img-global.cpcdn.com/recipes/4732548aa2202681/680x482cq70/%E0%A4%A7%E0%A4%B8%E0%A4%95-dhooska-recipe-in-hindi-%E0%A4%B0%E0%A4%B8%E0%A4%AA-%E0%A4%AE%E0%A4%96%E0%A4%AF-%E0%A4%A4%E0%A4%B8%E0%A4%B5%E0%A4%B0.jpg" alt=""/>
+            <div>
+              <div class="category category-ent">Jharkhand</div>
+              <h3>
+                <a href="article.html">Dhooska</a>
+              </h3>
+              <p>
+                Dhooska or Dushka is a popular deep fried snack eaten all over Jharkhand.It is one of the most popular dish and is a part of every home. It is usually consumed as breakfast which is served with traditional Ghughni.
+              </p>
+               <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://vismaifood.com/storage/app/uploads/public/be1/3f7/bc1/thumb__700_0_0_0_auto.jpg" alt=""/>
+            <div>
+              <div class="category category-tech">Andhra Pradesh</div>
+              <h3>
+                <a href="article.html">Pulihora</a>
+              </h3>
+              <p>
+                An exotic version of tamarind rice, also known as Chitrannam, is enriched with spicy flavours to give it a sour and salty taste at the same time. One of the main ingredients is tamarind along with curry leaves, tomatoes, and mustard seeds. Pulihora finds its place in kitchens often during festivities and special gatherings.
+              </p>
+               <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+            </div>
+          </article>
+          <article class="card">
+            <div>
+              <div class="category category-sports">Assam</div>
+              <h3>
+                <a href="article.html">Duck Meat Curry</a>
+              </h3>
+              <p>
+                Duck meat is a prized ingredient in Assam. Various styles of curry with this protein as the primary ingredient are prepared across Assam, most notably for special occasions. The preparation with Ash Gourd is the most loved but other styles such as with lentils, sesame seeds or even with pumpkin are quite popular too.
+              </p>
+              <img src="https://i0.wp.com/www.discovereast.in/wp-content/uploads/2020/08/Duck-curry-by-Bijit-Kumar-Kalita.jpg?resize=805%2C425" alt=""/>
+               <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+            </div>
+          </article>
+          <article class="card bg-primary">
+            <div class="category category-sports">Arunachal Pradesh</div>
+            <h3>
+              <a href="article.html">Bamboo Shoots</a>
+            </h3>
+            <p>
+              Bamboo shoot is widely eaten through all the North Eastern States because of its delicate flavour and is a chief component of food in Arunachal Pradesh. The delicious bamboo shoots are used in the dishes of boiled vegetables, cooked meat, pickles and chutneys.
+              Pongal is a delicious South Indian porridge made with rice and yellow moong lentils. It can be made sweet or savory. Here I share the savory version of pongal recipe known as Ven Pongal or Khara Pongal laced with the wonderful flavors of cumin, asafetida, curry leaves, ginger and black pepper.
+
+            </p>
+            <img src="https://www.archanaskitchen.com/images/archanaskitchen/1-Author/divya_shivaraman/Bamboo_Shoot_Stir_Fry.jpg" alt="">
+            <button class="cart-button">
+              <span class="add-to-cart">Add To Favourites</span>
+              <span class="added">Added</span>
+              <i class="fas fa-shopping-cart cart-icon"></i>
+              <i class="fas fa-box cart-item"></i>
+            </button>
+          </article>
+          <article class="card">
+            <img src="  https://img-global.cpcdn.com/recipes/4732548aa2202681/680x482cq70/%E0%A4%A7%E0%A4%B8%E0%A4%95-dhooska-recipe-in-hindi-%E0%A4%B0%E0%A4%B8%E0%A4%AA-%E0%A4%AE%E0%A4%96%E0%A4%AF-%E0%A4%A4%E0%A4%B8%E0%A4%B5%E0%A4%B0.jpg" alt=""/>
+            <div>
+              <div class="category category-ent">Bihar</div>
+              <h3>
+                <a href="article.html">Litti-Chokha</a>
+              </h3>
+              <p>
+                Litti, along with chokha, is a complete meal that takes the shape of a dough ball made up of whole wheat flour and stuffed with gram flour, pulses and mixed with herbs and spices. 
+                Pongal is a delicious South Indian porridge made with rice and yellow moong lentils. It can be made sweet or savory. Here I share the savory version of pongal recipe known as Ven Pongal or Khara Pongal laced with the wonderful flavors of cumin, asafetida, curry leaves, ginger and black pepper.
+              </p>
+               <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+            </div>
+          </article>
+          <article class="card bg-dark">
+            <div class="category category-sports">Chhattisgarh</div>
+            <h3>
+              <a href="article.html">Muthia</a>
+            </h3>
+            <p>
+              These are tasty and delicious steamed dumplings which are prepared in Chhattisgarh. This food is generally served as breakfast during the winter season in the rural areas of Chhattisgarh. Muthia is prepared with rice batter and is beautifully garnished with coriander leaves and sesame seeds.</p>
+              <img src="https://www.spiceupthecurry.com/wp-content/uploads/2020/11/methi-muthia-recipe-1.jpg " alt="" height="40%">
+               <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+            </article>
+            <article class="card">
+              <img src="https://www.secondrecipe.com/wp-content/uploads/2019/11/litti-chokha-1.jpg" alt=""/>
+              <div>
+                <div class="category category-sports">Bihar</div>
+                <h3>
+                  <a href="article.html">Litti-Chokha</a>
+                </h3>
+                <p>
+                  Litti, along with chokha, is a complete meal that takes the shape of a dough ball made up of whole wheat flour and stuffed with gram flour, pulses and mixed with herbs and spices. 
+                </p>
+                 <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+              </div>
+            </article>
+            <article class="card bg-primary">
+              <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/jadoh.jpg" alt=""/>
+              <div>
+                <div class="category category-ent">Meghalaya</div>
+                <h3>
+                  <a href="article.html">Jadoh</a>
+                </h3>
+                <p>
+                  Jadoh is a very popular dish among the Khasi community of Meghalaya. It is especially appetising because of its rich and unique colour.  
+                  Jadoh is basically red rice, cooked with generous amounts of pork meat.                 </p>
+                   <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+              </div>
+            </article>
+            <article class="card">
+              <img src="https://www.holidify.com/images/cmsuploads/compressed/33900074338_663bd54ef8_o_20191216115548.jpg" alt=""/>
+              <div>
+                <div class="category category-tech">Mizoram</div>
+                <h3>
+                  <a href="article.html">Misa Mach Poora</a>
+                </h3>
+                <p>
+                  Misa Mach Poora is a mouth-watering side dish. It is grilled shrimp cooked in mustard oil, lemon juice, orange zest and assorted spices.</p>
+                   <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+                </div>
+            </article>
+            <article class="card bg-dark">
+              <img src="https://www.holidify.com/images/cmsuploads/compressed/nature-white-leaf-isolated-bowl-dish-561380-pxhere.com_20200120140909.jpg" alt=""/>
+              <div>
+                <div class="category category-tech">Nagaland</div>
+                <h3>
+                  <a href="article.html">Pork with Bamboo Shoot</a>
+                </h3>
+                <p>
+                  Pork with bamboo shoots is simply a dish that is cooked with dry bamboo shoots, loads of chilies and herbs. 
+                  This dish tastes heavenly with boiled rice.</p>
+                   <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+              </div>
+            </article>
+            <article class="card">
+              <img src="https://s3-ap-south-1.amazonaws.com/betterbutterbucket-silver/payal-jain41523004616_thumb.jpeg" alt=""/>
+              <div>
+                <div class="category category-tech">Odhisha</div>
+                <h3>
+                  <a href="article.html">Chenna Poda</a>
+                </h3>
+                <p>
+                  Odisha's very own cheesecake! The lingering taste of burnt home-made cottage cheese and semolina combined with sugar syrup simply blow away your mind.
+                  This rare dessert is baked for several hours until it becomes red and the caramelised sugar brings out the distinct flavour of Chhena Poda. 
+                  </p>
+                   <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+              </div>
+            </article>
+            <article class="card">
+              <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/dal-baati-churma.jpg" alt=""/>
+              <div>
+                <div class="category category-tech">Rajasthan</div>
+                <h3>
+                  <a href="article.html">Dal Bati Churma</a>
+                </h3>
+                <p>
+                  Dal Bati Churma is a traditional Rajasthani treat with the spicy dal with the sweet churma along with deep fried crunchy batis.
+                </p>
+                 <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+              </div>
+            </article>
+            <article class="card">
+              <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/momo.jpg" alt=""/>
+              <div>
+                <div class="category category-tech">Sikkim</div>
+                <h3>
+                  <a href="article.html">Momo</a>
+                </h3>
+                <p>
+                  Momo is a type of South Asian dumpling, serverd with spicy sauces, popular across the Indian - Subcontinent and the himalayan regions of broader South Asia
+                </p>
+                 <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+              </div>
+            </article>
+            <article class="card bg-dark">
+              <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/biryani.jpg" alt=""/>
+              <div>
+                <div class="category category-tech">Telangana</div>
+                <h3>
+                  <a href="article.html">Biryani</a>
+                </h3>
+                <p>
+                  Biryani more famously the Hyderabadi version, is prepared in the form of kachay gosht ki Biryani and dum ki Biryani. This all time classic needs no explanation.
+                </p>
+                 <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+              </div>
+            </article>
+            <article class="card">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Chakhwi.jpg" alt=""/>
+              <div>
+                <div class="category category-tech">Tripura</div>
+                <h3>
+                  <a href="article.html">Chakhwi</a>
+                </h3>
+                <p>
+                  Chakhwi is one of the very traditional and very delicious and healthy preparations of the Tripura cuisines and the main ingredients of chakhwi are Bamboo Shoot, Green Papaya and verities of lentil.      </p>
+                   <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+                </div>
+            </article>
+            <article class="card">
+              <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/kosha-mangsho_5d3036c936254.jpg" alt=""/>
+              <div>
+                <div class="category category-tech">West Bengal</div>
+                <h3>
+                  <a href="article.html">Kosha Mangsho</a>
+                </h3>
+                <p>
+                  This Spicy Bengali Mutton Curry aka Kosha Mangsho is a perfect lunch recipe that would be loved by all. Velvety gravy with juicy pieces of meat served with maida luchi (pooris), full of flavors from the mutton, spices and mustard oil.</p>
+                   <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+                </div>
+            </article>
+            <article class="card bg-primary">
+              <img src="https://www.archanaskitchen.com/images/archanaskitchen/0-Archanas-Kitchen-Recipes/2017/10-oct/Uttaranchal_Style_Garwhali_Kafuli_Recipe_Spinach_Curry-9378.jpg" alt=""/>
+              <div>
+                <div class="category category-tech">Uttarakhand</div>
+                <h3>
+                  <a href="article.html">Kafuli</a>
+                </h3>
+                <p>
+                  This easy-to-make thick curry recipe is made using spinach, fenugreek leaves, garlic, ginger, green chilies, curd, rice paste and a mélange of spices. Kafuli is commonly served as a main-dish and savored best with chapattis or steamed rice.</p>
+                   <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+                </div>
+            </article>
+            <article class="card">
+              <img src="https://static.toiimg.com/photo/61051454.cms" alt=""/>
+              <div>
+                <div class="category category-tech">Tamil Nadu</div>
+                <h3>
+                  <a href="article.html">Pongal</a>
+                </h3>
+                <p>
+                  Pongal is a delicious South Indian porridge made with rice and yellow moong lentils. It can be made sweet or savory. Here I share the savory version of pongal recipe known as Ven Pongal or Khara Pongal laced with the wonderful flavors of cumin, asafetida, curry leaves, ginger and black pepper.</p>
+                   <button class="cart-button">
+                <span class="add-to-cart">Add To Favourites</span>
+                <span class="added">Added</span>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <i class="fas fa-box cart-item"></i>
+              </button>
+                </div>
+            </article>
+            <article></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="main-footer" class="py-2">
+        <div class="container footer-container">
+            <div>
+                <img src="img/logo_light.png" alt="CIBUS">
+                <p>This is some demon language but if you recite it you might get some food who knows?? *wink wink* Come on Chant with me:"Lorem Ipsum Dolor Sit Amet". </p>
+            </div>
+        <div>
+        <h3>Email newsletter</h3>
+     <p>The devil shall email you from LoremIpsum@DolorSit.Amet</p>
+     <form action="">
+         <input type="email" placeholder="Enter Email">
+         <input type="submit" value="Subscribe" class="button buttn-primary">
+     </form>
+        </div>
+        <div>
+            <h3>Site Links</h3>
+            <ul class="list">
+                <li><a href="#">Help & Support</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2>Join Our Club</h2>
+            <p>This is clearly our club's slogan: Repudiandae, voluptates!</p>
+            <a href="" class="button buttn-secondary">Join Now</a>
+        </div>
+        <div>
+      <p>
+          Copyright &copy; 2022, All rights reserved
+      </p>
+        </div>
+    </footer>
+    <script> 
+      const cartButtons = document.querySelectorAll('.cart-button');
+  
+  cartButtons.forEach(button => {
+    button.addEventListener('click', cartClick);
+  });
+  
+  function cartClick() {
+    let button = this;
+    button.classList.add('clicked');
+  }
+      
+  
+      
+      </script>
+  </body>
+</html>

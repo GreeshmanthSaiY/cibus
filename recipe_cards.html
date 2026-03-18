@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>recipe cards</title>
+    <style>
+     body{
+     display: flex; 
+     flex-wrap: wrap;
+     justify-content: center;
+      background: grey;
+      padding-top: 20px;
+      background-image: url("https://i.pinimg.com/originals/fb/72/a8/fb72a836ecfcf0306f83e06f5f269302.jpg ") ;
+      background-repeat:repeat-y;
+              /* background-attachment: scroll; */
+      }
+
+.card{
+    margin-top: 50px;
+background: #17141d;
+background: white;
+display: grid;
+grid-template-columns: 300px;
+grid-template-rows: 220px 30px  80px;
+grid-template-areas: "image" "text" "bottom";
+font-family: roboto;
+border-radius: 18px;
+box-shadow: -1rem 0 3rem #000;
+text-align: center;
+overflow: hidden;
+transition: all 0.6s ease;
+
+  
+ }
+
+
+.card-img{
+  grid-area: image;
+  background: linear-gradient(#fff0 0%, #fff0, 70%, #1d1d1d 100%), url("https://livingcities.org/wp-content/uploads/2021/04/AustinTX.jpg");
+  background-size: cover;
+ border-radius: 0 0 60% 60% /0 0 20% 20%;
+  
+}
+
+.card-discription{
+  grid-area: text;
+  font-family: roboto;
+  margin-top: -10px;
+}
+
+/* .card-discription > p{
+margin: 15px; margin-top: -10px;
+} */
+
+#visit-header, #visit-state{
+  font-family: arial;
+  text-transform: uppercase;
+}
+
+#visit-state{font-size: 18px;
+margin-top: -18px; margin-bottom: 20px;
+ color: #aaa;
+}
+
+#booknowbtn {
+ background: #e9443c;
+  background: #54c3dd;
+  background: 
+#38596c;
+   background:
+    linear-gradient( #cfb997,#f2eecb);   /*have to change the first color code*/
+ grid-area: bottom;
+ border: none;
+ font-size: 20px;
+ color: white;
+ margin-top: 30px;
+}
+
+#booknowbtn:hover{cursor: pointer; background: #54c3dd;
+background: #029be6;
+  background: #51a7e1; 
+  background: #2e709a;
+}
+
+.card:hover{
+  transform: translateY(-1rem);
+}
+
+.card:hover~.card{
+  transform: translateX(130px);
+}
+
+.card:not(:first-child){
+  margin-left: -130px;
+}
+
+
+
+/* LOCATION IMG */
+/* #sb{background-image: url("https://miro.medium.com/max/1000/1*HXChk_VSESSUYNR3VgCo_Q.jpeg")} */
+
+
+#sb{
+  background-position: bottom;
+  background-image: url("https://i.imgur.com/ZnaN89ql.jpg")}
+
+/* //https://prod-virtuoso.dotcmscloud.com/dA/b3bd129b-efda-486b-8290-ccb35cd0f167/previewImage/MissionSantaBarbara_hero.jpg */
+
+#andhrapradesh{
+  background-image:url("https://vismaifood.com/storage/app/uploads/public/be1/3f7/bc1/thumb__700_0_0_0_auto.jpg");
+}
+#arunachalpradesh{
+  background-image:url("https://www.archanaskitchen.com/images/archanaskitchen/1-Author/divya_shivaraman/Bamboo_Shoot_Stir_Fry.jpg");
+}
+#assam{
+  background-image:url("https://assets.sentinelassam.com/h-upload/2021/01/16/189530-httpsprodstatic9netaumedia201606290939green-duck-curry.webp?w=400&dpr=2.6");
+}
+#bihar{
+  background-image:url("https://www.secondrecipe.com/wp-content/uploads/2019/11/litti-chokha-1.jpg");
+}
+#chhattisgarh{
+  background-image:url("https://www.spiceupthecurry.com/wp-content/uploads/2020/11/methi-muthia-recipe-1.jpg");
+}
+#goa{
+  background-image:url("https://media.istockphoto.com/photos/macher-jhol-in-black-bowl-on-dark-slate-table-top-indian-cuisine-picture-id1295772368?k=20&m=1295772368&s=612x612&w=0&h=39YuGDvqQEIrLae4Idux7Iw3tIWje8fu2rq1di_QuQ4=");
+}
+#gujarat{
+  background-image:url("https://www.mygingergarlickitchen.com/wp-content/rich-markup-images/1x1/1x1-khaman-dhokla-recipe-how-to-make-instant-soft-and-spongy-dhokla-video-recipe.jpg");
+}
+#haryana{
+  background-image:url("https://images1.livehindustan.com/uploadimage/library/2018/09/29/16_9/16_9_1/bajra_khichdi_1538206303.jpg");
+}
+#himachalpradesh{
+  background-image:url("https://image.shutterstock.com/image-photo/dham-traditional-food-himachal-pradesh-260nw-2075469826.jpg");
+}
+#jharkhand{
+  background-image:url("https://images.prothomalo.com/prothomalo-bangla%2F2022-01%2Fed2be314-3ad1-45be-a1bc-051204d49dba%2F_SY_6956.JPG?auto=format%2Ccompress&format=webp&w=376&dpr=2.6");
+}
+#karnataka{
+  background-image:url("https://www.indianveggiedelight.com/wp-content/uploads/2020/06/bisibelebath_1-768x1024.webp");
+}
+#kerala{
+  background-image:url("https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/appam.jpg");
+}
+#madhyapradesh{
+  background-image:url("http://www.creativesaga.com/wp-content/uploads/2014/11/bhutte-ka-kees-recipe-grated-corn-upma-easy-corn-recipes.1024x1024.jpg");
+}
+#maharastra{
+  background-image:url("https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/misal-pav.jpg");
+}
+#manipur{
+  background-image:url("https://okcredit-blog-images-prod.storage.googleapis.com/2021/03/manipurfood1-1.jpg");
+}
+#meghalaya{
+  background-image:url("https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/jadoh.jpg");
+}
+#mizoram{
+  background-image:url("https://www.holidify.com/images/cmsuploads/compressed/33900074338_663bd54ef8_o_20191216115548.jpg");
+}
+#nagaland{
+  background-image:url("https://www.holidify.com/images/cmsuploads/compressed/nature-white-leaf-isolated-bowl-dish-561380-pxhere.com_20200120140909.jpg");
+}
+#odisha{
+  background-image:url("https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/chenna-poda.jpg");
+}
+#punjab{
+  background-image:url("https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/makki-de-roti.jpg");
+}
+#rajasthan{
+  background-image:url("https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/dal-baati-churma.jpg");
+}
+#sikkim{
+  background-image:url("https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/momo.jpg");
+}
+#tamilnadu{
+  background-image:url("https://static.toiimg.com/photo/61051454.cms");
+}
+#telangana{
+  background-image:url("https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/biryani.jpg");
+}
+#tripura{
+  background-image:url("https://upload.wikimedia.org/wikipedia/commons/1/11/Chakhwi.jpg");
+}
+#uttarpradesh{
+  background-image:url("https://images.herzindagi.info/image/2019/May/tunday-kabab.jpg");
+}
+#uttarkhand{
+  background-image:url("https://www.archanaskitchen.com/images/archanaskitchen/0-Archanas-Kitchen-Recipes/2017/10-oct/Uttaranchal_Style_Garwhali_Kafuli_Recipe_Spinach_Curry-9378.jpg");
+}
+#westbengal{
+  background-image:url("https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/kosha-mangsho_5d3036c936254.jpg");
+}
+
+
+a{text-decoration: none;
+color: white;}
+
+/* RGB */
+
+.rgb::after {
+  content:"";
+  background: linear-gradient(45deg,
+  #ff0000 0%, 
+  #ff9a00 10%,
+  #d0de21 20%,
+  #4fdc4a 30%, 
+  #3fdad8 40%,
+  #2fc9e2 50%, 
+  #1c7fee 60%, 
+  #5f15f2 70%, 
+  #ba0cf8 80%, 
+  #fb07d9 90%, 
+  #ff0000 100%  )
+  repeat 0% 0% / 300% 100%;
+  position: absolute;
+  inset: -3px;
+} 
+
+@keyframes rgb {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.rgb::after {
+
+  border-radius: 16px;
+  filter:blur(8px);
+  transform :translateZ(-1px); /*or z-index */
+  animation:rgb 6s linear infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ********************************** */
+/* ******************************************888888888*************** */
+
+
+
+
+
+
+
+
+       
+     
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="card" style="margin-left: 30px;">
+        <div class="card-img" id="andhrapradesh"> </div>
+        <div class="card-discription"> 
+          <h2 id="visit-header">Pulihora</h2> 
+           <h2 id="visit-state">Andhra Pradesh</h2> 
+          </div>
+          <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#pulihora" target="_blank"> View more information </a> </button> 
+    </div>
+    <div class="card">
+        <div class="card-img" id="arunachalpradesh"> </div>
+        <div class="card-discription"> 
+          <h2 id="visit-header">Bamboo Shoots</h2> 
+           <h2 id="visit-state">Arunachal Pradesh</h2> 
+          <!-- <p> Yosemite is a jaw dropping National Park, hidden away in California’s Sierra Nevada mountains. It’s famed for its giant ancient sequoia trees and iconic vistas. After a long day hiking Bridalveil Fall, El Capitan, or Half Dome; you can wind down at Yosemite Village which has shops, restaurants, lodging.  </p> -->
+          </div>
+          <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#bamboo" target="_blank"> View more information </a> </button>
+    </div>
+    <div class="card">
+        <div class="card-img" id="assam"> </div>
+        <div class="card-discription"> 
+          <h2 id="visit-header">Duck Curry</h2> 
+           <h2 id="visit-state">Assam</h2> 
+          <!-- <p> Santa Barbara is a city on the central California coast, with the Santa Ynez Mountains as dramatic backdrop. Downtown, Mediterranean-style white stucco buildings with red-tile roofs reflect the city’s Spanish colonial heritage. Upscale boutiques and restaurants offering local wines and seasonal fare line State Street. </p> -->
+          </div>
+          <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#duck" target="_blank"> View more information </a> </button>
+     </div>
+    <div class="card">
+        <div class="card-img" id="bihar">  </div>
+        <div class="card-discription"> 
+          <h2 id="visit-header">Litti Chowkha</h2> 
+           <h2 id="visit-state">Bihar</h2> 
+          <!-- <p> Austin is the state capital of Texas, an inland city bordering the Hill Country region. Home to the famous 6th Street bar scene, Austin is known for its eclectic live-music scene centered around country, blues, and rock. Its many parks and lakes are popular for hiking, biking, swimming and boating. </p> -->
+          </div>
+          <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#litti" target="_blank"> View more information </a> </button>
+    </div>
+   <!-- <hr>
+   <hr> -->
+ <!-- up to now is the basic structre i hope -->
+ <div class="card">
+  <div class="card-img" id="chhattisgarh"> </div>
+  <div class="card-discription"> 
+    <h2 id="visit-header">Muthia</h2> 
+     <h2 id="visit-state"> Chattisgarh</h2> 
+    <!-- <p> Yosemite is a jaw dropping National Park, hidden away in California’s Sierra Nevada mountains. It’s famed for its giant ancient sequoia trees and iconic vistas. After a long day hiking Bridalveil Fall, El Capitan, or Half Dome; you can wind down at Yosemite Village which has shops, restaurants, lodging.  </p> -->
+    </div>
+    <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#muthia" target="_blank"> View more information </a> </button>
+</div>
+<div class="card">
+  <div class="card-img" id="goa"> </div>
+  <div class="card-discription"> 
+    <h2 id="visit-header">Fish Curry</h2> 
+     <h2 id="visit-state">Goa</h2> 
+    <!-- <p> Santa Barbara is a city on the central California coast, with the Santa Ynez Mountains as dramatic backdrop. Downtown, Mediterranean-style white stucco buildings with red-tile roofs reflect the city’s Spanish colonial heritage. Upscale boutiques and restaurants offering local wines and seasonal fare line State Street. </p> -->
+    </div>
+    <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#fish" target="_blank"> View more information </a> </button>
+</div>
+<div class="card" >
+  <div class="card-img" id="gujarat">  </div>
+  <div class="card-discription"> 
+    <h2 id="visit-header">Dhokla </h2> 
+     <h2 id="visit-state">Gujarat</h2> 
+    <!-- <p> Austin is the state capital of Texas, an inland city bordering the Hill Country region. Home to the famous 6th Street bar scene, Austin is known for its eclectic live-music scene centered around country, blues, and rock. Its many parks and lakes are popular for hiking, biking, swimming and boating. </p> -->
+    </div>
+    <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#dhokla" target="_blank"> View more information </a> </button>
+</div>
+<!-- hbcwrfsuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh -->
+<div class="card" style = "margin-left: 30px;">
+  <div class="card-img" id="haryana"> </div>
+  <div class="card-discription"> 
+    <h2 id="visit-header">Bajre Ki Khichdi</h2> 
+     <h2 id="visit-state">Haryana</h2> 
+    <!-- <p> Yosemite is a jaw dropping National Park, hidden away in California’s Sierra Nevada mountains. It’s famed for its giant ancient sequoia trees and iconic vistas. After a long day hiking Bridalveil Fall, El Capitan, or Half Dome; you can wind down at Yosemite Village which has shops, restaurants, lodging.  </p> -->
+    </div>
+    <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#bajre" target="_blank"> View more information </a> </button>
+</div>
+<div class="card" >
+  <div class="card-img" id="himachalpradesh"> </div>
+  <div class="card-discription"> 
+    <h2 id="visit-header">Dham</h2> 
+     <h2 id="visit-state">Himachal Pradesh</h2> 
+    <!-- <p> Santa Barbara is a city on the central California coast, with the Santa Ynez Mountains as dramatic backdrop. Downtown, Mediterranean-style white stucco buildings with red-tile roofs reflect the city’s Spanish colonial heritage. Upscale boutiques and restaurants offering local wines and seasonal fare line State Street. </p> -->
+    </div>
+    <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#dham" target="_blank"> View more information </a> </button>
+</div>
+<div class="card">
+  <div class="card-img" id="jharkhand">  </div>
+  <div class="card-discription"> 
+    <h2 id="visit-header">Dhooska</h2> 
+     <h2 id="visit-state">Jharkhand</h2> 
+    <!-- <p> Austin is the state capital of Texas, an inland city bordering the Hill Country region. Home to the famous 6th Street bar scene, Austin is known for its eclectic live-music scene centered around country, blues, and rock. Its many parks and lakes are popular for hiking, biking, swimming and boating. </p> -->
+    </div>
+    <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#dhooska" target="_blank"> View more information </a> </button>
+</div>
+<!-- dfghjklertyuioeldsa,cnfvbyeruieoqwpls,mxnb -->
+<div class="card">
+  <div class="card-img" id="karnataka"> </div>
+  <div class="card-discription"> 
+    <h2 id="visit-header">Bisi Bele Bath </h2> 
+     <h2 id="visit-state">karnataka</h2> 
+    <!-- <p> Yosemite is a jaw dropping National Park, hidden away in California’s Sierra Nevada mountains. It’s famed for its giant ancient sequoia trees and iconic vistas. After a long day hiking Bridalveil Fall, El Capitan, or Half Dome; you can wind down at Yosemite Village which has shops, restaurants, lodging.  </p> -->
+    </div>
+    <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#bisi" target="_blank" > View more information </a> </button>
+</div>
+<div class="card">
+  <div class="card-img" id="kerala" > </div>
+  <div class="card-discription"> 
+    <h2 id="visit-header"> Appam</h2> 
+     <h2 id="visit-state">Kerala</h2> 
+    <!-- <p> Santa Barbara is a city on the central California coast, with the Santa Ynez Mountains as dramatic backdrop. Downtown, Mediterranean-style white stucco buildings with red-tile roofs reflect the city’s Spanish colonial heritage. Upscale boutiques and restaurants offering local wines and seasonal fare line State Street. </p> -->
+    </div>
+    <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#appam" target="_blank"> View more information </a> </button>
+</div>
+<div class="card">
+  <div class="card-img" id="madhyapradesh">  </div>
+  <div class="card-discription"> 
+    <h2 id="visit-header">Bhutte ka kees </h2> 
+     <h2 id="visit-state">Madhya Pradesh</h2> 
+    <!-- <p> Austin is the state capital of Texas, an inland city bordering the Hill Country region. Home to the famous 6th Street bar scene, Austin is known for its eclectic live-music scene centered around country, blues, and rock. Its many parks and lakes are popular for hiking, biking, swimming and boating. </p> -->
+    </div>
+    <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#bhutte" target="_blank" > View more information </a> </button>
+</div>
+<!-- dfghjklertyuioeldsa,cnfvbyeruieoqwpls,mxnb -->
+<div class="card">
+  <div class="card-img" id="maharastra">  </div>
+  <div class="card-discription"> 
+    <h2 id="visit-header">Mishal Pav</h2> 
+     <h2 id="visit-state">Maharastra</h2> 
+    <!-- <p> Austin is the state capital of Texas, an inland city bordering the Hill Country region. Home to the famous 6th Street bar scene, Austin is known for its eclectic live-music scene centered around country, blues, and rock. Its many parks and lakes are popular for hiking, biking, swimming and boating. </p> -->
+    </div>
+    <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#misal" target="_blank" > View more information </a> </button>
+</div>
+  
+  <div class="card" style = "margin-left: 30px;">
+    <div class="card-img" id="manipur" > </div>
+    <div class="card-discription"> 
+      <h2 id="visit-header"> Kangshoi </h2> 
+       <h2 id="visit-state">Manipur</h2> 
+      <!-- <p> Santa Barbara is a city on the central California coast, with the Santa Ynez Mountains as dramatic backdrop. Downtown, Mediterranean-style white stucco buildings with red-tile roofs reflect the city’s Spanish colonial heritage. Upscale boutiques and restaurants offering local wines and seasonal fare line State Street. </p> -->
+      </div>
+      <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#kangshoi" target="_blank"> View more information </a> </button>
+  </div>
+  <div class="card">
+    <div class="card-img" id="meghalaya">  </div>
+    <div class="card-discription"> 
+      <h2 id="visit-header">Jadoh </h2> 
+       <h2 id="visit-state">Meghalaya</h2> 
+      <!-- <p> Austin is the state capital of Texas, an inland city bordering the Hill Country region. Home to the famous 6th Street bar scene, Austin is known for its eclectic live-music scene centered around country, blues, and rock. Its many parks and lakes are popular for hiking, biking, swimming and boating. </p> -->
+      </div>
+      <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#jadoh" target="_blank"> View more information </a> </button>
+  </div>
+  <div class="card">
+    <div class="card-img" id="mizoram" style = "margin-left:30px"> </div>
+    <div class="card-discription"> 
+      <h2 id="visit-header">Misa Mach Poora</h2> 
+       <h2 id="visit-state">Mizoram</h2> 
+      <!-- <p> Yosemite is a jaw dropping National Park, hidden away in California’s Sierra Nevada mountains. It’s famed for its giant ancient sequoia trees and iconic vistas. After a long day hiking Bridalveil Fall, El Capitan, or Half Dome; you can wind down at Yosemite Village which has shops, restaurants, lodging.  </p> -->
+      </div>
+      <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#misa" target="_blank"> View more information </a> </button>
+  </div>
+  <div class="card">
+    <div class="card-img" id="nagaland"> </div>
+    <div class="card-discription"> 
+      <h2 id="visit-header">Pork</h2> 
+       <h2 id="visit-state">Nagaland</h2> 
+      <!-- <p> Santa Barbara is a city on the central California coast, with the Santa Ynez Mountains as dramatic backdrop. Downtown, Mediterranean-style white stucco buildings with red-tile roofs reflect the city’s Spanish colonial heritage. Upscale boutiques and restaurants offering local wines and seasonal fare line State Street. </p> -->
+      </div>
+      <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#pork" target="_blank"> View more information </a> </button>
+  </div>
+  
+  <div class="card" >
+    <div class="card-img" id="odisha">  </div>
+    <div class="card-discription"> 
+      <h2 id="visit-header">Chenna Poda </h2> 
+       <h2 id="visit-state">Odisha</h2> 
+      <!-- <p> Austin is the state capital of Texas, an inland city bordering the Hill Country region. Home to the famous 6th Street bar scene, Austin is known for its eclectic live-music scene centered around country, blues, and rock. Its many parks and lakes are popular for hiking, biking, swimming and boating. </p> -->
+      </div>
+      <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#chenna" target="_blank"> View more information </a> </button>
+  </div>
+  <!-- bqchiuwedn
+    -->
+    <div class="card">
+      <div class="card-img" id="punjab"> </div>
+      <div class="card-discription"> 
+        <h2 id="visit-header">Makki Di Roti </h2> 
+         <h2 id="visit-state">Punjab</h2> 
+        <!-- <p> Yosemite is a jaw dropping National Park, hidden away in California’s Sierra Nevada mountains. It’s famed for its giant ancient sequoia trees and iconic vistas. After a long day hiking Bridalveil Fall, El Capitan, or Half Dome; you can wind down at Yosemite Village which has shops, restaurants, lodging.  </p> -->
+        </div>
+        <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#makki" target="_blank"> View more information </a> </button>
+    </div>
+    <div class="card">
+      <div class="card-img" id="rajasthan"> </div>
+      <div class="card-discription"> 
+        <h2 id="visit-header">Dal Baati Churma </h2> 
+         <h2 id="visit-state">Rajasthan</h2> 
+        <!-- <p> Santa Barbara is a city on the central California coast, with the Santa Ynez Mountains as dramatic backdrop. Downtown, Mediterranean-style white stucco buildings with red-tile roofs reflect the city’s Spanish colonial heritage. Upscale boutiques and restaurants offering local wines and seasonal fare line State Street. </p> -->
+        </div>
+        <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#dal" target="_blank"> View more information </a> </button>
+    </div>
+    <div class="card" style="margin-left:20px;">
+      <div class="card-img" id="sikkim">  </div>
+      <div class="card-discription"> 
+        <h2 id="visit-header"> Momo </h2> 
+         <h2 id="visit-state">Sikkim</h2> 
+        <!-- <p> Austin is the state capital of Texas, an inland city bordering the Hill Country region. Home to the famous 6th Street bar scene, Austin is known for its eclectic live-music scene centered around country, blues, and rock. Its many parks and lakes are popular for hiking, biking, swimming and boating. </p> -->
+        </div>
+        <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#momo" target="_blank"> View more information </a> </button>
+    </div>
+    <div class="card">
+      <div class="card-img" id="tamilnadu"> </div>
+      <div class="card-discription"> 
+        <h2 id="visit-header">Pongal</h2> 
+         <h2 id="visit-state">Tamil Nadu</h2> 
+        <!-- <p> Yosemite is a jaw dropping National Park, hidden away in California’s Sierra Nevada mountains. It’s famed for its giant ancient sequoia trees and iconic vistas. After a long day hiking Bridalveil Fall, El Capitan, or Half Dome; you can wind down at Yosemite Village which has shops, restaurants, lodging.  </p> -->
+        </div>
+        <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#pongal" target="_blank"> View more information </a> </button>
+    </div>
+    <div class="card">
+      <div class="card-img" id="telangana"> </div>
+      <div class="card-discription"> 
+        <h2 id="visit-header">Biryani </h2> 
+         <h2 id="visit-state">Telangana</h2> 
+        <!-- <p> Santa Barbara is a city on the central California coast, with the Santa Ynez Mountains as dramatic backdrop. Downtown, Mediterranean-style white stucco buildings with red-tile roofs reflect the city’s Spanish colonial heritage. Upscale boutiques and restaurants offering local wines and seasonal fare line State Street. </p> -->
+        </div>
+        <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#biriyani" target="_blank"> View more information </a> </button>
+    </div>
+    <div class="card">
+      <div class="card-img" id="tripura"> </div>
+      <div class="card-discription"> 
+        <h2 id="visit-header">Chakhwi</h2> 
+         <h2 id="visit-state">Tripura</h2> 
+        <!-- <p> Santa Barbara is a city on the central California coast, with the Santa Ynez Mountains as dramatic backdrop. Downtown, Mediterranean-style white stucco buildings with red-tile roofs reflect the city’s Spanish colonial heritage. Upscale boutiques and restaurants offering local wines and seasonal fare line State Street. </p> -->
+        </div>
+        <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#chakhwi" target="_blank"> View more information </a> </button>
+    </div>
+    <div class="card">
+      <div class="card-img" id="uttarpradesh"> </div>
+      <div class="card-discription"> 
+        <h2 id="visit-header">Tunde Ke Kebabs </h2> 
+         <h2 id="visit-state">Uttar Pradesh</h2> 
+        <!-- <p> Santa Barbara is a city on the central California coast, with the Santa Ynez Mountains as dramatic backdrop. Downtown, Mediterranean-style white stucco buildings with red-tile roofs reflect the city’s Spanish colonial heritage. Upscale boutiques and restaurants offering local wines and seasonal fare line State Street. </p> -->
+        </div>
+        <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#tunde" target="_blank"> View more information </a> </button>
+    </div>
+    <div class="card">
+      <div class="card-img" id="uttarkhand"> </div>
+      <div class="card-discription"> 
+        <h2 id="visit-header">Kafuli </h2> 
+         <h2 id="visit-state"> Uttarkhand </h2> 
+        <!-- <p> Santa Barbara is a city on the central California coast, with the Santa Ynez Mountains as dramatic backdrop. Downtown, Mediterranean-style white stucco buildings with red-tile roofs reflect the city’s Spanish colonial heritage. Upscale boutiques and restaurants offering local wines and seasonal fare line State Street. </p> -->
+        </div>
+        <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#kafuli" target="_blank"> View more information </a> </button>
+    </div>
+    <div class="card">
+      <div class="card-img" id="westbengal"> </div>
+      <div class="card-discription"> 
+        <h2 id="visit-header">Kosha Mangsho</h2> 
+         <h2 id="visit-state"> West Bengal </h2>
+         
+        <!-- <p> Santa Barbara is a city on the central California coast, with the Santa Ynez Mountains as dramatic backdrop. Downtown, Mediterranean-style white stucco buildings with red-tile roofs reflect the city’s Spanish colonial heritage. Upscale boutiques and restaurants offering local wines and seasonal fare line State Street. </p> -->
+        </div>
+        <button id="booknowbtn"> <a href="http://127.0.0.1:5500/trail_3_uid_recipe_page.html#kosha" target="_blank"> View more information </a> </button>
+    </div>
+    
+
+
+
+
+
+    <!-- **************************************************************************************8
+    **********************************************************************************************
+****************************************************************************************************8
+  ********************************************************************************************8
+****************************************************************************************************8
+******************************************************************************************
+***************************************************************************************************
+************************************************************************************************ -->
+
+
+
+
+
+
+
+
+
+    
+                 
+
+           
+    
+</body>
+</html>
