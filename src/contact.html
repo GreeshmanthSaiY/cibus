@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e5225e29f1.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        function validate(){
+           var k = document.getElementById("name").value;
+           var c = document.getElementById("message").value;
+           if (k == "")
+        {
+            alert("Please enter your name.");
+            return false;
+        }
+
+        if (c == "")
+        {
+            alert("Please type a message.");
+            return false;
+        }
+            alert('We have received your message!');
+        }
+    </script>
+    <style>
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+
+
+html,body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+
+
+h1,h2,h3 {
+    padding-bottom: 20px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+
+.btn {
+    display: inline-block;
+    font-size: 18px ;
+    color: #fff;
+    background: #333;
+    padding: 13px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #f7c08a;
+    color: #333;
+}
+
+
+.py-1 { padding: 10px 0;}
+.py-2 { padding: 20px 0;}
+.py-3 { padding: 30px 0;}
+
+.l-heading {
+    font-size: 40px;
+    line-height: 1.2;
+}
+
+.container {
+    margin: auto;
+    max-width: 1100px;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.text-primary {
+    color: #f7c08a;
+}
+
+
+.box {
+     float: left;
+     width: 33.3%;
+     padding: 50px;
+     text-align: center;
+ }
+
+ .box i {
+     margin-bottom: 10px;
+ }
+
+
+     /* Contact Form */
+#contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#contact-form input, #contact-form textarea {
+     width: 100%;
+     padding: 10px;
+     border :1px #ddd solid;
+}
+
+#contact-form textarea {
+    height: 200px;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+    outline:none;
+    border-color: #f7c08a;
+} 
+
+.text-primary {
+    color: #f7c08a;
+}
+
+.bg-dark {
+    background: #333;
+    color: #fff;
+}
+
+ /* Footer */
+#main-footer {
+    text-align: center;
+    background: #444;
+    color: #fff;
+    padding: 20px;
+}
+
+.current {
+        background-color: red;
+    }
+
+
+
+    html,body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+h1,h2 {
+    padding-bottom: 20px;
+}
+
+.container {
+    margin: auto;
+    overflow: auto;
+    padding: 0px 20px;
+}
+
+#navbar {
+    background: black;
+    color: #fff;
+    overflow: auto;
+    opacity: 0.8;
+}
+
+#navbar a {
+    color: #fff;
+}
+
+#navbar h1 {
+    float: left;
+    padding-top: 20px;
+}
+
+#navbar ul {
+    list-style: none;
+    float: right;
+}
+
+#navbar ul li {
+    float: left;
+}
+
+#navbar ul li a {
+    display: block;
+    padding: 20px;
+    text-align: center;
+}
+
+#navbar ul li a:hover {
+    background: black;
+    color: #f7c08a;
+}
+
+
+    </style>
+</head>
+<body>
+
+
+    <!-- <div class="main-navbar"> -->
+        <!-- <a href="#FAQ">FAQ</a> -->
+        <!-- <a href="#Reviews">Reviews</a> -->
+        <!-- <a href="contact.html" class="current">Contact</a>
+        <a href="add_to_cart.html">Add to favorites</a> 
+        <a href="recipe_cards.html" target="_blank">Recipes by States</a>  -->
+        <!-- <div class="dropdown">
+          <button class="dropbtn">Recipes
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="andhra_recipe.html" target="_blank">Pulihora</a>
+            <a href="arunachal_recipe.html" target="_blank" >Bamboo Shoots</a>
+            <a href="assam_recipe.html" target="_blank" >Duck Curry</a>
+            <a href="bihar_recipe.html" target="_blank" >Litti Chokha</a>
+            <a href="chhatt_recipe.html" target="_blank" >Muthia</a>
+            <a href="#" target="_blank">Misal Pav</a>
+            <a href="#" target="_blank">Bisi Bele Bath</a>
+          </div>
+        </div>  -->
+        <!-- <a href="_new_all_states.html">Food by States</a> 
+        <a href="home_auto_effect.html">Home</a>  -->
+        <!-- <div class="dropdown">
+          <button class="dropbtn">Food by states
+            <i class="fa fa-caret-down"></i>
+          </button>
+          </div> -->
+        <!-- </div>  
+      </div> -->
+
+
+
+      <nav id="navbar">
+        <div class="container">
+            <h1 class="logo"><a href="index.html">CIBUS</a> </h1>
+            <ul>
+              <li> <a href="home_auto_effect.html">Home</a></li>
+              <li>  <a href="_new_all_states.html">Food by States</a> </li>
+              <li><a href="recipe_cards.html" target="_blank">Recipes by States</a></li>
+              <li><a href="add_to_cart.html">Add to favorites</a></li>
+                <li><a href="contact.html" class="current">Contact</a> </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+
+    <section id="contact-form" class="py-3">
+        <div class="container">
+            <h1 class="l-heading"><span class="text-primary">Contact</span> Us</h1>
+            <p>Please Fill out the form below to contact us</p>
+            <form>
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" required> </textarea>
+                </div>
+                <button type="submit" class="btn" onclick="validate()">Submit</button>
+            </form>
+        </div>
+    </section>
+    
+    <section id="contact-info" class="bg-dark">
+        <div class="container">
+            <div class="box">
+                <i class="fas fa-hotel fa-3x"></i>
+                <h3> Location</h3>
+                <p>50 main street, Surat,Gujarat</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-phone fa-3x"></i>
+                <h3>Phone Number</h3>
+                <p> +91-7842415628</p>
+                 <p>+91-9573004979</p></div>
+            <div class="box">
+                <i class="fas fa-envelope fa-3x"></i>
+                <h3>Email Address</h3>
+                <p>reception@cibus.com</p>
+    </section>
+
+     <footer id="main-footer">
+         <p>Cibus &copy; 2022,All Rights Reserved</p>
+     </footer>
+</body>
+</html>
