@@ -33,6 +33,15 @@
 ---
 
 
+## 🛠️ Tech Stack
+
+| Technology | Usage |
+|---|---|
+| **HTML5** | Page structure and content |
+| **CSS3** | Styling, animations, flexbox/grid layouts |
+| **Vanilla JavaScript** | Form validation, cart interactions, UI effects |
+| **Font Awesome** | Icons |
+| **Google Fonts** | Typography (Lato, Staatliches) |
 
 ## 📄 Pages Overview
 
