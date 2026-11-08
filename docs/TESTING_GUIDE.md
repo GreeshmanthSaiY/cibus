@@ -41,14 +41,22 @@ To ensure CIBUS is production-ready, regression-free, and maintainable without b
   - Schema verification of stored items.
   - Handling of corrupted or tampered JSON strings in localStorage.
   - Graceful fallback when storage quota is exceeded or storage is disabled.
+- `tests/unit/json-validation.test.js`:
+  - Schema validation for `data/states.json` (all 28 states, regions, capitals, coordinates).
+  - Schema validation for `data/food-items.json` (28+ authentic dishes, prices, ratings, dietary flags).
+  - Schema validation for `data/recipes.json` (28 heritage recipes, prep/cook times, servings, ingredients, instructions).
+  - Cross-referencing integrity between recipes, food items, and state catalogs.
 
-### 2.2. HTML & Link Integrity Tests (`tests/integration/`)
-- Checks every HTML file for:
-  - Valid HTML5 DOCTYPE and semantic tags.
+### 2.2. HTML, Link & Server Integration Tests (`tests/integration/`)
+- `tests/integration/html-integrity.test.js`:
+  - Checks every HTML file for valid HTML5 DOCTYPE and semantic tags.
   - Existence of all local `href` targets (no dead 404 links).
   - Existence of all local `src` targets (no missing images or scripts).
   - Absence of hardcoded localhost (`127.0.0.1:5500`) references.
   - Absence of duplicate HTML element IDs on the same page.
+- `tests/integration/server-probe.js`:
+  - Automated HTTP static server probe testing all 18 application routes.
+  - Asserts HTTP 200 OK status, proper MIME content-type headers, and positive byte sizes.
 
 ### 2.3. End-to-End Browser Tests (`tests/e2e/`)
 - Tests executed across Chromium, Firefox, and WebKit (mobile & desktop):
