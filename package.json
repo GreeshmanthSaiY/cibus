@@ -4,9 +4,10 @@
   "description": "Traditional Indian food discovery and heritage recipe platform celebrating 28 states.",
   "main": "index.html",
   "scripts": {
-    "start": "npx serve -l 3000 .",
+    "start": "node -e \"const http = require('http'), fs = require('fs'), path = require('path'); const mime = {'.html':'text/html','.css':'text/css','.js':'application/javascript','.json':'application/json','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.gif':'image/gif','.ico':'image/x-icon','.svg':'image/svg+xml'}; http.createServer((req,res) => { let p = decodeURI(req.url.split('?')[0]); if (p === '/') p = '/index.html'; const f = path.join(process.cwd(), p); fs.stat(f, (err, s) => { if (err || !s.isFile()) { res.writeHead(404); res.end('404 Not Found'); return; } res.writeHead(200, {'Content-Type': mime[path.extname(f).toLowerCase()] || 'application/octet-stream'}); fs.createReadStream(f).pipe(res); }); }).listen(3000, () => console.log('CIBUS running on http://localhost:3000'));\"",
     "test": "node --test tests/unit/*.test.js",
     "test:unit": "node --test tests/unit/*.test.js",
+    "test:probe": "node tests/integration/server-probe.js",
     "validate:html": "node tests/integration/html-integrity.test.js",
     "test:all": "npm run test && npm run validate:html",
     "build": "node -e \"console.log('CIBUS static assets verified for production deployment.')\""
