@@ -1,28 +1,300 @@
 /**
  * CIBUS RECIPE CARDS & RECIPE DETAIL STYLES
+ * Signature Cascading Fanned Card Decks & Arched Culinary Layout
  */
 
-/* Recipe Cards Grid */
-.recipes-grid {
+/* Atmospheric Culinary Backdrop for Recipe Cards */
+.recipe-cards-page {
+  background: linear-gradient(rgba(24, 18, 14, 0.78), rgba(24, 18, 14, 0.85)),
+              url("https://i.pinimg.com/originals/fb/72/a8/fb72a836ecfcf0306f83e06f5f269302.jpg") repeat-y center top,
+              url("../public/assets/images/food-photo.jpeg") repeat-y center top;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding-bottom: var(--space-4xl);
+}
+
+.recipe-cards-page .section-title-wrap {
+  color: #ffffff;
+  text-align: center;
+}
+
+.recipe-cards-page .section-title {
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.recipe-cards-page .section-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recipe-cards-page .section-eyebrow {
+  color: var(--color-accent);
+  background: rgba(212, 163, 115, 0.2);
+  border: 1px solid rgba(212, 163, 115, 0.4);
+}
+
+/* Gallery View Switcher & Controls */
+.gallery-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.view-toggle-wrap {
+  display: inline-flex;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 4px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.view-toggle-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-xs);
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
+}
+
+.view-toggle-btn:hover {
+  color: #ffffff;
+}
+
+.view-toggle-btn.active {
+  background: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(232, 90, 25, 0.5);
+}
+
+/* Deck Section Header */
+.deck-row-header {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: var(--space-xl) 0 var(--space-xs);
+  padding-left: var(--space-md);
+  border-left: 3px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==========================================================
+   CASCADING FANNED CARD DECK (SIGNATURE ORIGINAL EXPERIENCE)
+   ========================================================== */
+.recipe-deck-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 30px 45px;
+  margin-bottom: var(--space-xl);
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) transparent;
+}
+
+.recipe-deck-row::-webkit-scrollbar {
+  height: 6px;
+}
+.recipe-deck-row::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+}
+
+/* The Individual Fanned Recipe Card */
+.recipe-fanned-card {
+  flex: 0 0 290px;
+  width: 290px;
+  height: 380px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: -10px 0 28px rgba(0, 0, 0, 0.45);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.45s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Cascading Negative Margin Overlap */
+.recipe-fanned-card:not(:first-child) {
+  margin-left: -130px;
+}
+
+/* Hover Lift Effect */
+.recipe-fanned-card:hover {
+  transform: translateY(-24px) scale(1.05);
+  z-index: 50;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.65), 0 0 25px rgba(232, 90, 25, 0.35);
+}
+
+/* Subsequent Cards Slide to the Right on Hover */
+.recipe-fanned-card:hover ~ .recipe-fanned-card {
+  transform: translateX(135px);
+}
+
+/* Iconic Curved Top Image */
+.recipe-fanned-card .card-img {
+  width: 100%;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0 0 60% 60% / 0 0 20% 20%;
+  position: relative;
+  background-color: #2b2622;
+  transition: transform 0.45s ease;
+}
+
+.recipe-fanned-card:hover .card-img {
+  transform: scale(1.03);
+}
+
+/* Card Content: Title & State Subtitle */
+.recipe-fanned-card .card-description {
+  padding: 10px 16px 6px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipe-fanned-card .card-title {
+  font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+  margin: 0 0 4px;
+  line-height: 1.25;
+}
+
+.recipe-fanned-card .card-state {
+  font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #999999;
+  letter-spacing: 0.8px;
+  margin: 0;
+}
+
+/* Signature Warm Gold Champagne Action Button */
+.recipe-fanned-card .card-btn {
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #cfb997 0%, #f2eecb 100%);
+  border: none;
+  color: #ffffff;
+  font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.35s ease;
+}
+
+.recipe-fanned-card:hover .card-btn {
+  background: linear-gradient(135deg, var(--color-primary, #e85a19) 0%, #ff8f00 100%);
+  color: #ffffff;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================
+   OPTIONAL GRID VIEW (ACCESSED VIA VIEW SWITCHER)
+   ========================================================== */
+.recipes-grid-layout {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: var(--space-xl);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-2xl);
+  margin-top: var(--space-xl);
   margin-bottom: var(--space-3xl);
 }
 
-.recipe-meta-row {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  margin-bottom: var(--space-sm);
-  font-size: var(--font-xs);
-  color: var(--color-text-muted);
+.recipes-grid-layout .recipe-fanned-card {
+  width: 100%;
+  margin-left: 0 !important;
+  transform: none !important;
 }
 
-.recipe-meta-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
+.recipes-grid-layout .recipe-fanned-card:hover {
+  transform: translateY(-10px) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .recipe-fanned-card {
+    flex: 0 0 260px;
+    width: 260px;
+    height: 360px;
+  }
+  .recipe-fanned-card:not(:first-child) {
+    margin-left: -100px;
+  }
+  .recipe-fanned-card:hover ~ .recipe-fanned-card {
+    transform: translateX(105px);
+  }
+  .recipe-fanned-card .card-img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .recipe-deck-row {
+    padding: 30px 15px 35px;
+  }
+  .recipe-fanned-card {
+    flex: 0 0 240px;
+    width: 240px;
+    height: 350px;
+  }
+  .recipe-fanned-card:not(:first-child) {
+    margin-left: -70px;
+  }
+  .recipe-fanned-card:hover ~ .recipe-fanned-card {
+    transform: translateX(75px);
+  }
+  .recipe-fanned-card .card-title {
+    font-size: 1rem;
+  }
+  .gallery-controls-bar {
+    border-radius: var(--radius-lg);
+  }
 }
 
 /* Recipe Detail Layout */

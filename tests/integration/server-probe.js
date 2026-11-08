@@ -59,6 +59,8 @@ server.listen(0, '127.0.0.1', async () => {
     '/data/recipes.json',
     '/css/main.css',
     '/js/main.js',
+    '/public/favicon.svg',
+    '/public/favicon.ico',
     '/public/assets/images/food-photo.jpeg',
     '/public/assets/gif/food-animation.gif'
   ];
