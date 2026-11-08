@@ -1,0 +1,185 @@
+/**
+ * CIBUS FORM CONTROLS & AUTH/CONTACT STYLES
+ */
+
+.auth-page-wrapper {
+  min-height: calc(100vh - 74px - 260px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3xl) var(--space-md);
+  background: radial-gradient(circle at 50% 30%, #F5EBE1 0%, #FAF7F2 100%);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.auth-header h1 {
+  font-size: var(--font-3xl);
+  margin-bottom: var(--space-xs);
+}
+
+.auth-header p {
+  color: var(--color-text-muted);
+  font-size: var(--font-sm);
+}
+
+.auth-notice-banner {
+  background-color: var(--color-accent-light);
+  border: 1px solid rgba(230, 138, 0, 0.3);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-xs);
+  color: #7A4B00;
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  line-height: 1.4;
+}
+
+.form-group {
+  margin-bottom: var(--space-md);
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  font-size: var(--font-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-main);
+  margin-bottom: var(--space-2xs);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  background-color: var(--color-surface-bg);
+  transition: all var(--transition-fast);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.form-control.is-invalid {
+  border-color: var(--color-error);
+  background-color: var(--color-error-bg);
+}
+
+.field-error {
+  display: none;
+  font-size: var(--font-xs);
+  color: var(--color-error);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.field-error.visible {
+  display: block;
+}
+
+.form-actions {
+  margin-top: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.auth-switch-link {
+  text-align: center;
+  margin-top: var(--space-lg);
+  font-size: var(--font-sm);
+  color: var(--color-text-muted);
+}
+
+.auth-switch-link a {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.auth-switch-link a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Page Layout */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-3xl);
+}
+
+.contact-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.contact-card {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.contact-card h4 {
+  font-size: var(--font-lg);
+  margin-bottom: 4px;
+}
+
+.contact-card p {
+  color: var(--color-text-muted);
+  font-size: var(--font-sm);
+}
+
+.char-counter {
+  font-size: var(--font-xs);
+  color: var(--color-text-light);
+  text-align: right;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create a free CIBUS account to save and share traditional recipes across Indian states.">
+  <title>Sign Up &amp; Register — CIBUS</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pages/forms.css">
+</head>
+<body>
+
+  <!-- Universal Header -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="../index.html" class="brand-logo" aria-label="Cibus Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+        CIBUS
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="./home.html" class="nav-link">Home</a>
+        <a href="./food-menu.html" class="nav-link">Food by States</a>
+        <a href="./recipe-cards.html" class="nav-link">Recipes by States</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <a href="./cart.html" class="cart-icon-btn" aria-label="View Shopping Cart and Favorites">
+          🛒
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        <a href="./login.html" class="btn btn-outline btn-sm">Sign In</a>
+
+        <!-- Mobile Toggle Button -->
+        <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <a href="./home.html" class="nav-link">Home</a>
+      <a href="./food-menu.html" class="nav-link">Food by States</a>
+      <a href="./recipe-cards.html" class="nav-link">Recipes by States</a>
+      <a href="./cart.html" class="nav-link">Shopping Cart / Favorites</a>
+      <a href="./contact.html" class="nav-link">Contact Us</a>
+      <hr style="border: none; border-top: 1px solid var(--color-border); margin: var(--space-xs) 0;">
+      <a href="./login.html" class="btn btn-outline btn-block">Sign In</a>
+      <a href="./register.html" class="btn btn-primary btn-block">Create Free Account</a>
+    </div>
+  </header>
+
+  <main class="auth-page-wrapper">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h1>Join Cibus</h1>
+        <p>You're just a step away from authentic culinary discoveries!</p>
+      </div>
+
+      <!-- Architectural Notice -->
+      <div class="auth-notice-banner" role="note">
+        <span>ℹ️</span>
+        <div>
+          <strong>Demo Notice:</strong> CIBUS is running in static client demonstration mode. Creating an account demonstrates interface validation without transmitting real passwords.
+        </div>
+      </div>
+
+      <!-- Register Form -->
+      <form id="register-form" novalidate>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+          <div class="form-group">
+            <label for="first-name" class="form-label">First Name</label>
+            <input
+              type="text"
+              id="first-name"
+              name="firstName"
+              class="form-control"
+              placeholder="e.g. Aarav"
+              autocomplete="given-name"
+              required
+            >
+          </div>
+          <div class="form-group">
+            <label for="last-name" class="form-label">Last Name</label>
+            <input
+              type="text"
+              id="last-name"
+              name="lastName"
+              class="form-control"
+              placeholder="e.g. Sharma"
+              autocomplete="family-name"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="register-email" class="form-label">Email Address</label>
+          <input
+            type="email"
+            id="register-email"
+            name="email"
+            class="form-control"
+            placeholder="aarav@example.com"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="register-password" class="form-label">Password</label>
+          <input
+            type="password"
+            id="register-password"
+            name="password"
+            class="form-control"
+            placeholder="At least 8 chars, 1 uppercase, 1 digit"
+            autocomplete="new-password"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password" class="form-label">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirmPassword"
+            class="form-control"
+            placeholder="Re-type password"
+            autocomplete="new-password"
+            required
+          >
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-block btn-lg">
+            Create Free Account
+          </button>
+          <button type="reset" class="btn btn-outline btn-block">
+            Reset Form
+          </button>
+        </div>
+
+        <div class="auth-switch-link">
+          Already have an account? <a href="./login.html">Sign in here &rarr;</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>CIBUS</h2>
+          <p>
+            An open culinary exploration celebrating authentic Indian home cooking, heritage food recipes, and regional diversity.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./food-menu.html">Food by States</a></li>
+            <li><a href="./recipe-cards.html">Recipes Gallery</a></li>
+            <li><a href="./recipe-detail.html">Recipe Instructions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>User Services</h3>
+          <ul class="footer-links">
+            <li><a href="./cart.html">Cart & Favorites</a></li>
+            <li><a href="./login.html">Sign In</a></li>
+            <li><a href="./register.html">Create Account</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Regions</h3>
+          <ul class="footer-links">
+            <li><a href="./food-menu.html?region=south">South India</a></li>
+            <li><a href="./food-menu.html?region=north">North India</a></li>
+            <li><a href="./food-menu.html?region=west">West India</a></li>
+            <li><a href="./food-menu.html?region=northeast">Northeast India</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CIBUS. Built with pure HTML5, CSS3, and Vanilla JavaScript.</p>
+        <p>Created by <a href="https://github.com/GreeshmanthSaiY" target="_blank" rel="noopener noreferrer">Greeshmanth Sai</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/config.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/validation.js"></script>
+  <script src="../js/forms.js"></script>
+</body>
+</html>

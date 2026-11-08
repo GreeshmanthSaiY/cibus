@@ -1,0 +1,53 @@
+/**
+ * CIBUS FOOD MENU PAGE STYLES
+ * Replaces the legacy 19000px height with a fully responsive dynamic CSS grid
+ */
+
+.food-menu-header {
+  text-align: center;
+  padding: var(--space-2xl) 0 var(--space-xl);
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-3xl);
+}
+
+.food-card-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.recipe-link-btn {
+  font-size: var(--font-xs);
+  font-weight: 700;
+  color: var(--color-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.recipe-link-btn:hover {
+  color: var(--color-secondary-dark);
+  text-decoration: underline;
+}
+
+.results-count-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+  font-size: var(--font-sm);
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 640px) {
+  .food-grid {
+    grid-template-columns: 1fr;
+  }
+}

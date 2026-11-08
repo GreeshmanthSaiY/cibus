@@ -1,0 +1,2623 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Authentic, step-by-step cooking recipes and ingredient measurements for traditional dishes from all 28 Indian States.">
+  <title>Recipe Instructions & Ingredients — CIBUS</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pages/recipes.css">
+</head>
+<body>
+
+  <!-- Universal Header -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="../index.html" class="brand-logo" aria-label="Cibus Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+        CIBUS
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="./home.html" class="nav-link">Home</a>
+        <a href="./food-menu.html" class="nav-link">Food by States</a>
+        <a href="./recipe-cards.html" class="nav-link active">Recipes by States</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <a href="./cart.html" class="cart-icon-btn" aria-label="View Shopping Cart and Favorites">
+          🛒
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        <a href="./login.html" class="btn btn-outline btn-sm">Sign In</a>
+
+        <!-- Mobile Toggle Button -->
+        <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <a href="./home.html" class="nav-link">Home</a>
+      <a href="./food-menu.html" class="nav-link">Food by States</a>
+      <a href="./recipe-cards.html" class="nav-link active">Recipes by States</a>
+      <a href="./cart.html" class="nav-link">Shopping Cart / Favorites</a>
+      <a href="./contact.html" class="nav-link">Contact Us</a>
+      <hr style="border: none; border-top: 1px solid var(--color-border); margin: var(--space-xs) 0;">
+      <a href="./login.html" class="btn btn-outline btn-block">Sign In</a>
+      <a href="./register.html" class="btn btn-primary btn-block">Create Free Account</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- Header Intro -->
+      <section class="section-title-wrap" style="padding-top: var(--space-2xl); margin-bottom: var(--space-lg);">
+        <span class="section-eyebrow">Culinary Masterclasses</span>
+        <h1 class="section-title">Authentic Recipe Collection</h1>
+        <p class="section-subtitle">
+          Detailed ingredient ratios, master cooking techniques, and step-by-step instructions preserved from traditional Indian kitchens.
+        </p>
+      </section>
+
+      <!-- Main Layout with Sticky Sidebar -->
+      <div class="recipe-detail-container">
+
+        <!-- Sticky Quick Navigation Sidebar -->
+        <aside class="recipe-sidebar" aria-label="Quick jump to recipe">
+          <h3>Jump to State Dish</h3>
+          <ul class="recipe-nav-list" id="recipe-nav-list">
+            <li class="recipe-nav-item" id="nav-pulihora">
+              <a href="#pulihora">Pulihora (Andhra Tamarind Rice) <small style="display:block; color: var(--color-primary);">Andhra Pradesh</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-bamboo">
+              <a href="#bamboo">Bamboo Shoot Stir Fry <small style="display:block; color: var(--color-primary);">Arunachal Pradesh</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-duck">
+              <a href="#duck">Assamese Duck Meat Curry (Kumura Dha) <small style="display:block; color: var(--color-primary);">Assam</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-litti">
+              <a href="#litti">Bihari Litti Chokha <small style="display:block; color: var(--color-primary);">Bihar</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-muthia">
+              <a href="#muthia">Chhattisgarhi Steamed Muthia <small style="display:block; color: var(--color-primary);">Chhattisgarh</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-fish">
+              <a href="#fish">Goan Fish Curry (Xitt Codi) <small style="display:block; color: var(--color-primary);">Goa</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-dhokla">
+              <a href="#dhokla">Khaman Dhokla <small style="display:block; color: var(--color-primary);">Gujarat</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-bajre">
+              <a href="#bajre">Haryanvi Bajra Khichdi <small style="display:block; color: var(--color-primary);">Haryana</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-dham">
+              <a href="#dham">Himachali Dham (Madra) <small style="display:block; color: var(--color-primary);">Himachal Pradesh</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-dhooska">
+              <a href="#dhooska">Jharkhandi Dhooska <small style="display:block; color: var(--color-primary);">Jharkhand</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-bisi">
+              <a href="#bisi">Karnataka Bisi Bele Bath <small style="display:block; color: var(--color-primary);">Karnataka</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-appam">
+              <a href="#appam">Kerala Appam with Stew <small style="display:block; color: var(--color-primary);">Kerala</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-bhutte">
+              <a href="#bhutte">Bhutte Ka Kees <small style="display:block; color: var(--color-primary);">Madhya Pradesh</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-misal">
+              <a href="#misal">Kolhapuri Misal Pav <small style="display:block; color: var(--color-primary);">Maharashtra</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-kangshoi">
+              <a href="#kangshoi">Manipuri Kangshoi <small style="display:block; color: var(--color-primary);">Manipur</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-jadoh">
+              <a href="#jadoh">Khasi Jadoh <small style="display:block; color: var(--color-primary);">Meghalaya</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-misa">
+              <a href="#misa">Mizo Misa Mach Poora <small style="display:block; color: var(--color-primary);">Mizoram</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-pork">
+              <a href="#pork">Naga Pork with Bamboo Shoot <small style="display:block; color: var(--color-primary);">Nagaland</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-chenna">
+              <a href="#chenna">Odisha Chhena Poda <small style="display:block; color: var(--color-primary);">Odisha</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-makki">
+              <a href="#makki">Makki di Roti & Sarson da Saag <small style="display:block; color: var(--color-primary);">Punjab</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-dal">
+              <a href="#dal">Rajasthani Dal Baati Churma <small style="display:block; color: var(--color-primary);">Rajasthan</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-momo">
+              <a href="#momo">Sikkimese Steamed Momos <small style="display:block; color: var(--color-primary);">Sikkim</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-pongal">
+              <a href="#pongal">Tamil Ven Pongal <small style="display:block; color: var(--color-primary);">Tamil Nadu</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-biriyani">
+              <a href="#biriyani">Hyderabadi Dum Biryani <small style="display:block; color: var(--color-primary);">Telangana</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-chakhwi">
+              <a href="#chakhwi">Tripuri Chakhwi <small style="display:block; color: var(--color-primary);">Tripura</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-tunde">
+              <a href="#tunde">Lucknowi Tunday Kababi <small style="display:block; color: var(--color-primary);">Uttar Pradesh</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-kafuli">
+              <a href="#kafuli">Uttarakhandi Kafuli <small style="display:block; color: var(--color-primary);">Uttarakhand</small></a>
+            </li>
+            <li class="recipe-nav-item" id="nav-kosha">
+              <a href="#kosha">Bengali Kosha Mangsho <small style="display:block; color: var(--color-primary);">West Bengal</small></a>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Recipes Feed -->
+        <div class="recipes-feed">
+        <article class="recipe-article" id="pulihora">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Andhra Pradesh</span>
+            <h2 class="recipe-article-title">Pulihora (Andhra Tamarind Rice)</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 15 mins</span>
+              <span class="recipe-badge">🔥 Cook: 25 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Easy</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 cups Cooked Sona Masuri Rice (cooled) as used">
+              <span>2 cups Cooked Sona Masuri Rice (cooled)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 large lemon-sized ball of Tamarind (soaked in warm water) as used">
+              <span>1 large lemon-sized ball of Tamarind (soaked in warm water)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/4 cup Raw Peanuts as used">
+              <span>1/4 cup Raw Peanuts</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tbsp Chana Dal (Bengal gram) as used">
+              <span>1 tbsp Chana Dal (Bengal gram)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tbsp Urad Dal (Split black gram) as used">
+              <span>1 tbsp Urad Dal (Split black gram)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Mustard Seeds as used">
+              <span>1 tsp Mustard Seeds</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 sprigs Fresh Curry Leaves as used">
+              <span>2 sprigs Fresh Curry Leaves</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3-4 Slit Green Chilies as used">
+              <span>3-4 Slit Green Chilies</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3 Dried Red Chilies as used">
+              <span>3 Dried Red Chilies</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 tsp Turmeric Powder as used">
+              <span>1/2 tsp Turmeric Powder</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/4 tsp Asafoetida (Hing) as used">
+              <span>1/4 tsp Asafoetida (Hing)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3 tbsp Sesame or Peanut Oil as used">
+              <span>3 tbsp Sesame or Peanut Oil</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Cook rice until grains are fluffy and distinct; spread onto a wide tray with 1 tbsp sesame oil and turmeric powder to cool.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Extract thick tamarind pulp from soaked tamarind with 1 cup of warm water.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">In a heavy pan, simmer the tamarind pulp with slit green chilies, salt, and turmeric until it thickens into a glossy paste.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">In a separate pan, heat oil and roast peanuts until crunchy. Add mustard seeds, chana dal, urad dal, dried red chilies, hing, and fresh curry leaves.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Combine the thickened tamarind paste with the cooled rice gently, then pour the hot tempering over it and mix thoroughly.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Let the pulihora rest for at least 1 hour so the aromatic flavors infuse deeply before serving.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="bamboo">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Arunachal Pradesh</span>
+            <h2 class="recipe-article-title">Bamboo Shoot Stir Fry</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 20 mins</span>
+              <span class="recipe-badge">🔥 Cook: 20 mins</span>
+              <span class="recipe-badge">🍽️ 3 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Medium</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 250g Fresh or Fermented Tender Bamboo Shoots (thinly sliced) as used">
+              <span>250g Fresh or Fermented Tender Bamboo Shoots (thinly sliced)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Cold-pressed Mustard Oil as used">
+              <span>2 tbsp Cold-pressed Mustard Oil</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 4 Garlic cloves (crushed) as used">
+              <span>4 Garlic cloves (crushed)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3 Fresh Green Chilies (slit lengthwise) as used">
+              <span>3 Fresh Green Chilies (slit lengthwise)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 tsp Fenugreek Seeds (Methi) as used">
+              <span>1/2 tsp Fenugreek Seeds (Methi)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 tsp Turmeric Powder as used">
+              <span>1/2 tsp Turmeric Powder</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 medium Onion (thinly sliced) as used">
+              <span>1 medium Onion (thinly sliced)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Fresh Coriander or indigenous herbs for garnish as used">
+              <span>Fresh Coriander or indigenous herbs for garnish</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Boil sliced bamboo shoots in salted water for 10-15 minutes to eliminate natural bitterness, then drain thoroughly.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Heat mustard oil in a cast-iron wok until it begins to smoke gently, then lower heat.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Add fenugreek seeds and crushed garlic; sautÃ© until aromatic and golden.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Add sliced onions and green chilies, cooking until onions turn translucent.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Stir in the drained bamboo shoots, turmeric powder, and salt. SautÃ© on medium-high heat for 8-10 minutes.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Garnish with fresh herbs and serve hot alongside steamed sticky rice.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="duck">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Assam</span>
+            <h2 class="recipe-article-title">Assamese Duck Meat Curry (Kumura Dha)</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 25 mins</span>
+              <span class="recipe-badge">🔥 Cook: 50 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Hard</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 800g Fresh Duck Meat (cut into bone-in curry pieces) as used">
+              <span>800g Fresh Duck Meat (cut into bone-in curry pieces)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 300g White Gourd / Ash Gourd (Kumura), peeled and cubed as used">
+              <span>300g White Gourd / Ash Gourd (Kumura), peeled and cubed</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3 tbsp Mustard Oil as used">
+              <span>3 tbsp Mustard Oil</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 large Onions (finely sliced) as used">
+              <span>2 large Onions (finely sliced)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Ginger-Garlic Paste as used">
+              <span>2 tbsp Ginger-Garlic Paste</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Crushed Black Peppercorns as used">
+              <span>1 tsp Crushed Black Peppercorns</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Cumin Powder as used">
+              <span>1 tsp Cumin Powder</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 tsp Turmeric Powder as used">
+              <span>1/2 tsp Turmeric Powder</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 Bay Leaves (Tejpatta) as used">
+              <span>2 Bay Leaves (Tejpatta)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3 Green Cardamom pods and 1 inch Cinnamon as used">
+              <span>3 Green Cardamom pods and 1 inch Cinnamon</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Heat mustard oil in a heavy-bottomed kadhai until smoking point, then add bay leaves, cardamom, and cinnamon.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Add sliced onions and sautÃ© until golden brown. Add ginger-garlic paste and cook out the raw aroma.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Add the duck meat, turmeric, salt, and cumin powder. Cook on high heat for 10 minutes until meat browns.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Lower heat, cover tightly, and allow duck to cook in its own juices for 20 minutes.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Add cubed ash gourd and freshly crushed black pepper; toss well to coat.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Pour in 2 cups of warm water, cover, and slow-cook until duck meat is fork-tender and curry is thick.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">7</span>
+              <p class="step-text">Serve piping hot with fragrant Joha rice.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="litti">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Bihar</span>
+            <h2 class="recipe-article-title">Bihari Litti Chokha</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 30 mins</span>
+              <span class="recipe-badge">🔥 Cook: 35 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Medium</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 cups Whole Wheat Flour (Atta) as used">
+              <span>2 cups Whole Wheat Flour (Atta)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1.5 cups Roasted Gram Flour (Sattu) as used">
+              <span>1.5 cups Roasted Gram Flour (Sattu)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Mustard Oil as used">
+              <span>2 tbsp Mustard Oil</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tbsp Lemon Juice as used">
+              <span>1 tbsp Lemon Juice</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Ajwain (Carom seeds) & Kalonji (Nigella seeds) as used">
+              <span>1 tsp Ajwain (Carom seeds) & Kalonji (Nigella seeds)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 4 Green Chilies and 1 inch Ginger (finely chopped) as used">
+              <span>4 Green Chilies and 1 inch Ginger (finely chopped)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 cup Fresh Coriander (chopped) as used">
+              <span>1/2 cup Fresh Coriander (chopped)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 large Round Eggplant (Brinjal) for Chokha as used">
+              <span>1 large Round Eggplant (Brinjal) for Chokha</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3 ripe Tomatoes for Chokha as used">
+              <span>3 ripe Tomatoes for Chokha</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 Boiled Potatoes for Chokha as used">
+              <span>2 Boiled Potatoes for Chokha</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Desi Ghee for dipping as used">
+              <span>Desi Ghee for dipping</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Knead a firm, pliable dough using wheat flour, a pinch of salt, 1 tsp oil, and water. Rest for 20 minutes.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">For filling: Mix sattu with chopped green chilies, ginger, coriander, ajwain, kalonji, lemon juice, mustard oil, and salt with a splash of water until moist.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Form dough into smooth lemon-sized balls, cup them into hollow pockets, fill generously with sattu mixture, and seal tight.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Bake littis on a charcoal grill, tandoor, or preheated oven at 200Â°C for 25-30 minutes, turning periodically until outer crust is charred and crisp.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">For chokha: Roast brinjal and tomatoes on open flame until skins are charred. Peel and mash together with boiled potatoes, raw mustard oil, chopped onions, green chilies, and salt.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Dip hot littis generously in melted desi ghee, crack them open slightly, and serve alongside smoky chokha.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="muthia">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Chhattisgarh</span>
+            <h2 class="recipe-article-title">Chhattisgarhi Steamed Muthia</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 15 mins</span>
+              <span class="recipe-badge">🔥 Cook: 20 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Easy</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1.5 cups Rice Flour as used">
+              <span>1.5 cups Rice Flour</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 cup Cooked Leftover Rice (mashed) as used">
+              <span>1/2 cup Cooked Leftover Rice (mashed)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 cup Chopped Fresh Fenugreek (Methi) or Spinach as used">
+              <span>1/2 cup Chopped Fresh Fenugreek (Methi) or Spinach</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Oil as used">
+              <span>2 tbsp Oil</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Mustard Seeds as used">
+              <span>1 tsp Mustard Seeds</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp White Sesame Seeds (Til) as used">
+              <span>1 tsp White Sesame Seeds (Til)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 Dried Red Chilies as used">
+              <span>2 Dried Red Chilies</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 sprig Curry Leaves as used">
+              <span>1 sprig Curry Leaves</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 tsp Turmeric & Hing as used">
+              <span>1/2 tsp Turmeric & Hing</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Combine rice flour, mashed rice, chopped greens, salt, turmeric, and warm water to form a soft dough.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Pinch small portions of dough and shape into cylindrical muthia rolls using your fingers.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Grease a steamer plate and steam muthias for 12-15 minutes until firm to the touch.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Heat oil in a wide pan; crackle mustard seeds, sesame seeds, dried chilies, and curry leaves.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Add steamed muthias to the tempering and pan-fry on medium heat until surfaces turn lightly golden and crisp.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Serve warm with spicy green coriander chutney.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="fish">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Goa</span>
+            <h2 class="recipe-article-title">Goan Fish Curry (Xitt Codi)</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 20 mins</span>
+              <span class="recipe-badge">🔥 Cook: 25 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Medium</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 500g Fresh Kingfish or Pomfret fillets as used">
+              <span>500g Fresh Kingfish or Pomfret fillets</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 cup Fresh Grated Coconut as used">
+              <span>1 cup Fresh Grated Coconut</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 6-8 Dried Kashmiri Red Chilies as used">
+              <span>6-8 Dried Kashmiri Red Chilies</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tbsp Coriander Seeds & 1 tsp Cumin Seeds as used">
+              <span>1 tbsp Coriander Seeds & 1 tsp Cumin Seeds</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 4 Garlic cloves & 1 inch Ginger as used">
+              <span>4 Garlic cloves & 1 inch Ginger</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 4-5 Dried Kokum petals (soaked in warm water) as used">
+              <span>4-5 Dried Kokum petals (soaked in warm water)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 tsp Turmeric Powder as used">
+              <span>1/2 tsp Turmeric Powder</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 Green Chilies (slit) as used">
+              <span>2 Green Chilies (slit)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 cup Thick Coconut Milk as used">
+              <span>1 cup Thick Coconut Milk</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Coconut Oil & Salt to taste as used">
+              <span>Coconut Oil & Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Grind grated coconut, Kashmiri chilies, coriander seeds, cumin, garlic, ginger, and turmeric into a silky smooth paste with a little water.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Heat coconut oil in an earthenware pot (matka); add slit green chilies and the ground spice paste. SautÃ© gently until oil separates.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Add 1.5 cups of water and soaked kokum with its water; bring the curry to a gentle simmer.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Gently slide in fish fillets and coconut milk; simmer on low heat for 6-8 minutes without stirring vigorously to avoid breaking the fish.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Season with salt and let rest for 15 minutes before serving with hot steamed Goan red rice.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="dhokla">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Gujarat</span>
+            <h2 class="recipe-article-title">Khaman Dhokla</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 15 mins</span>
+              <span class="recipe-badge">🔥 Cook: 20 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Easy</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1.5 cups Besan (Gram flour) as used">
+              <span>1.5 cups Besan (Gram flour)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tbsp Semolina (Sooji) as used">
+              <span>1 tbsp Semolina (Sooji)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tbsp Lemon Juice as used">
+              <span>1 tbsp Lemon Juice</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Ginger-Green Chili Paste as used">
+              <span>1 tsp Ginger-Green Chili Paste</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Eno Fruit Salt or Baking Soda as used">
+              <span>1 tsp Eno Fruit Salt or Baking Soda</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/4 tsp Turmeric Powder as used">
+              <span>1/4 tsp Turmeric Powder</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tbsp Sugar as used">
+              <span>1 tbsp Sugar</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark For tempering: 1 tbsp Oil, 1 tsp Mustard Seeds, 1 tbsp Sesame Seeds, 4 Slit Green Chilies, 1 sprig Curry Leaves, 1/2 cup Water with 1 tsp Sugar as used">
+              <span>For tempering: 1 tbsp Oil, 1 tsp Mustard Seeds, 1 tbsp Sesame Seeds, 4 Slit Green Chilies, 1 sprig Curry Leaves, 1/2 cup Water with 1 tsp Sugar</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Garnish: Fresh grated coconut and coriander as used">
+              <span>Garnish: Fresh grated coconut and coriander</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Whisk besan, sooji, turmeric, ginger-chili paste, lemon juice, sugar, salt, and water into a smooth, lump-free batter.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Grease a steaming tin and boil water in the steamer.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Right before pouring, stir in Eno fruit salt and 1 tsp water; whisk in one direction until batter doubles in volume and becomes airy.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Pour immediately into the tin and steam on high heat for 18-20 minutes until a toothpick inserted comes out clean.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">In a small pan, prepare tempering by crackling mustard seeds, sesame seeds, curry leaves, and green chilies in oil, then pour in sugar water.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Cut steamed dhokla into neat squares, pour the warm tempering water evenly to keep it moist, and garnish with coconut and coriander.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="bajre">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Haryana</span>
+            <h2 class="recipe-article-title">Haryanvi Bajra Khichdi</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 20 mins</span>
+              <span class="recipe-badge">🔥 Cook: 45 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Easy</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 cup Pearl Millet (Bajra), crushed or coarsely ground as used">
+              <span>1 cup Pearl Millet (Bajra), crushed or coarsely ground</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 cup Yellow Moong Dal (split) as used">
+              <span>1/2 cup Yellow Moong Dal (split)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 5 cups Water as used">
+              <span>5 cups Water</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Cumin Seeds as used">
+              <span>1 tsp Cumin Seeds</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/4 tsp Asafoetida (Hing) as used">
+              <span>1/4 tsp Asafoetida (Hing)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3 tbsp Desi Ghee as used">
+              <span>3 tbsp Desi Ghee</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Pound bajra lightly in a mortar or pulse coarsely in a blender, then husk to remove chaff.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Wash bajra and moong dal together thoroughly.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">In a heavy pot or pressure cooker, bring water to a boil, then add the bajra and dal mixture with salt and turmeric.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Cook on low heat, stirring frequently to prevent sticking, until grains are thoroughly soft and porridge-like (about 4 whistles in pressure cooker).</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Heat ghee, temper with cumin seeds and hing, and stir into the hot khichdi.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Serve piping hot with fresh curd, jaggery, and extra spoons of golden ghee.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="dham">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Himachal Pradesh</span>
+            <h2 class="recipe-article-title">Himachali Dham (Madra)</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 8 hrs soaking</span>
+              <span class="recipe-badge">🔥 Cook: 40 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Medium</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1.5 cups Soaked Red Kidney Beans (Rajma) or Chickpeas (Kabuli Chana) as used">
+              <span>1.5 cups Soaked Red Kidney Beans (Rajma) or Chickpeas (Kabuli Chana)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1.5 cups Whisked Yogurt (Curd) as used">
+              <span>1.5 cups Whisked Yogurt (Curd)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3 tbsp Mustard Oil as used">
+              <span>3 tbsp Mustard Oil</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 Black Cardamom pods & 3 Green Cardamoms as used">
+              <span>2 Black Cardamom pods & 3 Green Cardamoms</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 inch Cinnamon stick & 3 Cloves as used">
+              <span>1 inch Cinnamon stick & 3 Cloves</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Fennel Seeds (Saunf powder) as used">
+              <span>1 tsp Fennel Seeds (Saunf powder)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 tsp Dry Ginger Powder (Sonth) as used">
+              <span>1/2 tsp Dry Ginger Powder (Sonth)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Turmeric Powder as used">
+              <span>1 tsp Turmeric Powder</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/4 cup Golden Raisins & Cashews as used">
+              <span>1/4 cup Golden Raisins & Cashews</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Pressure cook soaked rajma in water with a pinch of salt until tender.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Heat mustard oil in a heavy brass or iron pan until smoky; add whole cardamoms, cinnamon, and cloves.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Lower heat and add whisked yogurt gradually, stirring continuously on low heat to prevent curdling.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Add turmeric, dry ginger powder, and fennel powder. SautÃ© until oil separates from yogurt gravy.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Add boiled beans along with a cup of cooking liquid. Simmer on low heat for 20 minutes until gravy thickens.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Garnish with fried cashews and raisins. Serve warm with steamed basmati rice.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="dhooska">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Jharkhand</span>
+            <h2 class="recipe-article-title">Jharkhandi Dhooska</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 4 hrs soaking</span>
+              <span class="recipe-badge">🔥 Cook: 30 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Medium</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 cup Raw Rice as used">
+              <span>1 cup Raw Rice</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 cup Chana Dal (Bengal gram) as used">
+              <span>1/2 cup Chana Dal (Bengal gram)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/4 cup Urad Dal (Split black gram) as used">
+              <span>1/4 cup Urad Dal (Split black gram)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 Green Chilies & 1 inch Ginger as used">
+              <span>2 Green Chilies & 1 inch Ginger</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Cumin Seeds as used">
+              <span>1 tsp Cumin Seeds</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 tsp Turmeric & Hing as used">
+              <span>1/2 tsp Turmeric & Hing</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Oil for deep frying as used">
+              <span>Oil for deep frying</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Wash and soak rice, chana dal, and urad dal together in water for 4-5 hours.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Drain and grind into a thick, smooth pouring batter with green chilies, ginger, and minimal water.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Stir in cumin seeds, turmeric, hing, and salt. Whisk vigorously for 3 minutes to aerate.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Heat oil in a deep kadhai on medium heat.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Pour a small ladle of batter directly into the center without stirring; it will puff up like a poori.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Flip and fry until both sides are crisp and golden brown.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">7</span>
+              <p class="step-text">Drain on kitchen paper and serve hot with spicy aloo-chana sabzi.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="bisi">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Karnataka</span>
+            <h2 class="recipe-article-title">Karnataka Bisi Bele Bath</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 20 mins</span>
+              <span class="recipe-badge">🔥 Cook: 35 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Medium</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 cup Sona Masuri Rice as used">
+              <span>1 cup Sona Masuri Rice</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 cup Toor Dal (Pigeon pea) as used">
+              <span>1/2 cup Toor Dal (Pigeon pea)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1.5 cups Diced Mixed Vegetables (Carrot, Beans, Peas, Shallots) as used">
+              <span>1.5 cups Diced Mixed Vegetables (Carrot, Beans, Peas, Shallots)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3 tbsp Bisi Bele Bath Masala Powder as used">
+              <span>3 tbsp Bisi Bele Bath Masala Powder</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 small lemon-sized Tamarind (extracted) as used">
+              <span>1 small lemon-sized Tamarind (extracted)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3 tbsp Desi Ghee as used">
+              <span>3 tbsp Desi Ghee</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Mustard Seeds & 2 dried red chilies as used">
+              <span>1 tsp Mustard Seeds & 2 dried red chilies</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 sprig Curry Leaves & 12 Cashews as used">
+              <span>1 sprig Curry Leaves & 12 Cashews</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Pressure cook rice and toor dal together with 4 cups water and turmeric until very soft.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">In a pot, boil mixed vegetables in tamarind extract and salt until tender.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Dissolve Bisi Bele Bath powder in 1/2 cup water and stir into the simmering vegetables.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Add cooked rice and dal mixture; stir well, adding warm water to achieve a rich, semi-thick consistency.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Heat ghee in a pan, fry cashews, mustard seeds, red chilies, and curry leaves until fragrant.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Pour hot tempering over the bath, stir well, and serve hot with potato chips or boondi raita.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="appam">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Kerala</span>
+            <h2 class="recipe-article-title">Kerala Appam with Stew</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 8 hrs fermenting</span>
+              <span class="recipe-badge">🔥 Cook: 25 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Medium</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 cups Raw Rice (soaked 4 hours) as used">
+              <span>2 cups Raw Rice (soaked 4 hours)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 cup Fresh Grated Coconut as used">
+              <span>1 cup Fresh Grated Coconut</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 cup Cooked Rice as used">
+              <span>1/2 cup Cooked Rice</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 tsp Active Dry Yeast (or toddy) as used">
+              <span>1/2 tsp Active Dry Yeast (or toddy)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tbsp Sugar as used">
+              <span>1 tbsp Sugar</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark For Stew: 2 cups Mixed Vegetables, 1.5 cups Thin Coconut Milk, 1/2 cup Thick Coconut Milk, Whole Spices, Green Chilies, Coconut Oil, Curry Leaves as used">
+              <span>For Stew: 2 cups Mixed Vegetables, 1.5 cups Thin Coconut Milk, 1/2 cup Thick Coconut Milk, Whole Spices, Green Chilies, Coconut Oil, Curry Leaves</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Grind soaked rice, grated coconut, and cooked rice with water into a smooth batter.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Dissolve yeast and sugar in 2 tbsp warm water, mix into batter, and ferment for 8 hours until frothy.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Add salt and a pinch of sugar; batter should be of pouring consistency.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Heat an appachatti (curved appam pan). Pour a ladle of batter into the center, swirl the pan to coat sides, cover, and steam on medium heat for 2-3 minutes.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">The edges will turn golden and crisp while center remains fluffy.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">For stew: Simmer vegetables with whole spices, green chilies, and thin coconut milk until soft, then finish with thick coconut milk and curry leaves tempered in coconut oil.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">7</span>
+              <p class="step-text">Serve warm appams with aromatic stew.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="bhutte">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Madhya Pradesh</span>
+            <h2 class="recipe-article-title">Bhutte Ka Kees</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 15 mins</span>
+              <span class="recipe-badge">🔥 Cook: 20 mins</span>
+              <span class="recipe-badge">🍽️ 3 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Easy</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3 Fresh Sweet Corn Cobs (grated coarsely) as used">
+              <span>3 Fresh Sweet Corn Cobs (grated coarsely)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 cup Milk as used">
+              <span>1 cup Milk</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Desi Ghee or Oil as used">
+              <span>2 tbsp Desi Ghee or Oil</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Mustard Seeds & 1 tsp Cumin Seeds as used">
+              <span>1 tsp Mustard Seeds & 1 tsp Cumin Seeds</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/4 tsp Asafoetida (Hing) as used">
+              <span>1/4 tsp Asafoetida (Hing)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 Green Chilies & 1 inch Ginger (minced) as used">
+              <span>2 Green Chilies & 1 inch Ginger (minced)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 tsp Turmeric & Red Chili Powder as used">
+              <span>1/2 tsp Turmeric & Red Chili Powder</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tbsp Lemon Juice as used">
+              <span>1 tbsp Lemon Juice</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Fresh Grated Coconut and Coriander as used">
+              <span>2 tbsp Fresh Grated Coconut and Coriander</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Grate the fresh corn cobs on a medium box grater, reserving all milky juice.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Heat ghee in a pan; add mustard seeds, cumin seeds, and hing.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Add minced green chilies and ginger; sautÃ© for 1 minute.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Add grated corn, turmeric, red chili powder, and salt. SautÃ© on medium heat for 5 minutes.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Pour in milk slowly, stirring continuously to prevent scorching. Cover and simmer on low heat for 10-12 minutes until corn absorbs milk and thickens.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Finish with fresh lemon juice, grated coconut, and coriander leaves. Serve warm.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="misal">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Maharashtra</span>
+            <h2 class="recipe-article-title">Kolhapuri Misal Pav</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 12 hrs sprouting</span>
+              <span class="recipe-badge">🔥 Cook: 30 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Medium</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 cups Sprouted Matki (Moth beans) as used">
+              <span>2 cups Sprouted Matki (Moth beans)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 Onions & 2 Tomatoes (finely chopped) as used">
+              <span>2 Onions & 2 Tomatoes (finely chopped)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Misal Masala (or Kolhapuri Kanda-Lasun Masala) as used">
+              <span>2 tbsp Misal Masala (or Kolhapuri Kanda-Lasun Masala)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3 tbsp Oil (essential for fiery 'tarri' oil layer) as used">
+              <span>3 tbsp Oil (essential for fiery 'tarri' oil layer)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tbsp Ginger-Garlic Paste as used">
+              <span>1 tbsp Ginger-Garlic Paste</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Mustard Seeds & 1 sprig Curry Leaves as used">
+              <span>1 tsp Mustard Seeds & 1 sprig Curry Leaves</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark For assembly: 1 cup Spicy Farsan / Chiwda, Chopped Raw Onions, Lemon wedges, Coriander, 8 Buttered Pav buns as used">
+              <span>For assembly: 1 cup Spicy Farsan / Chiwda, Chopped Raw Onions, Lemon wedges, Coriander, 8 Buttered Pav buns</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Boil sprouted matki with a pinch of turmeric and salt until just cooked but holding shape; drain and reserve liquid.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Heat oil generously in a kadhai; add mustard seeds and curry leaves.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Add onions and sautÃ© until deep golden brown, then add ginger-garlic paste and tomatoes until mushy.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Add misal masala, red chili powder, and salt. Cook until bright red oil ('tarri') floats on top.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Add boiled sprouts and 3 cups of water; simmer vigorously for 15 minutes to form rich spicy gravy.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Assembly: Ladle sprouts into bowls, top generously with spicy farsan and fresh onions, pour thin fiery tarri over, and serve with warm buttered pav and lemon.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="kangshoi">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Manipur</span>
+            <h2 class="recipe-article-title">Manipuri Kangshoi</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 15 mins</span>
+              <span class="recipe-badge">🔥 Cook: 20 mins</span>
+              <span class="recipe-badge">🍽️ 3 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Easy</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 200g Seasonal Green Vegetables (Mustard greens, Spinach, Cabbage) as used">
+              <span>200g Seasonal Green Vegetables (Mustard greens, Spinach, Cabbage)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 large Potato (sliced) as used">
+              <span>1 large Potato (sliced)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 Onion (thinly sliced) as used">
+              <span>1 Onion (thinly sliced)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3-4 Fresh Green Chilies or King Chili (slit) as used">
+              <span>3-4 Fresh Green Chilies or King Chili (slit)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 inch Ginger (crushed) as used">
+              <span>1 inch Ginger (crushed)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 tsp Turmeric as used">
+              <span>1/2 tsp Turmeric</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Roasted Ngari (fermented fish paste) or dried shiitake for vegetarian version as used">
+              <span>2 tbsp Roasted Ngari (fermented fish paste) or dried shiitake for vegetarian version</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Fresh culantro / coriander leaves as used">
+              <span>Fresh culantro / coriander leaves</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Bring 3 cups of water to a rolling boil in a deep soup pot.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Add sliced onions, crushed ginger, slit chilies, turmeric, salt, and roasted ngari or mushroom.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Add sliced potatoes and simmer for 8 minutes until partially tender.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Add seasonal greens and vegetables; cook on medium heat for 6-8 minutes without covering so greens retain color.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Turn off heat and let steep for 3 minutes.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Serve warm as a light, revitalizing soup alongside steamed rice.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="jadoh">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Meghalaya</span>
+            <h2 class="recipe-article-title">Khasi Jadoh</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 15 mins</span>
+              <span class="recipe-badge">🔥 Cook: 35 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Medium</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 cups Hill Red Rice (Joha or indigenous red rice) as used">
+              <span>2 cups Hill Red Rice (Joha or indigenous red rice)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 400g Chicken or Pork pieces as used">
+              <span>400g Chicken or Pork pieces</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 Onions (chopped) as used">
+              <span>2 Onions (chopped)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Ginger paste & 1 tbsp Garlic paste as used">
+              <span>2 tbsp Ginger paste & 1 tbsp Garlic paste</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Black Sesame Seeds (roasted and powdered) as used">
+              <span>2 tbsp Black Sesame Seeds (roasted and powdered)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 Bay Leaves & 3 Green Chilies as used">
+              <span>2 Bay Leaves & 3 Green Chilies</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Mustard Oil as used">
+              <span>2 tbsp Mustard Oil</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Wash red rice and soak in water for 20 minutes.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Heat mustard oil in a heavy pot; add bay leaves and chopped onions until translucent.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Add ginger and garlic pastes; sautÃ© until fragrant.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Add meat pieces and cook on medium heat until lightly browned.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Stir in roasted black sesame powder, green chilies, and salt; mix thoroughly with meat.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Add drained red rice and roast for 2 minutes.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">7</span>
+              <p class="step-text">Add 4 cups of boiling water, cover tightly, reduce heat, and cook until rice is tender and moisture absorbed.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">8</span>
+              <p class="step-text">Rest covered for 10 minutes, fluff with fork, and serve.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="misa">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Mizoram</span>
+            <h2 class="recipe-article-title">Mizo Misa Mach Poora</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 15 mins</span>
+              <span class="recipe-badge">🔥 Cook: 20 mins</span>
+              <span class="recipe-badge">🍽️ 3 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Easy</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 400g Fresh River Prawns (cleaned and deveined) as used">
+              <span>400g Fresh River Prawns (cleaned and deveined)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Mustard Oil as used">
+              <span>2 tbsp Mustard Oil</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Crushed Peppercorns as used">
+              <span>1 tsp Crushed Peppercorns</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 tsp Turmeric Powder as used">
+              <span>1/2 tsp Turmeric Powder</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tbsp Lime Juice as used">
+              <span>1 tbsp Lime Juice</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 Green Chilies & 3 Garlic cloves (crushed) as used">
+              <span>2 Green Chilies & 3 Garlic cloves (crushed)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Banana leaves for wrapping (optional) as used">
+              <span>Banana leaves for wrapping (optional)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Marinate cleaned prawns with turmeric, crushed garlic, green chilies, pepper, lime juice, and salt for 15 minutes.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Toss with cold-pressed mustard oil.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">For authentic flavor, wrap marinated prawns inside softened banana leaf packets.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Roast over glowing charcoal or grill in a cast-iron skillet on medium heat for 6-8 minutes per side.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Unwrap and serve hot with steamed rice and boiled mountain greens.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="pork">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Nagaland</span>
+            <h2 class="recipe-article-title">Naga Pork with Bamboo Shoot</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 15 mins</span>
+              <span class="recipe-badge">🔥 Cook: 45 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Medium</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 600g Pork belly or shoulder (cut into bite-sized cubes) as used">
+              <span>600g Pork belly or shoulder (cut into bite-sized cubes)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3 tbsp Fermented Bamboo Shoot (wet or dry) as used">
+              <span>3 tbsp Fermented Bamboo Shoot (wet or dry)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 Naga King Chilies (Bhut Jolokia) or 6 Dry Red Chilies as used">
+              <span>2 Naga King Chilies (Bhut Jolokia) or 6 Dry Red Chilies</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 10 Garlic cloves (crushed coarsely) as used">
+              <span>10 Garlic cloves (crushed coarsely)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 inch Fresh Ginger (sliced) as used">
+              <span>1 inch Fresh Ginger (sliced)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Place pork cubes into a heavy pot without oil; render over medium heat until natural pork fat releases.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Add crushed garlic, ginger, and bruised king chili; sautÃ© in the rendered fat for 3 minutes.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Add fermented bamboo shoot and salt. Mix thoroughly to allow deep aromas to permeate.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Pour in 1.5 cups of warm water, cover with heavy lid, and simmer on gentle heat for 35-40 minutes until pork is meltingly tender.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Uncover and reduce gravy to a thick, glossy coat around the meat.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Serve warm with plain sticky rice.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="chenna">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Odisha</span>
+            <h2 class="recipe-article-title">Odisha Chhena Poda</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 20 mins</span>
+              <span class="recipe-badge">🔥 Cook: 50 mins</span>
+              <span class="recipe-badge">🍽️ 6 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Medium</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 500g Fresh Chhena (Paneer curd, moist and freshly made) as used">
+              <span>500g Fresh Chhena (Paneer curd, moist and freshly made)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3/4 cup Fine Sugar (plus 2 tbsp for caramelizing) as used">
+              <span>3/4 cup Fine Sugar (plus 2 tbsp for caramelizing)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Fine Semolina (Sooji) as used">
+              <span>2 tbsp Fine Semolina (Sooji)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Green Cardamom Powder as used">
+              <span>1 tsp Green Cardamom Powder</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Desi Ghee as used">
+              <span>2 tbsp Desi Ghee</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/4 cup Chopped Cashews and Raisins as used">
+              <span>1/4 cup Chopped Cashews and Raisins</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Sal or Banana leaves for lining baking tin as used">
+              <span>Sal or Banana leaves for lining baking tin</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Knead fresh chhena by hand for 6-8 minutes until soft and creamy, without making it greasy.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Add sugar, sooji, cardamom powder, melted ghee, cashews, and raisins. Mix gently into a smooth batter.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">In a baking pan or cake tin, caramelize 2 tbsp sugar with a drop of ghee over low flame until golden amber.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Line the tin with ghee-brushed banana leaves, pour chhena batter, and smooth the top.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Bake in a preheated oven at 180Â°C for 45-55 minutes until the crust turns dark golden brown and caramelizes.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Cool completely before slicing into triangles to appreciate the smoky, sweet caramelized crust.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="makki">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Punjab</span>
+            <h2 class="recipe-article-title">Makki di Roti & Sarson da Saag</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 30 mins</span>
+              <span class="recipe-badge">🔥 Cook: 45 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Medium</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark For Saag: 500g Mustard greens (Sarson), 250g Spinach (Palak), 100g Bathua, 3 tbsp Makki Atta, 2 Onions, 3 Tomatoes, 2 inch Ginger, 8 Garlic cloves, 4 Green Chilies, Desi Ghee, Salt as used">
+              <span>For Saag: 500g Mustard greens (Sarson), 250g Spinach (Palak), 100g Bathua, 3 tbsp Makki Atta, 2 Onions, 3 Tomatoes, 2 inch Ginger, 8 Garlic cloves, 4 Green Chilies, Desi Ghee, Salt</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark For Roti: 2 cups Makki Atta (Cornmeal flour), Warm water, Carom seeds, Salt as used">
+              <span>For Roti: 2 cups Makki Atta (Cornmeal flour), Warm water, Carom seeds, Salt</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Wash greens thoroughly, chop roughly, and pressure cook with ginger, garlic, green chilies, and salt with 1 cup water for 15 minutes.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Blend or mash cooked greens coarsely with a wooden churner (madhani).</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Dissolve makki atta in water, stir into the greens, and simmer for 20 minutes on low heat until creamy.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">In a separate pan, prepare tadka with ghee, sliced onions, tomatoes, and red chili powder; fold into the simmering saag.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">For roti: Knead makki atta with warm water into soft dough. Pat gently between damp palms or parchment paper into round flatbreads.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Cook on a medium hot tawa with generous ghee until golden speckled on both sides.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">7</span>
+              <p class="step-text">Serve piping hot with a dollop of white butter (makhan) and jaggery.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="dal">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Rajasthan</span>
+            <h2 class="recipe-article-title">Rajasthani Dal Baati Churma</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 30 mins</span>
+              <span class="recipe-badge">🔥 Cook: 50 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Hard</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark For Baati: 2 cups Coarse Wheat Flour, 1/4 cup Sooji, 1/2 tsp Ajwain, 1/4 cup Ghee (moyen), Warm water, Pinch of baking soda & salt as used">
+              <span>For Baati: 2 cups Coarse Wheat Flour, 1/4 cup Sooji, 1/2 tsp Ajwain, 1/4 cup Ghee (moyen), Warm water, Pinch of baking soda & salt</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark For Dal: 1/4 cup each of Toor, Chana, Moong, Urad, Masoor dals, Ghee, Cumin, Hing, Ginger-garlic, Spices as used">
+              <span>For Dal: 1/4 cup each of Toor, Chana, Moong, Urad, Masoor dals, Ghee, Cumin, Hing, Ginger-garlic, Spices</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark For Churma: Crushed baked baatis, Powdered Sugar, Ghee, Cardamom & Nuts as used">
+              <span>For Churma: Crushed baked baatis, Powdered Sugar, Ghee, Cardamom & Nuts</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Mix wheat flour, sooji, ajwain, salt, baking soda, and ghee until it resembles breadcrumbs. Knead a tight dough with warm water.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Divide into balls, make a gentle indentation in the center, and bake in a tandoor or 200Â°C oven for 30 minutes until cracked and golden.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Boil the 5 dals with turmeric and salt until tender. Prepare a rich ghee tadka with cumin, hing, green chilies, tomatoes, and spices; stir into dal.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">For churma: Crush 2 hot baatis in a food processor, sift, and mix with ghee, powdered sugar, cardamom, and sliced almonds.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Dip hot baatis in a bowl of melted desi ghee, crush lightly into warm spicy dal, and enjoy with sweet churma.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="momo">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Sikkim</span>
+            <h2 class="recipe-article-title">Sikkimese Steamed Momos</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 35 mins</span>
+              <span class="recipe-badge">🔥 Cook: 15 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Medium</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 cups All-Purpose Flour (Maida) as used">
+              <span>2 cups All-Purpose Flour (Maida)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 cups Finely Minced Cabbage, Carrots, Onions, and Spring Onions (or Minced Meat) as used">
+              <span>2 cups Finely Minced Cabbage, Carrots, Onions, and Spring Onions (or Minced Meat)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tbsp Ginger-Garlic (minced very fine) as used">
+              <span>1 tbsp Ginger-Garlic (minced very fine)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tbsp Soy Sauce as used">
+              <span>1 tbsp Soy Sauce</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Butter or Oil as used">
+              <span>2 tbsp Butter or Oil</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 tsp Black Pepper Powder as used">
+              <span>1/2 tsp Black Pepper Powder</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark For Chutney: 4 Dry Red Chilies, 2 Tomatoes, 4 Garlic cloves boiled and blended as used">
+              <span>For Chutney: 4 Dry Red Chilies, 2 Tomatoes, 4 Garlic cloves boiled and blended</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Knead flour and water into a smooth, pliable dough. Cover with damp cloth for 30 minutes.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">SautÃ© vegetables or meat filling with ginger, garlic, soy sauce, pepper, butter, and salt on high heat for 2 minutes to keep crisp.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Roll dough into thin 3-inch circular wrappers with edges slightly thinner than the center.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Place a spoonful of filling in the center, pleat the edges around the filling, and pinch closed into classic crescent or round shape.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Grease steamer racks, arrange momos leaving space between them, and steam over rolling boiling water for 10-12 minutes until translucent.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Serve hot with spicy garlic-chili tomato dip and clear soup.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="pongal">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Tamil Nadu</span>
+            <h2 class="recipe-article-title">Tamil Ven Pongal</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 10 mins</span>
+              <span class="recipe-badge">🔥 Cook: 25 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Easy</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 cup Raw Rice as used">
+              <span>1 cup Raw Rice</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 cup Yellow Moong Dal as used">
+              <span>1/2 cup Yellow Moong Dal</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 4.5 cups Water & 1/2 cup Milk as used">
+              <span>4.5 cups Water & 1/2 cup Milk</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3 tbsp Desi Ghee as used">
+              <span>3 tbsp Desi Ghee</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Whole Black Peppercorns as used">
+              <span>1 tsp Whole Black Peppercorns</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Cumin Seeds as used">
+              <span>1 tsp Cumin Seeds</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 inch Fresh Ginger (finely chopped) as used">
+              <span>1 inch Fresh Ginger (finely chopped)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 sprig Curry Leaves as used">
+              <span>1 sprig Curry Leaves</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 12-15 Whole Cashews as used">
+              <span>12-15 Whole Cashews</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/4 tsp Asafoetida (Hing) as used">
+              <span>1/4 tsp Asafoetida (Hing)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Dry roast moong dal in a pan on medium heat until fragrant and slightly golden, then wash with rice.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Pressure cook rice and dal in water and milk with salt and ginger for 4-5 whistles until very soft and creamy.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Gently mash cooked pongal with the back of a ladle.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Heat ghee in a pan, fry cashews until golden, then add cumin seeds, whole peppercorns, hing, and curry leaves.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Pour hot sizzling tempering over the mashed pongal and fold in gently.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Serve piping hot with fresh coconut chutney and spicy vegetable sambar.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="biriyani">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Telangana</span>
+            <h2 class="recipe-article-title">Hyderabadi Dum Biryani</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 45 mins</span>
+              <span class="recipe-badge">🔥 Cook: 45 mins</span>
+              <span class="recipe-badge">🍽️ 6 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Hard</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3 cups Aged Long Grain Basmati Rice (soaked 30 mins) as used">
+              <span>3 cups Aged Long Grain Basmati Rice (soaked 30 mins)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 800g Chicken or Lamb (marinated with yogurt, ginger-garlic, red chili, garam masala, mint, coriander, and fried onions) as used">
+              <span>800g Chicken or Lamb (marinated with yogurt, ginger-garlic, red chili, garam masala, mint, coriander, and fried onions)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 cup Fried Onions (Birista) as used">
+              <span>1 cup Fried Onions (Birista)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/4 cup Saffron Milk as used">
+              <span>1/4 cup Saffron Milk</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/4 cup Melted Desi Ghee as used">
+              <span>1/4 cup Melted Desi Ghee</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Whole Spices (Shahi jeera, star anise, cardamom, mace, cinnamon, cloves) as used">
+              <span>Whole Spices (Shahi jeera, star anise, cardamom, mace, cinnamon, cloves)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Whole Wheat Dough to seal the pot as used">
+              <span>Whole Wheat Dough to seal the pot</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Marinate meat for at least 2 hours with yogurt, biryani spices, ginger-garlic paste, fresh herbs, and salt.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Boil water with whole spices and salt; cook soaked basmati rice until 70% done, then drain immediately.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">In a thick-bottomed handi, layer marinated meat at the base.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Spread the 70% cooked rice evenly over the meat.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Top with fried onions, saffron milk, chopped mint, coriander, and generous spoons of ghee.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Seal the rim with wheat dough and cover tightly with a heavy lid.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">7</span>
+              <p class="step-text">Cook on high heat for 10 minutes, then place on a hot iron tawa on low heat for 35 minutes (dum).</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">8</span>
+              <p class="step-text">Rest for 15 minutes before unsealing. Gently fluff layers to reveal aromatic long rice and tender meat, served with mirchi ka salan and dahi raita.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="chakhwi">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Tripura</span>
+            <h2 class="recipe-article-title">Tripuri Chakhwi</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 15 mins</span>
+              <span class="recipe-badge">🔥 Cook: 25 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Easy</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 200g Fresh Bamboo Shoots (sliced) as used">
+              <span>200g Fresh Bamboo Shoots (sliced)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 150g Green Raw Papaya (peeled and diced) as used">
+              <span>150g Green Raw Papaya (peeled and diced)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 100g Jackfruit Seeds or Taro stems as used">
+              <span>100g Jackfruit Seeds or Taro stems</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 tsp Baking Soda or traditional Khar (alkaline extract) as used">
+              <span>1/2 tsp Baking Soda or traditional Khar (alkaline extract)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 4 Green Chilies (slit) as used">
+              <span>4 Green Chilies (slit)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 inch Ginger (pounded) as used">
+              <span>1 inch Ginger (pounded)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Rice flour paste (1 tbsp in water) as used">
+              <span>Rice flour paste (1 tbsp in water)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Bring 3 cups of water to a boil in a pan.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Add baking soda or indigenous khar along with green chilies, ginger, and salt.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Add bamboo shoots, raw papaya cubes, and jackfruit seeds.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Simmer on medium heat for 15-20 minutes until papaya is completely tender.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Stir in rice flour slurry to impart gentle thickness to the clear aromatic broth.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Serve warm as a nourishing digestive with steamed rice.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="tunde">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Uttar Pradesh</span>
+            <h2 class="recipe-article-title">Lucknowi Tunday Kababi</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 30 mins</span>
+              <span class="recipe-badge">🔥 Cook: 20 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Hard</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 500g Finely Minced Meat (passed through mincer 4 times) as used">
+              <span>500g Finely Minced Meat (passed through mincer 4 times)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Raw Papaya Paste (natural tenderizer) as used">
+              <span>2 tbsp Raw Papaya Paste (natural tenderizer)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Roasted Gram Flour (Besan) as used">
+              <span>2 tbsp Roasted Gram Flour (Besan)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Ghee as used">
+              <span>2 tbsp Ghee</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Ginger-Garlic Paste as used">
+              <span>2 tbsp Ginger-Garlic Paste</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tbsp Special Potli Masala (Cardamom, mace, nutmeg, clove, star anise, rose petals, black pepper) as used">
+              <span>1 tbsp Special Potli Masala (Cardamom, mace, nutmeg, clove, star anise, rose petals, black pepper)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Kashmiri Red Chili & Salt as used">
+              <span>1 tsp Kashmiri Red Chili & Salt</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Live charcoal and ghee for smoking (dhungar) as used">
+              <span>Live charcoal and ghee for smoking (dhungar)</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Marinate finely ground meat with raw papaya paste and salt for 1 hour.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Add roasted besan, ginger-garlic paste, and aromatic potli spice blend; knead thoroughly for 5 minutes until soft and cohesive.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Place a small metal bowl in the meat, add hot charcoal, pour 1 tsp ghee, and cover tightly for 10 minutes to infuse smoky aroma.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Shape meat into flat patties with oiled hands.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Heat ghee on a flat tawa; pan-fry kebabs on medium heat for 3-4 minutes per side until beautifully browned.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Serve hot with roomali roti, sliced minty onions, and lemon wedges.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="kafuli">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">Uttarakhand</span>
+            <h2 class="recipe-article-title">Uttarakhandi Kafuli</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 15 mins</span>
+              <span class="recipe-badge">🔥 Cook: 25 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Easy</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 300g Fresh Mountain Spinach (Palak) as used">
+              <span>300g Fresh Mountain Spinach (Palak)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 150g Fresh Fenugreek (Methi) leaves as used">
+              <span>150g Fresh Fenugreek (Methi) leaves</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Rice Flour (dissolved in 1/2 cup water) as used">
+              <span>2 tbsp Rice Flour (dissolved in 1/2 cup water)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Mustard Oil as used">
+              <span>2 tbsp Mustard Oil</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 tsp Jakhiya (wild mustard) or Cumin Seeds as used">
+              <span>1/2 tsp Jakhiya (wild mustard) or Cumin Seeds</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 4 Garlic cloves & 1 inch Ginger (crushed) as used">
+              <span>4 Garlic cloves & 1 inch Ginger (crushed)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 Green Chilies (slit) as used">
+              <span>2 Green Chilies (slit)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/4 tsp Asafoetida & Turmeric as used">
+              <span>1/4 tsp Asafoetida & Turmeric</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Wash greens thoroughly and boil in water with green chilies, ginger, and salt until tender.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Mash greens into a smooth purÃ©e using a blender or traditional wooden churner.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Heat mustard oil in an iron kadhai until smoking point.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Add jakhiya seeds and crushed garlic; fry until crisp and fragrant.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Pour in greens purÃ©e, turmeric, and hing. Bring to a gentle boil.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Pour in rice flour slurry while stirring continuously; simmer on low heat for 10 minutes until thick and velvet-smooth.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">7</span>
+              <p class="step-text">Serve piping hot with steamed rice or madua (ragi) rotis.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="recipe-article" id="kosha">
+          <div class="recipe-article-header">
+            <span class="recipe-article-state">West Bengal</span>
+            <h2 class="recipe-article-title">Bengali Kosha Mangsho</h2>
+            <div class="recipe-meta-badges">
+              <span class="recipe-badge">⏱️ Prep: 30 mins</span>
+              <span class="recipe-badge">🔥 Cook: 60 mins</span>
+              <span class="recipe-badge">🍽️ 4 Servings</span>
+              <span class="recipe-badge">⚡ Difficulty: Hard</span>
+            </div>
+          </div>
+
+          <div class="recipe-content-grid">
+            <div class="ingredients-box">
+              <h3>Ingredients Checklist</h3>
+              <ul class="ingredient-list">
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 800g Tender Goat Mutton (curry cuts) as used">
+              <span>800g Tender Goat Mutton (curry cuts)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 cup Mustard Oil as used">
+              <span>1/2 cup Mustard Oil</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 3 large Onions (finely sliced) as used">
+              <span>3 large Onions (finely sliced)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 2 tbsp Ginger-Garlic Paste as used">
+              <span>2 tbsp Ginger-Garlic Paste</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1/2 cup Whisked Yogurt as used">
+              <span>1/2 cup Whisked Yogurt</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tbsp Kashmiri Chili Powder & 1 tsp Turmeric as used">
+              <span>1 tbsp Kashmiri Chili Powder & 1 tsp Turmeric</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Whole Spices: 2 Bay leaves, 4 Cardamom, 1 inch Cinnamon, 4 Cloves as used">
+              <span>Whole Spices: 2 Bay leaves, 4 Cardamom, 1 inch Cinnamon, 4 Cloves</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 1 tsp Sugar (caramelized for rich dark color) as used">
+              <span>1 tsp Sugar (caramelized for rich dark color)</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark 4 Halved Fried Potatoes as used">
+              <span>4 Halved Fried Potatoes</span>
+            </li>
+            <li class="ingredient-item">
+              <input type="checkbox" class="ingredient-checkbox" aria-label="Mark Salt to taste as used">
+              <span>Salt to taste</span>
+            </li>
+              </ul>
+            </div>
+
+            <div class="instructions-box">
+              <h3>Step-by-Step Instructions</h3>
+              <div class="instruction-steps">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <p class="step-text">Marinate mutton with yogurt, 1 tbsp mustard oil, turmeric, and red chili powder for 2 hours.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <p class="step-text">Heat remaining mustard oil in a heavy kadhai until smoking; add 1 tsp sugar and allow to caramelize into deep golden brown.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <p class="step-text">Add whole spices and sliced onions; sautÃ© patiently on medium heat until dark mahogany brown.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <p class="step-text">Add ginger-garlic paste and cook out raw aroma. Add marinated mutton and fry on medium-high heat for 15 minutes.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">5</span>
+              <p class="step-text">Cover and 'koshano' (slow roast-fry) on low flame, stirring every 5 minutes until meat turns deep dark brown and oil releases cleanly.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">6</span>
+              <p class="step-text">Add fried potato halves and 1.5 cups warm water; simmer on low heat until mutton is melt-in-mouth tender and gravy is thick and clinging to meat.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">7</span>
+              <p class="step-text">Serve hot with fluffy luchi, Bengali sweet pulao, or steamed rice.</p>
+            </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>CIBUS</h2>
+          <p>
+            An open culinary exploration celebrating authentic Indian home cooking, heritage food recipes, and regional diversity.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./food-menu.html">Food by States</a></li>
+            <li><a href="./recipe-cards.html">Recipes Gallery</a></li>
+            <li><a href="./recipe-detail.html">Recipe Instructions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>User Services</h3>
+          <ul class="footer-links">
+            <li><a href="./cart.html">Cart & Favorites</a></li>
+            <li><a href="./login.html">Sign In</a></li>
+            <li><a href="./register.html">Create Account</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Regions</h3>
+          <ul class="footer-links">
+            <li><a href="./food-menu.html?region=south">South India</a></li>
+            <li><a href="./food-menu.html?region=north">North India</a></li>
+            <li><a href="./food-menu.html?region=west">West India</a></li>
+            <li><a href="./food-menu.html?region=northeast">Northeast India</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CIBUS. Built with pure HTML5, CSS3, and Vanilla JavaScript.</p>
+        <p>Created by <a href="https://github.com/GreeshmanthSaiY" target="_blank" rel="noopener noreferrer">Greeshmanth Sai</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/config.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/recipes.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      RecipesController.initDetail();
+    });
+  </script>
+</body>
+</html>

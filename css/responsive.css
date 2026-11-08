@@ -1,0 +1,129 @@
+/**
+ * CIBUS RESPONSIVE BREAKPOINTS
+ * - Desktop Widescreen: >= 1200px
+ * - Laptop / Small Desktop: 992px - 1199px
+ * - Tablet: 768px - 991px
+ * - Mobile Landscape / Large Mobile: 576px - 767px
+ * - Mobile Portrait / Small Screen: < 576px
+ */
+
+/* Tablets and Down (< 992px) */
+@media (max-width: 991px) {
+  :root {
+    --font-4xl: 2rem;
+    --font-5xl: 2.5rem;
+  }
+
+  .nav-links {
+    display: none; /* Collapsed into mobile drawer */
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer-brand {
+    grid-column: span 2;
+  }
+}
+
+/* Mobile Devices (< 768px) */
+@media (max-width: 767px) {
+  :root {
+    --space-3xl: 2.5rem;
+    --space-2xl: 2rem;
+    --font-3xl: 1.5rem;
+    --font-4xl: 1.75rem;
+  }
+
+  .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .site-nav {
+    height: 64px;
+  }
+
+  .mobile-drawer {
+    top: 64px;
+    height: calc(100vh - 64px);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .footer-brand {
+    grid-column: span 1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--space-xs);
+    text-align: center;
+  }
+
+  .filter-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input-wrap {
+    max-width: 100%;
+  }
+
+  .filter-pills {
+    overflow-x: auto;
+    padding-bottom: var(--space-xs);
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-pill {
+    flex-shrink: 0;
+  }
+
+  .toast-container {
+    left: var(--space-md);
+    right: var(--space-md);
+    bottom: var(--space-md);
+  }
+
+  .toast {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+/* Small Screens (< 480px) */
+@media (max-width: 479px) {
+  .brand-logo {
+    font-size: var(--font-xl);
+  }
+
+  .brand-logo svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .btn {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+
+  .card-footer .btn {
+    width: 100%;
+  }
+}

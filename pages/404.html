@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="404 — The requested culinary page or recipe could not be found on CIBUS.">
+  <title>404 Page Not Found — CIBUS</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- Universal Header -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="../index.html" class="brand-logo" aria-label="Cibus Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+        CIBUS
+      </a>
+      <div class="nav-actions">
+        <a href="./home.html" class="btn btn-outline btn-sm">Return Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main style="flex: 1; display: flex; align-items: center; justify-content: center; padding: var(--space-3xl) var(--space-md);">
+    <div class="container" style="text-align: center; max-width: 580px;">
+      <span style="font-size: 5rem; display: block; margin-bottom: var(--space-md);">🍲</span>
+      <h1 style="font-size: var(--font-5xl); color: var(--color-primary); margin-bottom: var(--space-xs);">404</h1>
+      <h2 style="font-size: var(--font-2xl); margin-bottom: var(--space-md);">Recipe or Page Not Found</h2>
+      <p style="color: var(--color-text-muted); margin-bottom: var(--space-xl); font-size: var(--font-base);">
+        The culinary route you requested may have moved or doesn't exist. Let's get you back to exploring our 28 state food menus and recipes.
+      </p>
+      <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+        <a href="./home.html" class="btn btn-primary btn-lg">Explore Home &rarr;</a>
+        <a href="./food-menu.html" class="btn btn-outline btn-lg">Browse Food Menu</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p>&copy; 2026 CIBUS. Built with pure HTML5, CSS3, and Vanilla JavaScript.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

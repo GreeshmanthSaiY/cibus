@@ -1,0 +1,779 @@
+[
+  {
+    "id": "pulihora",
+    "name": "Pulihora (Andhra Tamarind Rice)",
+    "state": "Andhra Pradesh",
+    "prepTime": "15 mins",
+    "cookTime": "25 mins",
+    "servings": 4,
+    "difficulty": "Easy",
+    "ingredients": [
+      "2 cups Cooked Sona Masuri Rice (cooled)",
+      "1 large lemon-sized ball of Tamarind (soaked in warm water)",
+      "1/4 cup Raw Peanuts",
+      "1 tbsp Chana Dal (Bengal gram)",
+      "1 tbsp Urad Dal (Split black gram)",
+      "1 tsp Mustard Seeds",
+      "2 sprigs Fresh Curry Leaves",
+      "3-4 Slit Green Chilies",
+      "3 Dried Red Chilies",
+      "1/2 tsp Turmeric Powder",
+      "1/4 tsp Asafoetida (Hing)",
+      "3 tbsp Sesame or Peanut Oil",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Cook rice until grains are fluffy and distinct; spread onto a wide tray with 1 tbsp sesame oil and turmeric powder to cool.",
+      "Extract thick tamarind pulp from soaked tamarind with 1 cup of warm water.",
+      "In a heavy pan, simmer the tamarind pulp with slit green chilies, salt, and turmeric until it thickens into a glossy paste.",
+      "In a separate pan, heat oil and roast peanuts until crunchy. Add mustard seeds, chana dal, urad dal, dried red chilies, hing, and fresh curry leaves.",
+      "Combine the thickened tamarind paste with the cooled rice gently, then pour the hot tempering over it and mix thoroughly.",
+      "Let the pulihora rest for at least 1 hour so the aromatic flavors infuse deeply before serving."
+    ]
+  },
+  {
+    "id": "bamboo",
+    "name": "Bamboo Shoot Stir Fry",
+    "state": "Arunachal Pradesh",
+    "prepTime": "20 mins",
+    "cookTime": "20 mins",
+    "servings": 3,
+    "difficulty": "Medium",
+    "ingredients": [
+      "250g Fresh or Fermented Tender Bamboo Shoots (thinly sliced)",
+      "2 tbsp Cold-pressed Mustard Oil",
+      "4 Garlic cloves (crushed)",
+      "3 Fresh Green Chilies (slit lengthwise)",
+      "1/2 tsp Fenugreek Seeds (Methi)",
+      "1/2 tsp Turmeric Powder",
+      "1 medium Onion (thinly sliced)",
+      "Fresh Coriander or indigenous herbs for garnish",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Boil sliced bamboo shoots in salted water for 10-15 minutes to eliminate natural bitterness, then drain thoroughly.",
+      "Heat mustard oil in a cast-iron wok until it begins to smoke gently, then lower heat.",
+      "Add fenugreek seeds and crushed garlic; sauté until aromatic and golden.",
+      "Add sliced onions and green chilies, cooking until onions turn translucent.",
+      "Stir in the drained bamboo shoots, turmeric powder, and salt. Sauté on medium-high heat for 8-10 minutes.",
+      "Garnish with fresh herbs and serve hot alongside steamed sticky rice."
+    ]
+  },
+  {
+    "id": "duck",
+    "name": "Assamese Duck Meat Curry (Kumura Dha)",
+    "state": "Assam",
+    "prepTime": "25 mins",
+    "cookTime": "50 mins",
+    "servings": 4,
+    "difficulty": "Hard",
+    "ingredients": [
+      "800g Fresh Duck Meat (cut into bone-in curry pieces)",
+      "300g White Gourd / Ash Gourd (Kumura), peeled and cubed",
+      "3 tbsp Mustard Oil",
+      "2 large Onions (finely sliced)",
+      "2 tbsp Ginger-Garlic Paste",
+      "1 tsp Crushed Black Peppercorns",
+      "1 tsp Cumin Powder",
+      "1/2 tsp Turmeric Powder",
+      "2 Bay Leaves (Tejpatta)",
+      "3 Green Cardamom pods and 1 inch Cinnamon",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Heat mustard oil in a heavy-bottomed kadhai until smoking point, then add bay leaves, cardamom, and cinnamon.",
+      "Add sliced onions and sauté until golden brown. Add ginger-garlic paste and cook out the raw aroma.",
+      "Add the duck meat, turmeric, salt, and cumin powder. Cook on high heat for 10 minutes until meat browns.",
+      "Lower heat, cover tightly, and allow duck to cook in its own juices for 20 minutes.",
+      "Add cubed ash gourd and freshly crushed black pepper; toss well to coat.",
+      "Pour in 2 cups of warm water, cover, and slow-cook until duck meat is fork-tender and curry is thick.",
+      "Serve piping hot with fragrant Joha rice."
+    ]
+  },
+  {
+    "id": "litti",
+    "name": "Bihari Litti Chokha",
+    "state": "Bihar",
+    "prepTime": "30 mins",
+    "cookTime": "35 mins",
+    "servings": 4,
+    "difficulty": "Medium",
+    "ingredients": [
+      "2 cups Whole Wheat Flour (Atta)",
+      "1.5 cups Roasted Gram Flour (Sattu)",
+      "2 tbsp Mustard Oil",
+      "1 tbsp Lemon Juice",
+      "1 tsp Ajwain (Carom seeds) & Kalonji (Nigella seeds)",
+      "4 Green Chilies and 1 inch Ginger (finely chopped)",
+      "1/2 cup Fresh Coriander (chopped)",
+      "1 large Round Eggplant (Brinjal) for Chokha",
+      "3 ripe Tomatoes for Chokha",
+      "2 Boiled Potatoes for Chokha",
+      "Desi Ghee for dipping",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Knead a firm, pliable dough using wheat flour, a pinch of salt, 1 tsp oil, and water. Rest for 20 minutes.",
+      "For filling: Mix sattu with chopped green chilies, ginger, coriander, ajwain, kalonji, lemon juice, mustard oil, and salt with a splash of water until moist.",
+      "Form dough into smooth lemon-sized balls, cup them into hollow pockets, fill generously with sattu mixture, and seal tight.",
+      "Bake littis on a charcoal grill, tandoor, or preheated oven at 200°C for 25-30 minutes, turning periodically until outer crust is charred and crisp.",
+      "For chokha: Roast brinjal and tomatoes on open flame until skins are charred. Peel and mash together with boiled potatoes, raw mustard oil, chopped onions, green chilies, and salt.",
+      "Dip hot littis generously in melted desi ghee, crack them open slightly, and serve alongside smoky chokha."
+    ]
+  },
+  {
+    "id": "muthia",
+    "name": "Chhattisgarhi Steamed Muthia",
+    "state": "Chhattisgarh",
+    "prepTime": "15 mins",
+    "cookTime": "20 mins",
+    "servings": 4,
+    "difficulty": "Easy",
+    "ingredients": [
+      "1.5 cups Rice Flour",
+      "1/2 cup Cooked Leftover Rice (mashed)",
+      "1/2 cup Chopped Fresh Fenugreek (Methi) or Spinach",
+      "2 tbsp Oil",
+      "1 tsp Mustard Seeds",
+      "1 tsp White Sesame Seeds (Til)",
+      "2 Dried Red Chilies",
+      "1 sprig Curry Leaves",
+      "1/2 tsp Turmeric & Hing",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Combine rice flour, mashed rice, chopped greens, salt, turmeric, and warm water to form a soft dough.",
+      "Pinch small portions of dough and shape into cylindrical muthia rolls using your fingers.",
+      "Grease a steamer plate and steam muthias for 12-15 minutes until firm to the touch.",
+      "Heat oil in a wide pan; crackle mustard seeds, sesame seeds, dried chilies, and curry leaves.",
+      "Add steamed muthias to the tempering and pan-fry on medium heat until surfaces turn lightly golden and crisp.",
+      "Serve warm with spicy green coriander chutney."
+    ]
+  },
+  {
+    "id": "fish",
+    "name": "Goan Fish Curry (Xitt Codi)",
+    "state": "Goa",
+    "prepTime": "20 mins",
+    "cookTime": "25 mins",
+    "servings": 4,
+    "difficulty": "Medium",
+    "ingredients": [
+      "500g Fresh Kingfish or Pomfret fillets",
+      "1 cup Fresh Grated Coconut",
+      "6-8 Dried Kashmiri Red Chilies",
+      "1 tbsp Coriander Seeds & 1 tsp Cumin Seeds",
+      "4 Garlic cloves & 1 inch Ginger",
+      "4-5 Dried Kokum petals (soaked in warm water)",
+      "1/2 tsp Turmeric Powder",
+      "2 Green Chilies (slit)",
+      "1 cup Thick Coconut Milk",
+      "Coconut Oil & Salt to taste"
+    ],
+    "instructions": [
+      "Grind grated coconut, Kashmiri chilies, coriander seeds, cumin, garlic, ginger, and turmeric into a silky smooth paste with a little water.",
+      "Heat coconut oil in an earthenware pot (matka); add slit green chilies and the ground spice paste. Sauté gently until oil separates.",
+      "Add 1.5 cups of water and soaked kokum with its water; bring the curry to a gentle simmer.",
+      "Gently slide in fish fillets and coconut milk; simmer on low heat for 6-8 minutes without stirring vigorously to avoid breaking the fish.",
+      "Season with salt and let rest for 15 minutes before serving with hot steamed Goan red rice."
+    ]
+  },
+  {
+    "id": "dhokla",
+    "name": "Khaman Dhokla",
+    "state": "Gujarat",
+    "prepTime": "15 mins",
+    "cookTime": "20 mins",
+    "servings": 4,
+    "difficulty": "Easy",
+    "ingredients": [
+      "1.5 cups Besan (Gram flour)",
+      "1 tbsp Semolina (Sooji)",
+      "1 tbsp Lemon Juice",
+      "1 tsp Ginger-Green Chili Paste",
+      "1 tsp Eno Fruit Salt or Baking Soda",
+      "1/4 tsp Turmeric Powder",
+      "1 tbsp Sugar",
+      "For tempering: 1 tbsp Oil, 1 tsp Mustard Seeds, 1 tbsp Sesame Seeds, 4 Slit Green Chilies, 1 sprig Curry Leaves, 1/2 cup Water with 1 tsp Sugar",
+      "Garnish: Fresh grated coconut and coriander"
+    ],
+    "instructions": [
+      "Whisk besan, sooji, turmeric, ginger-chili paste, lemon juice, sugar, salt, and water into a smooth, lump-free batter.",
+      "Grease a steaming tin and boil water in the steamer.",
+      "Right before pouring, stir in Eno fruit salt and 1 tsp water; whisk in one direction until batter doubles in volume and becomes airy.",
+      "Pour immediately into the tin and steam on high heat for 18-20 minutes until a toothpick inserted comes out clean.",
+      "In a small pan, prepare tempering by crackling mustard seeds, sesame seeds, curry leaves, and green chilies in oil, then pour in sugar water.",
+      "Cut steamed dhokla into neat squares, pour the warm tempering water evenly to keep it moist, and garnish with coconut and coriander."
+    ]
+  },
+  {
+    "id": "bajre",
+    "name": "Haryanvi Bajra Khichdi",
+    "state": "Haryana",
+    "prepTime": "20 mins",
+    "cookTime": "45 mins",
+    "servings": 4,
+    "difficulty": "Easy",
+    "ingredients": [
+      "1 cup Pearl Millet (Bajra), crushed or coarsely ground",
+      "1/2 cup Yellow Moong Dal (split)",
+      "5 cups Water",
+      "1 tsp Cumin Seeds",
+      "1/4 tsp Asafoetida (Hing)",
+      "3 tbsp Desi Ghee",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Pound bajra lightly in a mortar or pulse coarsely in a blender, then husk to remove chaff.",
+      "Wash bajra and moong dal together thoroughly.",
+      "In a heavy pot or pressure cooker, bring water to a boil, then add the bajra and dal mixture with salt and turmeric.",
+      "Cook on low heat, stirring frequently to prevent sticking, until grains are thoroughly soft and porridge-like (about 4 whistles in pressure cooker).",
+      "Heat ghee, temper with cumin seeds and hing, and stir into the hot khichdi.",
+      "Serve piping hot with fresh curd, jaggery, and extra spoons of golden ghee."
+    ]
+  },
+  {
+    "id": "dham",
+    "name": "Himachali Dham (Madra)",
+    "state": "Himachal Pradesh",
+    "prepTime": "8 hrs soaking",
+    "cookTime": "40 mins",
+    "servings": 4,
+    "difficulty": "Medium",
+    "ingredients": [
+      "1.5 cups Soaked Red Kidney Beans (Rajma) or Chickpeas (Kabuli Chana)",
+      "1.5 cups Whisked Yogurt (Curd)",
+      "3 tbsp Mustard Oil",
+      "2 Black Cardamom pods & 3 Green Cardamoms",
+      "1 inch Cinnamon stick & 3 Cloves",
+      "1 tsp Fennel Seeds (Saunf powder)",
+      "1/2 tsp Dry Ginger Powder (Sonth)",
+      "1 tsp Turmeric Powder",
+      "1/4 cup Golden Raisins & Cashews",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Pressure cook soaked rajma in water with a pinch of salt until tender.",
+      "Heat mustard oil in a heavy brass or iron pan until smoky; add whole cardamoms, cinnamon, and cloves.",
+      "Lower heat and add whisked yogurt gradually, stirring continuously on low heat to prevent curdling.",
+      "Add turmeric, dry ginger powder, and fennel powder. Sauté until oil separates from yogurt gravy.",
+      "Add boiled beans along with a cup of cooking liquid. Simmer on low heat for 20 minutes until gravy thickens.",
+      "Garnish with fried cashews and raisins. Serve warm with steamed basmati rice."
+    ]
+  },
+  {
+    "id": "dhooska",
+    "name": "Jharkhandi Dhooska",
+    "state": "Jharkhand",
+    "prepTime": "4 hrs soaking",
+    "cookTime": "30 mins",
+    "servings": 4,
+    "difficulty": "Medium",
+    "ingredients": [
+      "1 cup Raw Rice",
+      "1/2 cup Chana Dal (Bengal gram)",
+      "1/4 cup Urad Dal (Split black gram)",
+      "2 Green Chilies & 1 inch Ginger",
+      "1 tsp Cumin Seeds",
+      "1/2 tsp Turmeric & Hing",
+      "Oil for deep frying",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Wash and soak rice, chana dal, and urad dal together in water for 4-5 hours.",
+      "Drain and grind into a thick, smooth pouring batter with green chilies, ginger, and minimal water.",
+      "Stir in cumin seeds, turmeric, hing, and salt. Whisk vigorously for 3 minutes to aerate.",
+      "Heat oil in a deep kadhai on medium heat.",
+      "Pour a small ladle of batter directly into the center without stirring; it will puff up like a poori.",
+      "Flip and fry until both sides are crisp and golden brown.",
+      "Drain on kitchen paper and serve hot with spicy aloo-chana sabzi."
+    ]
+  },
+  {
+    "id": "bisi",
+    "name": "Karnataka Bisi Bele Bath",
+    "state": "Karnataka",
+    "prepTime": "20 mins",
+    "cookTime": "35 mins",
+    "servings": 4,
+    "difficulty": "Medium",
+    "ingredients": [
+      "1 cup Sona Masuri Rice",
+      "1/2 cup Toor Dal (Pigeon pea)",
+      "1.5 cups Diced Mixed Vegetables (Carrot, Beans, Peas, Shallots)",
+      "3 tbsp Bisi Bele Bath Masala Powder",
+      "1 small lemon-sized Tamarind (extracted)",
+      "3 tbsp Desi Ghee",
+      "1 tsp Mustard Seeds & 2 dried red chilies",
+      "1 sprig Curry Leaves & 12 Cashews",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Pressure cook rice and toor dal together with 4 cups water and turmeric until very soft.",
+      "In a pot, boil mixed vegetables in tamarind extract and salt until tender.",
+      "Dissolve Bisi Bele Bath powder in 1/2 cup water and stir into the simmering vegetables.",
+      "Add cooked rice and dal mixture; stir well, adding warm water to achieve a rich, semi-thick consistency.",
+      "Heat ghee in a pan, fry cashews, mustard seeds, red chilies, and curry leaves until fragrant.",
+      "Pour hot tempering over the bath, stir well, and serve hot with potato chips or boondi raita."
+    ]
+  },
+  {
+    "id": "appam",
+    "name": "Kerala Appam with Stew",
+    "state": "Kerala",
+    "prepTime": "8 hrs fermenting",
+    "cookTime": "25 mins",
+    "servings": 4,
+    "difficulty": "Medium",
+    "ingredients": [
+      "2 cups Raw Rice (soaked 4 hours)",
+      "1 cup Fresh Grated Coconut",
+      "1/2 cup Cooked Rice",
+      "1/2 tsp Active Dry Yeast (or toddy)",
+      "1 tbsp Sugar",
+      "For Stew: 2 cups Mixed Vegetables, 1.5 cups Thin Coconut Milk, 1/2 cup Thick Coconut Milk, Whole Spices, Green Chilies, Coconut Oil, Curry Leaves",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Grind soaked rice, grated coconut, and cooked rice with water into a smooth batter.",
+      "Dissolve yeast and sugar in 2 tbsp warm water, mix into batter, and ferment for 8 hours until frothy.",
+      "Add salt and a pinch of sugar; batter should be of pouring consistency.",
+      "Heat an appachatti (curved appam pan). Pour a ladle of batter into the center, swirl the pan to coat sides, cover, and steam on medium heat for 2-3 minutes.",
+      "The edges will turn golden and crisp while center remains fluffy.",
+      "For stew: Simmer vegetables with whole spices, green chilies, and thin coconut milk until soft, then finish with thick coconut milk and curry leaves tempered in coconut oil.",
+      "Serve warm appams with aromatic stew."
+    ]
+  },
+  {
+    "id": "bhutte",
+    "name": "Bhutte Ka Kees",
+    "state": "Madhya Pradesh",
+    "prepTime": "15 mins",
+    "cookTime": "20 mins",
+    "servings": 3,
+    "difficulty": "Easy",
+    "ingredients": [
+      "3 Fresh Sweet Corn Cobs (grated coarsely)",
+      "1 cup Milk",
+      "2 tbsp Desi Ghee or Oil",
+      "1 tsp Mustard Seeds & 1 tsp Cumin Seeds",
+      "1/4 tsp Asafoetida (Hing)",
+      "2 Green Chilies & 1 inch Ginger (minced)",
+      "1/2 tsp Turmeric & Red Chili Powder",
+      "1 tbsp Lemon Juice",
+      "2 tbsp Fresh Grated Coconut and Coriander",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Grate the fresh corn cobs on a medium box grater, reserving all milky juice.",
+      "Heat ghee in a pan; add mustard seeds, cumin seeds, and hing.",
+      "Add minced green chilies and ginger; sauté for 1 minute.",
+      "Add grated corn, turmeric, red chili powder, and salt. Sauté on medium heat for 5 minutes.",
+      "Pour in milk slowly, stirring continuously to prevent scorching. Cover and simmer on low heat for 10-12 minutes until corn absorbs milk and thickens.",
+      "Finish with fresh lemon juice, grated coconut, and coriander leaves. Serve warm."
+    ]
+  },
+  {
+    "id": "misal",
+    "name": "Kolhapuri Misal Pav",
+    "state": "Maharashtra",
+    "prepTime": "12 hrs sprouting",
+    "cookTime": "30 mins",
+    "servings": 4,
+    "difficulty": "Medium",
+    "ingredients": [
+      "2 cups Sprouted Matki (Moth beans)",
+      "2 Onions & 2 Tomatoes (finely chopped)",
+      "2 tbsp Misal Masala (or Kolhapuri Kanda-Lasun Masala)",
+      "3 tbsp Oil (essential for fiery 'tarri' oil layer)",
+      "1 tbsp Ginger-Garlic Paste",
+      "1 tsp Mustard Seeds & 1 sprig Curry Leaves",
+      "For assembly: 1 cup Spicy Farsan / Chiwda, Chopped Raw Onions, Lemon wedges, Coriander, 8 Buttered Pav buns",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Boil sprouted matki with a pinch of turmeric and salt until just cooked but holding shape; drain and reserve liquid.",
+      "Heat oil generously in a kadhai; add mustard seeds and curry leaves.",
+      "Add onions and sauté until deep golden brown, then add ginger-garlic paste and tomatoes until mushy.",
+      "Add misal masala, red chili powder, and salt. Cook until bright red oil ('tarri') floats on top.",
+      "Add boiled sprouts and 3 cups of water; simmer vigorously for 15 minutes to form rich spicy gravy.",
+      "Assembly: Ladle sprouts into bowls, top generously with spicy farsan and fresh onions, pour thin fiery tarri over, and serve with warm buttered pav and lemon."
+    ]
+  },
+  {
+    "id": "kangshoi",
+    "name": "Manipuri Kangshoi",
+    "state": "Manipur",
+    "prepTime": "15 mins",
+    "cookTime": "20 mins",
+    "servings": 3,
+    "difficulty": "Easy",
+    "ingredients": [
+      "200g Seasonal Green Vegetables (Mustard greens, Spinach, Cabbage)",
+      "1 large Potato (sliced)",
+      "1 Onion (thinly sliced)",
+      "3-4 Fresh Green Chilies or King Chili (slit)",
+      "1 inch Ginger (crushed)",
+      "1/2 tsp Turmeric",
+      "2 tbsp Roasted Ngari (fermented fish paste) or dried shiitake for vegetarian version",
+      "Fresh culantro / coriander leaves",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Bring 3 cups of water to a rolling boil in a deep soup pot.",
+      "Add sliced onions, crushed ginger, slit chilies, turmeric, salt, and roasted ngari or mushroom.",
+      "Add sliced potatoes and simmer for 8 minutes until partially tender.",
+      "Add seasonal greens and vegetables; cook on medium heat for 6-8 minutes without covering so greens retain color.",
+      "Turn off heat and let steep for 3 minutes.",
+      "Serve warm as a light, revitalizing soup alongside steamed rice."
+    ]
+  },
+  {
+    "id": "jadoh",
+    "name": "Khasi Jadoh",
+    "state": "Meghalaya",
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "servings": 4,
+    "difficulty": "Medium",
+    "ingredients": [
+      "2 cups Hill Red Rice (Joha or indigenous red rice)",
+      "400g Chicken or Pork pieces",
+      "2 Onions (chopped)",
+      "2 tbsp Ginger paste & 1 tbsp Garlic paste",
+      "2 tbsp Black Sesame Seeds (roasted and powdered)",
+      "2 Bay Leaves & 3 Green Chilies",
+      "2 tbsp Mustard Oil",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Wash red rice and soak in water for 20 minutes.",
+      "Heat mustard oil in a heavy pot; add bay leaves and chopped onions until translucent.",
+      "Add ginger and garlic pastes; sauté until fragrant.",
+      "Add meat pieces and cook on medium heat until lightly browned.",
+      "Stir in roasted black sesame powder, green chilies, and salt; mix thoroughly with meat.",
+      "Add drained red rice and roast for 2 minutes.",
+      "Add 4 cups of boiling water, cover tightly, reduce heat, and cook until rice is tender and moisture absorbed.",
+      "Rest covered for 10 minutes, fluff with fork, and serve."
+    ]
+  },
+  {
+    "id": "misa",
+    "name": "Mizo Misa Mach Poora",
+    "state": "Mizoram",
+    "prepTime": "15 mins",
+    "cookTime": "20 mins",
+    "servings": 3,
+    "difficulty": "Easy",
+    "ingredients": [
+      "400g Fresh River Prawns (cleaned and deveined)",
+      "2 tbsp Mustard Oil",
+      "1 tsp Crushed Peppercorns",
+      "1/2 tsp Turmeric Powder",
+      "1 tbsp Lime Juice",
+      "2 Green Chilies & 3 Garlic cloves (crushed)",
+      "Banana leaves for wrapping (optional)",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Marinate cleaned prawns with turmeric, crushed garlic, green chilies, pepper, lime juice, and salt for 15 minutes.",
+      "Toss with cold-pressed mustard oil.",
+      "For authentic flavor, wrap marinated prawns inside softened banana leaf packets.",
+      "Roast over glowing charcoal or grill in a cast-iron skillet on medium heat for 6-8 minutes per side.",
+      "Unwrap and serve hot with steamed rice and boiled mountain greens."
+    ]
+  },
+  {
+    "id": "pork",
+    "name": "Naga Pork with Bamboo Shoot",
+    "state": "Nagaland",
+    "prepTime": "15 mins",
+    "cookTime": "45 mins",
+    "servings": 4,
+    "difficulty": "Medium",
+    "ingredients": [
+      "600g Pork belly or shoulder (cut into bite-sized cubes)",
+      "3 tbsp Fermented Bamboo Shoot (wet or dry)",
+      "2 Naga King Chilies (Bhut Jolokia) or 6 Dry Red Chilies",
+      "10 Garlic cloves (crushed coarsely)",
+      "1 inch Fresh Ginger (sliced)",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Place pork cubes into a heavy pot without oil; render over medium heat until natural pork fat releases.",
+      "Add crushed garlic, ginger, and bruised king chili; sauté in the rendered fat for 3 minutes.",
+      "Add fermented bamboo shoot and salt. Mix thoroughly to allow deep aromas to permeate.",
+      "Pour in 1.5 cups of warm water, cover with heavy lid, and simmer on gentle heat for 35-40 minutes until pork is meltingly tender.",
+      "Uncover and reduce gravy to a thick, glossy coat around the meat.",
+      "Serve warm with plain sticky rice."
+    ]
+  },
+  {
+    "id": "chenna",
+    "name": "Odisha Chhena Poda",
+    "state": "Odisha",
+    "prepTime": "20 mins",
+    "cookTime": "50 mins",
+    "servings": 6,
+    "difficulty": "Medium",
+    "ingredients": [
+      "500g Fresh Chhena (Paneer curd, moist and freshly made)",
+      "3/4 cup Fine Sugar (plus 2 tbsp for caramelizing)",
+      "2 tbsp Fine Semolina (Sooji)",
+      "1 tsp Green Cardamom Powder",
+      "2 tbsp Desi Ghee",
+      "1/4 cup Chopped Cashews and Raisins",
+      "Sal or Banana leaves for lining baking tin"
+    ],
+    "instructions": [
+      "Knead fresh chhena by hand for 6-8 minutes until soft and creamy, without making it greasy.",
+      "Add sugar, sooji, cardamom powder, melted ghee, cashews, and raisins. Mix gently into a smooth batter.",
+      "In a baking pan or cake tin, caramelize 2 tbsp sugar with a drop of ghee over low flame until golden amber.",
+      "Line the tin with ghee-brushed banana leaves, pour chhena batter, and smooth the top.",
+      "Bake in a preheated oven at 180°C for 45-55 minutes until the crust turns dark golden brown and caramelizes.",
+      "Cool completely before slicing into triangles to appreciate the smoky, sweet caramelized crust."
+    ]
+  },
+  {
+    "id": "makki",
+    "name": "Makki di Roti & Sarson da Saag",
+    "state": "Punjab",
+    "prepTime": "30 mins",
+    "cookTime": "45 mins",
+    "servings": 4,
+    "difficulty": "Medium",
+    "ingredients": [
+      "For Saag: 500g Mustard greens (Sarson), 250g Spinach (Palak), 100g Bathua, 3 tbsp Makki Atta, 2 Onions, 3 Tomatoes, 2 inch Ginger, 8 Garlic cloves, 4 Green Chilies, Desi Ghee, Salt",
+      "For Roti: 2 cups Makki Atta (Cornmeal flour), Warm water, Carom seeds, Salt"
+    ],
+    "instructions": [
+      "Wash greens thoroughly, chop roughly, and pressure cook with ginger, garlic, green chilies, and salt with 1 cup water for 15 minutes.",
+      "Blend or mash cooked greens coarsely with a wooden churner (madhani).",
+      "Dissolve makki atta in water, stir into the greens, and simmer for 20 minutes on low heat until creamy.",
+      "In a separate pan, prepare tadka with ghee, sliced onions, tomatoes, and red chili powder; fold into the simmering saag.",
+      "For roti: Knead makki atta with warm water into soft dough. Pat gently between damp palms or parchment paper into round flatbreads.",
+      "Cook on a medium hot tawa with generous ghee until golden speckled on both sides.",
+      "Serve piping hot with a dollop of white butter (makhan) and jaggery."
+    ]
+  },
+  {
+    "id": "dal",
+    "name": "Rajasthani Dal Baati Churma",
+    "state": "Rajasthan",
+    "prepTime": "30 mins",
+    "cookTime": "50 mins",
+    "servings": 4,
+    "difficulty": "Hard",
+    "ingredients": [
+      "For Baati: 2 cups Coarse Wheat Flour, 1/4 cup Sooji, 1/2 tsp Ajwain, 1/4 cup Ghee (moyen), Warm water, Pinch of baking soda & salt",
+      "For Dal: 1/4 cup each of Toor, Chana, Moong, Urad, Masoor dals, Ghee, Cumin, Hing, Ginger-garlic, Spices",
+      "For Churma: Crushed baked baatis, Powdered Sugar, Ghee, Cardamom & Nuts"
+    ],
+    "instructions": [
+      "Mix wheat flour, sooji, ajwain, salt, baking soda, and ghee until it resembles breadcrumbs. Knead a tight dough with warm water.",
+      "Divide into balls, make a gentle indentation in the center, and bake in a tandoor or 200°C oven for 30 minutes until cracked and golden.",
+      "Boil the 5 dals with turmeric and salt until tender. Prepare a rich ghee tadka with cumin, hing, green chilies, tomatoes, and spices; stir into dal.",
+      "For churma: Crush 2 hot baatis in a food processor, sift, and mix with ghee, powdered sugar, cardamom, and sliced almonds.",
+      "Dip hot baatis in a bowl of melted desi ghee, crush lightly into warm spicy dal, and enjoy with sweet churma."
+    ]
+  },
+  {
+    "id": "momo",
+    "name": "Sikkimese Steamed Momos",
+    "state": "Sikkim",
+    "prepTime": "35 mins",
+    "cookTime": "15 mins",
+    "servings": 4,
+    "difficulty": "Medium",
+    "ingredients": [
+      "2 cups All-Purpose Flour (Maida)",
+      "2 cups Finely Minced Cabbage, Carrots, Onions, and Spring Onions (or Minced Meat)",
+      "1 tbsp Ginger-Garlic (minced very fine)",
+      "1 tbsp Soy Sauce",
+      "2 tbsp Butter or Oil",
+      "1/2 tsp Black Pepper Powder",
+      "For Chutney: 4 Dry Red Chilies, 2 Tomatoes, 4 Garlic cloves boiled and blended",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Knead flour and water into a smooth, pliable dough. Cover with damp cloth for 30 minutes.",
+      "Sauté vegetables or meat filling with ginger, garlic, soy sauce, pepper, butter, and salt on high heat for 2 minutes to keep crisp.",
+      "Roll dough into thin 3-inch circular wrappers with edges slightly thinner than the center.",
+      "Place a spoonful of filling in the center, pleat the edges around the filling, and pinch closed into classic crescent or round shape.",
+      "Grease steamer racks, arrange momos leaving space between them, and steam over rolling boiling water for 10-12 minutes until translucent.",
+      "Serve hot with spicy garlic-chili tomato dip and clear soup."
+    ]
+  },
+  {
+    "id": "pongal",
+    "name": "Tamil Ven Pongal",
+    "state": "Tamil Nadu",
+    "prepTime": "10 mins",
+    "cookTime": "25 mins",
+    "servings": 4,
+    "difficulty": "Easy",
+    "ingredients": [
+      "1 cup Raw Rice",
+      "1/2 cup Yellow Moong Dal",
+      "4.5 cups Water & 1/2 cup Milk",
+      "3 tbsp Desi Ghee",
+      "1 tsp Whole Black Peppercorns",
+      "1 tsp Cumin Seeds",
+      "1 inch Fresh Ginger (finely chopped)",
+      "1 sprig Curry Leaves",
+      "12-15 Whole Cashews",
+      "1/4 tsp Asafoetida (Hing)",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Dry roast moong dal in a pan on medium heat until fragrant and slightly golden, then wash with rice.",
+      "Pressure cook rice and dal in water and milk with salt and ginger for 4-5 whistles until very soft and creamy.",
+      "Gently mash cooked pongal with the back of a ladle.",
+      "Heat ghee in a pan, fry cashews until golden, then add cumin seeds, whole peppercorns, hing, and curry leaves.",
+      "Pour hot sizzling tempering over the mashed pongal and fold in gently.",
+      "Serve piping hot with fresh coconut chutney and spicy vegetable sambar."
+    ]
+  },
+  {
+    "id": "biriyani",
+    "name": "Hyderabadi Dum Biryani",
+    "state": "Telangana",
+    "prepTime": "45 mins",
+    "cookTime": "45 mins",
+    "servings": 6,
+    "difficulty": "Hard",
+    "ingredients": [
+      "3 cups Aged Long Grain Basmati Rice (soaked 30 mins)",
+      "800g Chicken or Lamb (marinated with yogurt, ginger-garlic, red chili, garam masala, mint, coriander, and fried onions)",
+      "1 cup Fried Onions (Birista)",
+      "1/4 cup Saffron Milk",
+      "1/4 cup Melted Desi Ghee",
+      "Whole Spices (Shahi jeera, star anise, cardamom, mace, cinnamon, cloves)",
+      "Whole Wheat Dough to seal the pot",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Marinate meat for at least 2 hours with yogurt, biryani spices, ginger-garlic paste, fresh herbs, and salt.",
+      "Boil water with whole spices and salt; cook soaked basmati rice until 70% done, then drain immediately.",
+      "In a thick-bottomed handi, layer marinated meat at the base.",
+      "Spread the 70% cooked rice evenly over the meat.",
+      "Top with fried onions, saffron milk, chopped mint, coriander, and generous spoons of ghee.",
+      "Seal the rim with wheat dough and cover tightly with a heavy lid.",
+      "Cook on high heat for 10 minutes, then place on a hot iron tawa on low heat for 35 minutes (dum).",
+      "Rest for 15 minutes before unsealing. Gently fluff layers to reveal aromatic long rice and tender meat, served with mirchi ka salan and dahi raita."
+    ]
+  },
+  {
+    "id": "chakhwi",
+    "name": "Tripuri Chakhwi",
+    "state": "Tripura",
+    "prepTime": "15 mins",
+    "cookTime": "25 mins",
+    "servings": 4,
+    "difficulty": "Easy",
+    "ingredients": [
+      "200g Fresh Bamboo Shoots (sliced)",
+      "150g Green Raw Papaya (peeled and diced)",
+      "100g Jackfruit Seeds or Taro stems",
+      "1/2 tsp Baking Soda or traditional Khar (alkaline extract)",
+      "4 Green Chilies (slit)",
+      "1 inch Ginger (pounded)",
+      "Rice flour paste (1 tbsp in water)",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Bring 3 cups of water to a boil in a pan.",
+      "Add baking soda or indigenous khar along with green chilies, ginger, and salt.",
+      "Add bamboo shoots, raw papaya cubes, and jackfruit seeds.",
+      "Simmer on medium heat for 15-20 minutes until papaya is completely tender.",
+      "Stir in rice flour slurry to impart gentle thickness to the clear aromatic broth.",
+      "Serve warm as a nourishing digestive with steamed rice."
+    ]
+  },
+  {
+    "id": "tunde",
+    "name": "Lucknowi Tunday Kababi",
+    "state": "Uttar Pradesh",
+    "prepTime": "30 mins",
+    "cookTime": "20 mins",
+    "servings": 4,
+    "difficulty": "Hard",
+    "ingredients": [
+      "500g Finely Minced Meat (passed through mincer 4 times)",
+      "2 tbsp Raw Papaya Paste (natural tenderizer)",
+      "2 tbsp Roasted Gram Flour (Besan)",
+      "2 tbsp Ghee",
+      "2 tbsp Ginger-Garlic Paste",
+      "1 tbsp Special Potli Masala (Cardamom, mace, nutmeg, clove, star anise, rose petals, black pepper)",
+      "1 tsp Kashmiri Red Chili & Salt",
+      "Live charcoal and ghee for smoking (dhungar)"
+    ],
+    "instructions": [
+      "Marinate finely ground meat with raw papaya paste and salt for 1 hour.",
+      "Add roasted besan, ginger-garlic paste, and aromatic potli spice blend; knead thoroughly for 5 minutes until soft and cohesive.",
+      "Place a small metal bowl in the meat, add hot charcoal, pour 1 tsp ghee, and cover tightly for 10 minutes to infuse smoky aroma.",
+      "Shape meat into flat patties with oiled hands.",
+      "Heat ghee on a flat tawa; pan-fry kebabs on medium heat for 3-4 minutes per side until beautifully browned.",
+      "Serve hot with roomali roti, sliced minty onions, and lemon wedges."
+    ]
+  },
+  {
+    "id": "kafuli",
+    "name": "Uttarakhandi Kafuli",
+    "state": "Uttarakhand",
+    "prepTime": "15 mins",
+    "cookTime": "25 mins",
+    "servings": 4,
+    "difficulty": "Easy",
+    "ingredients": [
+      "300g Fresh Mountain Spinach (Palak)",
+      "150g Fresh Fenugreek (Methi) leaves",
+      "2 tbsp Rice Flour (dissolved in 1/2 cup water)",
+      "2 tbsp Mustard Oil",
+      "1/2 tsp Jakhiya (wild mustard) or Cumin Seeds",
+      "4 Garlic cloves & 1 inch Ginger (crushed)",
+      "2 Green Chilies (slit)",
+      "1/4 tsp Asafoetida & Turmeric",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Wash greens thoroughly and boil in water with green chilies, ginger, and salt until tender.",
+      "Mash greens into a smooth purée using a blender or traditional wooden churner.",
+      "Heat mustard oil in an iron kadhai until smoking point.",
+      "Add jakhiya seeds and crushed garlic; fry until crisp and fragrant.",
+      "Pour in greens purée, turmeric, and hing. Bring to a gentle boil.",
+      "Pour in rice flour slurry while stirring continuously; simmer on low heat for 10 minutes until thick and velvet-smooth.",
+      "Serve piping hot with steamed rice or madua (ragi) rotis."
+    ]
+  },
+  {
+    "id": "kosha",
+    "name": "Bengali Kosha Mangsho",
+    "state": "West Bengal",
+    "prepTime": "30 mins",
+    "cookTime": "60 mins",
+    "servings": 4,
+    "difficulty": "Hard",
+    "ingredients": [
+      "800g Tender Goat Mutton (curry cuts)",
+      "1/2 cup Mustard Oil",
+      "3 large Onions (finely sliced)",
+      "2 tbsp Ginger-Garlic Paste",
+      "1/2 cup Whisked Yogurt",
+      "1 tbsp Kashmiri Chili Powder & 1 tsp Turmeric",
+      "Whole Spices: 2 Bay leaves, 4 Cardamom, 1 inch Cinnamon, 4 Cloves",
+      "1 tsp Sugar (caramelized for rich dark color)",
+      "4 Halved Fried Potatoes",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Marinate mutton with yogurt, 1 tbsp mustard oil, turmeric, and red chili powder for 2 hours.",
+      "Heat remaining mustard oil in a heavy kadhai until smoking; add 1 tsp sugar and allow to caramelize into deep golden brown.",
+      "Add whole spices and sliced onions; sauté patiently on medium heat until dark mahogany brown.",
+      "Add ginger-garlic paste and cook out raw aroma. Add marinated mutton and fry on medium-high heat for 15 minutes.",
+      "Cover and 'koshano' (slow roast-fry) on low flame, stirring every 5 minutes until meat turns deep dark brown and oil releases cleanly.",
+      "Add fried potato halves and 1.5 cups warm water; simmer on low heat until mutton is melt-in-mouth tender and gravy is thick and clinging to meat.",
+      "Serve hot with fluffy luchi, Bengali sweet pulao, or steamed rice."
+    ]
+  }
+]

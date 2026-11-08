@@ -1,0 +1,25 @@
+name: Production Release Gate
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  production-gate:
+    name: Production Release Verification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Complete Quality & Security Suite
+        run: |
+          node --test tests/unit/*.test.js
+          node tests/integration/html-integrity.test.js
+          echo "Production release gate passed successfully."
