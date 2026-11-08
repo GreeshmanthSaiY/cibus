@@ -171,8 +171,18 @@
   background-repeat: no-repeat;
   border-radius: 0 0 60% 60% / 0 0 20% 20%;
   position: relative;
-  background-color: #2b2622;
+  background-color: #2b1810;
+  background-image: radial-gradient(circle at 50% 40%, #5d2813 0%, #1e0d06 100%);
   transition: transform 0.45s ease;
+  overflow: hidden;
+}
+
+.recipe-fanned-card .card-img-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 0 0 60% 60% / 0 0 20% 20%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 50%, rgba(20, 10, 5, 0.65) 100%);
+  pointer-events: none;
 }
 
 .recipe-fanned-card:hover .card-img {

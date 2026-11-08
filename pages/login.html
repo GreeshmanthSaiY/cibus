@@ -70,55 +70,71 @@
 
   <main class="auth-page-wrapper">
     <div class="auth-card">
+
+      <!-- Auth Top Bar with Back Button -->
+      <div class="auth-top-nav">
+        <a href="./home.html" class="auth-back-btn" aria-label="Return to home page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+          <span>Back to Explore</span>
+        </a>
+        <span class="auth-badge-pill">🔒 Demo Portal</span>
+      </div>
+
       <div class="auth-header">
         <h1>Welcome Back</h1>
         <p>Access your favorite Indian recipes and saved collections.</p>
       </div>
 
       <!-- Architectural Transparency Notice -->
-      <div class="auth-notice-banner" role="note">
-        <span>ℹ️</span>
-        <div>
-          <strong>Client Demonstration Mode:</strong> CIBUS is running as a static application. For demonstration and UI testing, you may sign in with any sample username and password. Real passwords are not transmitted or stored insecurely.
-        </div>
+      <div class="demo-pill-badge" role="note">
+        <span>✨</span>
+        <span><strong>Client Demo Mode:</strong> Enter any sample username &amp; password to sign in</span>
       </div>
 
       <!-- Login Form -->
       <form id="login-form" novalidate>
         <div class="form-group">
           <label for="login-username" class="form-label">Username or Email</label>
-          <input
-            type="text"
-            id="login-username"
-            name="username"
-            class="form-control"
-            placeholder="e.g. foodlover@cibus.com"
-            autocomplete="username"
-            required
-          >
+          <div class="form-control-wrap">
+            <input
+              type="text"
+              id="login-username"
+              name="username"
+              class="form-control"
+              placeholder="e.g. foodlover@cibus.com"
+              autocomplete="username"
+              required
+            >
+          </div>
         </div>
 
         <div class="form-group">
           <label for="login-password" class="form-label">Password</label>
-          <input
-            type="password"
-            id="login-password"
-            name="password"
-            class="form-control"
-            placeholder="••••••••"
-            autocomplete="current-password"
-            required
-          >
+          <div class="form-control-wrap">
+            <input
+              type="password"
+              id="login-password"
+              name="password"
+              class="form-control"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            >
+            <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility" onclick="const p = document.getElementById('login-password'); p.type = p.type === 'password' ? 'text' : 'password';">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </button>
+          </div>
         </div>
 
         <div class="form-actions">
-          <button type="submit" class="btn btn-primary btn-block btn-lg">
-            Sign In to Cibus
+          <button type="submit" class="auth-submit-btn">
+            Sign In to Cibus &rarr;
           </button>
         </div>
 
         <div class="auth-switch-link">
-          Don't have an account yet? <a href="./register.html">Create a free demo account &rarr;</a>
+          <span>Don't have an account yet?</span>
+          <a href="./register.html">Create a free demo account &rarr;</a>
         </div>
       </form>
     </div>

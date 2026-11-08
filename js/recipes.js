@@ -10,34 +10,34 @@ const RecipesController = {
 
   // Authentic Image Dictionary matching Cibus heritage collection
   recipeImages: {
-    pulihora: 'https://vismaifood.com/storage/app/uploads/public/be1/3f7/bc1/thumb__700_0_0_0_auto.jpg',
-    bamboo: 'https://www.archanaskitchen.com/images/archanaskitchen/1-Author/divya_shivaraman/Bamboo_Shoot_Stir_Fry.jpg',
-    duck: 'https://assets.sentinelassam.com/h-upload/2021/01/16/189530-httpsprodstatic9netaumedia201606290939green-duck-curry.webp?w=400&dpr=2.6',
-    litti: 'https://www.secondrecipe.com/wp-content/uploads/2019/11/litti-chokha-1.jpg',
-    muthia: 'https://www.spiceupthecurry.com/wp-content/uploads/2020/11/methi-muthia-recipe-1.jpg',
+    pulihora: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=80',
+    bamboo: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80',
+    duck: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80',
+    litti: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80',
+    muthia: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&auto=format&fit=crop&q=80',
     fish: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=80',
-    dhokla: 'https://www.mygingergarlickitchen.com/wp-content/rich-markup-images/1x1/1x1-khaman-dhokla-recipe-how-to-make-instant-soft-and-spongy-dhokla-video-recipe.jpg',
-    bajre: 'https://images1.livehindustan.com/uploadimage/library/2018/09/29/16_9/16_9_1/bajra_khichdi_1538206303.jpg',
-    dham: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80',
+    dhokla: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80',
+    bajre: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80',
+    dham: 'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=600&auto=format&fit=crop&q=80',
     dhooska: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80',
-    bisi: 'https://www.indianveggiedelight.com/wp-content/uploads/2020/06/bisibelebath_1-768x1024.webp',
-    appam: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80',
-    bhutte: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80',
+    bisi: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&auto=format&fit=crop&q=80',
+    appam: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop&q=80',
+    bhutte: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&auto=format&fit=crop&q=80',
     misal: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&auto=format&fit=crop&q=80',
     kangshoi: 'https://images.unsplash.com/photo-1547928576-a4a33237cbc3?w=600&auto=format&fit=crop&q=80',
-    jadoh: 'https://images.unsplash.com/photo-1547928576-a4a33237cbc3?w=600&auto=format&fit=crop&q=80',
-    misa: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80',
-    pork: 'https://images.unsplash.com/photo-1547928576-a4a33237cbc3?w=600&auto=format&fit=crop&q=80',
+    jadoh: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&auto=format&fit=crop&q=80',
+    misa: 'https://images.unsplash.com/photo-1559742811-822873691df8?w=600&auto=format&fit=crop&q=80',
+    pork: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80',
     chenna: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?w=600&auto=format&fit=crop&q=80',
     makki: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80',
     dal: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80',
     momo: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&auto=format&fit=crop&q=80',
     pongal: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80',
     biriyani: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&auto=format&fit=crop&q=80',
-    chakhwi: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80',
+    chakhwi: 'https://images.unsplash.com/photo-1547928576-a4a33237cbc3?w=600&auto=format&fit=crop&q=80',
     tunde: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80',
     kafuli: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80',
-    kosha: 'https://images.unsplash.com/photo-1547928576-a4a33237cbc3?w=600&auto=format&fit=crop&q=80'
+    kosha: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80'
   },
 
   async initCards() {
@@ -77,11 +77,22 @@ const RecipesController = {
     }
   },
 
-  getRecipeImage(recipeId) {
-    if (this.recipeImages[recipeId]) {
-      return this.recipeImages[recipeId];
+  getRecipeImage(r) {
+    if (r && r.image) return r.image;
+    const id = typeof r === 'string' ? r : (r ? r.id : '');
+    if (this.recipeImages[id]) {
+      return this.recipeImages[id];
     }
     return 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80';
+  },
+
+  getCleanDishName(name) {
+    if (!name) return '';
+    // Formats into punchy uppercase dish title matching original Cibus deck (e.g. "PULIHORA", "DHOKLA", "LITTI CHOKHA")
+    return name
+      .replace(/\s*\([^)]*\)/g, '')
+      .replace(/^(Assamese|Chhattisgarhi|Haryanvi|Himachali|Jharkhandi|Karnataka|Kerala|Kolhapuri|Manipuri|Khasi|Mizo|Naga|Sikkimese|Tamil|Bengali|Lucknowi|Tripuri|Bihari)\s+/i, '')
+      .trim();
   },
 
   setupCardListeners() {
@@ -111,12 +122,15 @@ const RecipesController = {
   },
 
   renderCardMarkup(r) {
-    const img = this.getRecipeImage(r.id);
+    const img = this.getRecipeImage(r);
+    const cleanName = this.getCleanDishName(r.name);
     return `
       <a href="./recipe-detail.html#${Utils.escapeHtml(r.id)}" class="recipe-fanned-card" aria-label="${Utils.escapeHtml(r.name)} from ${Utils.escapeHtml(r.state)}">
-        <div class="card-img" style="background-image: url('${img}');"></div>
+        <div class="card-img" style="background-image: url('${img}');">
+          <div class="card-img-overlay"></div>
+        </div>
         <div class="card-description">
-          <h2 class="card-title">${Utils.escapeHtml(r.name)}</h2>
+          <h2 class="card-title">${Utils.escapeHtml(cleanName)}</h2>
           <p class="card-state">${Utils.escapeHtml(r.state)}</p>
         </div>
         <span class="card-btn">

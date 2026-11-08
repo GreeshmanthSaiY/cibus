@@ -56,11 +56,11 @@ const FormHandlers = {
       // Honest client demonstration submission
       const submitBtn = form.querySelector('button[type="submit"]');
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending Message...';
+      submitBtn.innerHTML = '<span>Sending Message...</span>';
 
       setTimeout(() => {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
+        submitBtn.innerHTML = 'Send Message &rarr;';
         form.reset();
         if (counter) counter.textContent = '0 / 1000 characters';
         Utils.showToast('Thank you! Your message has been logged in this demonstration session.', 'success', 5000);
@@ -124,9 +124,11 @@ const FormHandlers = {
       // Honest registration simulation
       const submitBtn = form.querySelector('button[type="submit"]');
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Creating Demo Account...';
+      submitBtn.innerHTML = '<span>Creating Demo Account...</span>';
 
       setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Create Free Account &rarr;';
         StorageManager.set('cibus_demo_user', {
           name: `${firstName.value.trim()} ${lastName.value.trim()}`,
           email: email.value.trim(),
@@ -171,9 +173,11 @@ const FormHandlers = {
 
       const submitBtn = form.querySelector('button[type="submit"]');
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Signing In...';
+      submitBtn.innerHTML = '<span>Signing In...</span>';
 
       setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Sign In to Cibus &rarr;';
         StorageManager.set('cibus_demo_user', {
           name: username.value.trim(),
           email: username.value.trim(),
