@@ -3,6 +3,11 @@ name: Production Release Gate
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
 
 jobs:
   production-gate:
@@ -10,16 +15,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout main
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node.js Runtime
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Complete Quality & Security Suite
+      - name: Run Complete Quality & Route Probe Suite
         run: |
           node --test tests/unit/*.test.js
           node tests/integration/html-integrity.test.js
-          echo "Production release gate passed successfully."
+          node tests/integration/server-probe.js
+
+      - name: Validate Production Vercel Configuration
+        run: |
+          node -e "const v = require('./vercel.json'); if (!v.routes || !v.headers) { console.error('Invalid vercel.json'); process.exit(1); } console.log('vercel.json passed production validation.');"
+
+      - name: Production Release Gate Sign-off
+        run: echo "Production release gate passed successfully."

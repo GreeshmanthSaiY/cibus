@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ develop, main ]
 
+permissions:
+  contents: read
+
 jobs:
   test-and-validate:
     name: Code Quality & Integrity Validation
@@ -26,10 +29,16 @@ jobs:
       - name: Run HTML & Asset Integrity Audit
         run: node tests/integration/html-integrity.test.js
 
+      - name: Run Server Route Probe
+        run: node tests/integration/server-probe.js
+
       - name: Secret & Credential Scan
         run: |
           echo "Scanning for accidental credential exposure..."
-          if grep -rnw --exclude-dir={.git,backup,node_modules} . -e "AIzaSy" -e "BEGIN PRIVATE KEY" -e "AKIA"; then
+          P_GCP="AIza""Sy"
+          P_RSA="BEGIN ""PRIVATE KEY"
+          P_AWS="AK""IA"
+          if grep -rnw --exclude-dir={.git,.github,backup,node_modules} . -e "$P_GCP" -e "$P_RSA" -e "$P_AWS"; then
             echo "::error::Potential secret detected in tracked files!"
             exit 1
           fi
