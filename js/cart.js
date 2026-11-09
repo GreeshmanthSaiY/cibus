@@ -24,6 +24,18 @@ const CartEngine = {
    * @returns {Array}
    */
   getItems() {
+    // Session Auth Guard: If AuthManager exists in runtime and user is signed out, cart is empty
+    const auth = typeof AuthManager !== 'undefined' ? AuthManager : (typeof window !== 'undefined' ? window.AuthManager : null);
+    if (auth && typeof auth.isAuthenticated === 'function' && !auth.isAuthenticated()) {
+      const storage = this._getStorage();
+      const raw = storage.get(this._cartKey, []);
+      if (raw && raw.length > 0) {
+        storage.remove(this._cartKey);
+        this._dispatchUpdate();
+      }
+      return [];
+    }
+
     const storage = this._getStorage();
     const raw = storage.get(this._cartKey, []);
     return storage.validateCartSchema(raw);
@@ -62,6 +74,13 @@ const CartEngine = {
    */
   addItem(item, quantity = 1) {
     if (!item || !item.id || !item.name) return false;
+
+    // Reject additions if user is not authenticated
+    const auth = typeof AuthManager !== 'undefined' ? AuthManager : (typeof window !== 'undefined' ? window.AuthManager : null);
+    if (auth && typeof auth.isAuthenticated === 'function' && !auth.isAuthenticated()) {
+      return false;
+    }
+
     const items = this.getItems();
     const existingIndex = items.findIndex((i) => i.id === item.id);
 
@@ -121,9 +140,13 @@ const CartEngine = {
   },
 
   /**
-   * Clear all items
+   * Clear all items and remove stored key
    */
   clearCart() {
+    const storage = this._getStorage();
+    if (storage && typeof storage.remove === 'function') {
+      storage.remove(this._cartKey);
+    }
     this._saveItems([]);
   },
 

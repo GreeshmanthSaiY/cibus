@@ -48,12 +48,33 @@ const Utils = {
   },
 
   /**
-   * Display accessible toast message
-   * @param {string} message
-   * @param {'success'|'error'|'info'} type
-   * @param {number} durationMs
+   * Display accessible toast message with 10-second lifetime, countdown progress bar, and pause-on-hover
+   * @param {string|object} options Message string or config object
+   * @param {'success'|'error'|'info'|'celebration'|'warning'} type
+   * @param {number} durationMs Default 10000ms (10 seconds)
    */
-  showToast(message, type = 'success', durationMs = 3500) {
+  showToast(options, type = 'success', durationMs = 10000) {
+    let message = '';
+    let title = '';
+    let icon = '';
+    let actionLabel = '';
+    let actionUrl = '';
+
+    if (typeof options === 'object' && options !== null) {
+      message = options.message || '';
+      title = options.title || '';
+      icon = options.icon || '';
+      type = options.type || type;
+      durationMs = options.durationMs ? Math.max(10000, options.durationMs) : durationMs;
+      actionLabel = options.actionLabel || '';
+      actionUrl = options.actionUrl || '';
+    } else {
+      message = String(options || '');
+    }
+
+    // Enforce 10-second standard toast duration per user requirement
+    durationMs = Math.max(10000, durationMs || 10000);
+
     let container = document.getElementById('cibus-toast-container');
     if (!container) {
       container = document.createElement('div');
@@ -68,32 +89,74 @@ const Utils = {
     toast.className = `toast toast-${type}`;
     toast.setAttribute('role', 'status');
 
-    const iconMap = {
+    const defaultIcons = {
       success: '✓',
+      celebration: '🎉',
       error: '✕',
+      warning: '⚠️',
       info: 'ℹ'
     };
 
-    const iconSpan = document.createElement('span');
-    iconSpan.style.fontWeight = 'bold';
-    iconSpan.textContent = iconMap[type] || '•';
+    const displayIcon = icon || defaultIcons[type] || '🍲';
 
-    const textSpan = document.createElement('span');
-    textSpan.textContent = message;
+    toast.innerHTML = `
+      <div class="toast-icon-wrap" aria-hidden="true">${displayIcon}</div>
+      <div class="toast-body">
+        ${title ? `<div class="toast-title">${this.escapeHtml(title)}</div>` : ''}
+        <div class="toast-msg">${this.escapeHtml(message)}</div>
+        ${actionLabel && actionUrl ? `<a href="${this.escapeHtml(actionUrl)}" class="toast-action-btn">${this.escapeHtml(actionLabel)} &rarr;</a>` : ''}
+      </div>
+      <button type="button" class="toast-close-btn" aria-label="Dismiss notification">&times;</button>
+      <div class="toast-progress-bar" style="animation-duration: ${durationMs}ms;"></div>
+    `;
 
-    toast.appendChild(iconSpan);
-    toast.appendChild(textSpan);
     container.appendChild(toast);
 
-    setTimeout(() => {
+    let remainingMs = durationMs;
+    let timerId = null;
+    let startTime = Date.now();
+
+    const startTimer = () => {
+      startTime = Date.now();
+      timerId = setTimeout(dismissToast, remainingMs);
+    };
+
+    const pauseTimer = () => {
+      clearTimeout(timerId);
+      remainingMs -= Date.now() - startTime;
+      const bar = toast.querySelector('.toast-progress-bar');
+      if (bar) bar.style.animationPlayState = 'paused';
+    };
+
+    const resumeTimer = () => {
+      const bar = toast.querySelector('.toast-progress-bar');
+      if (bar) bar.style.animationPlayState = 'running';
+      startTimer();
+    };
+
+    function dismissToast() {
+      clearTimeout(timerId);
       toast.style.opacity = '0';
-      toast.style.transform = 'translateY(15px)';
+      toast.style.transform = 'translateY(15px) scale(0.96)';
       setTimeout(() => {
         if (toast.parentNode) {
           toast.parentNode.removeChild(toast);
         }
-      }, 300);
-    }, durationMs);
+      }, 280);
+    }
+
+    toast.addEventListener('mouseenter', pauseTimer);
+    toast.addEventListener('mouseleave', resumeTimer);
+
+    const closeBtn = toast.querySelector('.toast-close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dismissToast();
+      });
+    }
+
+    startTimer();
   },
 
   /**

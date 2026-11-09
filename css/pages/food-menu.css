@@ -1,6 +1,6 @@
 /**
  * CIBUS FOOD MENU PAGE STYLES
- * Replaces the legacy 19000px height with a fully responsive dynamic CSS grid
+ * High-performance responsive dynamic CSS grid, animated filter pills, and interactive culinary cards
  */
 
 .food-menu-header {
@@ -13,6 +13,16 @@
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: var(--space-xl);
   margin-bottom: var(--space-3xl);
+}
+
+.food-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(199, 75, 22, 0.4);
+  box-shadow: 0 16px 32px rgba(28, 25, 23, 0.12);
 }
 
 .food-card-action {
@@ -30,20 +40,23 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 .recipe-link-btn:hover {
   color: var(--color-secondary-dark);
-  text-decoration: underline;
+  transform: translateX(3px);
 }
 
 .results-count-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
   font-size: var(--font-sm);
   color: var(--color-text-muted);
+  font-weight: 500;
 }
 
 @media (max-width: 640px) {

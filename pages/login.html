@@ -40,6 +40,31 @@
 
       <!-- Nav Actions -->
       <div class="nav-actions">
+        <!-- Notifications Bell -->
+        <div class="notification-dropdown-wrap">
+          <button type="button" class="notification-icon-btn" id="notif-bell-btn" aria-label="Culinary Notifications" aria-expanded="false">
+            🔔
+            <span class="notification-badge" id="notif-badge" style="display: none;">0</span>
+          </button>
+          <div class="notification-panel" id="notif-panel" role="dialog" aria-modal="true" style="display: none;">
+            <div class="notif-panel-header">
+              <div class="notif-header-title">
+                <span class="notif-bell-icon">🔔</span>
+                <h3>Notifications</h3>
+                <span class="notif-count-pill" id="notif-count-pill">0 New</span>
+              </div>
+              <div class="notif-header-actions">
+                <button type="button" class="notif-action-btn" id="notif-mark-read-btn" title="Mark all as read">Mark Read</button>
+                <button type="button" class="notif-action-btn notif-clear-btn" id="notif-clear-btn" title="Clear all">Clear</button>
+              </div>
+            </div>
+            <div class="notif-list" id="notif-list"></div>
+            <div class="notif-panel-footer">
+              <small>Cibus Heritage Alerts &bull; Real-time updates</small>
+            </div>
+          </div>
+        </div>
+
         <a href="./cart.html" class="cart-icon-btn" aria-label="View Shopping Cart and Favorites">
           🛒
           <span class="cart-badge" style="display: none;">0</span>
@@ -77,18 +102,29 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
           <span>Back to Explore</span>
         </a>
-        <span class="auth-badge-pill">🔒 Demo Portal</span>
+        <span class="auth-badge-pill">🔒 Session Portal</span>
       </div>
 
       <div class="auth-header">
         <h1>Welcome Back</h1>
-        <p>Access your favorite Indian recipes and saved collections.</p>
+        <p>Sign in to your session account to save recipes and add items to your cart.</p>
       </div>
 
-      <!-- Architectural Transparency Notice -->
-      <div class="demo-pill-badge" role="note">
-        <span>✨</span>
-        <span><strong>Client Demo Mode:</strong> Enter any sample username &amp; password to sign in</span>
+      <!-- Redirect notice if sent from Cart / Add to Cart action -->
+      <div id="login-redirect-notice" class="auth-redirect-notice" style="display: none;" role="alert">
+        🛒 <strong>Sign In Required:</strong> Please sign in to your session account to add items to your cart and place orders.
+      </div>
+
+      <!-- Browser Session Privacy Notice -->
+      <div class="session-privacy-notice" role="note">
+        <div class="notice-icon">🔒</div>
+        <div class="notice-body">
+          <h4>Active Browser Session Policy</h4>
+          <p>
+            Your account and login state remain active throughout this browser session (surviving page navigation &amp; hard refreshes). Once you completely close the browser, all temporary session records are safely cleared.
+          </p>
+          <small class="notice-subtext">Pre-seeded demo credentials: <strong>demo@cibus.in</strong> / <strong>Cibus@2026</strong> (or any account created via Sign Up).</small>
+        </div>
       </div>
 
       <!-- Login Form -->
@@ -101,7 +137,7 @@
               id="login-username"
               name="username"
               class="form-control"
-              placeholder="e.g. foodlover@cibus.com"
+              placeholder="e.g. demo@cibus.in or your email"
               autocomplete="username"
               required
             >
@@ -109,7 +145,10 @@
         </div>
 
         <div class="form-group">
-          <label for="login-password" class="form-label">Password</label>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <label for="login-password" class="form-label" style="margin-bottom: 0;">Password</label>
+            <a href="#forgot" id="forgot-password-toggle" class="auth-forgot-link">Forgot / Reset?</a>
+          </div>
           <div class="form-control-wrap">
             <input
               type="password"
@@ -134,9 +173,35 @@
 
         <div class="auth-switch-link">
           <span>Don't have an account yet?</span>
-          <a href="./register.html">Create a free demo account &rarr;</a>
+          <a href="./register.html">Create a free session account &rarr;</a>
         </div>
       </form>
+
+      <!-- Expandable Forgot / Reset Password Workflow -->
+      <div id="forgot-password-card" class="forgot-password-card" style="display: none;">
+        <div class="reset-card-header">
+          <h3>🔑 Reset Account Password</h3>
+          <p>Reset your password for this browser session. Enter your registered email below.</p>
+        </div>
+        <form id="forgot-password-form" novalidate>
+          <div class="form-group">
+            <label for="reset-email" class="form-label">Registered Email Address</label>
+            <input type="email" id="reset-email" class="form-control" placeholder="e.g. demo@cibus.in" required>
+          </div>
+          <div class="form-group">
+            <label for="reset-new-password" class="form-label">New Password</label>
+            <input type="password" id="reset-new-password" class="form-control" placeholder="Min 8 chars, 1 uppercase, 1 digit" required>
+          </div>
+          <div class="form-group">
+            <label for="reset-confirm-password" class="form-label">Confirm New Password</label>
+            <input type="password" id="reset-confirm-password" class="form-control" placeholder="Re-type your new password" required>
+          </div>
+          <div class="reset-actions">
+            <button type="submit" class="btn btn-primary btn-sm">Save New Password &rarr;</button>
+            <button type="button" id="cancel-reset-btn" class="btn btn-outline btn-sm">Cancel</button>
+          </div>
+        </form>
+      </div>
     </div>
   </main>
 
@@ -189,7 +254,10 @@
   <script src="../js/config.js"></script>
   <script src="../js/utils.js"></script>
   <script src="../js/storage.js"></script>
+  <script src="../js/auth.js"></script>
   <script src="../js/cart.js"></script>
+  <script src="../js/celebration.js"></script>
+  <script src="../js/notifications.js"></script>
   <script src="../js/navigation.js"></script>
   <script src="../js/validation.js"></script>
   <script src="../js/forms.js"></script>

@@ -70,3 +70,27 @@ test('CartEngine: removes item', () => {
   assert.strictEqual(CartEngine.getTotalCount(), 2);
   assert.strictEqual(CartEngine.getItems().some(i => i.id === 'item1'), false);
 });
+
+test('CartEngine: clears and returns empty array when user is signed out', () => {
+  // Simulate an authenticated session with items
+  global.AuthManager = {
+    isAuthenticated: () => true
+  };
+  CartEngine.clearCart();
+  CartEngine.addItem({ id: 'item1', name: 'Item 1', price: 100 }, 2);
+  assert.strictEqual(CartEngine.getTotalCount(), 2);
+
+  // User signs out
+  global.AuthManager.isAuthenticated = () => false;
+
+  // CartEngine should immediately report 0 items and empty array
+  assert.strictEqual(CartEngine.getTotalCount(), 0);
+  assert.deepStrictEqual(CartEngine.getItems(), []);
+
+  // Unauthenticated user cannot add items
+  const addAttempt = CartEngine.addItem({ id: 'item2', name: 'Item 2', price: 200 }, 1);
+  assert.strictEqual(addAttempt, false);
+  assert.strictEqual(CartEngine.getTotalCount(), 0);
+
+  delete global.AuthManager;
+});

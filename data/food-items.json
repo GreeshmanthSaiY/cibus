@@ -8,7 +8,7 @@
     "price": 160,
     "rating": 4.8,
     "description": "Tangy tamarind-infused rice tempered with roasted peanuts, mustard seeds, curry leaves, and green chilies.",
-    "image": "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/pulihora.webp",
     "diet": "Vegetarian",
     "prepTime": "35 mins"
   },
@@ -21,7 +21,7 @@
     "price": 190,
     "rating": 4.6,
     "description": "Crisp young bamboo shoots wok-tossed with local mountain herbs, garlic, and cold-pressed mustard oil.",
-    "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/bamboo.webp",
     "diet": "Vegan",
     "prepTime": "30 mins"
   },
@@ -34,7 +34,7 @@
     "price": 380,
     "rating": 4.9,
     "description": "Slow-cooked tender duck prepared with ash gourd, black peppercorns, and indigenous whole Assamese spices.",
-    "image": "https://images.unsplash.com/photo-1547928576-a4a33237cbc3?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/duck.webp",
     "diet": "Non-Vegetarian",
     "prepTime": "60 mins"
   },
@@ -47,7 +47,7 @@
     "price": 220,
     "rating": 4.9,
     "description": "Roasted whole wheat dough balls filled with spiced sattu, served with fire-roasted brinjal and tomato chokha with desi ghee.",
-    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/litti.webp",
     "diet": "Vegetarian",
     "prepTime": "50 mins"
   },
@@ -60,7 +60,7 @@
     "price": 150,
     "rating": 4.5,
     "description": "Steamed and seasoned savory rice flour rolls lightly tempered with mustard seeds, sesame, and fresh coriander.",
-    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/muthia.webp",
     "diet": "Vegetarian",
     "prepTime": "35 mins"
   },
@@ -73,7 +73,7 @@
     "price": 360,
     "rating": 4.9,
     "description": "Fresh catch simmered in rich coconut milk with tart kokum, Kashmiri red chilies, and coriander seeds.",
-    "image": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/fish.webp",
     "diet": "Non-Vegetarian",
     "prepTime": "40 mins"
   },
@@ -86,7 +86,7 @@
     "price": 140,
     "rating": 4.7,
     "description": "Soft and spongy fermented gram flour cakes garnished with tempered mustard seeds, slit green chilies, and grated coconut.",
-    "image": "https://images.unsplash.com/photo-1626132647523-66f5bf380027?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/dhokla.webp",
     "diet": "Vegetarian",
     "prepTime": "30 mins"
   },
@@ -99,7 +99,7 @@
     "price": 170,
     "rating": 4.6,
     "description": "Rustic pearl millet and moong dal porridge slow-simmered in an earthen pot and served piping hot with golden homemade ghee.",
-    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/bajre.webp",
     "diet": "Vegetarian",
     "prepTime": "45 mins"
   },
@@ -112,7 +112,7 @@
     "price": 280,
     "rating": 4.8,
     "description": "Traditional celebratory feast centering on red kidney beans (rajma) cooked with yogurt, whole cardamom, and dried ginger powder.",
-    "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/dham.webp",
     "diet": "Vegetarian",
     "prepTime": "60 mins"
   },
@@ -125,7 +125,7 @@
     "price": 180,
     "rating": 4.7,
     "description": "Crispy golden fried pancakes made from soaked rice and chana dal batter, served with spicy homestyle potato-gram curry.",
-    "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/dhooska.webp",
     "diet": "Vegetarian",
     "prepTime": "40 mins"
   },
@@ -138,7 +138,7 @@
     "price": 190,
     "rating": 4.9,
     "description": "Classic Karnataka comfort dish: rice, toor dal, and fresh garden vegetables slow-cooked in aromatic spice blend and ghee.",
-    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/bisi.webp",
     "diet": "Vegetarian",
     "prepTime": "45 mins"
   },
@@ -151,7 +151,7 @@
     "price": 230,
     "rating": 4.9,
     "description": "Lacy fermented rice flour pancakes with pillow-soft centers, served with creamy coconut milk vegetable stew infused with whole cinnamon.",
-    "image": "https://images.unsplash.com/photo-1630383249896-424e482df921?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/appam.webp",
     "diet": "Vegetarian",
     "prepTime": "40 mins"
   },
@@ -164,7 +164,7 @@
     "price": 160,
     "rating": 4.7,
     "description": "Indori street classic of grated sweet corn simmered in seasoned milk, flavored with hing, mustard seeds, and fresh grated coconut.",
-    "image": "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/bhutte.webp",
     "diet": "Vegetarian",
     "prepTime": "30 mins"
   },
@@ -177,7 +177,7 @@
     "price": 180,
     "rating": 4.9,
     "description": "Fiery sprouted moth bean gravy crowned with crunchy farsan, chopped onions, and fresh coriander, served with warm buttered pav.",
-    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/misal.webp",
     "diet": "Vegetarian",
     "prepTime": "35 mins"
   },
@@ -190,7 +190,7 @@
     "price": 210,
     "rating": 4.6,
     "description": "Delicate, clear vegetable broth with mountain greens, sliced ginger, king chili, and traditional fermented seasoning.",
-    "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/kangshoi.webp",
     "diet": "Vegetarian",
     "prepTime": "30 mins"
   },
@@ -203,7 +203,7 @@
     "price": 290,
     "rating": 4.8,
     "description": "Iconic Khasi specialty of indigenous red hill rice cooked with seasoned meat, ginger, bay leaves, and black sesame paste.",
-    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/jadoh.webp",
     "diet": "Non-Vegetarian",
     "prepTime": "50 mins"
   },
@@ -216,7 +216,7 @@
     "price": 350,
     "rating": 4.7,
     "description": "Succulent freshwater river shrimp grilled over charcoal with mustard oil, cracked black peppercorns, and fresh lime.",
-    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/misa.webp",
     "diet": "Non-Vegetarian",
     "prepTime": "35 mins"
   },
@@ -229,7 +229,7 @@
     "price": 420,
     "rating": 4.9,
     "description": "Dry-smoked pork simmered with fermented bamboo shoots, spicy Naga king chili (bhut jolokia), and crushed garlic.",
-    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/pork.webp",
     "diet": "Non-Vegetarian",
     "prepTime": "60 mins"
   },
@@ -242,7 +242,7 @@
     "price": 200,
     "rating": 4.9,
     "description": "Revered roasted cheesecake of fresh chhena kneaded with cardamom, sugar, and cashews, slow-baked until richly caramelized.",
-    "image": "https://images.unsplash.com/photo-1587314168485-3236d6710814?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/chenna.webp",
     "diet": "Vegetarian",
     "prepTime": "75 mins"
   },
@@ -253,9 +253,9 @@
     "region": "North",
     "category": "Breads & Platters",
     "price": 250,
-    "rating": 5.0,
+    "rating": 5,
     "description": "Golden maize flour flatbreads paired with slow-simmered mustard greens and bathua, served with white butter and jaggery.",
-    "image": "https://images.unsplash.com/photo-1505253758473-96b3d5ebcd96?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/makki.webp",
     "diet": "Vegetarian",
     "prepTime": "60 mins"
   },
@@ -266,9 +266,9 @@
     "region": "North",
     "category": "Breads & Platters",
     "price": 290,
-    "rating": 5.0,
+    "rating": 5,
     "description": "Clay-baked wheat baatis crushed into hot panchmel dal, accompanied by sweet powdered wheat churma and pure ghee.",
-    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/dal.webp",
     "diet": "Vegetarian",
     "prepTime": "65 mins"
   },
@@ -281,7 +281,7 @@
     "price": 170,
     "rating": 4.8,
     "description": "Delicate steamed handmade dumplings packed with garden vegetables or minced filling, served with fire-roasted dalle chili dip.",
-    "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/momo.webp",
     "diet": "Vegetarian",
     "prepTime": "35 mins"
   },
@@ -294,7 +294,7 @@
     "price": 170,
     "rating": 4.8,
     "description": "Creamy rice and yellow moong dal tempered with whole black peppercorns, cumin seeds, fresh ginger, and fried cashews in pure ghee.",
-    "image": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/pongal.webp",
     "diet": "Vegetarian",
     "prepTime": "30 mins"
   },
@@ -305,9 +305,9 @@
     "region": "South",
     "category": "Rice & Grains",
     "price": 340,
-    "rating": 5.0,
+    "rating": 5,
     "description": "Aromatic long-grain basmati rice layered with spiced marinated cuts, saffron milk, caramelized onions, and cooked under sealed dum.",
-    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/biriyani.webp",
     "diet": "Non-Vegetarian",
     "prepTime": "70 mins"
   },
@@ -320,7 +320,7 @@
     "price": 200,
     "rating": 4.6,
     "description": "Wholesome indigenous stew prepared with tender bamboo shoots, green papaya, jackfruit seeds, and local alkaline seasoning.",
-    "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/chakhwi.webp",
     "diet": "Vegan",
     "prepTime": "40 mins"
   },
@@ -333,7 +333,7 @@
     "price": 320,
     "rating": 4.9,
     "description": "Velvety melt-in-mouth Awadhi minced kebabs infused with raw papaya and a royal blend of over 100 rare aromatic spices.",
-    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/tunde.webp",
     "diet": "Non-Vegetarian",
     "prepTime": "45 mins"
   },
@@ -346,7 +346,7 @@
     "price": 190,
     "rating": 4.7,
     "description": "Traditional Garhwali purée of mountain spinach and fenugreek leaves slow-cooked in iron kadhai with rice flour paste and mustard oil.",
-    "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/kafuli.webp",
     "diet": "Vegetarian",
     "prepTime": "35 mins"
   },
@@ -357,9 +357,9 @@
     "region": "East",
     "category": "Traditional Curries",
     "price": 390,
-    "rating": 5.0,
+    "rating": 5,
     "description": "Rich, velvety, dark-brown slow-roasted mutton curry cooked with mustard oil, caramelized onions, whole garam masala, and green chilies.",
-    "image": "https://images.unsplash.com/photo-1547928576-a4a33237cbc3?w=600&auto=format&fit=crop&q=80",
+    "image": "../public/assets/images/dishes/kosha.webp",
     "diet": "Non-Vegetarian",
     "prepTime": "75 mins"
   }

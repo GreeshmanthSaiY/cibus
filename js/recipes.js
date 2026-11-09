@@ -5,75 +5,94 @@
 
 const RecipesController = {
   recipes: [],
+  foodMap: new Map(),
   searchQuery: '',
   currentView: 'deck', // 'deck' (default signature fanned cards) or 'grid'
 
   // Authentic Image Dictionary matching Cibus heritage collection
   recipeImages: {
-    pulihora: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=80',
-    bamboo: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80',
-    duck: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80',
-    litti: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80',
-    muthia: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&auto=format&fit=crop&q=80',
-    fish: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=80',
-    dhokla: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80',
-    bajre: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80',
-    dham: 'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=600&auto=format&fit=crop&q=80',
-    dhooska: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80',
-    bisi: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&auto=format&fit=crop&q=80',
-    appam: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop&q=80',
-    bhutte: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&auto=format&fit=crop&q=80',
-    misal: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&auto=format&fit=crop&q=80',
-    kangshoi: 'https://images.unsplash.com/photo-1547928576-a4a33237cbc3?w=600&auto=format&fit=crop&q=80',
-    jadoh: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&auto=format&fit=crop&q=80',
-    misa: 'https://images.unsplash.com/photo-1559742811-822873691df8?w=600&auto=format&fit=crop&q=80',
-    pork: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80',
-    chenna: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?w=600&auto=format&fit=crop&q=80',
-    makki: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80',
-    dal: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80',
-    momo: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&auto=format&fit=crop&q=80',
-    pongal: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80',
-    biriyani: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&auto=format&fit=crop&q=80',
-    chakhwi: 'https://images.unsplash.com/photo-1547928576-a4a33237cbc3?w=600&auto=format&fit=crop&q=80',
-    tunde: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80',
-    kafuli: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80',
-    kosha: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80'
+    pulihora: '../public/assets/images/dishes/pulihora.webp',
+    bamboo: '../public/assets/images/dishes/bamboo.webp',
+    duck: '../public/assets/images/dishes/duck.webp',
+    litti: '../public/assets/images/dishes/litti.webp',
+    muthia: '../public/assets/images/dishes/muthia.webp',
+    fish: '../public/assets/images/dishes/fish.webp',
+    dhokla: '../public/assets/images/dishes/dhokla.webp',
+    bajre: '../public/assets/images/dishes/bajre.webp',
+    dham: '../public/assets/images/dishes/dham.webp',
+    dhooska: '../public/assets/images/dishes/dhooska.webp',
+    bisi: '../public/assets/images/dishes/bisi.webp',
+    appam: '../public/assets/images/dishes/appam.webp',
+    bhutte: '../public/assets/images/dishes/bhutte.webp',
+    misal: '../public/assets/images/dishes/misal.webp',
+    kangshoi: '../public/assets/images/dishes/kangshoi.webp',
+    jadoh: '../public/assets/images/dishes/jadoh.webp',
+    misa: '../public/assets/images/dishes/misa.webp',
+    pork: '../public/assets/images/dishes/pork.webp',
+    chenna: '../public/assets/images/dishes/chenna.webp',
+    makki: '../public/assets/images/dishes/makki.webp',
+    dal: '../public/assets/images/dishes/dal.webp',
+    momo: '../public/assets/images/dishes/momo.webp',
+    pongal: '../public/assets/images/dishes/pongal.webp',
+    biriyani: '../public/assets/images/dishes/biriyani.webp',
+    chakhwi: '../public/assets/images/dishes/chakhwi.webp',
+    tunde: '../public/assets/images/dishes/tunde.webp',
+    kafuli: '../public/assets/images/dishes/kafuli.webp',
+    kosha: '../public/assets/images/dishes/kosha.webp'
   },
 
   async initCards() {
     await this.loadRecipes();
     this.setupCardListeners();
     this.renderCards();
+    this.setupCartDelegation();
+
+    window.addEventListener('cibus:cart:updated', () => {
+      this.syncCartButtons();
+    });
+
+    window.addEventListener('cibus:auth:changed', () => {
+      this.syncCartButtons();
+    });
   },
 
   async initDetail() {
     await this.loadRecipes();
     this.setupDetailSidebar();
     this.setupChecklistHandlers();
+    this.injectDetailOrderButtons();
+    this.setupCartDelegation();
     this.highlightActiveHash();
 
     window.addEventListener('hashchange', () => {
       this.highlightActiveHash();
     });
+
+    window.addEventListener('cibus:cart:updated', () => {
+      this.injectDetailOrderButtons();
+    });
+
+    window.addEventListener('cibus:auth:changed', () => {
+      this.injectDetailOrderButtons();
+    });
   },
 
   async loadRecipes() {
     try {
-      const res = await fetch('../data/recipes.json');
-      if (res.ok) {
-        this.recipes = await res.json();
-      } else {
-        throw new Error('Relative fetch failed, try fallback');
+      const [recRes, foodRes] = await Promise.all([
+        fetch('../data/recipes.json').catch(() => fetch('./data/recipes.json')),
+        fetch('../data/food-items.json').catch(() => fetch('./data/food-items.json'))
+      ]);
+      if (recRes && recRes.ok) {
+        this.recipes = await recRes.json();
+      }
+      if (foodRes && foodRes.ok) {
+        const foods = await foodRes.json();
+        this.foodMap = new Map();
+        foods.forEach((f) => this.foodMap.set(f.id, f));
       }
     } catch (e) {
-      try {
-        const fallbackRes = await fetch('./data/recipes.json');
-        if (fallbackRes.ok) {
-          this.recipes = await fallbackRes.json();
-        }
-      } catch (err) {
-        console.error('[Cibus Recipes] Failed to load recipes dataset:', err);
-      }
+      console.error('[Cibus Recipes] Failed to load data:', e);
     }
   },
 
@@ -83,7 +102,7 @@ const RecipesController = {
     if (this.recipeImages[id]) {
       return this.recipeImages[id];
     }
-    return 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80';
+    return '../public/assets/images/dishes/biriyani.webp';
   },
 
   getCleanDishName(name) {
@@ -124,8 +143,14 @@ const RecipesController = {
   renderCardMarkup(r) {
     const img = this.getRecipeImage(r);
     const cleanName = this.getCleanDishName(r.name);
+    const food = this.foodMap ? this.foodMap.get(r.id) : null;
+    const price = (food && food.price) || 220;
+    const cartItems = typeof CartEngine !== 'undefined' ? CartEngine.getItems() : [];
+    const inCart = cartItems.find((i) => i.id === r.id);
+
     return `
-      <a href="./recipe-detail.html#${Utils.escapeHtml(r.id)}" class="recipe-fanned-card" aria-label="${Utils.escapeHtml(r.name)} from ${Utils.escapeHtml(r.state)}">
+      <div class="recipe-fanned-card" data-id="${Utils.escapeHtml(r.id)}">
+        <a href="./recipe-detail.html#${Utils.escapeHtml(r.id)}" class="card-link-overlay" aria-label="${Utils.escapeHtml(r.name)} from ${Utils.escapeHtml(r.state)}"></a>
         <div class="card-img" style="background-image: url('${img}');">
           <div class="card-img-overlay"></div>
         </div>
@@ -133,11 +158,252 @@ const RecipesController = {
           <h2 class="card-title">${Utils.escapeHtml(cleanName)}</h2>
           <p class="card-state">${Utils.escapeHtml(r.state)}</p>
         </div>
+        <div class="card-action-bar">
+          <span class="card-price-tag">₹${price}</span>
+          ${
+            inCart && inCart.quantity > 0
+              ? `
+            <div class="card-cart-stepper card-cart-stepper-dark" data-id="${Utils.escapeHtml(r.id)}">
+              <button type="button" class="card-stepper-btn js-deck-cart-dec" data-id="${Utils.escapeHtml(r.id)}" title="Decrease quantity">−</button>
+              <button type="button" class="card-stepper-label js-cart-view" data-id="${Utils.escapeHtml(r.id)}" title="View in cart">
+                <span class="stepper-check">✓</span> In Cart (${inCart.quantity})
+              </button>
+              <button type="button" class="card-stepper-btn js-deck-cart-inc" data-id="${Utils.escapeHtml(r.id)}" title="Add one more">+</button>
+            </div>
+          `
+              : `
+            <button type="button" class="btn-card-add-cart js-deck-add-cart" data-id="${Utils.escapeHtml(r.id)}" aria-label="Add ${Utils.escapeHtml(r.name)} to cart">
+              🛒 Add
+            </button>
+          `
+          }
+        </div>
         <span class="card-btn">
-          View more information &rarr;
+          View Recipe &rarr;
         </span>
-      </a>
+      </div>
     `;
+  },
+
+  injectDetailOrderButtons() {
+    document.querySelectorAll('.recipe-article').forEach((article) => {
+      const id = article.id;
+      const header = article.querySelector('.recipe-article-header');
+      if (!header) return;
+
+      let orderBar = header.querySelector('.recipe-order-bar');
+      if (!orderBar) {
+        orderBar = document.createElement('div');
+        orderBar.className = 'recipe-order-bar';
+        header.appendChild(orderBar);
+      }
+
+      const food = this.foodMap ? this.foodMap.get(id) : null;
+      const price = (food && food.price) || 220;
+      const cartItems = typeof CartEngine !== 'undefined' ? CartEngine.getItems() : [];
+      const inCart = cartItems.find((i) => i.id === id);
+
+      orderBar.innerHTML = `
+        <span class="recipe-price-tag">₹${price}</span>
+        ${
+          inCart && inCart.quantity > 0
+            ? `
+          <div class="card-cart-stepper" data-id="${Utils.escapeHtml(id)}">
+            <button type="button" class="card-stepper-btn js-recipe-cart-dec" data-id="${Utils.escapeHtml(id)}" title="Decrease quantity">−</button>
+            <button type="button" class="card-stepper-label js-cart-view" data-id="${Utils.escapeHtml(id)}" title="View in cart">
+              <span class="stepper-check">✓</span> In Cart (${inCart.quantity})
+            </button>
+            <button type="button" class="card-stepper-btn js-recipe-cart-inc" data-id="${Utils.escapeHtml(id)}" title="Add one more">+</button>
+          </div>
+        `
+            : `
+          <button type="button" class="btn btn-primary btn-sm js-recipe-add-cart" data-id="${Utils.escapeHtml(id)}">
+            🛒 Add Dish to Cart
+          </button>
+        `
+        }
+      `;
+    });
+  },
+
+  syncCartButtons() {
+    // Sync all fanned cards on recipe-cards.html
+    document.querySelectorAll('.recipe-fanned-card[data-id]').forEach((card) => {
+      const id = card.dataset.id;
+      const r = this.recipes.find((rec) => rec.id === id);
+      if (!r) return;
+      const food = this.foodMap ? this.foodMap.get(id) : null;
+      const price = (food && food.price) || 220;
+      const cartItems = typeof CartEngine !== 'undefined' ? CartEngine.getItems() : [];
+      const inCart = cartItems.find((i) => i.id === id);
+
+      const bar = card.querySelector('.card-action-bar');
+      if (bar) {
+        bar.innerHTML = `
+          <span class="card-price-tag">₹${price}</span>
+          ${
+            inCart && inCart.quantity > 0
+              ? `
+            <div class="card-cart-stepper card-cart-stepper-dark" data-id="${Utils.escapeHtml(id)}">
+              <button type="button" class="card-stepper-btn js-deck-cart-dec" data-id="${Utils.escapeHtml(id)}" title="Decrease quantity">−</button>
+              <button type="button" class="card-stepper-label js-cart-view" data-id="${Utils.escapeHtml(id)}" title="View in cart">
+                <span class="stepper-check">✓</span> In Cart (${inCart.quantity})
+              </button>
+              <button type="button" class="card-stepper-btn js-deck-cart-inc" data-id="${Utils.escapeHtml(id)}" title="Add one more">+</button>
+            </div>
+          `
+              : `
+            <button type="button" class="btn-card-add-cart js-deck-add-cart" data-id="${Utils.escapeHtml(id)}" aria-label="Add ${Utils.escapeHtml(r.name)} to cart">
+              🛒 Add
+            </button>
+          `
+          }
+        `;
+      }
+    });
+
+    // Also sync detail order bars if on detail page
+    this.injectDetailOrderButtons();
+  },
+
+  setupCartDelegation() {
+    const requireAuth = () => {
+      if (!window.AuthManager || !AuthManager.isAuthenticated()) {
+        Utils.showToast({
+          title: 'Sign In Required 🔒',
+          message: 'Please sign in to your session account to add items to your cart!',
+          icon: '👤',
+          type: 'warning',
+          durationMs: 10000,
+          actionLabel: 'Sign In Now',
+          actionUrl: './login.html?redirect=recipe-cards.html'
+        });
+        const curPage = window.location.pathname.split('/').pop() || 'recipe-cards.html';
+        const redirectUrl = curPage + (window.location.hash || '');
+        setTimeout(() => {
+          window.location.href = `./login.html?redirect=${encodeURIComponent(redirectUrl)}`;
+        }, 1200);
+        return false;
+      }
+      return true;
+    };
+
+    const handleAdd = (dishId, targetEl) => {
+      if (!requireAuth()) return;
+
+      const food = this.foodMap ? this.foodMap.get(dishId) : null;
+      const recipe = this.recipes.find((r) => r.id === dishId);
+      const name = (food && food.name) || (recipe && recipe.name) || dishId;
+      const price = (food && food.price) || 220;
+      const state = (recipe && recipe.state) || (food && food.state) || 'Traditional';
+      const image = (food && food.image) || (recipe && recipe.image) || this.getRecipeImage(dishId);
+
+      CartEngine.addItem({
+        id: dishId,
+        name: name,
+        price: price,
+        image: image,
+        state: state
+      });
+
+      if (typeof CelebrationFx !== 'undefined' && targetEl) {
+        CelebrationFx.burstFromElement(targetEl, name);
+      }
+
+      if (typeof NotificationCenter !== 'undefined') {
+        NotificationCenter.add({
+          title: 'Celebration! Dish Added 🎉',
+          message: `1x ${name} (${state}) added to your culinary order.`,
+          icon: '🍲',
+          type: 'cart',
+          link: './cart.html'
+        });
+      }
+
+      Utils.showToast({
+        title: 'Added to Cart! 🎉',
+        message: `1x ${name} (${Utils.formatCurrency(price)}) added to order.`,
+        icon: '🍲',
+        type: 'celebration',
+        durationMs: 10000,
+        actionLabel: 'View Cart 🛒',
+        actionUrl: './cart.html'
+      });
+
+      this.syncCartButtons();
+    };
+
+    const handleUpdate = (dishId, delta, targetEl) => {
+      if (!requireAuth()) return;
+      const inCart = CartEngine.getItems().find((i) => i.id === dishId);
+      if (!inCart) return;
+      const nextQty = inCart.quantity + delta;
+
+      if (nextQty <= 0) {
+        CartEngine.removeItem(dishId);
+        Utils.showToast({
+          title: 'Item Removed',
+          message: `${inCart.name} removed from your cart.`,
+          icon: '🗑️',
+          type: 'info',
+          durationMs: 10000
+        });
+      } else {
+        CartEngine.updateQuantity(dishId, nextQty);
+        if (delta > 0 && typeof CelebrationFx !== 'undefined' && targetEl) {
+          CelebrationFx.burstFromElement(targetEl, inCart.name);
+        }
+        Utils.showToast({
+          title: 'Quantity Updated 🛒',
+          message: `${inCart.name} quantity updated to ${nextQty}.`,
+          icon: delta > 0 ? '➕' : '➖',
+          type: 'info',
+          durationMs: 10000
+        });
+      }
+
+      this.syncCartButtons();
+    };
+
+    document.addEventListener('click', (e) => {
+      const deckBtn = e.target.closest('.js-deck-add-cart');
+      const recipeBtn = e.target.closest('.js-recipe-add-cart');
+      const deckInc = e.target.closest('.js-deck-cart-inc');
+      const deckDec = e.target.closest('.js-deck-cart-dec');
+      const recInc = e.target.closest('.js-recipe-cart-inc');
+      const recDec = e.target.closest('.js-recipe-cart-dec');
+      const viewBtn = e.target.closest('.js-cart-view');
+
+      if (deckBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        handleAdd(deckBtn.dataset.id, deckBtn);
+      } else if (recipeBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        handleAdd(recipeBtn.dataset.id, recipeBtn);
+      } else if (deckInc) {
+        e.preventDefault();
+        e.stopPropagation();
+        handleUpdate(deckInc.dataset.id, 1, deckInc);
+      } else if (deckDec) {
+        e.preventDefault();
+        e.stopPropagation();
+        handleUpdate(deckDec.dataset.id, -1, deckDec);
+      } else if (recInc) {
+        e.preventDefault();
+        e.stopPropagation();
+        handleUpdate(recInc.dataset.id, 1, recInc);
+      } else if (recDec) {
+        e.preventDefault();
+        e.stopPropagation();
+        handleUpdate(recDec.dataset.id, -1, recDec);
+      } else if (viewBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.location.href = './cart.html';
+      }
+    });
   },
 
   renderCards() {

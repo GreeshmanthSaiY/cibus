@@ -12,6 +12,15 @@ const FoodMenuController = {
     await this.loadData();
     this.setupListeners();
     this.render();
+
+    // Dynamically synchronize card button states with cart updates across windows/tabs
+    window.addEventListener('cibus:cart:updated', () => {
+      this.syncCardButtons();
+    });
+
+    window.addEventListener('cibus:auth:changed', () => {
+      this.syncCardButtons();
+    });
   },
 
   async loadData() {
@@ -57,17 +66,127 @@ const FoodMenuController = {
       });
     });
 
-    // Delegated click handler for "Add to Cart"
+    // Delegated click handler for "Add to Cart", stepper increment, and decrement
     const grid = document.getElementById('food-menu-grid');
     if (grid) {
       grid.addEventListener('click', (e) => {
         const addBtn = e.target.closest('.js-add-cart-btn');
+        const incBtn = e.target.closest('.js-cart-increment');
+        const decBtn = e.target.closest('.js-cart-decrement');
+        const viewBtn = e.target.closest('.js-cart-view');
+
+        // Check auth guard before any cart modification
+        const requireAuth = () => {
+          if (typeof AuthManager !== 'undefined' && !AuthManager.isAuthenticated()) {
+            Utils.showToast({
+              title: 'Sign In Required 🔒',
+              message: 'Please sign in to your session account to add items to your cart!',
+              icon: '👤',
+              type: 'warning',
+              durationMs: 10000,
+              actionLabel: 'Sign In Now',
+              actionUrl: './login.html?redirect=food-menu.html'
+            });
+            setTimeout(() => {
+              window.location.href = `./login.html?redirect=${encodeURIComponent(window.location.pathname.split('/').pop())}`;
+            }, 1200);
+            return false;
+          }
+          return true;
+        };
+
         if (addBtn) {
+          if (!requireAuth()) return;
           const itemId = addBtn.dataset.id;
           const item = this.foodItems.find((f) => f.id === itemId);
           if (item && typeof CartEngine !== 'undefined') {
             CartEngine.addItem(item, 1);
+
+            // Trigger celebration burst & flight pill
+            if (typeof CelebrationFx !== 'undefined') {
+              CelebrationFx.burstFromElement(addBtn, item.name);
+            }
+
+            // Push notification to center
+            if (typeof NotificationCenter !== 'undefined') {
+              NotificationCenter.add({
+                title: 'Celebration! Dish Added 🎉',
+                message: `1x ${item.name} from ${item.state} (${Utils.formatCurrency(item.price)}) is now in your cart.`,
+                icon: '🍲',
+                type: 'cart',
+                link: './cart.html'
+              });
+            }
+
+            // Rich 10-second notification
+            Utils.showToast({
+              title: 'Added to Cart! 🎉',
+              message: `1x ${item.name} (${Utils.formatCurrency(item.price)}) added to order.`,
+              icon: '🍲',
+              type: 'celebration',
+              durationMs: 10000,
+              actionLabel: 'View Cart 🛒',
+              actionUrl: './cart.html'
+            });
+
+            this.syncCardButtons();
           }
+        } else if (incBtn) {
+          if (!requireAuth()) return;
+          const itemId = incBtn.dataset.id;
+          const item = this.foodItems.find((f) => f.id === itemId);
+          if (item && typeof CartEngine !== 'undefined') {
+            const inCart = CartEngine.getItems().find((i) => i.id === itemId);
+            const nextQty = (inCart ? inCart.quantity : 0) + 1;
+            CartEngine.updateQuantity(itemId, nextQty);
+
+            if (typeof CelebrationFx !== 'undefined') {
+              CelebrationFx.burstFromElement(incBtn, item.name);
+            }
+
+            Utils.showToast({
+              title: 'Quantity Updated 🛒',
+              message: `${item.name} quantity increased to ${nextQty}.`,
+              icon: '➕',
+              type: 'info',
+              durationMs: 10000
+            });
+
+            this.syncCardButtons();
+          }
+        } else if (decBtn) {
+          if (!requireAuth()) return;
+          const itemId = decBtn.dataset.id;
+          const item = this.foodItems.find((f) => f.id === itemId);
+          if (item && typeof CartEngine !== 'undefined') {
+            const inCart = CartEngine.getItems().find((i) => i.id === itemId);
+            const currentQty = inCart ? inCart.quantity : 1;
+            const nextQty = currentQty - 1;
+
+            if (nextQty <= 0) {
+              CartEngine.removeItem(itemId);
+              Utils.showToast({
+                title: 'Item Removed',
+                message: `${item.name} removed from your cart.`,
+                icon: '🗑️',
+                type: 'info',
+                durationMs: 10000
+              });
+            } else {
+              CartEngine.updateQuantity(itemId, nextQty);
+              Utils.showToast({
+                title: 'Quantity Updated',
+                message: `${item.name} quantity decreased to ${nextQty}.`,
+                icon: '➖',
+                type: 'info',
+                durationMs: 10000
+              });
+            }
+
+            this.syncCardButtons();
+          }
+        } else if (viewBtn) {
+          window.location.href = './cart.html';
         }
       });
     }
@@ -117,7 +236,7 @@ const FoodMenuController = {
     }
 
     grid.innerHTML = items
-      .map((item) => {
+      .map((item, index) => {
         const dietClass =
           item.diet === 'Vegetarian'
             ? 'diet-veg'
@@ -126,9 +245,9 @@ const FoodMenuController = {
             : 'diet-nonveg';
 
         return `
-        <article class="card food-card" data-id="${Utils.escapeHtml(item.id)}">
+        <article class="card food-card" data-id="${Utils.escapeHtml(item.id)}" style="animation: fadeInUp 0.35s ease ${(index % 12) * 0.03}s both;">
           <div class="card-img-wrap">
-            <img src="${Utils.escapeHtml(item.image)}" alt="${Utils.escapeHtml(item.name)}" loading="lazy" onerror="this.src='../public/assets/images/food-photo.jpeg'; this.onerror=null;">
+            <img src="${Utils.escapeHtml(item.image)}" alt="${Utils.escapeHtml(item.name)}" loading="lazy" decoding="async" onerror="this.src='../public/assets/images/food-photo.webp'; this.onerror=null;">
             <span class="card-tag">${Utils.escapeHtml(item.region || 'India')}</span>
             <span class="card-diet-tag ${dietClass}">${Utils.escapeHtml(item.diet || 'Traditional')}</span>
           </div>
@@ -145,9 +264,7 @@ const FoodMenuController = {
                 <a href="./recipe-detail.html#${Utils.escapeHtml(item.id)}" class="recipe-link-btn" title="View step-by-step recipe">
                   Recipe &rarr;
                 </a>
-                <button type="button" class="btn btn-primary btn-sm js-add-cart-btn" data-id="${Utils.escapeHtml(item.id)}">
-                  Add to Cart
-                </button>
+                ${this.renderActionButton(item)}
               </div>
             </div>
           </div>
@@ -155,6 +272,51 @@ const FoodMenuController = {
       `;
       })
       .join('');
+  },
+
+  /**
+   * Seamlessly synchronize card action buttons with current cart state without full grid re-render
+   */
+  syncCardButtons() {
+    const cards = document.querySelectorAll('.food-card[data-id]');
+    cards.forEach((card) => {
+      const id = card.dataset.id;
+      const item = this.foodItems.find((f) => f.id === id);
+      if (!item) return;
+
+      const actionWrap = card.querySelector('.food-card-action');
+      if (actionWrap) {
+        actionWrap.innerHTML = `
+          <a href="./recipe-detail.html#${Utils.escapeHtml(item.id)}" class="recipe-link-btn" title="View step-by-step recipe">
+            Recipe &rarr;
+          </a>
+          ${this.renderActionButton(item)}
+        `;
+      }
+    });
+  },
+
+  renderActionButton(item) {
+    const cartItems = typeof CartEngine !== 'undefined' ? CartEngine.getItems() : [];
+    const inCart = cartItems.find((i) => i.id === item.id);
+
+    if (inCart && inCart.quantity > 0) {
+      return `
+        <div class="card-cart-stepper" data-id="${Utils.escapeHtml(item.id)}">
+          <button type="button" class="card-stepper-btn js-cart-decrement" data-id="${Utils.escapeHtml(item.id)}" aria-label="Decrease quantity" title="Decrease quantity">−</button>
+          <button type="button" class="card-stepper-label js-cart-view" data-id="${Utils.escapeHtml(item.id)}" title="Click to view in cart">
+            <span class="stepper-check">✓</span> In Cart (${inCart.quantity})
+          </button>
+          <button type="button" class="card-stepper-btn js-cart-increment" data-id="${Utils.escapeHtml(item.id)}" aria-label="Increase quantity" title="Add one more">+</button>
+        </div>
+      `;
+    }
+
+    return `
+      <button type="button" class="btn btn-primary btn-sm js-add-cart-btn" data-id="${Utils.escapeHtml(item.id)}">
+        Add to Cart
+      </button>
+    `;
   }
 };
 

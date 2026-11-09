@@ -14,7 +14,7 @@ const CIBUS_CONFIG = Object.freeze({
     AUTH_DEMO_USER: 'cibus_demo_user',
     BOOKMARKS: 'cibus_recipe_bookmarks'
   }),
-  DEFAULT_PLACEHOLDER_IMAGE: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?w=600&auto=format&fit=crop&q=80',
+  DEFAULT_PLACEHOLDER_IMAGE: '../public/assets/images/dishes/biriyani.webp',
   ROUTES: Object.freeze({
     HOME: './home.html',
     FOOD_MENU: './food-menu.html',

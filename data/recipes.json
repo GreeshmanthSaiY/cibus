@@ -30,7 +30,7 @@
       "Combine the thickened tamarind paste with the cooled rice gently, then pour the hot tempering over it and mix thoroughly.",
       "Let the pulihora rest for at least 1 hour so the aromatic flavors infuse deeply before serving."
     ],
-    "image": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/pulihora.webp"
   },
   {
     "id": "bamboo",
@@ -59,7 +59,7 @@
       "Stir in the drained bamboo shoots, turmeric powder, and salt. Sauté on medium-high heat for 8-10 minutes.",
       "Garnish with fresh herbs and serve hot alongside steamed sticky rice."
     ],
-    "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/bamboo.webp"
   },
   {
     "id": "duck",
@@ -91,7 +91,7 @@
       "Pour in 2 cups of warm water, cover, and slow-cook until duck meat is fork-tender and curry is thick.",
       "Serve piping hot with fragrant Joha rice."
     ],
-    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/duck.webp"
   },
   {
     "id": "litti",
@@ -123,7 +123,7 @@
       "For chokha: Roast brinjal and tomatoes on open flame until skins are charred. Peel and mash together with boiled potatoes, raw mustard oil, chopped onions, green chilies, and salt.",
       "Dip hot littis generously in melted desi ghee, crack them open slightly, and serve alongside smoky chokha."
     ],
-    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/litti.webp"
   },
   {
     "id": "muthia",
@@ -153,7 +153,7 @@
       "Add steamed muthias to the tempering and pan-fry on medium heat until surfaces turn lightly golden and crisp.",
       "Serve warm with spicy green coriander chutney."
     ],
-    "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/muthia.webp"
   },
   {
     "id": "fish",
@@ -182,7 +182,7 @@
       "Gently slide in fish fillets and coconut milk; simmer on low heat for 6-8 minutes without stirring vigorously to avoid breaking the fish.",
       "Season with salt and let rest for 15 minutes before serving with hot steamed Goan red rice."
     ],
-    "image": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/fish.webp"
   },
   {
     "id": "dhokla",
@@ -211,7 +211,7 @@
       "In a small pan, prepare tempering by crackling mustard seeds, sesame seeds, curry leaves, and green chilies in oil, then pour in sugar water.",
       "Cut steamed dhokla into neat squares, pour the warm tempering water evenly to keep it moist, and garnish with coconut and coriander."
     ],
-    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/dhokla.webp"
   },
   {
     "id": "bajre",
@@ -238,7 +238,7 @@
       "Heat ghee, temper with cumin seeds and hing, and stir into the hot khichdi.",
       "Serve piping hot with fresh curd, jaggery, and extra spoons of golden ghee."
     ],
-    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/bajre.webp"
   },
   {
     "id": "dham",
@@ -268,7 +268,7 @@
       "Add boiled beans along with a cup of cooking liquid. Simmer on low heat for 20 minutes until gravy thickens.",
       "Garnish with fried cashews and raisins. Serve warm with steamed basmati rice."
     ],
-    "image": "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/dham.webp"
   },
   {
     "id": "dhooska",
@@ -297,7 +297,7 @@
       "Flip and fry until both sides are crisp and golden brown.",
       "Drain on kitchen paper and serve hot with spicy aloo-chana sabzi."
     ],
-    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/dhooska.webp"
   },
   {
     "id": "bisi",
@@ -326,7 +326,7 @@
       "Heat ghee in a pan, fry cashews, mustard seeds, red chilies, and curry leaves until fragrant.",
       "Pour hot tempering over the bath, stir well, and serve hot with potato chips or boondi raita."
     ],
-    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/bisi.webp"
   },
   {
     "id": "appam",
@@ -354,7 +354,7 @@
       "For stew: Simmer vegetables with whole spices, green chilies, and thin coconut milk until soft, then finish with thick coconut milk and curry leaves tempered in coconut oil.",
       "Serve warm appams with aromatic stew."
     ],
-    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/appam.webp"
   },
   {
     "id": "bhutte",
@@ -384,7 +384,7 @@
       "Pour in milk slowly, stirring continuously to prevent scorching. Cover and simmer on low heat for 10-12 minutes until corn absorbs milk and thickens.",
       "Finish with fresh lemon juice, grated coconut, and coriander leaves. Serve warm."
     ],
-    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/bhutte.webp"
   },
   {
     "id": "misal",
@@ -412,7 +412,7 @@
       "Add boiled sprouts and 3 cups of water; simmer vigorously for 15 minutes to form rich spicy gravy.",
       "Assembly: Ladle sprouts into bowls, top generously with spicy farsan and fresh onions, pour thin fiery tarri over, and serve with warm buttered pav and lemon."
     ],
-    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/misal.webp"
   },
   {
     "id": "kangshoi",
@@ -441,7 +441,7 @@
       "Turn off heat and let steep for 3 minutes.",
       "Serve warm as a light, revitalizing soup alongside steamed rice."
     ],
-    "image": "https://images.unsplash.com/photo-1547928576-a4a33237cbc3?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/kangshoi.webp"
   },
   {
     "id": "jadoh",
@@ -471,7 +471,7 @@
       "Add 4 cups of boiling water, cover tightly, reduce heat, and cook until rice is tender and moisture absorbed.",
       "Rest covered for 10 minutes, fluff with fork, and serve."
     ],
-    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/jadoh.webp"
   },
   {
     "id": "misa",
@@ -498,7 +498,7 @@
       "Roast over glowing charcoal or grill in a cast-iron skillet on medium heat for 6-8 minutes per side.",
       "Unwrap and serve hot with steamed rice and boiled mountain greens."
     ],
-    "image": "https://images.unsplash.com/photo-1559742811-822873691df8?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/misa.webp"
   },
   {
     "id": "pork",
@@ -524,7 +524,7 @@
       "Uncover and reduce gravy to a thick, glossy coat around the meat.",
       "Serve warm with plain sticky rice."
     ],
-    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/pork.webp"
   },
   {
     "id": "chenna",
@@ -551,7 +551,7 @@
       "Bake in a preheated oven at 180°C for 45-55 minutes until the crust turns dark golden brown and caramelizes.",
       "Cool completely before slicing into triangles to appreciate the smoky, sweet caramelized crust."
     ],
-    "image": "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/chenna.webp"
   },
   {
     "id": "makki",
@@ -587,7 +587,7 @@
       "Cook on a medium hot tawa with generous ghee until golden speckled on both sides.",
       "Serve piping hot with a dollop of white butter (makhan) and jaggery."
     ],
-    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/makki.webp"
   },
   {
     "id": "dal",
@@ -620,7 +620,7 @@
       "For churma: Crush 2 hot baatis in a food processor, sift, and mix with ghee, powdered sugar, cardamom, and sliced almonds.",
       "Dip hot baatis in a bowl of melted desi ghee, crush lightly into warm spicy dal, and enjoy with sweet churma."
     ],
-    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/dal.webp"
   },
   {
     "id": "momo",
@@ -648,7 +648,7 @@
       "Grease steamer racks, arrange momos leaving space between them, and steam over rolling boiling water for 10-12 minutes until translucent.",
       "Serve hot with spicy garlic-chili tomato dip and clear soup."
     ],
-    "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/momo.webp"
   },
   {
     "id": "pongal",
@@ -679,7 +679,7 @@
       "Pour hot sizzling tempering over the mashed pongal and fold in gently.",
       "Serve piping hot with fresh coconut chutney and spicy vegetable sambar."
     ],
-    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/pongal.webp"
   },
   {
     "id": "biriyani",
@@ -709,7 +709,7 @@
       "Cook on high heat for 10 minutes, then place on a hot iron tawa on low heat for 35 minutes (dum).",
       "Rest for 15 minutes before unsealing. Gently fluff layers to reveal aromatic long rice and tender meat, served with mirchi ka salan and dahi raita."
     ],
-    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/biriyani.webp"
   },
   {
     "id": "chakhwi",
@@ -737,7 +737,7 @@
       "Stir in rice flour slurry to impart gentle thickness to the clear aromatic broth.",
       "Serve warm as a nourishing digestive with steamed rice."
     ],
-    "image": "https://images.unsplash.com/photo-1547928576-a4a33237cbc3?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/chakhwi.webp"
   },
   {
     "id": "tunde",
@@ -765,7 +765,7 @@
       "Heat ghee on a flat tawa; pan-fry kebabs on medium heat for 3-4 minutes per side until beautifully browned.",
       "Serve hot with roomali roti, sliced minty onions, and lemon wedges."
     ],
-    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/tunde.webp"
   },
   {
     "id": "kafuli",
@@ -795,7 +795,7 @@
       "Pour in rice flour slurry while stirring continuously; simmer on low heat for 10 minutes until thick and velvet-smooth.",
       "Serve piping hot with steamed rice or madua (ragi) rotis."
     ],
-    "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/kafuli.webp"
   },
   {
     "id": "kosha",
@@ -826,6 +826,6 @@
       "Add fried potato halves and 1.5 cups warm water; simmer on low heat until mutton is melt-in-mouth tender and gravy is thick and clinging to meat.",
       "Serve hot with fluffy luchi, Bengali sweet pulao, or steamed rice."
     ],
-    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80"
+    "image": "../public/assets/images/dishes/kosha.webp"
   }
 ]
