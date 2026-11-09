@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with the Cibus team for recipe inquiries, regional cuisine recommendations, or culinary feedback.">
+  <title>Contact Us — CIBUS</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../public/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="../public/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pages/forms.css">
+</head>
+<body>
+
+  <!-- Universal Header -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="../index.html" class="brand-logo" aria-label="Cibus Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+        CIBUS
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="./home.html" class="nav-link">Home</a>
+        <a href="./food-menu.html" class="nav-link">Food Menu</a>
+        <a href="./recipe-cards.html" class="nav-link">Cook Recipes</a>
+        <a href="./contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Notifications Bell -->
+        <div class="notification-dropdown-wrap">
+          <button type="button" class="notification-icon-btn" id="notif-bell-btn" aria-label="Culinary Notifications" aria-expanded="false">
+            🔔
+            <span class="notification-badge" id="notif-badge" style="display: none;">0</span>
+          </button>
+          <div class="notification-panel" id="notif-panel" role="dialog" aria-modal="true" style="display: none;">
+            <div class="notif-panel-header">
+              <div class="notif-header-title">
+                <span class="notif-bell-icon">🔔</span>
+                <h3>Notifications</h3>
+                <span class="notif-count-pill" id="notif-count-pill">0 New</span>
+              </div>
+              <div class="notif-header-actions">
+                <button type="button" class="notif-action-btn" id="notif-mark-read-btn" title="Mark all as read">Mark Read</button>
+                <button type="button" class="notif-action-btn notif-clear-btn" id="notif-clear-btn" title="Clear all">Clear</button>
+              </div>
+            </div>
+            <div class="notif-list" id="notif-list"></div>
+            <div class="notif-panel-footer">
+              <small>Cibus Heritage Alerts &bull; Real-time updates</small>
+            </div>
+          </div>
+        </div>
+
+        <a href="./cart.html" class="cart-icon-btn" aria-label="View Shopping Cart and Favorites">
+          🛒
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        <div id="nav-auth-container"></div>
+
+        <!-- Mobile Toggle Button -->
+        <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <a href="./home.html" class="nav-link">Home</a>
+      <a href="./food-menu.html" class="nav-link">Food Menu</a>
+      <a href="./recipe-cards.html" class="nav-link">Cook Recipes</a>
+      <a href="./cart.html" class="nav-link">Shopping Cart / Favorites</a>
+      <a href="./contact.html" class="nav-link active">Contact Us</a>
+      <div id="mobile-drawer-auth"></div>
+    </div>
+  </header>
+
+  <main class="contact-page-wrapper">
+    <div class="container">
+
+      <!-- Back Navigation & Status Pill -->
+      <div class="auth-top-nav" style="margin-bottom: var(--space-lg); border-bottom: none;">
+        <a href="./home.html" class="auth-back-btn" aria-label="Return to home page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+          <span>Back to Explore</span>
+        </a>
+        <span class="auth-badge-pill">💬 Direct Culinary Desk</span>
+      </div>
+
+      <!-- Header Section -->
+      <section class="section-title-wrap" style="margin-bottom: var(--space-xl); text-align: center;">
+        <span class="section-eyebrow">Connect With Us</span>
+        <h1 class="section-title">Get In Touch</h1>
+        <p class="section-subtitle">
+          Have questions about a regional spice, want to suggest an authentic recipe from your home state, or need culinary guidance? We'd love to hear from you.
+        </p>
+      </section>
+
+      <!-- Contact Layout -->
+      <div class="contact-layout">
+
+        <!-- Form Column -->
+        <div class="contact-form-card">
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Full Name</label>
+              <div class="form-control-wrap">
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  class="form-control"
+                  placeholder="Your full name"
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Email Address</label>
+              <div class="form-control-wrap">
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  class="form-control"
+                  placeholder="your.email@example.com"
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">Inquiry Topic</label>
+              <div class="form-control-wrap">
+                <select id="contact-subject" name="subject" class="form-control" style="cursor: pointer;">
+                  <option value="recipe">Culinary Question / Recipe Cooking Advice</option>
+                  <option value="suggest">Suggest an Authentic State Dish</option>
+                  <option value="feedback">Platform Feedback &amp; Suggestions</option>
+                  <option value="general">General Inquiry / Culinary Collaboration</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Your Message</label>
+              <div class="form-control-wrap">
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  class="form-control"
+                  rows="5"
+                  maxlength="1000"
+                  placeholder="Tell us about your culinary question or traditional recipe suggestions..."
+                  required
+                ></textarea>
+              </div>
+              <div id="message-char-counter" class="char-counter">0 / 1000 characters</div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="auth-submit-btn">
+                Send Message &rarr;
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Contact Info Column -->
+        <div class="contact-info-panel">
+          <div class="contact-card">
+            <div class="contact-icon-box">📍</div>
+            <div>
+              <h4>Culinary Studio &amp; Heritage Center</h4>
+              <p>50 Main Street, Surat, Gujarat 395003, India</p>
+              <p style="margin-top: 6px;"><a href="https://maps.google.com/?q=Surat,Gujarat,India" target="_blank" rel="noopener noreferrer">View Location on Map &rarr;</a></p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon-box">📞</div>
+            <div>
+              <h4>Direct Phone Inquiries</h4>
+              <p>
+                <a href="tel:+917842415628">+91 78424 15628</a> &nbsp;|&nbsp;
+                <a href="tel:+919573004979">+91 95730 04979</a>
+              </p>
+              <p style="font-size: var(--font-xs); color: #6b7280; margin-top: 6px;">Available Monday to Saturday: 9:00 AM – 7:00 PM IST</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon-box">✉️</div>
+            <div>
+              <h4>Electronic Mail</h4>
+              <p><a href="mailto:reception@cibus.com" style="color: var(--color-primary); font-weight: 700;">reception@cibus.com</a></p>
+              <p style="font-size: var(--font-xs); color: #6b7280; margin-top: 6px;">Responses guaranteed within 24 business hours.</p>
+            </div>
+          </div>
+
+          <div class="contact-card" style="background: linear-gradient(135deg, rgba(254, 243, 199, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%); border-color: rgba(245, 158, 11, 0.35);">
+            <div class="contact-icon-box" style="background: rgba(232, 90, 25, 0.15);">🌟</div>
+            <div>
+              <h4 style="color: #92400e;">Preserve Your Family Recipes</h4>
+              <p style="color: #78350f;">Have a family heirloom recipe from your community? Send us the ingredients and method — we feature traditional cooks across India.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>CIBUS</h2>
+          <p>
+            An open culinary exploration celebrating authentic Indian home cooking, heritage food recipes, and regional diversity.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./food-menu.html">Food by States</a></li>
+            <li><a href="./recipe-cards.html">Recipes Gallery</a></li>
+            <li><a href="./recipe-detail.html">Recipe Instructions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>User Services</h3>
+          <ul class="footer-links">
+            <li><a href="./cart.html">Cart & Favorites</a></li>
+            <li><a href="./login.html">Sign In</a></li>
+            <li><a href="./register.html">Create Account</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Regions</h3>
+          <ul class="footer-links">
+            <li><a href="./food-menu.html?region=south">South India</a></li>
+            <li><a href="./food-menu.html?region=north">North India</a></li>
+            <li><a href="./food-menu.html?region=west">West India</a></li>
+            <li><a href="./food-menu.html?region=northeast">Northeast India</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CIBUS. Built with pure HTML5, CSS3, and Vanilla JavaScript.</p>
+        <p>Created by <a href="https://github.com/GreeshmanthSaiY" target="_blank" rel="noopener noreferrer">Greeshmanth Sai</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/config.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/celebration.js"></script>
+  <script src="../js/notifications.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/validation.js"></script>
+  <script src="../js/forms.js"></script>
+</body>
+</html>

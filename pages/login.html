@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in to your CIBUS account to manage your favorite traditional Indian recipes and culinary preferences.">
+  <title>Sign In — CIBUS</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../public/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="../public/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pages/forms.css">
+</head>
+<body>
+
+  <!-- Universal Header -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="../index.html" class="brand-logo" aria-label="Cibus Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+        CIBUS
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="./home.html" class="nav-link">Home</a>
+        <a href="./food-menu.html" class="nav-link">Food by States</a>
+        <a href="./recipe-cards.html" class="nav-link">Recipes by States</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Notifications Bell -->
+        <div class="notification-dropdown-wrap">
+          <button type="button" class="notification-icon-btn" id="notif-bell-btn" aria-label="Culinary Notifications" aria-expanded="false">
+            🔔
+            <span class="notification-badge" id="notif-badge" style="display: none;">0</span>
+          </button>
+          <div class="notification-panel" id="notif-panel" role="dialog" aria-modal="true" style="display: none;">
+            <div class="notif-panel-header">
+              <div class="notif-header-title">
+                <span class="notif-bell-icon">🔔</span>
+                <h3>Notifications</h3>
+                <span class="notif-count-pill" id="notif-count-pill">0 New</span>
+              </div>
+              <div class="notif-header-actions">
+                <button type="button" class="notif-action-btn" id="notif-mark-read-btn" title="Mark all as read">Mark Read</button>
+                <button type="button" class="notif-action-btn notif-clear-btn" id="notif-clear-btn" title="Clear all">Clear</button>
+              </div>
+            </div>
+            <div class="notif-list" id="notif-list"></div>
+            <div class="notif-panel-footer">
+              <small>Cibus Heritage Alerts &bull; Real-time updates</small>
+            </div>
+          </div>
+        </div>
+
+        <a href="./cart.html" class="cart-icon-btn" aria-label="View Shopping Cart and Favorites">
+          🛒
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        <a href="./register.html" class="btn btn-primary btn-sm">Sign Up</a>
+
+        <!-- Mobile Toggle Button -->
+        <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <a href="./home.html" class="nav-link">Home</a>
+      <a href="./food-menu.html" class="nav-link">Food by States</a>
+      <a href="./recipe-cards.html" class="nav-link">Recipes by States</a>
+      <a href="./cart.html" class="nav-link">Shopping Cart / Favorites</a>
+      <a href="./contact.html" class="nav-link">Contact Us</a>
+      <hr style="border: none; border-top: 1px solid var(--color-border); margin: var(--space-xs) 0;">
+      <a href="./login.html" class="btn btn-outline btn-block">Sign In</a>
+      <a href="./register.html" class="btn btn-primary btn-block">Create Free Account</a>
+    </div>
+  </header>
+
+  <main class="auth-page-wrapper">
+    <div class="auth-card">
+
+      <!-- Auth Top Bar with Back Button -->
+      <div class="auth-top-nav">
+        <a href="./home.html" class="auth-back-btn" aria-label="Return to home page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+          <span>Back to Explore</span>
+        </a>
+        <span class="auth-badge-pill">🔒 Session Portal</span>
+      </div>
+
+      <div class="auth-header">
+        <h1>Welcome Back</h1>
+        <p>Sign in to your session account to save recipes and add items to your cart.</p>
+      </div>
+
+      <!-- Redirect notice if sent from Cart / Add to Cart action -->
+      <div id="login-redirect-notice" class="auth-redirect-notice" style="display: none;" role="alert">
+        🛒 <strong>Sign In Required:</strong> Please sign in to your session account to add items to your cart and place orders.
+      </div>
+
+      <!-- Browser Session Privacy Notice -->
+      <div class="session-privacy-notice" role="note">
+        <div class="notice-icon">🔒</div>
+        <div class="notice-body">
+          <h4>Active Browser Session Policy</h4>
+          <p>
+            Your account and login state remain active throughout this browser session (surviving page navigation &amp; hard refreshes). Once you completely close the browser, all temporary session records are safely cleared.
+          </p>
+          <small class="notice-subtext">Pre-seeded demo credentials: <strong>demo@cibus.in</strong> / <strong>Cibus@2026</strong> (or any account created via Sign Up).</small>
+        </div>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label for="login-username" class="form-label">Username or Email</label>
+          <div class="form-control-wrap">
+            <input
+              type="text"
+              id="login-username"
+              name="username"
+              class="form-control"
+              placeholder="e.g. demo@cibus.in or your email"
+              autocomplete="username"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <label for="login-password" class="form-label" style="margin-bottom: 0;">Password</label>
+            <a href="#forgot" id="forgot-password-toggle" class="auth-forgot-link">Forgot / Reset?</a>
+          </div>
+          <div class="form-control-wrap">
+            <input
+              type="password"
+              id="login-password"
+              name="password"
+              class="form-control"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            >
+            <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility" onclick="const p = document.getElementById('login-password'); p.type = p.type === 'password' ? 'text' : 'password';">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="auth-submit-btn">
+            Sign In to Cibus &rarr;
+          </button>
+        </div>
+
+        <div class="auth-switch-link">
+          <span>Don't have an account yet?</span>
+          <a href="./register.html">Create a free session account &rarr;</a>
+        </div>
+      </form>
+
+      <!-- Expandable Forgot / Reset Password Workflow -->
+      <div id="forgot-password-card" class="forgot-password-card" style="display: none;">
+        <div class="reset-card-header">
+          <h3>🔑 Reset Account Password</h3>
+          <p>Reset your password for this browser session. Enter your registered email below.</p>
+        </div>
+        <form id="forgot-password-form" novalidate>
+          <div class="form-group">
+            <label for="reset-email" class="form-label">Registered Email Address</label>
+            <input type="email" id="reset-email" class="form-control" placeholder="e.g. demo@cibus.in" required>
+          </div>
+          <div class="form-group">
+            <label for="reset-new-password" class="form-label">New Password</label>
+            <input type="password" id="reset-new-password" class="form-control" placeholder="Min 8 chars, 1 uppercase, 1 digit" required>
+          </div>
+          <div class="form-group">
+            <label for="reset-confirm-password" class="form-label">Confirm New Password</label>
+            <input type="password" id="reset-confirm-password" class="form-control" placeholder="Re-type your new password" required>
+          </div>
+          <div class="reset-actions">
+            <button type="submit" class="btn btn-primary btn-sm">Save New Password &rarr;</button>
+            <button type="button" id="cancel-reset-btn" class="btn btn-outline btn-sm">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>CIBUS</h2>
+          <p>
+            An open culinary exploration celebrating authentic Indian home cooking, heritage food recipes, and regional diversity.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./food-menu.html">Food by States</a></li>
+            <li><a href="./recipe-cards.html">Recipes Gallery</a></li>
+            <li><a href="./recipe-detail.html">Recipe Instructions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>User Services</h3>
+          <ul class="footer-links">
+            <li><a href="./cart.html">Cart & Favorites</a></li>
+            <li><a href="./login.html">Sign In</a></li>
+            <li><a href="./register.html">Create Account</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Regions</h3>
+          <ul class="footer-links">
+            <li><a href="./food-menu.html?region=south">South India</a></li>
+            <li><a href="./food-menu.html?region=north">North India</a></li>
+            <li><a href="./food-menu.html?region=west">West India</a></li>
+            <li><a href="./food-menu.html?region=northeast">Northeast India</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CIBUS. Built with pure HTML5, CSS3, and Vanilla JavaScript.</p>
+        <p>Created by <a href="https://github.com/GreeshmanthSaiY" target="_blank" rel="noopener noreferrer">Greeshmanth Sai</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/config.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/celebration.js"></script>
+  <script src="../js/notifications.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/validation.js"></script>
+  <script src="../js/forms.js"></script>
+</body>
+</html>

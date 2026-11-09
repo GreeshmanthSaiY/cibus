@@ -1,0 +1,220 @@
+/**
+ * CIBUS LANDING / SPLASH PAGE STYLES
+ * Preserves the iconic Indian Ashoka Chakra, Tricolor Gradient, Parallax Wave Animation
+ * Modernized with semantic typography, WCAG contrast, and interactive buttons
+ */
+
+.landing-body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #FAF7F2;
+  overflow-x: hidden;
+}
+
+.landing-header {
+  position: relative;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    #FF9933 0%,
+    #FFF4E6 45%,
+    #E8F5E9 65%,
+    #138808 100%
+  );
+  color: #1C1917;
+  overflow: hidden;
+}
+
+.landing-inner-header {
+  min-height: 68vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1.5rem 1rem;
+}
+
+.chakra-emblem {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 1.25rem;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 128, 0.25));
+  animation: emblem-rotate 60s linear infinite;
+}
+
+@keyframes emblem-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.landing-title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #000080; /* Traditional Navy Blue */
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
+}
+
+.landing-tagline {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #2D3748;
+  max-width: 580px;
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.landing-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+.landing-btn-primary {
+  background-color: #C74B16;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.9rem 2rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(199, 75, 22, 0.4);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.landing-btn-primary:hover {
+  background-color: #9A340B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(199, 75, 22, 0.5);
+  color: #fff;
+}
+
+.landing-btn-outline {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #0A6B48;
+  border: 2px solid #0A6B48;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.landing-btn-outline:hover {
+  background-color: #0A6B48;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Waving Flag & Water SVG Animation */
+.waves-container {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  min-height: 100px;
+  max-height: 150px;
+  margin-bottom: -7px;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.parallax > use {
+  animation: wave-move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes wave-move-forever {
+  0% { transform: translate3d(-90px, 0, 0); }
+  100% { transform: translate3d(85px, 0, 0); }
+}
+
+/* Bottom Content & Navigation Links */
+.landing-footer-content {
+  background-color: #FAF7F2;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.landing-auth-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4A5568;
+}
+
+.landing-auth-links a {
+  color: #C74B16;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.15s ease;
+}
+
+.landing-auth-links a:hover {
+  color: #9A340B;
+}
+
+.landing-attribution {
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+@media (max-width: 768px) {
+  .landing-title {
+    font-size: 2.25rem;
+  }
+  .landing-tagline {
+    font-size: 1rem;
+  }
+  .waves-container {
+    height: 60px;
+    min-height: 60px;
+  }
+}

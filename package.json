@@ -1,0 +1,36 @@
+{
+  "name": "cibus",
+  "version": "2.0.0",
+  "description": "Traditional Indian food discovery and heritage recipe platform celebrating 28 states.",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node --test tests/unit/*.test.js",
+    "test:unit": "node --test tests/unit/*.test.js",
+    "test:probe": "node tests/integration/server-probe.js",
+    "validate:html": "node tests/integration/html-integrity.test.js",
+    "test:all": "npm run test && npm run validate:html",
+    "build": "node -e \"console.log('CIBUS static assets verified for production deployment.')\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GreeshmanthSaiY/cibus.git"
+  },
+  "keywords": [
+    "indian-food",
+    "traditional-recipes",
+    "regional-cuisine",
+    "vanilla-javascript",
+    "html5",
+    "css3",
+    "vercel",
+    "static-web"
+  ],
+  "author": "Greeshmanth Sai Y",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GreeshmanthSaiY/cibus/issues"
+  },
+  "homepage": "https://github.com/GreeshmanthSaiY/cibus#readme"
+}

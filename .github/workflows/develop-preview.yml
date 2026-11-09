@@ -1,0 +1,32 @@
+name: Develop Staging & Preview Check
+
+on:
+  push:
+    branches: [ develop ]
+
+permissions:
+  contents: read
+
+jobs:
+  preview-check:
+    name: Staging Preview Verification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run Integrity & Probe Suite
+        run: |
+          node --test tests/unit/*.test.js
+          node tests/integration/html-integrity.test.js
+          node tests/integration/server-probe.js
+
+      - name: Verify Vercel Configuration
+        run: |
+          node -e "const v = require('./vercel.json'); if (!v.routes || !v.headers) { console.error('Invalid vercel.json'); process.exit(1); } console.log('vercel.json configuration syntax is valid.');"

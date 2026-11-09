@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cibus-food.vercel.app/sitemap.xml

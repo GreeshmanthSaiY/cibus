@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cibus — A celebration of traditional Indian cuisine. Discover authentic recipes, explore 28 regional state menus, and celebrate culinary heritage.">
+  <meta name="theme-color" content="#FF9933">
+
+  <title>CIBUS — Celebrating Traditional Indian Cuisines</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="public/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages/landing.css">
+</head>
+<body class="landing-body">
+
+  <header class="landing-header">
+    <div class="landing-inner-header">
+
+      <!-- Ashoka Chakra Emblem (Semantic SVG with correct XML namespace) -->
+      <svg class="chakra-emblem" viewBox="0 0 515 515" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Indian Chakra Emblem">
+        <circle cx="256" cy="256" r="248" fill="none" stroke="#000080" stroke-width="12" />
+        <circle cx="256" cy="256" r="48" fill="#000080" />
+        <!-- 24 Spokes of the Chakra -->
+        <g stroke="#000080" stroke-width="5">
+          <line x1="256" y1="8" x2="256" y2="504" />
+          <line x1="8" y1="256" x2="504" y2="256" />
+          <line x1="80" y1="80" x2="432" y2="432" />
+          <line x1="80" y1="432" x2="432" y2="80" />
+          <line x1="161" y1="26" x2="351" y2="486" />
+          <line x1="26" y1="161" x2="486" y2="351" />
+          <line x1="351" y1="26" x2="161" y2="486" />
+          <line x1="486" y1="161" x2="26" y2="351" />
+          <line x1="38" y1="110" x2="474" y2="402" />
+          <line x1="110" y1="38" x2="402" y2="474" />
+          <line x1="474" y1="110" x2="38" y2="402" />
+          <line x1="402" y1="38" x2="110" y2="474" />
+        </g>
+      </svg>
+
+      <h1 class="landing-title">Welcome To Cibus</h1>
+      <p class="landing-tagline">
+        An immersive celebration of authentic regional food, time-honored recipes, and living culinary heritage across the 28 States of India.
+      </p>
+
+      <div class="landing-actions">
+        <a href="pages/home.html" class="landing-btn-primary">
+          Explore Cibus &rarr;
+        </a>
+        <a href="pages/food-menu.html" class="landing-btn-outline">
+          Discover Food Menus
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Parallax Waves Animation -->
+    <div class="waves-container">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto" role="presentation">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255, 255, 255, 0.7)" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255, 255, 255, 0.5)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255, 255, 255, 0.3)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#FAF7F2" />
+        </g>
+      </svg>
+    </div>
+  </header>
+
+  <footer class="landing-footer-content">
+    <nav class="landing-auth-links" aria-label="Account Access">
+      <a href="pages/register.html">New User? Create Account</a>
+      <span aria-hidden="true" style="color: #CBD5E0;">|</span>
+      <a href="pages/login.html">Sign In to Account</a>
+      <span aria-hidden="true" style="color: #CBD5E0;">|</span>
+      <a href="pages/contact.html">Contact Us</a>
+    </nav>
+    <p class="landing-attribution">
+      Cibus &copy; 2026. Handcrafted to celebrate traditional Indian food culture.
+    </p>
+  </footer>
+
+</body>
+</html>

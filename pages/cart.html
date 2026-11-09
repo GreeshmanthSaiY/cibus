@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View your selected traditional Indian dishes, manage quantities, and review order totals in Cibus.">
+  <title>Shopping Cart & Favorites — CIBUS</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../public/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="../public/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pages/cart.css">
+</head>
+<body>
+
+  <!-- Universal Header -->
+  <header class="site-header">
+    <div class="container site-nav">
+      <a href="../index.html" class="brand-logo" aria-label="Cibus Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+        CIBUS
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="./home.html" class="nav-link">Home</a>
+        <a href="./food-menu.html" class="nav-link">Food Menu</a>
+        <a href="./recipe-cards.html" class="nav-link">Cook Recipes</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Notifications Bell -->
+        <div class="notification-dropdown-wrap">
+          <button type="button" class="notification-icon-btn" id="notif-bell-btn" aria-label="Culinary Notifications" aria-expanded="false">
+            🔔
+            <span class="notification-badge" id="notif-badge" style="display: none;">0</span>
+          </button>
+          <div class="notification-panel" id="notif-panel" role="dialog" aria-modal="true" style="display: none;">
+            <div class="notif-panel-header">
+              <div class="notif-header-title">
+                <span class="notif-bell-icon">🔔</span>
+                <h3>Notifications</h3>
+                <span class="notif-count-pill" id="notif-count-pill">0 New</span>
+              </div>
+              <div class="notif-header-actions">
+                <button type="button" class="notif-action-btn" id="notif-mark-read-btn" title="Mark all as read">Mark Read</button>
+                <button type="button" class="notif-action-btn notif-clear-btn" id="notif-clear-btn" title="Clear all">Clear</button>
+              </div>
+            </div>
+            <div class="notif-list" id="notif-list"></div>
+            <div class="notif-panel-footer">
+              <small>Cibus Heritage Alerts &bull; Real-time updates</small>
+            </div>
+          </div>
+        </div>
+
+        <a href="./cart.html" class="cart-icon-btn active" aria-label="View Shopping Cart and Favorites">
+          🛒
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        <div id="nav-auth-container"></div>
+
+        <!-- Mobile Toggle Button -->
+        <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <a href="./home.html" class="nav-link">Home</a>
+      <a href="./food-menu.html" class="nav-link">Food Menu</a>
+      <a href="./recipe-cards.html" class="nav-link">Cook Recipes</a>
+      <a href="./cart.html" class="nav-link active">Shopping Cart / Favorites</a>
+      <a href="./contact.html" class="nav-link">Contact Us</a>
+      <div id="mobile-drawer-auth"></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- Header Section -->
+      <section class="section-title-wrap" style="padding-top: var(--space-2xl); margin-bottom: var(--space-lg);">
+        <span class="section-eyebrow">Your Culinary Order</span>
+        <h1 class="section-title">Shopping Cart &amp; Favorites</h1>
+        <p class="section-subtitle">
+          Review your chosen regional delicacies, adjust serving portions, and calculate estimated totals.
+        </p>
+      </section>
+
+      <!-- Cart Layout -->
+      <div class="cart-layout">
+
+        <!-- Cart Items Column -->
+        <div class="cart-items-panel">
+
+          <!-- Empty State (Shown when 0 items) -->
+          <div id="cart-empty-state" class="empty-state" style="display: none;">
+            <span class="empty-state-icon">🛒</span>
+            <h3>Your Cart is Currently Empty</h3>
+            <p>
+              You haven't selected any traditional dishes yet. Browse our regional state food menus to discover authentic specialties!
+            </p>
+            <a href="./food-menu.html" class="btn btn-primary">
+              Browse Food Menu &rarr;
+            </a>
+          </div>
+
+          <!-- Items Table Wrapper -->
+          <div id="cart-table-wrapper">
+            <div class="cart-table-header">
+              <span>Dish &amp; Region</span>
+              <span>Unit Price</span>
+              <span>Quantity</span>
+              <span>Subtotal</span>
+              <span aria-label="Remove item"></span>
+            </div>
+
+            <!-- Dynamic Cart Items Container -->
+            <div id="cart-items-container">
+              <!-- Rendered by js/main.js App.initCartPage() -->
+            </div>
+
+            <div class="cart-actions-bar">
+              <a href="./food-menu.html" class="btn btn-outline btn-sm">
+                &larr; Add More Dishes
+              </a>
+              <button type="button" id="clear-cart-btn" class="btn btn-outline btn-sm" style="color: var(--color-error); border-color: var(--color-error-bg);">
+                Clear Entire Cart
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Order Summary Column -->
+        <aside class="order-summary-panel" id="order-summary-panel">
+          <h3>Order Summary</h3>
+          <div class="summary-row">
+            <span>Items Subtotal</span>
+            <span id="cart-subtotal">₹0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Estimated GST (5%)</span>
+            <span id="cart-tax">₹0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Heritage Packaging</span>
+            <span style="color: var(--color-secondary); font-weight: 600;">Complimentary</span>
+          </div>
+          <div class="summary-row total-row">
+            <span>Grand Total</span>
+            <span id="cart-grand-total">₹0.00</span>
+          </div>
+
+          <button type="button" id="checkout-btn" class="btn btn-primary btn-lg checkout-btn">
+            Proceed to Demo Checkout &rarr;
+          </button>
+
+          <p class="delivery-note">
+            🛡️ <strong>Demonstration Mode:</strong> CIBUS is currently running in static client mode. Cart items are securely validated in your browser.
+          </p>
+        </aside>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>CIBUS</h2>
+          <p>
+            An open culinary exploration celebrating authentic Indian home cooking, heritage food recipes, and regional diversity.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./food-menu.html">Food by States</a></li>
+            <li><a href="./recipe-cards.html">Recipes Gallery</a></li>
+            <li><a href="./recipe-detail.html">Recipe Instructions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>User Services</h3>
+          <ul class="footer-links">
+            <li><a href="./cart.html">Cart & Favorites</a></li>
+            <li><a href="./login.html">Sign In</a></li>
+            <li><a href="./register.html">Create Account</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Regions</h3>
+          <ul class="footer-links">
+            <li><a href="./food-menu.html?region=south">South India</a></li>
+            <li><a href="./food-menu.html?region=north">North India</a></li>
+            <li><a href="./food-menu.html?region=west">West India</a></li>
+            <li><a href="./food-menu.html?region=northeast">Northeast India</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CIBUS. Built with pure HTML5, CSS3, and Vanilla JavaScript.</p>
+        <p>Created by <a href="https://github.com/GreeshmanthSaiY" target="_blank" rel="noopener noreferrer">Greeshmanth Sai</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/config.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/celebration.js"></script>
+  <script src="../js/notifications.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
