@@ -38,6 +38,12 @@ const routeAliases = {
 
 const server = http.createServer((req, res) => {
   let reqPath = decodeURI(req.url.split('?')[0]);
+  if (reqPath.startsWith('/_vercel/')) {
+    res.writeHead(200, { 'Content-Type': 'application/javascript; charset=utf-8' });
+    res.end('/* Vercel Web Analytics & Speed Insights probe mock */');
+    return;
+  }
+
   if (routeAliases[reqPath]) {
     reqPath = routeAliases[reqPath];
   }
@@ -99,7 +105,9 @@ server.listen(0, '127.0.0.1', async () => {
     '/public/assets/images/favicon-32x32.png',
     '/public/assets/images/apple-touch-icon.png',
     '/public/assets/images/food-photo.jpeg',
-    '/public/assets/gif/food-animation.gif'
+    '/public/assets/gif/food-animation.gif',
+    '/_vercel/insights/script.js',
+    '/_vercel/speed-insights/script.js'
   ];
 
   let probedCount = 0;

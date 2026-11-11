@@ -87,6 +87,20 @@ htmlFiles.forEach((filePath) => {
     }
   }
 
+  // 4b. Verify Vercel Analytics & Speed Insights instrumentation
+  if (!content.includes('/_vercel/insights/script.js')) {
+    console.error(`  ❌ Missing Vercel Web Analytics script (/_vercel/insights/script.js)`);
+    totalErrors++;
+  }
+  if (!content.includes('/_vercel/speed-insights/script.js')) {
+    console.error(`  ❌ Missing Vercel Speed Insights script (/_vercel/speed-insights/script.js)`);
+    totalErrors++;
+  }
+  if (!content.includes('window.va =') || !content.includes('window.si =')) {
+    console.error(`  ❌ Missing Vercel Analytics/Speed Insights queue initialization`);
+    totalErrors++;
+  }
+
   // 5. Check for icon & manifest links
   const linkMatches = content.matchAll(/<link[^>]+(?:rel=["'](?:icon|alternate icon|apple-touch-icon|manifest)["'])[^>]+href=["']([^"']+)["']/gi);
   for (const m of linkMatches) {

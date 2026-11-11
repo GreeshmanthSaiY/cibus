@@ -247,7 +247,7 @@ npm test
 # Run HTML integrity and broken link validation (all 11 HTML pages)
 npm run validate:html
 
-# Run server route probe (37 HTTP endpoints)
+# Run server route probe (39 HTTP endpoints including Vercel Analytics & Speed Insights mocks)
 npm run test:probe
 
 # Run production build verification gate
