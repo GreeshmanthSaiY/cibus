@@ -106,6 +106,16 @@
 @media (max-width: 479px) {
   .brand-logo {
     font-size: var(--font-xl);
+    gap: 6px;
+  }
+
+  .brand-logo-img {
+    height: 38px;
+    max-width: 52px;
+  }
+
+  .brand-text {
+    font-size: var(--font-xl);
   }
 
   .brand-logo svg {

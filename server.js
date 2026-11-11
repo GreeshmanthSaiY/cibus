@@ -46,7 +46,8 @@ const MIME_TYPES = {
   '.woff2': 'font/woff2',
   '.ttf': 'font/ttf',
   '.txt': 'text/plain; charset=utf-8',
-  '.xml': 'application/xml; charset=utf-8'
+  '.xml': 'application/xml; charset=utf-8',
+  '.webmanifest': 'application/manifest+json; charset=utf-8'
 };
 
 // Clean URL Route Definitions (mirrors vercel.json)
@@ -63,7 +64,8 @@ const ROUTE_ALIASES = {
   '/favicon.ico': '/public/favicon.ico',
   '/favicon.svg': '/public/favicon.svg',
   '/robots.txt': '/public/robots.txt',
-  '/sitemap.xml': '/public/sitemap.xml'
+  '/sitemap.xml': '/public/sitemap.xml',
+  '/site.webmanifest': '/public/site.webmanifest'
 };
 
 // Active Server-Sent Event (SSE) clients for live reload
@@ -469,6 +471,16 @@ function startServer(port = DEFAULT_PORT) {
       res.write(': connected\n\n');
       sseClients.add(res);
       req.on('close', () => sseClients.delete(res));
+      return;
+    }
+
+    // 1b. Stub Vercel Analytics / Speed Insights endpoints for local development
+    if (req.url.startsWith('/_vercel/')) {
+      res.writeHead(200, {
+        'Content-Type': 'application/javascript; charset=utf-8',
+        'Cache-Control': 'no-cache'
+      });
+      res.end('/* Vercel Web Analytics & Speed Insights local development stub */');
       return;
     }
 
