@@ -15,12 +15,32 @@ const mimeTypes = {
   '.jpeg': 'image/jpeg',
   '.gif': 'image/gif',
   '.ico': 'image/x-icon',
-  '.svg': 'image/svg+xml'
+  '.svg': 'image/svg+xml',
+  '.webmanifest': 'application/manifest+json; charset=utf-8'
+};
+
+const routeAliases = {
+  '/': '/index.html',
+  '/home': '/pages/home.html',
+  '/food-menu': '/pages/food-menu.html',
+  '/recipe-cards': '/pages/recipe-cards.html',
+  '/recipe-detail': '/pages/recipe-detail.html',
+  '/cart': '/pages/cart.html',
+  '/login': '/pages/login.html',
+  '/register': '/pages/register.html',
+  '/contact': '/pages/contact.html',
+  '/favicon.ico': '/public/favicon.ico',
+  '/favicon.svg': '/public/favicon.svg',
+  '/robots.txt': '/public/robots.txt',
+  '/sitemap.xml': '/public/sitemap.xml',
+  '/site.webmanifest': '/public/site.webmanifest'
 };
 
 const server = http.createServer((req, res) => {
   let reqPath = decodeURI(req.url.split('?')[0]);
-  if (reqPath === '/') reqPath = '/index.html';
+  if (routeAliases[reqPath]) {
+    reqPath = routeAliases[reqPath];
+  }
 
   const filePath = path.join(projectRoot, reqPath);
 
@@ -45,13 +65,22 @@ server.listen(0, '127.0.0.1', async () => {
   const routesToProbe = [
     '/',
     '/index.html',
+    '/404.html',
+    '/home',
     '/pages/home.html',
+    '/food-menu',
     '/pages/food-menu.html',
+    '/recipe-cards',
     '/pages/recipe-cards.html',
+    '/recipe-detail',
     '/pages/recipe-detail.html',
+    '/cart',
     '/pages/cart.html',
+    '/login',
     '/pages/login.html',
+    '/register',
     '/pages/register.html',
+    '/contact',
     '/pages/contact.html',
     '/pages/404.html',
     '/data/states.json',
@@ -63,6 +92,12 @@ server.listen(0, '127.0.0.1', async () => {
     '/favicon.svg',
     '/public/favicon.svg',
     '/public/favicon.ico',
+    '/public/site.webmanifest',
+    '/site.webmanifest',
+    '/public/assets/images/cibus-logo.png',
+    '/public/assets/images/cibus-logo-header.png',
+    '/public/assets/images/favicon-32x32.png',
+    '/public/assets/images/apple-touch-icon.png',
     '/public/assets/images/food-photo.jpeg',
     '/public/assets/gif/food-animation.gif'
   ];
@@ -78,7 +113,7 @@ server.listen(0, '127.0.0.1', async () => {
           assert.strictEqual(res.statusCode, 200, `Expected 200 for ${route}, got ${res.statusCode}`);
           const totalBytes = Buffer.concat(body).length;
           assert.ok(totalBytes > 0, `Expected non-empty response for ${route}`);
-          console.log(`  ✓ Route ${route.padEnd(40)} -> HTTP 200 (${totalBytes} bytes)`);
+          console.log(`  ✓ Route ${route.padEnd(42)} -> HTTP 200 (${totalBytes} bytes)`);
           probedCount++;
           resolve();
         });
@@ -91,4 +126,3 @@ server.listen(0, '127.0.0.1', async () => {
     process.exit(0);
   });
 });
-

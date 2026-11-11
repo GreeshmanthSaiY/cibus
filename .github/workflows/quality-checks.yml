@@ -44,5 +44,5 @@ jobs:
           fi
           echo "No hardcoded secrets detected."
 
-      - name: Production Readiness Verification
-        run: node -e "console.log('Static application validation completed successfully.')"
+      - name: Production Readiness & Architecture Verification
+        run: node scripts/verify-build.js

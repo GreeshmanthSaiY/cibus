@@ -11,7 +11,7 @@
     "test:probe": "node tests/integration/server-probe.js",
     "validate:html": "node tests/integration/html-integrity.test.js",
     "test:all": "npm run test && npm run validate:html",
-    "build": "node -e \"console.log('CIBUS static assets verified for production deployment.')\""
+    "build": "node scripts/verify-build.js"
   },
   "repository": {
     "type": "git",
