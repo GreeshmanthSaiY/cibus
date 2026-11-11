@@ -7,9 +7,12 @@
   <meta name="description" content="Authentic, step-by-step cooking recipes and ingredient measurements for traditional dishes from all 28 Indian States.">
   <title>Recipe Instructions & Ingredients — CIBUS</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="../public/favicon.svg">
-  <link rel="alternate icon" type="image/x-icon" href="../public/favicon.ico">
+  <!-- Complete Favicon Suite -->
+  <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../public/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../public/assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../public/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="../public/site.webmanifest">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,9 +28,9 @@
   <!-- Universal Header -->
   <header class="site-header">
     <div class="container site-nav">
-      <a href="../index.html" class="brand-logo" aria-label="Cibus Home">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
-        CIBUS
+      <a href="../index.html" class="brand-logo" aria-label="CIBUS Home">
+        <img src="../public/assets/images/cibus-logo-header.png" alt="CIBUS — Celebrating Traditional Indian Cuisines" class="brand-logo-img">
+        <span class="brand-text">CIBUS</span>
       </a>
 
       <!-- Desktop Navigation -->
@@ -2687,7 +2690,10 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h2>CIBUS</h2>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.75rem;">
+            <img src="../public/assets/images/cibus-logo-header.png" alt="CIBUS" style="height: 38px; width: auto; object-fit: contain;">
+            <h2 style="margin: 0;">CIBUS</h2>
+          </div>
           <p>
             An open culinary exploration celebrating authentic Indian home cooking, heritage food recipes, and regional diversity.
           </p>
@@ -2742,5 +2748,8 @@
       RecipesController.initDetail();
     });
   </script>
+  <!-- Vercel Web Analytics & Speed Insights (Failsafe static integration) -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>

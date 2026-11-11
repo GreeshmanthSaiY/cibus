@@ -46,6 +46,30 @@
   color: var(--color-primary);
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  text-decoration: none;
+}
+
+.brand-logo-img {
+  height: 46px;
+  width: auto;
+  max-width: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(199, 75, 22, 0.22));
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  font-family: var(--font-heading);
+  font-size: var(--font-2xl);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.brand-logo:hover .brand-logo-img {
+  transform: scale(1.05);
 }
 
 .brand-logo svg {

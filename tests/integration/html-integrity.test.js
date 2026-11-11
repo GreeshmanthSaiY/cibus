@@ -5,6 +5,7 @@ const projectRoot = path.resolve(__dirname, '../../');
 
 const htmlFiles = [
   path.join(projectRoot, 'index.html'),
+  path.join(projectRoot, '404.html'),
   path.join(projectRoot, 'pages/home.html'),
   path.join(projectRoot, 'pages/food-menu.html'),
   path.join(projectRoot, 'pages/recipe-cards.html'),
@@ -56,7 +57,9 @@ htmlFiles.forEach((filePath) => {
     if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('//')) {
       continue;
     }
-    const resolvedPath = path.resolve(fileDir, href);
+    const resolvedPath = href.startsWith('/')
+      ? path.join(projectRoot, href.slice(1))
+      : path.resolve(fileDir, href);
     if (!fs.existsSync(resolvedPath)) {
       console.error(`  ❌ Broken stylesheet link: "${href}" (resolved: ${resolvedPath})`);
       totalErrors++;
@@ -67,12 +70,51 @@ htmlFiles.forEach((filePath) => {
   const scriptMatches = content.matchAll(/<script[^>]+src=["']([^"']+)["']/gi);
   for (const m of scriptMatches) {
     const src = m[1];
-    if (src.startsWith('http://') || src.startsWith('https://') || src.startsWith('//')) {
+    if (
+      src.startsWith('http://') ||
+      src.startsWith('https://') ||
+      src.startsWith('//') ||
+      src.startsWith('/_vercel/')
+    ) {
       continue;
     }
-    const resolvedPath = path.resolve(fileDir, src);
+    const resolvedPath = src.startsWith('/')
+      ? path.join(projectRoot, src.slice(1))
+      : path.resolve(fileDir, src);
     if (!fs.existsSync(resolvedPath)) {
       console.error(`  ❌ Broken script src: "${src}" (resolved: ${resolvedPath})`);
+      totalErrors++;
+    }
+  }
+
+  // 5. Check for icon & manifest links
+  const linkMatches = content.matchAll(/<link[^>]+(?:rel=["'](?:icon|alternate icon|apple-touch-icon|manifest)["'])[^>]+href=["']([^"']+)["']/gi);
+  for (const m of linkMatches) {
+    const href = m[1];
+    if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('//') || href.startsWith('data:')) {
+      continue;
+    }
+    const resolvedPath = href.startsWith('/')
+      ? path.join(projectRoot, href.slice(1))
+      : path.resolve(fileDir, href);
+    if (!fs.existsSync(resolvedPath)) {
+      console.error(`  ❌ Broken icon/manifest link: "${href}" (resolved: ${resolvedPath})`);
+      totalErrors++;
+    }
+  }
+
+  // 6. Check for local image references
+  const imgMatches = content.matchAll(/<img[^>]+src=["']([^"']+)["']/gi);
+  for (const m of imgMatches) {
+    const src = m[1];
+    if (src.startsWith('http://') || src.startsWith('https://') || src.startsWith('//') || src.startsWith('data:')) {
+      continue;
+    }
+    const resolvedPath = src.startsWith('/')
+      ? path.join(projectRoot, src.slice(1))
+      : path.resolve(fileDir, src);
+    if (!fs.existsSync(resolvedPath)) {
+      console.error(`  ❌ Broken image src: "${src}" (resolved: ${resolvedPath})`);
       totalErrors++;
     }
   }
@@ -95,7 +137,11 @@ htmlFiles.forEach((filePath) => {
     const cleanHref = href.split('?')[0].split('#')[0];
     if (!cleanHref) continue;
 
-    const resolvedPath = path.resolve(fileDir, cleanHref);
+    const resolvedPath = cleanHref === '/'
+      ? path.join(projectRoot, 'index.html')
+      : cleanHref.startsWith('/')
+        ? path.join(projectRoot, cleanHref.slice(1))
+        : path.resolve(fileDir, cleanHref);
     if (!fs.existsSync(resolvedPath)) {
       console.error(`  ❌ Broken anchor link: "${href}" (resolved: ${resolvedPath})`);
       totalErrors++;

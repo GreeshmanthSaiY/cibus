@@ -1,64 +1,60 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
-  "routes": [
+  "outputDirectory": ".",
+  "rewrites": [
     {
-      "src": "/favicon.ico",
-      "dest": "/public/favicon.ico"
+      "source": "/favicon.ico",
+      "destination": "/public/favicon.ico"
     },
     {
-      "src": "/favicon.svg",
-      "dest": "/public/favicon.svg"
+      "source": "/favicon.svg",
+      "destination": "/public/favicon.svg"
     },
     {
-      "src": "/robots.txt",
-      "dest": "/public/robots.txt"
+      "source": "/robots.txt",
+      "destination": "/public/robots.txt"
     },
     {
-      "src": "/sitemap.xml",
-      "dest": "/public/sitemap.xml"
+      "source": "/sitemap.xml",
+      "destination": "/public/sitemap.xml"
     },
     {
-      "src": "/home",
-      "dest": "/pages/home.html"
+      "source": "/site.webmanifest",
+      "destination": "/public/site.webmanifest"
     },
     {
-      "src": "/food-menu",
-      "dest": "/pages/food-menu.html"
+      "source": "/home",
+      "destination": "/pages/home.html"
     },
     {
-      "src": "/recipe-cards",
-      "dest": "/pages/recipe-cards.html"
+      "source": "/food-menu",
+      "destination": "/pages/food-menu.html"
     },
     {
-      "src": "/recipe-detail",
-      "dest": "/pages/recipe-detail.html"
+      "source": "/recipe-cards",
+      "destination": "/pages/recipe-cards.html"
     },
     {
-      "src": "/cart",
-      "dest": "/pages/cart.html"
+      "source": "/recipe-detail",
+      "destination": "/pages/recipe-detail.html"
     },
     {
-      "src": "/login",
-      "dest": "/pages/login.html"
+      "source": "/cart",
+      "destination": "/pages/cart.html"
     },
     {
-      "src": "/register",
-      "dest": "/pages/register.html"
+      "source": "/login",
+      "destination": "/pages/login.html"
     },
     {
-      "src": "/contact",
-      "dest": "/pages/contact.html"
+      "source": "/register",
+      "destination": "/pages/register.html"
     },
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "status": 404,
-      "dest": "/pages/404.html"
+      "source": "/contact",
+      "destination": "/pages/contact.html"
     }
   ],
   "headers": [
@@ -67,7 +63,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://kit.fontawesome.com https://ka-f.fontawesome.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://use.fontawesome.com; font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com data:; img-src 'self' data: https:; connect-src 'self' https://ka-f.fontawesome.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://kit.fontawesome.com https://ka-f.fontawesome.com https://va.vercel-scripts.com https://speed-insights.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://use.fontawesome.com; font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com data:; img-src 'self' data: https:; connect-src 'self' https://ka-f.fontawesome.com https://vitals.vercel-insights.com https://va.vercel-scripts.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self';"
         },
         {
           "key": "X-Content-Type-Options",
@@ -75,7 +71,7 @@
         },
         {
           "key": "X-Frame-Options",
-          "value": "DENY"
+          "value": "SAMEORIGIN"
         },
         {
           "key": "Referrer-Policy",
@@ -92,11 +88,20 @@
       ]
     },
     {
-      "source": "/(public|css|js|data)/(.*)",
+      "source": "/(public|css|js)/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/data/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
         }
       ]
     }
