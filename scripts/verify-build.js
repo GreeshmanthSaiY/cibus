@@ -100,6 +100,31 @@ try {
   assert(false, `vercel.json parsing failed: ${err.message}`);
 }
 
+// 6. Vercel Analytics & Speed Insights Instrumentation
+console.log('\n6. Validating Vercel Analytics & Speed Insights Instrumentation...');
+const allHtmlPages = [
+  'index.html',
+  '404.html',
+  'pages/home.html',
+  'pages/food-menu.html',
+  'pages/recipe-cards.html',
+  'pages/recipe-detail.html',
+  'pages/cart.html',
+  'pages/login.html',
+  'pages/register.html',
+  'pages/contact.html',
+  'pages/404.html'
+];
+allHtmlPages.forEach(p => {
+  const full = path.join(rootDir, p);
+  if (fs.existsSync(full)) {
+    const content = fs.readFileSync(full, 'utf8');
+    assert(content.includes('/_vercel/insights/script.js'), `Page "${p}" contains Vercel Web Analytics script`);
+    assert(content.includes('/_vercel/speed-insights/script.js'), `Page "${p}" contains Vercel Speed Insights script`);
+    assert(content.includes('window.va =') && content.includes('window.si ='), `Page "${p}" contains Vercel queue initialization`);
+  }
+});
+
 console.log('\n====================================================');
 if (errors === 0) {
   console.log('✨ [SUCCESS] All CIBUS static production assets & configs verified!');
