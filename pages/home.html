@@ -162,7 +162,7 @@
 
               <!-- Dish Photo Wrap -->
               <div class="hero-dish-img-wrap">
-                <img id="hero-dish-img" src="../public/assets/images/dishes/biriyani.webp" alt="Hyderabadi Dum Biryani" loading="eager" decoding="async">
+                <img id="hero-dish-img" src="../public/assets/images/dishes/biriyani.webp" alt="Hyderabadi Dum Biryani" loading="eager" decoding="async" fetchpriority="high">
                 <div class="hero-dish-gradient-scrim"></div>
               </div>
 
@@ -600,7 +600,11 @@
   <script src="../js/notifications.js"></script>
   <script src="../js/navigation.js"></script>
   <script src="../js/main.js"></script>
-  <!-- Vercel Web Analytics & Speed Insights (Failsafe static integration) -->
+  <!-- Vercel Web Analytics & Speed Insights (Official Static Integration) -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>

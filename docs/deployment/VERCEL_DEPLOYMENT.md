@@ -105,39 +105,56 @@ All 11 HTML pages feature standardized icon metadata:
 ## 6. Vercel Web Analytics Integration
 
 ### Implementation
-Integrated via standard static script tag placed before `</body>` across all HTML pages:
+Integrated via the official Vercel Static HTML snippet placed before `</body>` across all 11 HTML pages:
 ```html
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
 <script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 ```
 
-### Key Technical Properties
-- **Zero Dependencies:** Pure static endpoint served automatically by Vercel Edge.
-- **Local Development Failsafe:** `server.js` contains an internal stub route (`/_vercel/*`) returning an empty script so local development incurs 0 errors and 0 console warnings.
-- **Privacy First:** Privacy-friendly tracking with no third-party cookies or personally identifiable information (PII).
+### Key Technical Properties & Queue Mechanism
+- **Non-blocking Buffer Queue (`window.va` & `window.vaq`):**
+  Defines an in-memory queue function before the external deferred script loads. Any analytics tracking calls triggered early during page load are safely pushed to `window.vaq` without throwing runtime `undefined` errors. When `/_vercel/insights/script.js` finishes loading asynchronously, it drains the queue and transmits telemetry.
+- **Zero Dependencies:** Pure static endpoints served natively by the Vercel Edge Network without npm packages or framework bundles.
+- **Local Development Failsafe:** `server.js` and `tests/integration/server-probe.js` intercept `/_vercel/*` routes, returning a lightweight mock script (`HTTP 200 application/javascript`) to ensure zero 404 network errors and clean browser consoles during local offline development.
+- **Privacy First:** Fully privacy-compliant analytics without cookies, local storage tracking, or collection of Personally Identifiable Information (PII).
 
-### Dashboard Activation (One-time manual action)
-1. Go to the **Analytics** tab in your Vercel Project.
-2. Click **Enable Web Analytics**.
-3. Select your project and confirm.
-4. Once traffic arrives on the production deployment, real-time page views and visitor metrics will appear.
+### Dashboard Activation (Step-by-step from Recommendations or Analytics Tab)
+1. **From Recommendations Modal (As seen in Vercel Dashboard):**
+   - Click the **"Enable"** button on the **"Enable Web Analytics"** card.
+2. **From the Project Sidebar:**
+   - Navigate to the **Analytics** tab (`vercel.com/[team]/[project]/analytics`).
+   - Click **Enable Web Analytics**.
+   - Confirm your target production domain (`cibus-silk.vercel.app`).
+3. **Data Availability:**
+   - Real-time visitor counts, top pages, referrers, and device telemetry will populate as soon as the first live visitors navigate the deployed production website.
 
 ---
 
 ## 7. Vercel Speed Insights Integration & Performance Optimization
 
 ### Implementation
-Integrated via standard static script tag placed before `</body>` across all HTML pages:
+Integrated alongside Web Analytics in all 11 HTML documents:
 ```html
 <script defer src="/_vercel/speed-insights/script.js"></script>
 ```
 
+### Key Technical Properties & Queue Mechanism
+- **Buffer Queue (`window.si` & `window.siq`):**
+  Ensures Core Web Vitals (CWV) observation events captured during early paint phases are buffered in `window.siq` until `/_vercel/speed-insights/script.js` completes execution.
+- **Official Endpoints & CSP Compatibility:**
+  The Content Security Policy allows telemetry transmissions to `https://vitals.vercel-insights.com` and `https://va.vercel-scripts.com` in `connect-src`, as well as script execution from `https://speed-insights.vercel-scripts.com` in `script-src`.
+
 ### Concrete Performance Engineering Delivered
-1. **LCP Optimization:**
-   - The primary hero dish image (`pages/home.html`) is configured with `loading="eager"` and `decoding="async"`.
-   - The landing page master logo is equipped with explicit `width`, `height`, and `fetchpriority="high"`.
-2. **CLS Elimination:**
-   - All brand logo images, headers, and navigation bars have fixed aspect-ratio / dimensions declared in CSS to prevent layout shifting.
-3. **FCP & Render-Blocking Mitigation:**
+1. **LCP (Largest Contentful Paint) Optimization:**
+   - The primary hero dish image (`pages/home.html`) is configured with `loading="eager"`, `decoding="async"`, and `fetchpriority="high"`.
+   - The landing page master logo (`index.html`) is equipped with explicit `width`, `height`, and `fetchpriority="high"`.
+2. **CLS (Cumulative Layout Shift) Elimination:**
+   - All brand logo images, headers, Ashoka Chakra graphics, and navigation bars have fixed aspect ratios, explicit dimensional attributes, and reservation containers in CSS to prevent layout shifting during image decoding.
+3. **FCP (First Contentful Paint) & Render-Blocking Mitigation:**
    - Preconnect links for Google Fonts (`fonts.googleapis.com`, `fonts.gstatic.com`).
    - Below-the-fold dish cards utilize native `loading="lazy"` and `decoding="async"`.
 4. **Edge Cache Headers:**
@@ -145,9 +162,9 @@ Integrated via standard static script tag placed before `</body>` across all HTM
    - Datasets (`/data/*`) configured with `public, max-age=86400, stale-while-revalidate=604800`.
 
 ### Dashboard Activation (One-time manual action)
-1. Go to the **Speed Insights** tab in your Vercel Project.
+1. Go to the **Speed Insights** tab in your Vercel Project sidebar.
 2. Click **Enable Speed Insights**.
-3. Real-world Core Web Vitals (LCP, FID/INP, CLS) will populate automatically.
+3. Real-world Core Web Vitals (LCP, INP, CLS, FCP, TTFB) score distribution will populate as visitor sessions accumulate.
 
 ---
 
