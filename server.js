@@ -71,6 +71,16 @@ const ROUTE_ALIASES = {
 // Active Server-Sent Event (SSE) clients for live reload
 const sseClients = new Set();
 
+// Production-Parity Security Headers (mirrors vercel.json)
+const SECURITY_HEADERS = {
+  'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' https://kit.fontawesome.com https://ka-f.fontawesome.com https://va.vercel-scripts.com https://speed-insights.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://use.fontawesome.com; font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com data:; img-src 'self' data: https:; connect-src 'self' https://ka-f.fontawesome.com https://vitals.vercel-insights.com https://va.vercel-scripts.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self';",
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'SAMEORIGIN',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()',
+  'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload'
+};
+
 /**
  * Format bytes into human-readable string (kB / MB)
  */
@@ -478,7 +488,8 @@ function startServer(port = DEFAULT_PORT) {
     if (req.url.startsWith('/_vercel/')) {
       res.writeHead(200, {
         'Content-Type': 'application/javascript; charset=utf-8',
-        'Cache-Control': 'no-cache'
+        'Cache-Control': 'no-cache',
+        ...SECURITY_HEADERS
       });
       res.end('/* Vercel Web Analytics & Speed Insights local development stub */');
       return;
@@ -488,7 +499,7 @@ function startServer(port = DEFAULT_PORT) {
     const filePath = resolveFilePath(req.url);
 
     if (!filePath) {
-      res.writeHead(403, { 'Content-Type': 'text/plain' });
+      res.writeHead(403, { 'Content-Type': 'text/plain', ...SECURITY_HEADERS });
       res.end('403 Forbidden');
       return;
     }
@@ -498,7 +509,7 @@ function startServer(port = DEFAULT_PORT) {
       if (err || !stats.isFile()) {
         const notFoundPath = path.join(PROJECT_ROOT, 'pages', '404.html');
         fs.readFile(notFoundPath, 'utf8', (readErr, content) => {
-          res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+          res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8', ...SECURITY_HEADERS });
           if (!readErr && content) {
             res.end(injectLiveReload(content));
           } else {
@@ -516,11 +527,11 @@ function startServer(port = DEFAULT_PORT) {
       if (ext === '.html') {
         fs.readFile(filePath, 'utf8', (readErr, content) => {
           if (readErr) {
-            res.writeHead(500, { 'Content-Type': 'text/plain' });
+            res.writeHead(500, { 'Content-Type': 'text/plain', ...SECURITY_HEADERS });
             res.end('500 Internal Server Error');
             return;
           }
-          res.writeHead(200, { 'Content-Type': contentType });
+          res.writeHead(200, { 'Content-Type': contentType, ...SECURITY_HEADERS });
           res.end(injectLiveReload(content));
         });
         return;
@@ -530,7 +541,8 @@ function startServer(port = DEFAULT_PORT) {
       res.writeHead(200, {
         'Content-Type': contentType,
         'Content-Length': stats.size,
-        'Cache-Control': 'no-cache'
+        'Cache-Control': 'no-cache',
+        ...SECURITY_HEADERS
       });
       fs.createReadStream(filePath).pipe(res);
     });
