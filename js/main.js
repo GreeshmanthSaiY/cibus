@@ -32,30 +32,147 @@ const App = {
       const cartTableWrapper = document.getElementById('cart-table-wrapper');
       const summaryPanel = document.getElementById('order-summary-panel');
 
+      const cartLayout = document.querySelector('.cart-layout');
+
+      const recommendationsHTML = `
+        <div class="cart-recommendations-section">
+          <div class="cart-rec-header">
+            <span class="section-eyebrow">Culinary Inspiration</span>
+            <h3 class="cart-rec-title">Popular Regional Delicacies to Try</h3>
+            <p class="cart-rec-desc">Handcrafted traditional favorites celebrated across the 28 Indian States.</p>
+          </div>
+          <div class="cart-rec-grid">
+            <a href="./food-menu.html?region=south#biryani" class="cart-rec-card">
+              <img src="../public/assets/images/dishes/biriyani.webp" alt="Hyderabadi Dum Biryani" class="cart-rec-img" onerror="this.src='../public/assets/images/food-photo.jpeg';">
+              <div class="cart-rec-body">
+                <span class="cart-rec-state">Telangana &bull; South</span>
+                <h4 class="cart-rec-name">Hyderabadi Dum Biryani</h4>
+                <div class="cart-rec-footer">
+                  <span class="cart-rec-price">₹320</span>
+                  <span class="cart-rec-action">Explore &rarr;</span>
+                </div>
+              </div>
+            </a>
+            <a href="./food-menu.html?region=north#makki" class="cart-rec-card">
+              <img src="../public/assets/images/dishes/makki.webp" alt="Makki di Roti" class="cart-rec-img" onerror="this.src='../public/assets/images/food-photo.jpeg';">
+              <div class="cart-rec-body">
+                <span class="cart-rec-state">Punjab &bull; North</span>
+                <h4 class="cart-rec-name">Makki di Roti &amp; Saag</h4>
+                <div class="cart-rec-footer">
+                  <span class="cart-rec-price">₹240</span>
+                  <span class="cart-rec-action">Explore &rarr;</span>
+                </div>
+              </div>
+            </a>
+            <a href="./food-menu.html?region=east#litti" class="cart-rec-card">
+              <img src="../public/assets/images/dishes/litti.webp" alt="Bihari Litti Chokha" class="cart-rec-img" onerror="this.src='../public/assets/images/food-photo.jpeg';">
+              <div class="cart-rec-body">
+                <span class="cart-rec-state">Bihar &bull; East</span>
+                <h4 class="cart-rec-name">Bihari Litti Chokha</h4>
+                <div class="cart-rec-footer">
+                  <span class="cart-rec-price">₹220</span>
+                  <span class="cart-rec-action">Explore &rarr;</span>
+                </div>
+              </div>
+            </a>
+            <a href="./food-menu.html?region=west#dhokla" class="cart-rec-card">
+              <img src="../public/assets/images/dishes/dhokla.webp" alt="Khaman Dhokla" class="cart-rec-img" onerror="this.src='../public/assets/images/food-photo.jpeg';">
+              <div class="cart-rec-body">
+                <span class="cart-rec-state">Gujarat &bull; West</span>
+                <h4 class="cart-rec-name">Khaman Dhokla</h4>
+                <div class="cart-rec-footer">
+                  <span class="cart-rec-price">₹140</span>
+                  <span class="cart-rec-action">Explore &rarr;</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      `;
+
       if (items.length === 0) {
         if (cartTableWrapper) cartTableWrapper.style.display = 'none';
         if (summaryPanel) summaryPanel.style.display = 'none';
+        if (cartLayout) cartLayout.classList.add('is-empty');
         if (emptyState) {
           emptyState.style.display = 'block';
           if (!isAuth) {
             emptyState.innerHTML = `
-              <span class="empty-state-icon">🔒</span>
-              <h3>You are Currently Signed Out</h3>
-              <p>Your session cart is empty. Please sign in or create an account to start adding authentic heritage dishes.</p>
-              <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px;">
-                <a href="./login.html?redirect=cart.html" class="btn btn-primary">Sign In &rarr;</a>
-                <a href="./register.html?redirect=cart.html" class="btn btn-outline">Create Free Account</a>
-                <a href="./food-menu.html" class="btn btn-outline">Browse Food Menu</a>
+              <div class="cart-signed-out-card">
+                <div class="cart-pill-tag">
+                  <span class="pill-dot"></span>
+                  Session-Guarded Culinary Commerce
+                </div>
+                <div class="cart-icon-wrapper">
+                  <svg width="68" height="68" viewBox="0 0 68 68" fill="none" class="cart-premium-icon" aria-hidden="true">
+                    <circle cx="34" cy="34" r="32" fill="#E85A19" fill-opacity="0.1" stroke="#E85A19" stroke-width="1.5"/>
+                    <rect x="22" y="30" width="24" height="20" rx="5" fill="#E85A19" stroke="#C74B16" stroke-width="2"/>
+                    <path d="M26 30V24C26 19.5817 29.5817 16 34 16C38.4183 16 42 19.5817 42 24V30" stroke="#E85A19" stroke-width="3" stroke-linecap="round"/>
+                    <circle cx="34" cy="39" r="2.5" fill="#FFFFFF"/>
+                    <path d="M34 41.5V45" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h2 class="cart-empty-title">Sign In to Access Your CIBUS Cart</h2>
+                <p class="cart-empty-desc">
+                  Your regional culinary choices, personalized favorites, and custom serving portions are private and securely tied to your active CIBUS account. Sign in to view your bag or create a free account to begin your journey across 28 Indian States.
+                </p>
+                <div class="cart-benefits-row">
+                  <div class="cart-benefit-item">
+                    <span class="benefit-icon">🌿</span>
+                    <span>28 State Master Dishes</span>
+                  </div>
+                  <div class="cart-benefit-item">
+                    <span class="benefit-icon">⚖️</span>
+                    <span>Real-Time GST &amp; Portions</span>
+                  </div>
+                  <div class="cart-benefit-item">
+                    <span class="benefit-icon">🛡️</span>
+                    <span>Account-Scoped Privacy</span>
+                  </div>
+                </div>
+                <div class="cart-cta-group">
+                  <a href="./login.html?redirect=cart.html" class="btn btn-primary btn-lg">
+                    Sign In to Your Account &rarr;
+                  </a>
+                  <a href="./register.html?redirect=cart.html" class="btn btn-secondary btn-lg">
+                    Create Free Account
+                  </a>
+                  <a href="./food-menu.html" class="btn btn-outline btn-lg">
+                    Browse Food Menu
+                  </a>
+                </div>
               </div>
+              ${recommendationsHTML}
             `;
           } else {
             emptyState.innerHTML = `
-              <span class="empty-state-icon">🛒</span>
-              <h3>Your Cart is Currently Empty</h3>
-              <p>You haven't selected any traditional dishes yet. Browse our regional state food menus to discover authentic specialties!</p>
-              <div style="margin-top: 16px;">
-                <a href="./food-menu.html" class="btn btn-primary">Browse Food Menu &rarr;</a>
+              <div class="cart-empty-card">
+                <div class="cart-pill-tag">
+                  <span class="pill-dot"></span>
+                  Personal Culinary Bag
+                </div>
+                <div class="cart-icon-wrapper">
+                  <svg width="68" height="68" viewBox="0 0 68 68" fill="none" class="cart-premium-icon" aria-hidden="true">
+                    <circle cx="34" cy="34" r="32" fill="#E85A19" fill-opacity="0.1" stroke="#E85A19" stroke-width="1.5"/>
+                    <path d="M18 42C18 33.163 25.163 26 34 26C42.837 26 50 33.163 50 42H18Z" fill="#E85A19" fill-opacity="0.2" stroke="#E85A19" stroke-width="2"/>
+                    <path d="M14 46C14 44.8954 14.8954 44 16 44H52C53.1046 44 54 44.8954 54 46V47C54 47.5523 53.5523 48 53 48H15C14.4477 48 14 47.5523 14 47V46Z" fill="#E85A19" stroke="#C74B16" stroke-width="1.5"/>
+                    <circle cx="34" cy="22" r="3" fill="#D4A373" stroke="#E85A19" stroke-width="2"/>
+                  </svg>
+                </div>
+                <h2 class="cart-empty-title">Your Cart is Currently Empty</h2>
+                <p class="cart-empty-desc">
+                  You haven't selected any traditional dishes yet. Explore our regional menus to discover authentic specialties, adjust portion servings, and curate your personalized feast.
+                </p>
+                <div class="cart-cta-group">
+                  <a href="./food-menu.html" class="btn btn-primary btn-lg">
+                    Browse Food Menu &rarr;
+                  </a>
+                  <a href="./recipe-cards.html" class="btn btn-outline btn-lg">
+                    Cook Master Recipes
+                  </a>
+                </div>
               </div>
+              ${recommendationsHTML}
             `;
           }
         }
@@ -65,6 +182,7 @@ const App = {
         return;
       }
 
+      if (cartLayout) cartLayout.classList.remove('is-empty');
       if (cartTableWrapper) cartTableWrapper.style.display = 'block';
       if (summaryPanel) summaryPanel.style.display = 'block';
       if (emptyState) emptyState.style.display = 'none';

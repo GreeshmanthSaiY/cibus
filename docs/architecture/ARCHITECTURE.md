@@ -30,12 +30,10 @@ cibus/
 ├── .editorconfig               # Consistent cross-platform indentation & formatting
 ├── .npmrc                      # Package manager configuration
 ├── .nvmrc                      # Node.js 20 LTS runtime standard
-├── package.json                # Project scripts, dev dependencies, test tooling
-├── package-lock.json           # Locked dependency tree
+├── package.json                # Project scripts, zero-dependency manifest & metadata
 ├── vercel.json                 # Vercel deployment routing, security headers & caching
 ├── README.md                   # Comprehensive project documentation & showcase
 ├── SECURITY.md                 # Security policies & vulnerability disclosure
-├── LICENSE                     # Personal project copyright & rights reserved
 │
 ├── public/                     # Static assets served at root
 │   ├── favicon.ico             # 32x32 / multi-res application favicon
@@ -105,7 +103,10 @@ cibus/
 │   ├── deployment/             # Vercel and production deployment manuals
 │   ├── security/               # Security audits & guidelines
 │   ├── development/            # Developer setup & testing guides
-│   └── project/                # Feature inventory, audit logs & changelog
+│   ├── project/                # Feature inventory, audit logs & changelog
+│   └── screenshots/            # Genuine desktop & mobile browser captures
+│       ├── desktop/            # 10 desktop application view captures
+│       └── mobile/             # 4 mobile responsive viewport captures
 │
 ├── tests/                      # Automated quality & testing suites
 │   ├── unit/                   # Unit tests (auth, cart, datasets, storage, validation)
