@@ -348,24 +348,29 @@
 
 @media (max-width: 600px) {
   .recipe-deck-row {
-    padding: 30px 15px 35px;
+    padding: 24px 10px 30px;
+    gap: 0;
   }
   .recipe-fanned-card {
-    flex: 0 0 240px;
-    width: 240px;
-    height: 350px;
+    flex: 0 0 220px;
+    width: 220px;
+    height: 330px;
   }
   .recipe-fanned-card:not(:first-child) {
-    margin-left: -70px;
+    margin-left: -60px;
   }
   .recipe-fanned-card:hover ~ .recipe-fanned-card {
-    transform: translateX(75px);
+    transform: translateX(65px);
   }
   .recipe-fanned-card .card-title {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+  .recipe-fanned-card .card-img {
+    height: 180px;
   }
   .gallery-controls-bar {
     border-radius: var(--radius-lg);
+    padding: var(--space-xs) var(--space-md);
   }
 }
 
@@ -555,10 +560,14 @@
 @media (max-width: 991px) {
   .recipe-detail-container {
     grid-template-columns: 1fr;
+    gap: var(--space-xl);
   }
   .recipe-sidebar {
     position: static;
-    max-height: none;
+    max-height: 260px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-md);
   }
 }
 
@@ -569,6 +578,49 @@
   }
   .recipe-article {
     padding: var(--space-lg);
+    border-radius: var(--radius-md);
+  }
+  .recipes-grid-layout {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+    gap: var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .recipe-article {
+    padding: 16px 12px;
+  }
+  .recipe-article-title {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  .recipe-meta-badges {
+    gap: 6px;
+  }
+  .recipe-badge {
+    font-size: 0.72rem;
+    padding: 3px 8px;
+  }
+  .ingredients-box {
+    padding: 14px 10px;
+  }
+  .ingredient-item {
+    font-size: 0.82rem;
+    min-height: 40px;
+    align-items: center;
+  }
+  .step-card {
+    padding: 12px 10px;
+    gap: 10px;
+  }
+  .step-number {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+  .recipes-grid-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 }
 
