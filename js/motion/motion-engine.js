@@ -72,8 +72,8 @@
       }
 
       const observerOptions = {
-        threshold: 0.12,
-        rootMargin: '0px 0px -30px 0px'
+        threshold: 0,
+        rootMargin: '120px 0px 120px 0px'
       };
 
       this.observer = new IntersectionObserver((entries) => {
@@ -89,7 +89,7 @@
         });
       }, observerOptions);
 
-      // Collect all motion targets
+      // Collect discrete motion targets (never hide large layout wrappers)
       const selector = [
         '[data-motion]',
         '.reveal',
@@ -97,19 +97,37 @@
         '.spice-trail-section',
         '.philosophy-section',
         '.site-footer',
-        '.food-grid',
-        '.recipes-grid-layout',
-        '.recipe-content-grid',
-        '.auth-card',
-        '.contact-container',
-        '.cart-layout'
+        '.auth-card'
       ].join(', ');
 
       const elements = document.querySelectorAll(selector);
+
+      // Immediately reveal any target matching the active hash or already in/near the initial viewport
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const hash = window.location.hash ? window.location.hash.slice(1) : null;
+      if (hash) {
+        const hashEl = document.getElementById(hash);
+        if (hashEl) {
+          let node = hashEl;
+          while (node && node !== document.body) {
+            node.setAttribute('data-motion-revealed', 'true');
+            node.classList.add('revealed');
+            node = node.parentElement;
+          }
+        }
+      }
+
       elements.forEach((el) => {
         // Automatically inject --stagger-idx variables onto direct card/item children
         this.applyChildStaggerMetrics(el);
-        this.observer.observe(el);
+
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= vh + 120 && rect.bottom >= -120) {
+          el.setAttribute('data-motion-revealed', 'true');
+          el.classList.add('revealed');
+        } else {
+          this.observer.observe(el);
+        }
       });
     },
 
@@ -294,3 +312,4 @@
     MotionEngine.init();
   }
 })();
+

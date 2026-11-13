@@ -13,6 +13,21 @@
   transform: none;
 }
 
+/* Layout and content containers are strictly never hidden */
+main,
+.container,
+.recipe-detail-container,
+.recipe-content-grid,
+.food-grid,
+.cart-layout,
+.contact-layout,
+#recipes-card-container,
+.recipe-sidebar,
+.recipes-grid-layout,
+.recipe-card-full {
+  opacity: 1 !important;
+}
+
 /* Once JavaScript verifies environment & observer readiness, enable motion staging */
 html.js-ready [data-motion]:not([data-motion-revealed="true"]) {
   opacity: 0;
@@ -286,3 +301,4 @@ body.page-is-leaving {
   box-shadow: 0 0 0 3px rgba(199, 75, 22, 0.15);
   background-color: var(--color-surface-card);
 }
+
