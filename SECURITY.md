@@ -15,10 +15,11 @@ The following table reflects which versions of CIBUS receive security updates:
 
 Security is a foundational engineering priority for CIBUS. If you discover a security vulnerability, we appreciate your responsible disclosure.
 
-### Please DO NOT file a public issue on GitHub.
+### Private Reporting Route
 
-Instead, please report the vulnerability privately by emailing:
-**reception@cibus.com** or reaching out directly to the repository maintainer [@GreeshmanthSaiY](https://github.com/GreeshmanthSaiY).
+Please report vulnerabilities privately through GitHub's Private Vulnerability Reporting feature (navigate to the **Security** tab of the [CIBUS repository](https://github.com/GreeshmanthSaiY/cibus/security) and click **"Report a vulnerability"**), or contact the repository maintainer directly via GitHub at [@GreeshmanthSaiY](https://github.com/GreeshmanthSaiY).
+
+Please do not open public issues for security vulnerabilities until a coordinated assessment has been completed.
 
 ### What to Include in Your Report
 1. Description of the vulnerability.

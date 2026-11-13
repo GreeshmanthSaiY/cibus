@@ -184,9 +184,24 @@ const NotificationCenter = {
     }
   },
 
+  markSingleAsRead(id) {
+    const all = this.getAll();
+    const item = all.find((n) => n.id === id);
+    if (item && !item.read) {
+      item.read = true;
+      this.save(all);
+      this.setUnreadCount(this.getUnreadCount() - 1);
+      this.renderList();
+    }
+  },
+
+  currentFilter: 'all',
+
   updateBadge() {
     const isAuth = typeof AuthManager !== 'undefined' ? AuthManager.isAuthenticated() : true;
     const count = isAuth ? this.getUnreadCount() : 0;
+    const all = isAuth ? this.getAll() : [];
+    const totalCount = all.length;
     const badges = document.querySelectorAll('.notification-badge, #notif-badge');
     const pill = document.getElementById('notif-count-pill');
 
@@ -202,6 +217,11 @@ const NotificationCenter = {
     if (pill) {
       pill.textContent = count > 0 && isAuth ? `${count} New` : 'All Caught Up';
     }
+
+    const allCounter = document.getElementById('notif-all-count');
+    const unreadCounter = document.getElementById('notif-unread-count');
+    if (allCounter) allCounter.textContent = isAuth ? totalCount : 0;
+    if (unreadCounter) unreadCounter.textContent = isAuth ? count : 0;
   },
 
   renderList() {
@@ -210,21 +230,53 @@ const NotificationCenter = {
 
     const isAuth = typeof AuthManager !== 'undefined' ? AuthManager.isAuthenticated() : true;
     const all = isAuth ? this.getAll() : [];
-    if (all.length === 0) {
+
+    if (!isAuth) {
       list.innerHTML = `
         <div class="notif-empty-state">
-          <span class="notif-empty-icon">🔕</span>
-          <h4>No Notifications</h4>
-          <p>${isAuth ? "You're all caught up! Real-time culinary alerts will appear here." : 'Please sign in to view your real-time culinary alerts and notifications.'}</p>
+          <span class="notif-empty-icon">🔒</span>
+          <h4>Sign In for Updates</h4>
+          <p>Your regional recipe alerts, trending seasonal ingredients, and culinary updates are linked to your session account.</p>
+          <a href="./login.html" class="btn btn-primary btn-sm" style="margin-top: 10px; display: inline-block;">Sign In &rarr;</a>
         </div>
       `;
+      this.updateBadge();
       return;
     }
 
-    list.innerHTML = all
+    if (all.length === 0) {
+      list.innerHTML = `
+        <div class="notif-empty-state">
+          <span class="notif-empty-icon">✨</span>
+          <h4>All Caught Up!</h4>
+          <p>No new culinary updates at this moment. Explore our 28 State dishes or recipes to trigger alerts.</p>
+        </div>
+      `;
+      this.updateBadge();
+      return;
+    }
+
+    let itemsToDisplay = all;
+    if (this.currentFilter === 'unread') {
+      itemsToDisplay = all.filter((n) => !n.read);
+    }
+
+    if (itemsToDisplay.length === 0 && this.currentFilter === 'unread') {
+      list.innerHTML = `
+        <div class="notif-empty-state">
+          <span class="notif-empty-icon">✓</span>
+          <h4>No Unread Alerts</h4>
+          <p>You have read all notifications. Switch to "All" to review previous updates.</p>
+        </div>
+      `;
+      this.updateBadge();
+      return;
+    }
+
+    list.innerHTML = itemsToDisplay
       .map(
         (n) => `
-      <div class="notif-item ${n.read ? 'notif-read' : 'notif-unread'}" data-id="${Utils.escapeHtml(n.id)}">
+      <div class="notif-item ${n.read ? 'notif-read' : 'notif-unread'}" data-id="${Utils.escapeHtml(n.id)}" style="cursor: pointer;">
         <div class="notif-icon-col">
           <span class="notif-icon-pill">${Utils.escapeHtml(n.icon)}</span>
         </div>
@@ -244,6 +296,8 @@ const NotificationCenter = {
     `
       )
       .join('');
+
+    this.updateBadge();
   },
 
   bindUI() {
@@ -251,6 +305,47 @@ const NotificationCenter = {
     const panel = document.getElementById('notif-panel');
     const markReadBtn = document.getElementById('notif-mark-read-btn');
     const clearBtn = document.getElementById('notif-clear-btn');
+
+    if (panel) {
+      // Inject filter bar if not present
+      let filterBar = panel.querySelector('.notif-filter-bar');
+      if (!filterBar) {
+        filterBar = document.createElement('div');
+        filterBar.className = 'notif-filter-bar';
+        filterBar.innerHTML = `
+          <button type="button" class="notif-filter-btn active" data-filter="all">All (<span id="notif-all-count">0</span>)</button>
+          <button type="button" class="notif-filter-btn" data-filter="unread">Unread (<span id="notif-unread-count">0</span>)</button>
+        `;
+        const header = panel.querySelector('.notif-panel-header');
+        if (header && header.nextSibling) {
+          panel.insertBefore(filterBar, header.nextSibling);
+        } else {
+          panel.prepend(filterBar);
+        }
+
+        filterBar.addEventListener('click', (e) => {
+          const btn = e.target.closest('.notif-filter-btn');
+          if (!btn) return;
+          const filter = btn.dataset.filter || 'all';
+          this.currentFilter = filter;
+          filterBar.querySelectorAll('.notif-filter-btn').forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+          this.renderList();
+        });
+      }
+
+      // Allow clicking individual items to mark read
+      const list = panel.querySelector('.notif-list');
+      if (list) {
+        list.addEventListener('click', (e) => {
+          const item = e.target.closest('.notif-item');
+          if (item && !e.target.closest('a')) {
+            const id = item.dataset.id;
+            if (id) this.markSingleAsRead(id);
+          }
+        });
+      }
+    }
 
     if (bellBtn && panel) {
       bellBtn.addEventListener('click', (e) => {
@@ -298,6 +393,15 @@ const NotificationCenter = {
         e.stopPropagation();
         this.clearAll();
       });
+    }
+
+    // Auto-open notification panel if ?openNotif=true in URL
+    if (new URLSearchParams(window.location.search).get('openNotif') === 'true') {
+      if (panel) {
+        panel.style.display = 'flex';
+        panel.classList.add('panel-active');
+        if (bellBtn) bellBtn.setAttribute('aria-expanded', 'true');
+      }
     }
   }
 };

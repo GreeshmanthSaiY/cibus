@@ -11,7 +11,7 @@
 [![States Represented](https://img.shields.io/badge/States_Celebrated-28_Indian_States-15803D.svg?style=for-the-badge)](https://github.com/GreeshmanthSaiY/cibus)
 [![Architecture](https://img.shields.io/badge/Architecture-Zero_Dependency_Static_JAMstack-0284C7.svg?style=for-the-badge)](https://github.com/GreeshmanthSaiY/cibus)
 [![Deployment](https://img.shields.io/badge/Deployment-Vercel_Edge_Network-000000.svg?style=for-the-badge)](https://vercel.com)
-[![License](https://img.shields.io/badge/License-Personal_Project_All_Rights_Reserved-C74B16.svg?style=for-the-badge)](./LICENSE)
+[![License](https://img.shields.io/badge/License-Personal_Project_All_Rights_Reserved-C74B16.svg?style=for-the-badge)](#-author--copyright-notice)
 
 <br />
 
@@ -110,19 +110,49 @@ flowchart TD
 
 <div align="center">
 
-### Experience Tour Across Key Product Views
+### Desktop Experience Across Key Product Views
 
-| Gateway & Splash | Regional Food Discovery | Cascading Recipe Deck |
-| :---: | :---: | :---: |
-| <img src="public/assets/screenshots/opening_page.png" alt="CIBUS Welcome Gateway" width="280"/> | <img src="public/assets/screenshots/food_menu.png" alt="28 State Food Directory" width="280"/> | <img src="public/assets/screenshots/recipe_cards.png" alt="Visual Recipe Cards Gallery" width="280"/> |
-| *Tricolor Gateway with Ashoka Chakra* | *28-State Filter & Real-Time Search* | *Interactive 3D Cascading Recipe Cards* |
+| 1. Heritage Welcome & Gateway | 2. Regional Heritage Explorer |
+| :---: | :---: |
+| <img src="docs/screenshots/desktop/welcome.png" alt="CIBUS Welcome Gateway" width="440"/> | <img src="docs/screenshots/desktop/homepage.png" alt="CIBUS Regional Explorer" width="440"/> |
+| *Tricolor Gateway with Ashoka Chakra* | *Interactive 28-State Cultural Explorer* |
 
 <br/>
 
-| Living Recipe Instructions | Shopping Cart & Portioning | Session Authentication |
-| :---: | :---: | :---: |
-| <img src="public/assets/screenshots/recipe_detail.png" alt="Step-by-Step Cooking Checklist" width="280"/> | <img src="public/assets/screenshots/add_to_cart.png" alt="Dynamic Cart Engine" width="280"/> | <img src="public/assets/screenshots/login_page.webp" alt="Session Access & Authentication" width="280"/> |
-| *Interactive Ingredient Checklists* | *Portion Steppers & Live Order Summary* | *Browser-Scoped Session Security* |
+| 3. 28-State Food Directory | 4. Cascading Recipe Cards Gallery |
+| :---: | :---: |
+| <img src="docs/screenshots/desktop/food-menu.png" alt="28 State Food Directory" width="440"/> | <img src="docs/screenshots/desktop/recipe-cards.png" alt="Visual Recipe Cards Gallery" width="440"/> |
+| *Real-Time Dietary Filters & Search* | *Interactive 3D Cascading Recipe Cards* |
+
+<br/>
+
+| 5. Step-by-Step Cooking Guide | 6. Luxury Shopping Cart & Stepper |
+| :---: | :---: |
+| <img src="docs/screenshots/desktop/recipe-detail.png" alt="Step-by-Step Cooking Checklist" width="440"/> | <img src="docs/screenshots/desktop/shopping-cart.png" alt="Dynamic Cart Engine" width="440"/> |
+| *Interactive Ingredient Checklists & Progress Bar* | *Session-Guarded Cart & Regional Recommendations* |
+
+<br/>
+
+| 7. Real-Time Notification Center | 8. Authentic Community & Contact Hub |
+| :---: | :---: |
+| <img src="docs/screenshots/desktop/notifications.png" alt="Notification Drawer" width="440"/> | <img src="docs/screenshots/desktop/contact.png" alt="Community & Contact Hub" width="440"/> |
+| *Filtered Notifications Drawer with Badging* | *Verified Maintainer Channels & State Inquiries* |
+
+<br/>
+
+| 9. Session Access & Authentication | 10. Member Registration Portal |
+| :---: | :---: |
+| <img src="docs/screenshots/desktop/login.png" alt="Session Login" width="440"/> | <img src="docs/screenshots/desktop/register.png" alt="Account Registration" width="440"/> |
+| *Browser-Scoped Session Access* | *Client-Side Account Creation* |
+
+<br/>
+
+### Responsive Mobile Experience
+
+| Mobile Explorer | Mobile Food Menu | Mobile Recipe Guide | Mobile Cart |
+| :---: | :---: | :---: | :---: |
+| <img src="docs/screenshots/mobile/homepage-mobile.png" alt="Mobile Explorer" width="220"/> | <img src="docs/screenshots/mobile/food-menu-mobile.png" alt="Mobile Food Menu" width="220"/> | <img src="docs/screenshots/mobile/recipe-detail-mobile.png" alt="Mobile Recipe Detail" width="220"/> | <img src="docs/screenshots/mobile/cart-mobile.png" alt="Mobile Cart" width="220"/> |
+| *Adaptive Mobile Layout* | *Touch-Friendly Dietary Filters* | *In-Kitchen Checklist* | *Mobile Steppers & GST* |
 
 </div>
 
@@ -279,11 +309,11 @@ Deep dive into the architectural and engineering documentation available in the 
 
 ---
 
-## 📄 License & Attribution
+## 📄 Author & Copyright Notice
 
 - **Project Type:** Personal Project
 - **Copyright:** &copy; 2026 [Greeshmanth Sai Y](https://github.com/GreeshmanthSaiY). All Rights Reserved.
-- **License:** Proprietary / UNLICENSED (Unauthorized copying, redistribution, or commercial use is prohibited).
+- **Notice:** This repository and its source code, design assets, and documentation are the personal work of **Greeshmanth Sai Y**. Unauthorized copying, distribution, modification, or commercial use is strictly prohibited without explicit written permission.
 - **Platform:** [CIBUS on GitHub](https://github.com/GreeshmanthSaiY/cibus)
 
 ---

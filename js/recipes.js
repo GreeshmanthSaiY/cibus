@@ -478,8 +478,34 @@ const RecipesController = {
   },
 
   setupDetailSidebar() {
+    const sidebar = document.querySelector('.recipe-sidebar');
     const sidebarList = document.getElementById('recipe-nav-list');
     if (!sidebarList) return;
+
+    // Add search filter input if not present
+    if (sidebar && !sidebar.querySelector('.recipe-sidebar-search-wrap')) {
+      const searchWrap = document.createElement('div');
+      searchWrap.className = 'recipe-sidebar-search-wrap';
+      searchWrap.innerHTML = `
+        <input type="text" class="recipe-sidebar-search" placeholder="Search dish or state..." aria-label="Filter dishes">
+      `;
+      const title = sidebar.querySelector('h3');
+      if (title && title.nextSibling) {
+        sidebar.insertBefore(searchWrap, title.nextSibling);
+      } else {
+        sidebar.prepend(searchWrap);
+      }
+
+      const searchInput = searchWrap.querySelector('.recipe-sidebar-search');
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        const items = sidebarList.querySelectorAll('.recipe-nav-item');
+        items.forEach((item) => {
+          const text = item.textContent.toLowerCase();
+          item.style.display = text.includes(query) ? '' : 'none';
+        });
+      });
+    }
 
     sidebarList.innerHTML = this.recipes
       .map(
@@ -492,6 +518,93 @@ const RecipesController = {
       `
       )
       .join('');
+
+    this.setupScrollSpy();
+    this.setupBackToTop();
+  },
+
+  setupScrollSpy() {
+    const articles = document.querySelectorAll('.recipe-article');
+    if (!articles.length || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            document.querySelectorAll('.recipe-nav-item').forEach((item) => {
+              item.classList.toggle('active', item.id === `nav-${id}`);
+            });
+            const activeItem = document.getElementById(`nav-${id}`);
+            if (activeItem && activeItem.scrollIntoView) {
+              activeItem.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+            }
+          }
+        });
+      },
+      { rootMargin: '-100px 0px -60% 0px', threshold: 0 }
+    );
+
+    articles.forEach((a) => observer.observe(a));
+  },
+
+  setupBackToTop() {
+    let btn = document.getElementById('back-to-top-btn');
+    if (!btn) {
+      btn = document.createElement('button');
+      btn.id = 'back-to-top-btn';
+      btn.className = 'back-to-top-btn';
+      btn.setAttribute('aria-label', 'Back to top of recipes');
+      btn.innerHTML = '&uarr;';
+      document.body.appendChild(btn);
+
+      btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      window.addEventListener(
+        'scroll',
+        () => {
+          if (window.scrollY > 400) {
+            btn.classList.add('is-visible');
+          } else {
+            btn.classList.remove('is-visible');
+          }
+        },
+        { passive: true }
+      );
+    }
+  },
+
+  updateIngredientProgress(box) {
+    if (!box) return;
+    const checkboxes = box.querySelectorAll('.ingredient-checkbox');
+    const total = checkboxes.length;
+    if (total === 0) return;
+    const checked = box.querySelectorAll('.ingredient-checkbox:checked').length;
+    const pct = Math.round((checked / total) * 100);
+
+    let progressWrap = box.querySelector('.ingredient-progress-wrapper');
+    if (!progressWrap) {
+      progressWrap = document.createElement('div');
+      progressWrap.className = 'ingredient-progress-wrapper';
+      const title = box.querySelector('h3');
+      if (title && title.nextSibling) {
+        box.insertBefore(progressWrap, title.nextSibling);
+      } else {
+        box.prepend(progressWrap);
+      }
+    }
+
+    progressWrap.innerHTML = `
+      <div class="ingredient-progress-info">
+        <span>Ingredients Ready</span>
+        <span class="ingredient-progress-text">${checked} of ${total} (${pct}%)</span>
+      </div>
+      <div class="ingredient-progress-bar">
+        <div class="ingredient-progress-fill" style="width: ${pct}%;"></div>
+      </div>
+    `;
   },
 
   highlightActiveHash() {
@@ -514,12 +627,21 @@ const RecipesController = {
   },
 
   setupChecklistHandlers() {
+    // Initial calculation for all recipe boxes
+    document.querySelectorAll('.ingredients-box').forEach((box) => {
+      this.updateIngredientProgress(box);
+    });
+
     document.addEventListener('change', (e) => {
       if (e.target.matches('.ingredient-checkbox')) {
         const item = e.target.closest('.ingredient-item');
         if (item) {
           item.style.textDecoration = e.target.checked ? 'line-through' : 'none';
           item.style.opacity = e.target.checked ? '0.6' : '1';
+        }
+        const box = e.target.closest('.ingredients-box');
+        if (box) {
+          this.updateIngredientProgress(box);
         }
       }
     });
