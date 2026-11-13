@@ -161,13 +161,14 @@
 
 .landing-title {
   font-family: var(--font-heading);
-  font-size: 3rem;
+  font-size: clamp(1.75rem, 6vw, 3rem);
   font-weight: 800;
   color: #000080; /* Traditional Navy Blue */
   letter-spacing: 1.2px;
   margin: 0 auto 0.75rem auto;
   line-height: 1.15;
   text-shadow: 0 1px 4px rgba(255, 255, 255, 0.85);
+  word-break: break-word;
 }
 
 .landing-tagline {

@@ -9,11 +9,11 @@
   <title>404 Page Not Found — CIBUS</title>
 
   <!-- Complete Favicon Suite -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/public/assets/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/public/assets/images/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/public/assets/images/apple-touch-icon.png">
-  <link rel="manifest" href="/public/site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="./public/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./public/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./public/assets/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./public/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="./public/site.webmanifest">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,20 +21,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/layout.css">
 </head>
 <body style="min-height: 100vh; display: flex; flex-direction: column; background-color: var(--color-bg, #FAF7F2);">
 
   <!-- Universal Header -->
   <header class="site-header">
     <div class="container site-nav">
-      <a href="/" class="brand-logo" aria-label="CIBUS Home">
-        <img src="/public/assets/images/cibus-logo-header.png" alt="CIBUS — Celebrating Traditional Indian Cuisines" class="brand-logo-img">
+      <a href="./index.html" class="brand-logo" aria-label="CIBUS Home">
+        <img src="./public/assets/images/cibus-logo-header.png" alt="CIBUS — Celebrating Traditional Indian Cuisines" class="brand-logo-img">
         <span class="brand-text">CIBUS</span>
       </a>
       <div class="nav-actions">
-        <a href="/pages/home.html" class="btn btn-outline btn-sm">Return Home</a>
+        <a href="./pages/home.html" class="btn btn-outline btn-sm">Return Home</a>
       </div>
     </div>
   </header>
@@ -48,8 +48,8 @@
         The culinary route you requested may have moved or does not exist. Let's get you back to exploring our 28 state food menus and recipes.
       </p>
       <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
-        <a href="/pages/home.html" class="btn btn-primary btn-lg">Explore Home &rarr;</a>
-        <a href="/pages/food-menu.html" class="btn btn-outline btn-lg">Browse Food Menu</a>
+        <a href="./pages/home.html" class="btn btn-primary btn-lg">Explore Home &rarr;</a>
+        <a href="./pages/food-menu.html" class="btn btn-outline btn-lg">Browse Food Menu</a>
       </div>
     </div>
   </main>
@@ -61,6 +61,8 @@
     </div>
   </footer>
 
+  <!-- Centralized Motion Engine -->
+  <script src="./js/motion/motion-engine.js"></script>
   <!-- Vercel Web Analytics & Speed Insights (Official Static Integration) -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

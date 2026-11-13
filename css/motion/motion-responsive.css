@@ -1,0 +1,170 @@
+/**
+ * CIBUS MOTION DESIGN SYSTEM — RESPONSIVE ADAPTATIONS & ACCESSIBILITY
+ * Touch ergonomics, mobile performance, and complete prefers-reduced-motion accessibility.
+ */
+
+/* ==========================================================================
+   1. Tablet Adaptations (768px - 1024px)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  :root {
+    --motion-dist-editorial: 24px;
+    --motion-dist-cinematic: 32px;
+    --motion-duration-cinematic: 800ms;
+  }
+
+  /* Tone down ambient radiance on tablets */
+  .hero-visual-bg::before {
+    animation-duration: 16s;
+  }
+}
+
+/* ==========================================================================
+   2. Mobile Adaptations (< 768px)
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  :root {
+    /* Clamped travel distances: guarantees ZERO horizontal or vertical overflow */
+    --motion-dist-subtle: 4px;
+    --motion-dist-sm: 8px;
+    --motion-dist-md: 12px;
+    --motion-dist-lg: 16px;
+    --motion-dist-cinematic: 18px;
+
+    /* Accelerated durations for instantaneous touch responsiveness */
+    --motion-duration-fast: 160ms;
+    --motion-duration-normal: 260ms;
+    --motion-duration-slow: 420ms;
+    --motion-duration-cinematic: 600ms;
+    --motion-stagger-base: 45ms;
+  }
+
+  /* Simplify hero entrance on phones */
+  .hero-title,
+  .landing-hero-title {
+    animation-duration: 0.6s;
+  }
+
+  /* Disable continuous heavy background gradient animations to preserve mobile battery & GPU */
+  .hero-visual-bg::before {
+    animation: none;
+    opacity: 0.6;
+  }
+
+  /* Disable hover translations that don't make sense on touchscreens */
+  @media (hover: none) {
+    .food-card:hover,
+    .recipe-card:hover,
+    .state-preview-card:hover,
+    .spice-card:hover,
+    .feature-box:hover,
+    .contact-card:hover,
+    .cart-rec-card:hover {
+      transform: none;
+      box-shadow: var(--shadow-md);
+    }
+
+    .food-card:hover .food-card-img,
+    .recipe-card:hover .recipe-image-wrap img,
+    .state-preview-card:hover .state-card-img-wrap img {
+      transform: none;
+      filter: none;
+    }
+
+    .btn:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Provide immediate touch feedback instead */
+    .btn:active,
+    .food-card:active,
+    .recipe-card:active {
+      transform: scale(0.98);
+      transition-duration: 70ms;
+    }
+  }
+
+  /* Ensure card deck on mobile doesn't skew off-screen */
+  .recipes-deck-mode .recipe-card:hover {
+    transform: translateY(-6px) scale(1.01) !important;
+  }
+
+  /* Prevent horizontal translateX reveals from overflowing narrow mobile viewports */
+  .contact-card:nth-child(1),
+  .contact-card:nth-child(2) {
+    animation: contactCardFadeUp 0.6s var(--motion-ease-out-expo) both !important;
+  }
+
+  @keyframes contactCardFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ==========================================================================
+   3. Complete Accessibility & Reduced Motion Support
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  /* Make all motion-staged content immediately visible */
+  [data-motion],
+  [data-motion="fade-up"],
+  [data-motion="fade-down"],
+  [data-motion="editorial-reveal"],
+  [data-motion="scale-in"],
+  [data-motion="slide-left"],
+  [data-motion="slide-right"],
+  [data-motion="clip-up"],
+  [data-motion-child] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    visibility: visible !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  body,
+  body.page-is-leaving {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .hero-logo-img,
+  .landing-logo,
+  .hero-title,
+  .landing-hero-title,
+  .hero-subtitle,
+  .hero-ctas,
+  .hero-floating-badge,
+  .hero-floating-badge-2,
+  .landing-chakra,
+  .hero-visual-bg::before,
+  .spice-trail-section .spice-card,
+  .philosophy-section .feature-box,
+  .site-footer .footer-col {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

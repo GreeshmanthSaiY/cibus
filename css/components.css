@@ -230,12 +230,19 @@
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .search-input-wrap {
   position: relative;
-  flex: 1 1 280px;
+  flex: 1 1 240px;
   max-width: 420px;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .search-input-wrap svg {
@@ -257,6 +264,7 @@
   background-color: var(--color-surface-bg);
   font-size: var(--font-sm);
   transition: all var(--transition-fast);
+  box-sizing: border-box;
 }
 
 .search-input:focus {
@@ -270,6 +278,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-xs);
+  min-width: 0;
+  max-width: 100%;
 }
 
 .filter-pill {
@@ -642,6 +652,23 @@
   overflow: hidden;
   animation: notifPanelIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: top right;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .notification-panel {
+    position: fixed;
+    top: 66px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: calc(100vw - 24px);
+    max-height: calc(100vh - 80px);
+    max-height: calc(100dvh - 80px);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.25);
+    transform-origin: top center;
+  }
 }
 
 @keyframes notifPanelIn {
@@ -1163,6 +1190,7 @@
   top: calc(100% + 10px);
   right: 0;
   width: 260px;
+  max-width: calc(100vw - 24px);
   background: #ffffff;
   border-radius: 18px;
   border: 1px solid rgba(212, 163, 115, 0.45);
@@ -1171,6 +1199,17 @@
   z-index: 1000;
   display: none;
   animation: fadeInUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .user-dropdown-panel {
+    position: fixed;
+    top: 66px;
+    right: 12px;
+    left: auto;
+    width: min(280px, calc(100vw - 24px));
+  }
 }
 
 .user-dropdown-panel.show {

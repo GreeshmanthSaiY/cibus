@@ -449,17 +449,58 @@
 @media (max-width: 991px) {
   .contact-layout {
     grid-template-columns: 1fr;
+    gap: var(--space-xl);
   }
 }
 
 @media (max-width: 600px) {
   .auth-card {
-    padding: 28px 20px 32px;
+    padding: 24px 18px 28px;
     border-radius: 18px;
   }
   .contact-form-card {
-    padding: 24px 18px;
+    padding: 20px 16px;
     border-radius: 18px;
+  }
+  .form-control,
+  .input-with-icon input,
+  .textarea-field {
+    font-size: 16px; /* Prevents auto-zoom in mobile Safari */
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-page-wrapper {
+    padding: var(--space-xl) var(--space-sm);
+  }
+  .auth-card {
+    padding: 20px 14px 24px;
+    border-radius: 14px;
+  }
+  .auth-top-nav,
+  .contact-top-bar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .contact-form-card {
+    padding: 16px 12px;
+    border-radius: 14px;
+  }
+  .contact-card {
+    padding: 16px 12px;
+    gap: 12px;
+    border-radius: 14px;
+  }
+  .contact-icon-box {
+    width: 40px;
+    height: 40px;
+    font-size: 1.15rem;
+  }
+  .auth-header h1 {
+    font-size: 1.65rem;
+  }
+  .auth-header p {
+    font-size: 0.85rem;
   }
 }
 
