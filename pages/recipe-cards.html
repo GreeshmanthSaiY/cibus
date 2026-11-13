@@ -98,7 +98,7 @@
     <div class="container">
 
       <!-- Header Section -->
-      <section class="section-title-wrap" style="padding-top: var(--space-2xl); margin-bottom: var(--space-xl);">
+      <section class="section-title-wrap" data-motion="editorial-reveal" style="padding-top: var(--space-2xl); margin-bottom: var(--space-xl);">
         <span class="section-eyebrow">Heritage Collections</span>
         <h1 class="section-title">Recipes by States Gallery</h1>
         <p class="section-subtitle">
@@ -107,7 +107,7 @@
       </section>
 
       <!-- Gallery Controls Toolbar -->
-      <div class="gallery-controls-bar">
+      <div class="gallery-controls-bar" data-motion="fade-up">
         <div class="search-input-wrap" style="flex: 1; max-width: 480px;">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.71 20.29l-5.4-5.39A8 8 0 1010 16a7.92 7.92 0 004.9-1.69l5.39 5.4a1 1 0 001.42 0 1 1 0 000-1.42zM4 10a6 6 0 116 6 6 6 0 01-6-6z"/></svg>
           <input type="text" id="recipe-search-input" class="search-input" placeholder="Search recipe name, state, or dish..." aria-label="Search recipes">
@@ -124,7 +124,7 @@
       </div>
 
       <!-- Recipe Cards Display Container -->
-      <div id="recipes-card-container">
+      <div id="recipes-card-container" data-motion="fade-up">
         <!-- Rendered dynamically by RecipesController.renderCards() -->
       </div>
 
@@ -188,6 +188,7 @@
   <script src="../js/celebration.js"></script>
   <script src="../js/notifications.js"></script>
   <script src="../js/navigation.js"></script>
+  <script src="../js/motion/motion-engine.js"></script>
   <script src="../js/recipes.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {

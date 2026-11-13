@@ -1,0 +1,288 @@
+/**
+ * CIBUS MOTION DESIGN SYSTEM — GLOBAL MOTION & MICRO-INTERACTIONS
+ * Page transitions, reveal primitives, progressive enhancement safeguards, and UI micro-interactions.
+ */
+
+/* ==========================================================================
+   1. Progressive Enhancement & Initial Content Safeguards
+   ========================================================================== */
+
+/* By default, ALL content is immediately visible. No content is hidden if JS fails */
+[data-motion] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Once JavaScript verifies environment & observer readiness, enable motion staging */
+html.js-ready [data-motion]:not([data-motion-revealed="true"]) {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+/* Staging offsets for specific motion styles */
+html.js-ready [data-motion="fade-up"]:not([data-motion-revealed="true"]) {
+  transform: translateY(var(--motion-dist-md));
+}
+
+html.js-ready [data-motion="fade-down"]:not([data-motion-revealed="true"]) {
+  transform: translateY(calc(-1 * var(--motion-dist-sm)));
+}
+
+html.js-ready [data-motion="editorial-reveal"]:not([data-motion-revealed="true"]) {
+  transform: translateY(var(--motion-dist-lg));
+}
+
+html.js-ready [data-motion="scale-in"]:not([data-motion-revealed="true"]) {
+  transform: scale(0.94);
+}
+
+html.js-ready [data-motion="slide-left"]:not([data-motion-revealed="true"]) {
+  transform: translateX(var(--motion-dist-md));
+}
+
+html.js-ready [data-motion="slide-right"]:not([data-motion-revealed="true"]) {
+  transform: translateX(calc(-1 * var(--motion-dist-md)));
+}
+
+html.js-ready [data-motion="clip-up"]:not([data-motion-revealed="true"]) {
+  clip-path: inset(100% 0 0 0);
+  transform: translateY(12px);
+}
+
+/* Active Revealed State */
+[data-motion-revealed="true"] {
+  opacity: 1 !important;
+  transform: none !important;
+  clip-path: inset(0 0 0 0) !important;
+  transition: 
+    opacity var(--motion-duration-slow) var(--motion-ease-out-expo),
+    transform var(--motion-duration-slow) var(--motion-ease-out-expo),
+    clip-path var(--motion-duration-slow) var(--motion-ease-editorial);
+}
+
+/* Stagger calculation helper applied to child elements */
+[data-motion-revealed="true"] [data-motion-child] {
+  animation: childStaggerReveal var(--motion-duration-normal) var(--motion-ease-out-expo) calc(var(--stagger-idx, 0) * var(--motion-stagger-base)) both;
+}
+
+@keyframes childStaggerReveal {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-dist-sm));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   2. Seamless Page Transitions (Non-SPA, Native Compliant)
+   ========================================================================== */
+
+/* Page entrance */
+body {
+  animation: cibusPageEntrance var(--motion-duration-normal) var(--motion-ease-out-expo) both;
+}
+
+@keyframes cibusPageEntrance {
+  0% {
+    opacity: 0.15;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page exit when internal link is clicked */
+body.page-is-leaving {
+  opacity: 0 !important;
+  transform: translateY(-4px) !important;
+  pointer-events: none !important;
+  transition: 
+    opacity var(--motion-duration-fast) var(--motion-ease-in-out),
+    transform var(--motion-duration-fast) var(--motion-ease-in-out) !important;
+}
+
+/* ==========================================================================
+   3. Interactive Micro-Interactions (Buttons, Cards, Links, Badges)
+   ========================================================================== */
+
+/* Universal Button Physics */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: 
+    transform var(--motion-duration-fast) var(--motion-ease-spring),
+    box-shadow var(--motion-duration-fast) var(--motion-ease-out-expo),
+    background-color var(--motion-duration-fast) ease,
+    border-color var(--motion-duration-fast) ease,
+    color var(--motion-duration-fast) ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(199, 75, 22, 0.18);
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 6px rgba(199, 75, 22, 0.12);
+  transition-duration: 80ms;
+}
+
+/* Shimmer accent on primary CTA buttons */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  transition: left 0.75s ease;
+}
+
+.btn-primary:hover::after {
+  left: 160%;
+}
+
+/* Outline button hover fill transition */
+.btn-outline {
+  transition: 
+    transform var(--motion-duration-fast) var(--motion-ease-spring),
+    background-color var(--motion-duration-fast) ease,
+    color var(--motion-duration-fast) ease,
+    border-color var(--motion-duration-fast) ease,
+    box-shadow var(--motion-duration-fast) ease;
+}
+
+.btn-outline:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(28, 25, 23, 0.08);
+}
+
+/* Navigation Links Animated Underline */
+.nav-link {
+  position: relative;
+  transition: color var(--motion-duration-fast) ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-radius: var(--radius-full);
+  transform: translateX(-50%);
+  transition: width var(--motion-duration-normal) var(--motion-ease-editorial);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 80%;
+}
+
+/* Interactive Card Elevation & Visual Depth */
+.food-card,
+.recipe-card,
+.state-preview-card,
+.spice-card,
+.feature-box,
+.contact-card,
+.cart-rec-card {
+  transition: 
+    transform var(--motion-duration-normal) var(--motion-ease-out-expo),
+    box-shadow var(--motion-duration-normal) var(--motion-ease-out-expo),
+    border-color var(--motion-duration-fast) ease;
+}
+
+.food-card:hover,
+.recipe-card:hover,
+.state-preview-card:hover,
+.spice-card:hover,
+.feature-box:hover,
+.contact-card:hover,
+.cart-rec-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px -6px rgba(28, 25, 23, 0.12), 0 8px 16px -4px rgba(199, 75, 22, 0.08);
+}
+
+/* Card Image Scale on Hover */
+.food-card .food-card-img,
+.recipe-card .recipe-image-wrap img,
+.state-preview-card .state-card-img-wrap img,
+.cart-rec-card .cart-rec-img {
+  transition: transform var(--motion-duration-slow) var(--motion-ease-editorial), filter var(--motion-duration-normal) ease;
+}
+
+.food-card:hover .food-card-img,
+.recipe-card:hover .recipe-image-wrap img,
+.state-preview-card:hover .state-card-img-wrap img,
+.cart-rec-card:hover .cart-rec-img {
+  transform: scale(1.05);
+  filter: brightness(1.03);
+}
+
+/* Dietary & State Badges Spring Bounce */
+.badge,
+.tag,
+.state-region-tag,
+.state-diet-tag,
+.diet-badge {
+  transition: transform var(--motion-duration-fast) var(--motion-ease-spring);
+}
+
+.badge:hover,
+.tag:hover,
+.state-region-tag:hover {
+  transform: scale(1.06);
+}
+
+/* Interactive Icon Buttons */
+.notification-icon-btn,
+.cart-icon-btn,
+.cart-btn,
+.heart-btn,
+.theme-toggle-btn {
+  transition: transform var(--motion-duration-fast) var(--motion-ease-spring), color var(--motion-duration-fast) ease;
+}
+
+.notification-icon-btn:hover,
+.cart-btn:hover,
+.cart-icon-btn:hover {
+  transform: scale(1.08) rotate(4deg);
+}
+
+.notification-icon-btn:active,
+.cart-btn:active {
+  transform: scale(0.92);
+}
+
+/* Form Input Illumination */
+.form-control,
+.form-input {
+  transition: 
+    border-color var(--motion-duration-fast) ease,
+    box-shadow var(--motion-duration-fast) var(--motion-ease-out-expo),
+    background-color var(--motion-duration-fast) ease;
+}
+
+.form-control:focus,
+.form-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(199, 75, 22, 0.15);
+  background-color: var(--color-surface-card);
+}

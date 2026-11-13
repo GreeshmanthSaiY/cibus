@@ -1,0 +1,55 @@
+/**
+ * CIBUS MOTION DESIGN SYSTEM — MOTION TOKENS
+ * Centralized durations, easing curves, staggers, and spatial metrics.
+ */
+
+:root {
+  /* ==========================================================================
+     Motion Duration Tokens
+     ========================================================================== */
+  --motion-duration-instant: 120ms;
+  --motion-duration-fast: 220ms;
+  --motion-duration-normal: 380ms;
+  --motion-duration-slow: 650ms;
+  --motion-duration-cinematic: 950ms;
+  --motion-duration-ambient: 12s;
+
+  /* ==========================================================================
+     Motion Easing Curves
+     ========================================================================== */
+  /* Lively tactile spring for buttons, badges, and micro-interactions */
+  --motion-ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* Smooth exponential deceleration for card arrivals and modal panels */
+  --motion-ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Editorial luxury curve for hero entrances and text unveils */
+  --motion-ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  
+  /* Symmetrical acceleration/deceleration for continuous breathing elements */
+  --motion-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  
+  /* General purpose smooth curve */
+  --motion-ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ==========================================================================
+     Stagger Intervals
+     ========================================================================== */
+  --motion-stagger-fast: 40ms;
+  --motion-stagger-base: 70ms;
+  --motion-stagger-slow: 110ms;
+
+  /* ==========================================================================
+     Reveal Distances & Transforms
+     ========================================================================== */
+  --motion-dist-subtle: 8px;
+  --motion-dist-sm: 14px;
+  --motion-dist-md: 24px;
+  --motion-dist-lg: 38px;
+  --motion-dist-cinematic: 52px;
+
+  /* ==========================================================================
+     3D Perspective
+     ========================================================================== */
+  --motion-perspective: 1200px;
+}

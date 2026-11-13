@@ -98,7 +98,7 @@
     <div class="container">
 
       <!-- Header Intro -->
-      <section class="section-title-wrap" style="padding-top: var(--space-2xl); margin-bottom: var(--space-lg);">
+      <section class="section-title-wrap" data-motion="editorial-reveal" style="padding-top: var(--space-2xl); margin-bottom: var(--space-lg);">
         <span class="section-eyebrow">Culinary Masterclasses</span>
         <h1 class="section-title">Authentic Recipe Collection</h1>
         <p class="section-subtitle">
@@ -107,7 +107,7 @@
       </section>
 
       <!-- Main Layout with Sticky Sidebar -->
-      <div class="recipe-detail-container">
+      <div class="recipe-detail-container" data-motion="fade-up">
 
         <!-- Sticky Quick Navigation Sidebar -->
         <aside class="recipe-sidebar" aria-label="Quick jump to recipe">
@@ -2742,6 +2742,7 @@
   <script src="../js/celebration.js"></script>
   <script src="../js/notifications.js"></script>
   <script src="../js/navigation.js"></script>
+  <script src="../js/motion/motion-engine.js"></script>
   <script src="../js/recipes.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {

@@ -245,7 +245,7 @@ const FoodMenuController = {
             : 'diet-nonveg';
 
         return `
-        <article class="card food-card" data-id="${Utils.escapeHtml(item.id)}" style="animation: fadeInUp 0.35s ease ${(index % 12) * 0.03}s both;">
+        <article class="card food-card" data-id="${Utils.escapeHtml(item.id)}" style="animation: foodCardGridEnter 0.45s var(--motion-ease-out-expo) ${(index % 12) * 0.045}s both; --item-idx: ${index % 12};">
           <div class="card-img-wrap">
             <img src="${Utils.escapeHtml(item.image)}" alt="${Utils.escapeHtml(item.name)}" loading="lazy" decoding="async" onerror="this.src='../public/assets/images/food-photo.webp'; this.onerror=null;">
             <span class="card-tag">${Utils.escapeHtml(item.region || 'India')}</span>

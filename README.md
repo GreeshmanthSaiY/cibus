@@ -229,6 +229,18 @@ Explore deep-dive agricultural and Ayurvedic profiles of India's 6 protected her
 * **Zero Layout Shift (CLS):** Explicit aspect-ratio containers and image dimensions prevent layout jumps during loading.
 * **Hardware-Accelerated Rendering:** CSS transforms and asynchronous image decoding ensure smooth scrolling across mobile and desktop devices.
 
+### 8. 🎭 Centralized Cinematic Motion System & Micro-Interactions
+* **Centralized Architecture:** Fully structured motion tokens (`motion-tokens.css`), global primitives (`motion-global.css`), bespoke section treatments (`motion-sections.css`), and touch-optimized responsive rules (`motion-responsive.css`).
+* **Handcrafted Section Identities:** Every major section boasts a distinct animation personality:
+  - *Homepage Hero:* Ambient dawn radiance, golden logo entrance, and sequenced title unveil.
+  - *Story & Philosophy:* Editorial clip reveals and horizontally expanding golden motif dividers.
+  - *Food Directory & Menu:* Staggered dish card waves, spring-popping region pills, and smooth category crossfades.
+  - *Recipe Deck Gallery:* 3D cascading fan-deck opening physics and view-toggle perspective flips.
+  - *In-Kitchen Recipe Guide:* Interactive checkbox celebrations, strikethrough glides, and live cooking progress bar updates.
+  - *Shopping Cart:* Tactile micro-stepper physics, price pulse highlights, and smooth row collapse on item removal.
+* **Native Page Transitions:** Fluid 160ms exit glide and entry fade with full `pageshow` (bfcache) support for instantaneous browser back/forward navigation.
+* **Full Reduced-Motion Accessibility:** Automatic detection of `prefers-reduced-motion: reduce`, instantaneously revealing all content with zero-duration transitions. Progressive enhancement ensures 100% content visibility even if JavaScript is unavailable.
+
 ---
 
 ## 🍽️ The 28-State Culinary Mosaic
