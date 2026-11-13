@@ -216,10 +216,15 @@ const App = {
         )
         .join('');
 
-      // Update summary numbers
+      // Update summary numbers with subtle pulse
       if (summarySubtotal) summarySubtotal.textContent = Utils.formatCurrency(CartEngine.getSubtotal());
       if (summaryTax) summaryTax.textContent = Utils.formatCurrency(CartEngine.getTax());
-      if (summaryTotal) summaryTotal.textContent = Utils.formatCurrency(CartEngine.getGrandTotal());
+      if (summaryTotal) {
+        summaryTotal.textContent = Utils.formatCurrency(CartEngine.getGrandTotal());
+        summaryTotal.classList.remove('price-pulse');
+        void summaryTotal.offsetWidth;
+        summaryTotal.classList.add('price-pulse');
+      }
     };
 
     // Initial render
@@ -249,7 +254,15 @@ const App = {
         }
       } else if (remBtn) {
         const id = remBtn.dataset.id;
-        CartEngine.removeItem(id);
+        const row = remBtn.closest('.cart-item-row');
+        if (row) {
+          row.classList.add('is-removing');
+          setTimeout(() => {
+            CartEngine.removeItem(id);
+          }, 280);
+        } else {
+          CartEngine.removeItem(id);
+        }
       }
     });
 

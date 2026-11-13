@@ -70,12 +70,13 @@
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: 3.4rem;
+  font-size: clamp(1.85rem, 5vw, 3.4rem);
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.14;
+  line-height: 1.15;
   margin-bottom: var(--space-md);
   text-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  word-break: break-word;
 }
 
 .hero-title .hero-highlight-gold {
@@ -1075,18 +1076,20 @@
 
 @media (max-width: 768px) {
   .hero-showcase {
-    padding: 3rem 1.25rem;
+    padding: 2.5rem 1.25rem;
     margin-top: var(--space-md);
   }
   .hero-title {
-    font-size: 2.35rem;
+    font-size: clamp(1.75rem, 4.5vw, 2.35rem);
   }
   .hero-subtitle {
     font-size: 1rem;
+    margin-bottom: var(--space-lg);
   }
   .hero-stats-row {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-lg);
+    gap: var(--space-md);
+    max-width: 100%;
   }
   .quote-banner {
     padding: var(--space-xl) var(--space-lg) var(--space-xl) 3.5rem;
@@ -1099,5 +1102,93 @@
   }
   .spice-cards-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-showcase {
+    padding: 2rem 1rem;
+    border-radius: var(--radius-lg);
+  }
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.85rem;
+    letter-spacing: 1px;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+  }
+  .hero-title {
+    font-size: 1.7rem;
+    line-height: 1.2;
+  }
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-sm);
+  }
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    justify-content: center;
+  }
+  .hero-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 12px;
+  }
+  .hero-stat-number {
+    font-size: 1.45rem;
+  }
+  .hero-stat-label {
+    font-size: 0.65rem;
+  }
+  .hero-stage {
+    width: 100%;
+    max-width: 100%;
+  }
+  .hero-dish-card {
+    max-width: 100%;
+    border-radius: var(--radius-lg);
+  }
+  .hero-dish-img-wrap {
+    height: 210px;
+  }
+  /* Remove negative badge bleed to prevent mobile horizontal overflow */
+  .hero-badge-top-left {
+    top: 8px;
+    left: 8px;
+  }
+  .hero-badge-top-right {
+    top: 8px;
+    right: 8px;
+  }
+  .hero-badge-bottom-left {
+    top: auto;
+    bottom: 8px;
+    left: 8px;
+  }
+  .quote-banner {
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-showcase {
+    padding: 1.5rem 0.75rem;
+  }
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  .hero-stats-row {
+    gap: 6px;
+    padding: 8px;
+  }
+  .hero-stat-number {
+    font-size: 1.3rem;
   }
 }

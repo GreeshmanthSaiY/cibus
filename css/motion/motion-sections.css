@@ -1,0 +1,628 @@
+/**
+ * CIBUS MOTION DESIGN SYSTEM — SECTION IDENTITIES
+ * Unique, handcrafted motion treatments for every major section across CIBUS.
+ */
+
+/* ==========================================================================
+   A. Homepage Hero — Cinematic Arrival
+   ========================================================================== */
+
+/* Ambient backdrop aura */
+.hero-visual-bg,
+.landing-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-visual-bg::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 10%;
+  width: 80%;
+  height: 120%;
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(230, 138, 0, 0.08) 0%,
+    rgba(199, 75, 22, 0.04) 50%,
+    transparent 80%
+  );
+  pointer-events: none;
+  animation: heroAmbientRadiance var(--motion-duration-ambient) ease-in-out infinite alternate;
+}
+
+@keyframes heroAmbientRadiance {
+  0% { transform: scale(1) translateY(0); opacity: 0.7; }
+  50% { transform: scale(1.08) translateY(-10px); opacity: 1; }
+  100% { transform: scale(1.02) translateY(5px); opacity: 0.85; }
+}
+
+/* Official CIBUS Logo entrance with golden aura */
+.hero-logo-img,
+.landing-logo {
+  animation: heroLogoCinematic 1s var(--motion-ease-editorial) both;
+}
+
+@keyframes heroLogoCinematic {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+    filter: drop-shadow(0 0 0 rgba(230, 138, 0, 0));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 10px 24px rgba(199, 75, 22, 0.16));
+  }
+}
+
+/* Ashoka Chakra subtle radiant pulse */
+.landing-chakra {
+  animation: chakraCinematic 1.1s var(--motion-ease-editorial) 0.15s both;
+}
+
+@keyframes chakraCinematic {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) rotate(-15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Hero Title sequenced reveal */
+.hero-title,
+.landing-hero-title {
+  animation: heroTitleReveal 0.85s var(--motion-ease-out-expo) 0.2s both;
+}
+
+@keyframes heroTitleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero Subtitle gentle entrance */
+.hero-subtitle,
+.landing-hero-desc {
+  animation: heroSubtitleReveal 0.75s var(--motion-ease-out-expo) 0.35s both;
+}
+
+@keyframes heroSubtitleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero CTA Buttons staggered pop */
+.hero-ctas,
+.landing-hero-actions {
+  animation: heroCtasReveal 0.65s var(--motion-ease-spring) 0.45s both;
+}
+
+@keyframes heroCtasReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Floating Heritage Badges */
+.hero-floating-badge {
+  animation: 
+    badgePopIn 0.8s var(--motion-ease-spring) 0.5s both,
+    heroFloat 6.5s ease-in-out infinite 1.3s;
+}
+
+.hero-floating-badge-2 {
+  animation: 
+    badgePopIn 0.8s var(--motion-ease-spring) 0.65s both,
+    heroFloatReverse 5.5s ease-in-out infinite 1.45s;
+}
+
+@keyframes badgePopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ==========================================================================
+   B. Introduction & Story Sections — Editorial Reveal
+   ========================================================================== */
+
+/* Quote Banner Editorial Unveil */
+.quote-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-banner[data-motion-revealed="true"] blockquote {
+  animation: editorialQuoteReveal 0.9s var(--motion-ease-editorial) both;
+}
+
+@keyframes editorialQuoteReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quote-banner[data-motion-revealed="true"] cite {
+  animation: editorialAuthorReveal 0.8s var(--motion-ease-out-expo) 0.25s both;
+}
+
+@keyframes editorialAuthorReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Decorative separator line expansion */
+.motion-divider,
+.quote-banner::after,
+.section-header::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.9s var(--motion-ease-editorial);
+}
+
+[data-motion-revealed="true"] .motion-divider,
+.quote-banner[data-motion-revealed="true"]::after,
+.section-header[data-motion-revealed="true"]::after {
+  transform: scaleX(1);
+}
+
+/* Philosophy Section Asymmetric Entrance */
+.philosophy-section[data-motion-revealed="true"] .feature-box:nth-child(1) {
+  animation: editorialFeatureRise 0.75s var(--motion-ease-out-expo) 0.05s both;
+}
+
+.philosophy-section[data-motion-revealed="true"] .feature-box:nth-child(2) {
+  animation: editorialFeatureRise 0.75s var(--motion-ease-out-expo) 0.18s both;
+}
+
+.philosophy-section[data-motion-revealed="true"] .feature-box:nth-child(3) {
+  animation: editorialFeatureRise 0.75s var(--motion-ease-out-expo) 0.31s both;
+}
+
+@keyframes editorialFeatureRise {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   C. Food Discovery Section — Culinary Showcase
+   ========================================================================== */
+
+/* Spice trail card staggered wave */
+.spice-trail-section[data-motion-revealed="true"] .spice-card:nth-child(1) { animation: spiceCardWave 0.7s var(--motion-ease-out-expo) 0.04s both; }
+.spice-trail-section[data-motion-revealed="true"] .spice-card:nth-child(2) { animation: spiceCardWave 0.7s var(--motion-ease-out-expo) 0.11s both; }
+.spice-trail-section[data-motion-revealed="true"] .spice-card:nth-child(3) { animation: spiceCardWave 0.7s var(--motion-ease-out-expo) 0.18s both; }
+.spice-trail-section[data-motion-revealed="true"] .spice-card:nth-child(4) { animation: spiceCardWave 0.7s var(--motion-ease-out-expo) 0.25s both; }
+.spice-trail-section[data-motion-revealed="true"] .spice-card:nth-child(5) { animation: spiceCardWave 0.7s var(--motion-ease-out-expo) 0.32s both; }
+.spice-trail-section[data-motion-revealed="true"] .spice-card:nth-child(6) { animation: spiceCardWave 0.7s var(--motion-ease-out-expo) 0.39s both; }
+
+@keyframes spiceCardWave {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Spice card micro-hover */
+.spice-card .spice-botanical-tag {
+  transition: transform var(--motion-duration-fast) var(--motion-ease-spring), background-color var(--motion-duration-fast) ease;
+}
+
+.spice-card:hover .spice-botanical-tag {
+  transform: scale(1.05) translateY(-2px);
+}
+
+/* ==========================================================================
+   D. Regional Food Menu — Exploration Motion
+   ========================================================================== */
+
+/* Filter Pills Spring State Transition */
+.filter-pill,
+.home-filter-pill {
+  position: relative;
+  transition: 
+    background-color var(--motion-duration-fast) ease,
+    color var(--motion-duration-fast) ease,
+    transform var(--motion-duration-fast) var(--motion-ease-spring),
+    box-shadow var(--motion-duration-fast) ease;
+}
+
+.filter-pill.active,
+.home-filter-pill.active {
+  transform: scale(1.04);
+  box-shadow: 0 4px 12px rgba(199, 75, 22, 0.25);
+}
+
+.filter-pill:hover:not(.active),
+.home-filter-pill:hover:not(.active) {
+  transform: translateY(-2px);
+  background-color: var(--color-surface-elevated);
+}
+
+/* Staggered Food Grid Entry on Filter */
+.food-grid-item-enter {
+  animation: foodCardGridEnter var(--motion-duration-normal) var(--motion-ease-out-expo) calc(var(--item-idx, 0) * var(--motion-stagger-fast)) both;
+}
+
+@keyframes foodCardGridEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==========================================================================
+   E. Recipe Collection — Editorial Gallery (3D Cascading Deck)
+   ========================================================================== */
+
+/* Fanned card deck entrance physics */
+.recipes-deck-mode .recipe-card {
+  transition: 
+    transform var(--motion-duration-slow) var(--motion-ease-editorial),
+    box-shadow var(--motion-duration-slow) var(--motion-ease-out-expo),
+    opacity var(--motion-duration-normal) ease;
+}
+
+.recipes-deck-mode .recipe-card:hover {
+  transform: translateY(-16px) scale(1.03) rotate(0deg) !important;
+  z-index: 50 !important;
+  box-shadow: 0 24px 48px -12px rgba(28, 25, 23, 0.22);
+}
+
+/* View Mode Switcher Flip Animation */
+.view-mode-btn {
+  transition: 
+    background-color var(--motion-duration-fast) ease,
+    color var(--motion-duration-fast) ease,
+    transform var(--motion-duration-fast) var(--motion-ease-spring);
+}
+
+.view-mode-btn.active {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   F. Recipe Detail — In-Kitchen Experience
+   ========================================================================== */
+
+/* Recipe Hero Banner smooth panorama */
+.recipe-hero-banner {
+  overflow: hidden;
+}
+
+.recipe-hero-banner img {
+  animation: recipeHeroUnveil 1.1s var(--motion-ease-editorial) both;
+}
+
+@keyframes recipeHeroUnveil {
+  0% {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Interactive Checklist Checkbox Celebration */
+.ingredient-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--color-border-dark);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  position: relative;
+  transition: 
+    background-color var(--motion-duration-fast) ease,
+    border-color var(--motion-duration-fast) ease,
+    transform var(--motion-duration-fast) var(--motion-ease-spring);
+}
+
+.ingredient-checkbox:checked {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+  transform: scale(1.15);
+  animation: checkboxPop var(--motion-duration-fast) var(--motion-ease-spring);
+}
+
+@keyframes checkboxPop {
+  0% { transform: scale(0.85); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1.15); }
+}
+
+.ingredient-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Checked ingredient label line-through glide */
+.ingredient-item.is-completed {
+  opacity: 0.65;
+  transition: opacity var(--motion-duration-normal) ease;
+}
+
+.ingredient-item.is-completed .ingredient-name {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+}
+
+/* Recipe Progress Bar Fill Transition */
+.recipe-progress-fill {
+  transition: width 0.4s var(--motion-ease-out-expo);
+}
+
+/* Numbered Step Circle Pulse */
+.step-number {
+  transition: 
+    transform var(--motion-duration-fast) var(--motion-ease-spring),
+    background-color var(--motion-duration-fast) ease,
+    box-shadow var(--motion-duration-fast) ease;
+}
+
+.instruction-step:hover .step-number {
+  transform: scale(1.12);
+  box-shadow: 0 0 0 4px rgba(199, 75, 22, 0.15);
+}
+
+/* ==========================================================================
+   G. Shopping Cart — Transactional Feedback
+   ========================================================================== */
+
+/* Cart Item Stagger Entrance */
+.cart-item-row {
+  transition: 
+    opacity var(--motion-duration-normal) ease,
+    transform var(--motion-duration-normal) var(--motion-ease-out-expo),
+    max-height var(--motion-duration-normal) ease,
+    margin var(--motion-duration-normal) ease,
+    padding var(--motion-duration-normal) ease;
+}
+
+/* Cart item removal smooth collapse */
+.cart-item-row.is-removing {
+  opacity: 0 !important;
+  transform: translateX(-30px) !important;
+  max-height: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin: 0 !important;
+  border-bottom: none !important;
+  overflow: hidden !important;
+}
+
+/* Quantity Stepper Tactile Buttons */
+.cart-stepper-btn,
+.stepper-btn {
+  transition: 
+    transform var(--motion-duration-instant) var(--motion-ease-spring),
+    background-color var(--motion-duration-instant) ease;
+}
+
+.cart-stepper-btn:active,
+.stepper-btn:active {
+  transform: scale(0.86);
+}
+
+/* Grand Total highlight pulse on update */
+.price-pulse {
+  animation: priceHighlightPulse 0.45s var(--motion-ease-spring);
+}
+
+@keyframes priceHighlightPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); color: var(--color-primary); }
+  100% { transform: scale(1); }
+}
+
+/* ==========================================================================
+   H. Favorites Micro-Interaction
+   ========================================================================== */
+
+.favorite-pop {
+  animation: favoriteHeartPop 0.45s var(--motion-ease-spring) both;
+}
+
+@keyframes favoriteHeartPop {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.35) rotate(-8deg); color: #E11D48; }
+  70% { transform: scale(0.95) rotate(4deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* ==========================================================================
+   I. Notification Center — Live Interaction
+   ========================================================================== */
+
+/* Bell ringing wiggle on new notification */
+.bell-ring-active {
+  animation: bellRingCinematic 0.85s var(--motion-ease-out-expo) both;
+  transform-origin: top center;
+}
+
+@keyframes bellRingCinematic {
+  0% { transform: rotate(0); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-12deg); }
+  45% { transform: rotate(9deg); }
+  60% { transform: rotate(-6deg); }
+  75% { transform: rotate(3deg); }
+  100% { transform: rotate(0); }
+}
+
+/* Notification Drawer smooth scale-reveal from bell */
+.notification-dropdown {
+  transform-origin: top right;
+  transition: 
+    opacity var(--motion-duration-fast) var(--motion-ease-out-expo),
+    transform var(--motion-duration-fast) var(--motion-ease-out-expo),
+    visibility var(--motion-duration-fast) ease;
+}
+
+/* Individual notification item entrance */
+.notification-item {
+  transition: 
+    background-color var(--motion-duration-fast) ease,
+    transform var(--motion-duration-fast) ease;
+}
+
+.notification-item:hover {
+  transform: translateX(4px);
+  background-color: var(--color-surface-elevated);
+}
+
+/* ==========================================================================
+   J. Contact Hub — Connection Experience
+   ========================================================================== */
+
+.contact-card:nth-child(1) {
+  animation: contactCardSlideLeft 0.75s var(--motion-ease-out-expo) 0.1s both;
+}
+
+.contact-card:nth-child(2) {
+  animation: contactCardSlideRight 0.75s var(--motion-ease-out-expo) 0.22s both;
+}
+
+@keyframes contactCardSlideLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes contactCardSlideRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ==========================================================================
+   K. Login & Register — Focused Interface
+   ========================================================================== */
+
+.auth-card {
+  animation: authCardEntrance 0.8s var(--motion-ease-editorial) both;
+}
+
+@keyframes authCardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Input validation shake */
+.input-invalid-shake {
+  animation: inputShake 0.4s ease both;
+}
+
+@keyframes inputShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+/* ==========================================================================
+   L. Footer — Cinematic Closing
+   ========================================================================== */
+
+.site-footer[data-motion-revealed="true"] .footer-col:nth-child(1) { animation: footerColLift 0.65s var(--motion-ease-out-expo) 0.05s both; }
+.site-footer[data-motion-revealed="true"] .footer-col:nth-child(2) { animation: footerColLift 0.65s var(--motion-ease-out-expo) 0.12s both; }
+.site-footer[data-motion-revealed="true"] .footer-col:nth-child(3) { animation: footerColLift 0.65s var(--motion-ease-out-expo) 0.19s both; }
+.site-footer[data-motion-revealed="true"] .footer-col:nth-child(4) { animation: footerColLift 0.65s var(--motion-ease-out-expo) 0.26s both; }
+
+@keyframes footerColLift {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-links a {
+  position: relative;
+  display: inline-block;
+  transition: color var(--motion-duration-fast) ease, transform var(--motion-duration-fast) ease;
+}
+
+.footer-links a:hover {
+  transform: translateX(4px);
+  color: var(--color-primary);
+}
+
+.social-links a {
+  transition: transform var(--motion-duration-fast) var(--motion-ease-spring), color var(--motion-duration-fast) ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px) scale(1.15);
+  color: var(--color-primary);
+}
+
