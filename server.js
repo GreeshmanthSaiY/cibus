@@ -175,49 +175,22 @@ function renderChunkTable(inventory) {
 }
 
 /**
- * Find the primary local network IPv4 address
+ * Print dev server launch banner (Clean local development output)
  */
-function getNetworkAddress() {
-  const interfaces = os.networkInterfaces();
-  for (const name of Object.keys(interfaces)) {
-    for (const net of interfaces[name]) {
-      if (net.family === 'IPv4' && !net.internal) {
-        return net.address;
-      }
-    }
-  }
-  return null;
-}
-
-/**
- * Print dev server launch banner
- */
-function printLaunchBanner(port, durationMs, showTable = false) {
-  if (showTable) {
-    const inventory = getChunkInventory();
-    renderChunkTable(inventory);
-  }
-
-  console.log(`\n  ${colors.bold}${colors.brightGreen}🍲  CIBUS Dev Server v2.0.0${colors.reset}\n`);
-  console.log(`  ${colors.brightGreen}➜${colors.reset}  ${colors.bold}Local:${colors.reset}   ${colors.cyan}http://localhost:${port}/${colors.reset}`);
-  const netIp = getNetworkAddress();
-  if (netIp) {
-    console.log(`  ${colors.brightGreen}➜${colors.reset}  ${colors.bold}Network:${colors.reset} ${colors.cyan}http://${netIp}:${port}/${colors.reset}`);
-  }
-  console.log(`  ${colors.gray}➜  press h + enter to show help${colors.reset}\n`);
-  console.log(`  ${colors.dim}[ready in ${durationMs}ms · live reload active]${colors.reset}\n`);
+function printLaunchBanner(port) {
+  console.log(`\nCIBUS Development Server\n\nLocal: http://localhost:${port}/\n\nReady for local development.\n`);
 }
 
 /**
  * Display keyboard shortcut help
  */
 function showHelpMenu(port) {
-  console.log(`\n${colors.bold}  CIBUS Server Shortcuts:${colors.reset}`);
-  console.log(`  ${colors.cyan}r + enter${colors.reset}  re-scan assets and rebuild bundle stats`);
-  console.log(`  ${colors.cyan}u + enter${colors.reset}  show server urls`);
-  console.log(`  ${colors.cyan}o + enter${colors.reset}  open local URL in default browser`);
-  console.log(`  ${colors.cyan}c + enter${colors.reset}  clear terminal screen`);
-  console.log(`  ${colors.cyan}q + enter${colors.reset}  quit server gracefully\n`);
+  console.log(`\nCIBUS Server Shortcuts:`);
+  console.log(`  r + enter  broadcast reload to browser`);
+  console.log(`  u + enter  show local server URL`);
+  console.log(`  o + enter  open local URL in default browser`);
+  console.log(`  c + enter  clear terminal screen`);
+  console.log(`  q + enter  quit server gracefully\n`);
 }
 
 /**
@@ -429,19 +402,14 @@ function setupKeyboardShortcuts(port) {
         broadcastReload('reload');
         break;
       case 'u':
-        console.log(`\n  ${colors.brightGreen}➜${colors.reset}  ${colors.bold}Local:${colors.reset}   ${colors.cyan}http://localhost:${port}/${colors.reset}`);
-        const netIp = getNetworkAddress();
-        if (netIp) {
-          console.log(`  ${colors.brightGreen}➜${colors.reset}  ${colors.bold}Network:${colors.reset} ${colors.cyan}http://${netIp}:${port}/${colors.reset}`);
-        }
-        console.log('');
+        console.log(`\nLocal: http://localhost:${port}/\n`);
         break;
       case 'o':
         openInBrowser(`http://localhost:${port}/`);
         break;
       case 'c':
         console.clear();
-        printLaunchBanner(port, 10, false);
+        printLaunchBanner(port);
         break;
       case 'q':
         console.log(`\n${colors.yellow}Stopping CIBUS development server... Goodbye!${colors.reset}\n`);
@@ -558,9 +526,8 @@ function startServer(port = DEFAULT_PORT) {
     }
   });
 
-  server.listen(port, () => {
-    const elapsed = Date.now() - startTime;
-    printLaunchBanner(port, elapsed);
+  server.listen(port, '127.0.0.1', () => {
+    printLaunchBanner(port);
     setupFileWatcher();
     setupKeyboardShortcuts(port);
   });
