@@ -151,6 +151,12 @@ const tasks = [
     size: '390,844'
   },
   {
+    name: 'mobile/navigation-mobile.png',
+    file: 'pages/home.html?openMenu=true',
+    out: path.join(PROJECT_ROOT, 'docs/screenshots/mobile/navigation-mobile.png'),
+    size: '390,844'
+  },
+  {
     name: 'mobile/food-menu-mobile.png',
     file: 'pages/food-menu.html',
     out: path.join(PROJECT_ROOT, 'docs/screenshots/mobile/food-menu-mobile.png'),
@@ -160,6 +166,12 @@ const tasks = [
     name: 'mobile/recipe-cards-mobile.png',
     file: 'pages/recipe-cards.html',
     out: path.join(PROJECT_ROOT, 'docs/screenshots/mobile/recipe-cards-mobile.png'),
+    size: '390,844'
+  },
+  {
+    name: 'mobile/recipe-collection-mobile.png',
+    file: 'pages/recipe-cards.html',
+    out: path.join(PROJECT_ROOT, 'docs/screenshots/mobile/recipe-collection-mobile.png'),
     size: '390,844'
   },
   {
@@ -196,6 +208,12 @@ const tasks = [
     name: 'mobile/register-mobile.png',
     file: 'pages/register.html',
     out: path.join(PROJECT_ROOT, 'docs/screenshots/mobile/register-mobile.png'),
+    size: '390,844'
+  },
+  {
+    name: 'mobile/registration-mobile.png',
+    file: 'pages/register.html',
+    out: path.join(PROJECT_ROOT, 'docs/screenshots/mobile/registration-mobile.png'),
     size: '390,844'
   }
 ];

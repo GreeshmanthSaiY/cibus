@@ -11,6 +11,33 @@ const FoodMenuController = {
   async init() {
     await this.loadData();
     this.setupListeners();
+
+    // Check URL parameters (e.g. ?region=south or ?filter=Vegetarian or ?search=biryani)
+    const urlParams = new URLSearchParams(window.location.search);
+    const regionParam = urlParams.get('region') || urlParams.get('filter');
+    const searchParam = urlParams.get('search');
+
+    if (regionParam) {
+      const matchPill = Array.from(document.querySelectorAll('.filter-pill')).find(
+        (p) => (p.dataset.filter || '').toLowerCase() === regionParam.toLowerCase()
+      );
+      if (matchPill) {
+        document.querySelectorAll('.filter-pill').forEach((p) => {
+          p.classList.remove('active');
+          p.setAttribute('aria-selected', 'false');
+        });
+        matchPill.classList.add('active');
+        matchPill.setAttribute('aria-selected', 'true');
+        this.activeFilter = matchPill.dataset.filter;
+      }
+    }
+
+    if (searchParam) {
+      this.searchQuery = searchParam.trim().toLowerCase();
+      const searchInput = document.getElementById('food-search-input');
+      if (searchInput) searchInput.value = searchParam;
+    }
+
     this.render();
 
     // Dynamically synchronize card button states with cart updates across windows/tabs

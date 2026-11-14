@@ -419,96 +419,188 @@ const App = {
     const statesContainer = document.getElementById('home-states-preview');
     if (!statesContainer) return;
 
-    let foodItems = [];
-    let stateList = [];
+    let activeRegion = 'all';
 
+    // Fallback data if JSON fetch fails or runs from local filesystem
+    const fallbackDishes = [
+      {
+        id: 'pulihora',
+        name: 'Andhra Pradesh',
+        region: 'South',
+        dish: 'Pulihora (Tamarind Rice)',
+        dishId: 'pulihora',
+        image: '../public/assets/images/dishes/pulihora.webp',
+        diet: 'Vegetarian',
+        rating: 4.8,
+        description: 'Tangy tamarind-infused rice tempered with roasted peanuts, mustard seeds, curry leaves, and green chilies.',
+        price: 160
+      },
+      {
+        id: 'makki',
+        name: 'Punjab',
+        region: 'North',
+        dish: 'Makki di Roti & Sarson da Saag',
+        dishId: 'makki',
+        image: '../public/assets/images/dishes/makki.webp',
+        diet: 'Vegetarian',
+        rating: 4.9,
+        description: 'Slow-simmered mustard greens with tender bathua leaves served with golden corn flatbread and fresh white butter.',
+        price: 220
+      },
+      {
+        id: 'biriyani',
+        name: 'Telangana',
+        region: 'South',
+        dish: 'Hyderabadi Dum Biryani',
+        dishId: 'biriyani',
+        image: '../public/assets/images/dishes/biriyani.webp',
+        diet: 'Non-Vegetarian',
+        rating: 4.9,
+        description: 'Royal long-grain basmati infused with saffron milk, whole garam masala, and fragrant herbs in slow sealed dum.',
+        price: 340
+      },
+      {
+        id: 'fish',
+        name: 'Goa',
+        region: 'West',
+        dish: 'Goan Fish Curry',
+        dishId: 'fish',
+        image: '../public/assets/images/dishes/fish.webp',
+        diet: 'Non-Vegetarian',
+        rating: 4.9,
+        description: 'Coastal catch simmered in spiced fresh coconut milk, dried red Kashmiri chillies, and tangy dried kokum petals.',
+        price: 360
+      },
+      {
+        id: 'litti',
+        name: 'Bihar',
+        region: 'East',
+        dish: 'Bihari Litti Chokha',
+        dishId: 'litti',
+        image: '../public/assets/images/dishes/litti.webp',
+        diet: 'Vegetarian',
+        rating: 4.8,
+        description: 'Roasted whole wheat globes stuffed with spiced sattu, served with charred eggplant and tomato mash in pure desi ghee.',
+        price: 200
+      },
+      {
+        id: 'pork',
+        name: 'Nagaland',
+        region: 'Northeast',
+        dish: 'Naga Smoked Pork with Bamboo Shoot',
+        dishId: 'pork',
+        image: '../public/assets/images/dishes/pork.webp',
+        diet: 'Non-Vegetarian',
+        rating: 4.9,
+        description: 'Wood-smoked pork pieces slow-braised with fermented bamboo shoots, fiery Raja Mircha, and native mountain herbs.',
+        price: 380
+      }
+    ];
+
+    let combined = fallbackDishes;
+
+    const renderGrid = (filterRegion = 'all') => {
+      activeRegion = filterRegion;
+      let filtered = combined;
+      if (filterRegion === 'Vegetarian') {
+        filtered = combined.filter((item) => item.diet === 'Vegetarian' || item.diet === 'Vegan');
+      } else if (filterRegion !== 'all') {
+        filtered = combined.filter((item) => item.region.toLowerCase() === filterRegion.toLowerCase());
+      }
+
+      const toDisplay = filtered.slice(0, 8);
+
+      if (toDisplay.length === 0) {
+        statesContainer.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 2rem; color: var(--color-text-muted);">
+            <p>No regional delicacies currently matching this selection. Try selecting <strong>All States</strong>.</p>
+          </div>
+        `;
+        return;
+      }
+
+      statesContainer.innerHTML = toDisplay
+        .map(
+          (item, index) => `
+        <div class="state-preview-card" style="animation: fadeInUp 0.4s ease ${index * 0.05}s both;">
+          <div class="state-card-img-wrap">
+            <img src="${Utils.escapeHtml(item.image)}" alt="${Utils.escapeHtml(item.name + ' ' + item.dish)}" loading="lazy" decoding="async" onerror="this.src='../public/assets/images/dishes/${Utils.escapeHtml(item.dishId)}.webp';">
+            <div class="state-card-badges">
+              <span class="state-region-tag">${Utils.escapeHtml(item.region)} India</span>
+              <span class="state-diet-tag" style="color: ${item.diet === 'Non-Vegetarian' ? '#B91C1C' : '#15803D'};">
+                ${item.diet === 'Non-Vegetarian' ? '🔴 Non-Veg' : '🟢 Veg'}
+              </span>
+            </div>
+          </div>
+          <div class="state-card-body">
+            <span class="state-name">${Utils.escapeHtml(item.name)}</span>
+            <h3 class="state-dish-highlight">${Utils.escapeHtml(item.dish)}</h3>
+            <p class="state-dish-desc">${Utils.escapeHtml(item.description)}</p>
+            <div class="state-card-footer">
+              <span class="state-rating-wrap">⭐ ${item.rating}</span>
+              <a href="./recipe-detail.html#${Utils.escapeHtml(item.dishId)}" class="btn btn-outline btn-sm">
+                View Recipe &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      `
+        )
+        .join('');
+    };
+
+    // Setup filter buttons immediately
+    const filterPills = document.querySelectorAll('.home-filter-pill');
+    filterPills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach((p) => {
+          p.classList.remove('active');
+          p.setAttribute('aria-selected', 'false');
+        });
+        pill.classList.add('active');
+        pill.setAttribute('aria-selected', 'true');
+        const reg = pill.dataset.region || 'all';
+        renderGrid(reg);
+      });
+    });
+
+    // Initial render with fallback immediately available
+    renderGrid('all');
+
+    // Asynchronously fetch full datasets
     try {
       const [statesRes, foodsRes] = await Promise.all([
         fetch('../data/states.json').catch(() => fetch('./data/states.json')),
         fetch('../data/food-items.json').catch(() => fetch('./data/food-items.json'))
       ]);
 
-      if (statesRes && statesRes.ok) {
-        stateList = await statesRes.json();
-      }
-      if (foodsRes && foodsRes.ok) {
-        foodItems = await foodsRes.json();
-      }
+      if (statesRes && statesRes.ok && foodsRes && foodsRes.ok) {
+        const stateList = await statesRes.json();
+        const foodItems = await foodsRes.json();
 
-      const foodMap = new Map();
-      foodItems.forEach((f) => foodMap.set(f.id, f));
+        const foodMap = new Map();
+        foodItems.forEach((f) => foodMap.set(f.id, f));
 
-      const combined = stateList.map((s) => {
-        const food = foodMap.get(s.dishId) || {};
-        return {
-          id: s.id,
-          name: s.name,
-          region: s.region,
-          dish: s.dish,
-          dishId: s.dishId,
-          image: food.image || '../public/assets/images/dishes/' + s.dishId + '.webp',
-          diet: food.diet || 'Vegetarian',
-          rating: food.rating || 4.8,
-          description: food.description || `Authentic regional heritage dish celebrated across ${s.name}.`,
-          price: food.price || 220
-        };
-      });
-
-      const renderGrid = (filterRegion = 'all') => {
-        let filtered = combined;
-        if (filterRegion === 'Vegetarian') {
-          filtered = combined.filter((item) => item.diet === 'Vegetarian' || item.diet === 'Vegan');
-        } else if (filterRegion !== 'all') {
-          filtered = combined.filter((item) => item.region.toLowerCase() === filterRegion.toLowerCase());
-        }
-
-        const toDisplay = filtered.slice(0, 8);
-
-        statesContainer.innerHTML = toDisplay
-          .map(
-            (item, index) => `
-          <div class="state-preview-card" style="animation: fadeInUp 0.4s ease ${index * 0.05}s both;">
-            <div class="state-card-img-wrap">
-              <img src="${Utils.escapeHtml(item.image)}" alt="${Utils.escapeHtml(item.name + ' ' + item.dish)}" loading="lazy" decoding="async" onerror="this.src='../public/assets/images/dishes/${Utils.escapeHtml(item.dishId)}.webp';">
-              <div class="state-card-badges">
-                <span class="state-region-tag">${Utils.escapeHtml(item.region)} India</span>
-                <span class="state-diet-tag" style="color: ${item.diet === 'Non-Vegetarian' ? '#B91C1C' : '#15803D'};">
-                  ${item.diet === 'Non-Vegetarian' ? '🔴 Non-Veg' : '🟢 Veg'}
-                </span>
-              </div>
-            </div>
-            <div class="state-card-body">
-              <span class="state-name">${Utils.escapeHtml(item.name)}</span>
-              <h3 class="state-dish-highlight">${Utils.escapeHtml(item.dish)}</h3>
-              <p class="state-dish-desc">${Utils.escapeHtml(item.description)}</p>
-              <div class="state-card-footer">
-                <span class="state-rating-wrap">⭐ ${item.rating}</span>
-                <a href="./recipe-detail.html#${Utils.escapeHtml(item.dishId)}" class="btn btn-outline btn-sm">
-                  View Recipe &rarr;
-                </a>
-              </div>
-            </div>
-          </div>
-        `
-          )
-          .join('');
-      };
-
-      // Initial render
-      renderGrid('all');
-
-      // Setup filter buttons
-      const filterPills = document.querySelectorAll('.home-filter-pill');
-      filterPills.forEach((pill) => {
-        pill.addEventListener('click', () => {
-          filterPills.forEach((p) => p.classList.remove('active'));
-          pill.classList.add('active');
-          const reg = pill.dataset.region || 'all';
-          renderGrid(reg);
+        combined = stateList.map((s) => {
+          const food = foodMap.get(s.dishId) || {};
+          return {
+            id: s.id,
+            name: s.name,
+            region: s.region,
+            dish: s.dish,
+            dishId: s.dishId,
+            image: food.image || '../public/assets/images/dishes/' + s.dishId + '.webp',
+            diet: food.diet || 'Vegetarian',
+            rating: food.rating || 4.8,
+            description: food.description || `Authentic regional heritage dish celebrated across ${s.name}.`,
+            price: food.price || 220
+          };
         });
-      });
+
+        renderGrid(activeRegion);
+      }
     } catch (err) {
-      console.warn('[Cibus Home] Could not load state dishes:', err);
+      console.warn('[Cibus Home] Dataset load note:', err.message);
     }
   }
 };

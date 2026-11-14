@@ -7,6 +7,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.1.0] - 2026-11-14
+
+### Added
+- **Mobile Navigation Drawer & Responsive Layout on Welcome Gateway:**
+  - Added slide-in mobile navigation drawer (`.landing-mobile-drawer`) and hamburger toggle (`.landing-nav-toggle`) to `index.html`.
+  - Added URL parameter support (`?openMenu=true`) for programmatic menu activation and deep-linking.
+  - Responsive logo and Ashoka Chakra proportions across small mobile (320px), standard mobile (360px-390px), large mobile (430px), tablet (768px), and desktop.
+  - Standardized 48px minimum touch targets and centered CTA button layout on mobile.
+- **Breadcrumb Navigation in Recipe Detail:**
+  - Added top "Back to Recipes Gallery" breadcrumb navigation on `pages/recipe-detail.html`.
+- **Automated Genuine Multi-Device Screenshot Suite:**
+  - Added headless Chrome screenshot pipeline capturing desktop, tablet, and mobile views (`scripts/capture-screenshots.js`).
+
+### Fixed
+- **Section Option Buttons & Navigation Responsiveness:**
+  - Eliminated delayed artificial page transition timer and link hijack in `js/motion/motion-engine.js`, restoring instant native navigation.
+  - Removed accidental `pointer-events: none` on `body.page-is-leaving` that locked mobile gestures.
+  - Fixed syntax error in `css/layout.css` around mobile drawer styling and ensured robust pointer-events handling for open/closed states.
+  - Fixed regional filter pills in `pages/home.html` by binding click event listeners synchronously prior to dataset fetching.
+  - Added URL search parameter parsing (`?region=`, `?filter=`, `?search=`) in `js/food-menu.js` so footer region links automatically activate corresponding filter pills.
+- **Unified Back-To-Top Button Engineering:**
+  - Upgraded `js/navigation.js` to observe hero boundary via `IntersectionObserver` across all pages.
+  - Removed redundant conflicting `#back-to-top-btn` scripts and styles from `js/recipes.js` and `css/pages/recipes.css`.
+  - Unified smooth scrolling with `prefers-reduced-motion` detection, accessibility state (`aria-hidden`), safe-area insets, and high-contrast `:focus-visible` styling.
+- **Hero-to-Footer Layout & Gap Elimination:**
+  - Configured flex layout on landing header and body to eliminate unintended cream gaps between wave graphics and footer across all mobile viewports.
+- **Local Development Server Output:**
+  - Simplified server startup banner in `server.js` to display clean local-only address.
+
+---
+
 ## [2.0.0] - 2026-11-11
 
 ### Added

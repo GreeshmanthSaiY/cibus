@@ -113,12 +113,11 @@ body {
 
 /* Page exit when internal link is clicked */
 body.page-is-leaving {
-  opacity: 0 !important;
-  transform: translateY(-4px) !important;
-  pointer-events: none !important;
+  opacity: 0.85;
+  transform: translateY(-2px);
   transition: 
     opacity var(--motion-duration-fast) var(--motion-ease-in-out),
-    transform var(--motion-duration-fast) var(--motion-ease-in-out) !important;
+    transform var(--motion-duration-fast) var(--motion-ease-in-out);
 }
 
 /* ==========================================================================
