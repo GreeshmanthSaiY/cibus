@@ -31,10 +31,12 @@
     <!-- Top Utility Bar (Directly Above the Fold) -->
     <nav class="landing-top-nav" aria-label="Quick Navigation">
       <div class="landing-top-nav-inner">
-        <a href="pages/home.html" class="landing-nav-brand">
+        <a href="pages/home.html" class="landing-nav-brand" aria-label="CIBUS Home">
           <img src="public/assets/images/favicon-32x32.png" alt="CIBUS Icon" width="22" height="22">
           <span>CIBUS</span>
         </a>
+
+        <!-- Desktop Navigation Links -->
         <div class="landing-nav-links">
           <a href="pages/home.html" class="landing-nav-link">Explore</a>
           <a href="pages/food-menu.html" class="landing-nav-link">Menu</a>
@@ -42,6 +44,25 @@
           <span class="landing-nav-divider" aria-hidden="true"></span>
           <a href="pages/login.html" class="landing-nav-link">Sign In</a>
           <a href="pages/register.html" class="landing-nav-cta">Create Account</a>
+        </div>
+
+        <!-- Mobile Navigation Toggle -->
+        <button type="button" class="mobile-nav-toggle landing-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div class="landing-mobile-drawer mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation" aria-hidden="true">
+        <a href="pages/home.html" class="nav-link">Explore Cibus</a>
+        <a href="pages/food-menu.html" class="nav-link">Food Menu</a>
+        <a href="pages/recipe-cards.html" class="nav-link">Cook Recipes</a>
+        <a href="pages/contact.html" class="nav-link">Contact Us</a>
+        <div class="landing-drawer-auth" style="margin-top: var(--space-md); padding-top: var(--space-md); border-top: 1px solid var(--color-border); display: flex; flex-direction: column; gap: 8px;">
+          <a href="pages/login.html" class="btn btn-outline btn-block">Sign In</a>
+          <a href="pages/register.html" class="btn btn-primary btn-block">Create Account</a>
         </div>
       </div>
     </nav>
@@ -110,7 +131,8 @@
     </p>
   </footer>
 
-  <!-- Centralized Motion Engine -->
+  <!-- Navigation & Motion Controllers -->
+  <script src="./js/navigation.js"></script>
   <script src="./js/motion/motion-engine.js"></script>
   <!-- Vercel Web Analytics & Speed Insights (Official Static Integration) -->
   <script>

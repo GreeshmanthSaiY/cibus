@@ -311,44 +311,123 @@ const NavigationManager = {
       btn.className = 'back-to-top-btn';
       btn.setAttribute('type', 'button');
       btn.setAttribute('aria-label', 'Back to top of page');
-      btn.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l-7 7h4v9h6v-9h4z"/></svg>`;
+      btn.setAttribute('aria-hidden', 'true');
+      btn.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22" fill="currentColor"><path d="M12 4l-7 7h4v9h6v-9h4z"/></svg>`;
       document.body.appendChild(btn);
     }
 
-    const checkScroll = () => {
-      if (window.scrollY > 250) {
-        btn.classList.add('visible');
-      } else {
-        btn.classList.remove('visible');
-      }
+    const setVisibility = (visible) => {
+      btn.classList.toggle('visible', visible);
+      btn.classList.toggle('is-visible', visible);
+      btn.setAttribute('aria-hidden', String(!visible));
     };
 
-    window.addEventListener('scroll', checkScroll, { passive: true });
+    // Hero boundary detection via IntersectionObserver
+    const heroSelectors = [
+      '.hero-showcase',
+      '.landing-header',
+      '.landing-inner-header',
+      '.food-menu-header',
+      '.section-title-wrap',
+      '.cart-header-section',
+      '.contact-header',
+      '.auth-card',
+      'main > .container > section:first-child'
+    ];
+    const hero = document.querySelector(heroSelectors.join(', '));
+
+    if ('IntersectionObserver' in window && hero) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            // When hero is past the viewport in the scroll direction, show button
+            const pastHero = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+            setVisibility(pastHero);
+          });
+        },
+        { threshold: 0, rootMargin: '0px 0px 0px 0px' }
+      );
+      observer.observe(hero);
+    } else {
+      const checkScroll = () => {
+        const threshold = hero ? Math.max(180, hero.offsetTop + hero.offsetHeight * 0.6) : 250;
+        setVisibility(window.scrollY > threshold);
+      };
+      window.addEventListener('scroll', checkScroll, { passive: true });
+    }
+
+    // Smooth scroll to top on click with reduced-motion awareness
     btn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({
+        top: 0,
+        behavior: prefersReduced ? 'auto' : 'smooth'
+      });
+      // Move keyboard focus back to top of document for screen readers
+      const focusTarget = document.querySelector('header a, .brand-logo, .landing-nav-brand, h1');
+      if (focusTarget && typeof focusTarget.focus === 'function') {
+        focusTarget.focus({ preventScroll: true });
+      }
     });
   },
 
   setupMobileDrawer() {
-    const toggleBtn = document.querySelector('.mobile-nav-toggle');
-    const drawer = document.querySelector('.mobile-drawer');
+    const toggleBtn = document.querySelector('.mobile-nav-toggle, .landing-nav-toggle');
+    const drawer = document.querySelector('.mobile-drawer, .landing-mobile-drawer');
     if (!toggleBtn || !drawer) return;
 
-    toggleBtn.addEventListener('click', () => {
+    const closeDrawer = () => {
+      toggleBtn.classList.remove('open');
+      drawer.classList.remove('open');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+    };
+
+    const openDrawer = () => {
+      toggleBtn.classList.add('open');
+      drawer.classList.add('open');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+    };
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isOpen = drawer.classList.contains('open');
-      toggleBtn.classList.toggle('open', !isOpen);
-      drawer.classList.toggle('open', !isOpen);
-      toggleBtn.setAttribute('aria-expanded', String(!isOpen));
+      if (isOpen) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
     });
 
-    // Close drawer when clicking navigation link
+    // Close drawer when clicking any link inside
     drawer.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
-        toggleBtn.classList.remove('open');
-        drawer.classList.remove('open');
-        toggleBtn.setAttribute('aria-expanded', 'false');
+        closeDrawer();
       });
     });
+
+    // Close drawer when clicking outside
+    document.addEventListener('click', (e) => {
+      if (drawer.classList.contains('open') && !drawer.contains(e.target) && !toggleBtn.contains(e.target)) {
+        closeDrawer();
+      }
+    });
+
+    // Close drawer on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) {
+        closeDrawer();
+        toggleBtn.focus();
+      }
+    });
+
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('openMenu') === 'true') {
+        openDrawer();
+      }
+    } catch (_) {}
   },
 
   highlightActiveRoute() {

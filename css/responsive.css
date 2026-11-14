@@ -231,6 +231,12 @@ svg {
     padding: var(--space-lg) var(--space-md);
   }
 
+  .mobile-drawer.open {
+    transform: translateX(0) !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
   /* Hero Showcase */
   .hero-showcase {
     padding: 2.5rem 1.25rem;

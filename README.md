@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="public/assets/images/cibus-logo.png" alt="CIBUS — The Living Culinary Heritage of 28 Indian States" width="180" style="margin-bottom: 8px;" />
+
 # 🍲 CIBUS
 ### *The Living Culinary Heritage of 28 Indian States*
 
@@ -163,7 +165,7 @@ flowchart TD
 
 <br/>
 
-### 📲 Mobile Adaptive Experience (375 × 812)
+### 📲 Mobile Adaptive Experience (390 × 844)
 
 | Mobile Explorer | Mobile Food Menu | Mobile Recipe Cards | Mobile Cooking Guide |
 | :---: | :---: | :---: | :---: |
@@ -176,6 +178,13 @@ flowchart TD
 | :---: | :---: | :---: | :---: |
 | <img src="docs/screenshots/mobile/welcome-mobile.png" alt="Mobile Welcome" width="210"/> | <img src="docs/screenshots/mobile/cart-mobile.png" alt="Mobile Cart" width="210"/> | <img src="docs/screenshots/mobile/notifications-mobile.png" alt="Mobile Notifications" width="210"/> | <img src="docs/screenshots/mobile/login-mobile.png" alt="Mobile Login" width="210"/> |
 | *Seamless Indian Flag Gradient* | *Stacked Mobile Order Summary* | *Full-Width Glass Overlay Drawer* | *16px Inputs (No Safari Auto-Zoom)* |
+
+<br/>
+
+| Mobile Navigation Drawer | Mobile Recipe Collection | Mobile Member Registration | Mobile Contact Hub |
+| :---: | :---: | :---: | :---: |
+| <img src="docs/screenshots/mobile/navigation-mobile.png" alt="Mobile Navigation Drawer" width="210"/> | <img src="docs/screenshots/mobile/recipe-collection-mobile.png" alt="Mobile Recipe Collection" width="210"/> | <img src="docs/screenshots/mobile/registration-mobile.png" alt="Mobile Registration" width="210"/> | <img src="docs/screenshots/mobile/contact-mobile.png" alt="Mobile Contact" width="210"/> |
+| *Smooth Slide-in Mobile Drawer* | *Adaptive Dual-View Recipe Cards* | *Client-Side Account Creation* | *Community & Maintainer Inquiries* |
 
 </div>
 
@@ -292,6 +301,59 @@ Security is built into CIBUS as an architectural foundation:
 
 ---
 
+## 📂 Repository & Directory Structure
+
+```text
+cibus/
+├── index.html                  # Welcome landing gateway with tricolor hero & parallax waves
+├── pages/                      # Product page views
+│   ├── home.html               # 28-State interactive cultural explorer
+│   ├── food-menu.html          # State food directory with dietary & regional filters
+│   ├── recipe-cards.html       # Cascading 3D & grid recipe card gallery
+│   ├── recipe-detail.html      # In-kitchen step-by-step cooking checklists
+│   ├── cart.html               # Session cart with GST calculation & checkout
+│   ├── contact.html            # Community contact and culinary inquiries
+│   ├── login.html              # Member session login portal
+│   └── register.html           # New member registration portal
+├── css/                        # Design system & modular stylesheets
+│   ├── components.css          # Navigation, back-to-top, buttons, cards, toasts
+│   ├── layout.css              # Header, footer, grid layouts, mobile drawer
+│   ├── responsive.css          # Viewport media queries (320px - 1920px)
+│   ├── pages/                  # Page-specific styling (landing, recipes, cart, etc.)
+│   └── motion/                 # Centralized 60fps cinematic motion system
+├── js/                         # Vanilla ECMAScript modules
+│   ├── main.js                 # Application initializer & state showcase
+│   ├── navigation.js           # Header, active routes, drawer & back-to-top observer
+│   ├── food-menu.js            # Food filtering, query params & search logic
+│   ├── recipes.js              # Recipe decks, filtering & detail checklists
+│   ├── cart.js                 # Reactive shopping cart & order calculations
+│   ├── auth.js                 # Client authentication & session management
+│   ├── notifications.js        # Notification drawer & auto-dismissing toasts
+│   ├── storage.js              # Schema-validated LocalStorage guard
+│   └── motion/motion-engine.js # Cinematic motion triggers & scroll transitions
+├── data/                       # Normalized JSON relational datasets
+│   ├── states.json             # 28 Indian States metadata, geography & culture
+│   ├── food-items.json         # Traditional dishes, ingredients & dietary tags
+│   └── recipes.json            # Step-by-step cooking methods & timelines
+├── docs/                       # Comprehensive technical documentation & screenshots
+│   ├── architecture/           # System & data architecture specifications
+│   ├── deployment/             # Vercel deployment & release engineering guides
+│   ├── development/            # Setup, testing & QA manuals
+│   ├── project/                # Features catalog, changelog & migration records
+│   ├── security/               # Security audits & frontend hardening standards
+│   └── screenshots/            # Genuine multi-device captures (desktop, tablet, mobile)
+├── tests/                      # Automated test suite
+│   ├── unit/                   # 22 Node.js unit tests (auth, cart, datasets, storage)
+│   └── integration/            # HTML integrity, route probe & link validator
+├── scripts/                    # Build, verification & screenshot capture utilities
+│   ├── verify-build.js         # Production pre-flight verification gate
+│   └── capture-screenshots.js  # Chrome headless genuine multi-device screenshot capture
+├── server.js                   # Minimalist local development HTTP server
+└── vercel.json                 # Vercel Edge routing, clean URLs & security headers
+```
+
+---
+
 ## 🚀 Quick Start & Local Development
 
 ### Prerequisites
@@ -323,6 +385,51 @@ npm run test:probe
 # Run production build verification gate
 npm run build
 ```
+
+---
+
+## ☁️ Production Deployment (Vercel)
+
+CIBUS is engineered for zero-compilation deployment on the **Vercel Global Edge Network**:
+
+1. **Edge Configuration:** `vercel.json` provides route rewrites, clean `.html` extension stripping, immutable asset caching, and enterprise Content Security Policy (CSP).
+2. **Pre-Flight Verification:** Always run `npm run build` locally before pushing to verify dataset integrity, required assets, and route definitions.
+3. **Deploying via Vercel CLI:**
+   ```bash
+   # Preview Deployment
+   vercel
+
+   # Production Deployment
+   vercel --prod
+   ```
+4. **Git-Integrated Continuous Deployment:** Pushes to `main` trigger automated production deployments; pull requests generate isolated preview URLs for review.
+
+---
+
+## ⚠️ Known Limitations
+
+1. **Client-Side Session State:** As a zero-dependency static JAMstack platform, user sessions, favorites, and cart contents are persisted in browser `localStorage` protected by schema guards. There is no remote backend database.
+2. **Simulated Commerce Checkout:** The shopping cart and order confirmation demonstrate real-time GST calculations, portion changes, and celebration micro-interactions without processing real financial transactions.
+3. **Offline Network Availability:** Full offline caching relies on standard browser caching headers; progressive Service Worker installation (PWA) is designated for a future version.
+
+---
+
+## 🔮 Future Improvements
+
+1. **Progressive Web App (PWA):** Service worker offline caching and Web App Manifest for seamless in-kitchen reference during connectivity dropouts.
+2. **Regional Vernacular Localization:** Multi-language support across major Indian regional languages (Hindi, Tamil, Telugu, Bengali, Kannada, Marathi, Gujarati, etc.).
+3. **Indigenous Audio Pronunciation:** Authentic audio clips for regional dish names, local cooking implements, and indigenous spice terms.
+4. **Seasonal Harvest Calendar:** Dynamic seasonal recommendations highlighting regional ingredients at their agricultural peak across Indian climatic zones.
+
+---
+
+## 📬 Contact & Responsible Disclosure
+
+- **Maintainer:** Greeshmanth Sai Y
+- **GitHub Profile:** [@GreeshmanthSaiY](https://github.com/GreeshmanthSaiY)
+- **Repository:** [https://github.com/GreeshmanthSaiY/cibus](https://github.com/GreeshmanthSaiY/cibus)
+- **Issue Tracker:** [GitHub Issues](https://github.com/GreeshmanthSaiY/cibus/issues)
+- **Security Inquiries:** Please use [GitHub Private Vulnerability Reporting](https://github.com/GreeshmanthSaiY/cibus/security) or contact the maintainer directly via GitHub.
 
 ---
 

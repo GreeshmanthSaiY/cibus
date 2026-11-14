@@ -342,7 +342,9 @@
   flex-direction: column;
   gap: var(--space-sm);
   transform: translateX(-100%);
-  transition: transform var(--transition-normal);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform var(--transition-normal), visibility var(--transition-normal);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   border-top: 1px solid var(--color-border);
@@ -364,13 +366,11 @@
     height: calc(100dvh - 58px);
   }
 }
-  transition: transform var(--transition-normal);
-  overflow-y: auto;
-  border-top: 1px solid var(--color-border);
-}
 
 .mobile-drawer.open {
   transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-drawer .nav-link {
