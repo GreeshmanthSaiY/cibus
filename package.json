@@ -10,7 +10,8 @@
     "test:unit": "node --test tests/unit/*.test.js",
     "test:probe": "node tests/integration/server-probe.js",
     "validate:html": "node tests/integration/html-integrity.test.js",
-    "test:all": "npm run test && npm run validate:html",
+    "validate:docs": "node scripts/validate-docs.js",
+    "test:all": "npm run test && npm run validate:html && npm run validate:docs",
     "build": "node scripts/verify-build.js",
     "capture:screenshots": "node scripts/capture-screenshots.js"
   },

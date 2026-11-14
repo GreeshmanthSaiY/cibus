@@ -167,31 +167,109 @@ flowchart TD
 
 ### 📲 Mobile Adaptive Experience (390 × 844)
 
-| Mobile Explorer | Mobile Food Menu | Mobile Recipe Cards | Mobile Cooking Guide |
-| :---: | :---: | :---: | :---: |
-| <img src="docs/screenshots/mobile/homepage-mobile.png" alt="Mobile Explorer" width="210"/> | <img src="docs/screenshots/mobile/food-menu-mobile.png" alt="Mobile Food Menu" width="210"/> | <img src="docs/screenshots/mobile/recipe-cards-mobile.png" alt="Mobile Recipe Cards" width="210"/> | <img src="docs/screenshots/mobile/recipe-detail-mobile.png" alt="Mobile Recipe Detail" width="210"/> |
-| *Fluid Hero Typography & Compact Logo* | *Horizontal Scrolling Pills & Single Column* | *Deck Card Stacking & Touch Target* | *In-Kitchen Step Checklists* |
+The mobile experience of CIBUS has been engineered from the ground up for handheld ergonomics, touch comfort, and editorial beauty. Every viewport has been validated against our automated 80-point responsive suite to guarantee **zero horizontal overflow** and seamless fluid scaling.
 
 <br/>
 
-| Mobile Welcome Gateway | Mobile Shopping Cart | Mobile Notifications | Mobile Member Login |
-| :---: | :---: | :---: | :---: |
-| <img src="docs/screenshots/mobile/welcome-mobile.png" alt="Mobile Welcome" width="210"/> | <img src="docs/screenshots/mobile/cart-mobile.png" alt="Mobile Cart" width="210"/> | <img src="docs/screenshots/mobile/notifications-mobile.png" alt="Mobile Notifications" width="210"/> | <img src="docs/screenshots/mobile/login-mobile.png" alt="Mobile Login" width="210"/> |
-| *Seamless Indian Flag Gradient* | *Stacked Mobile Order Summary* | *Full-Width Glass Overlay Drawer* | *16px Inputs (No Safari Auto-Zoom)* |
+#### 1. 🏛️ Mobile Regional Explorer & Flagship Hero
+*Balanced typography, proportional brand crest, Ashoka Chakra badge, dual culinary action CTAs, and live cultural statistics.*
+
+| Initial Handheld Viewport | Flagship Hero Presentation & Metrics |
+| :---: | :---: |
+| <img src="docs/screenshots/mobile/homepage-390.png" alt="Mobile Regional Explorer Initial Viewport" width="340"/> | <img src="docs/screenshots/mobile/homepage-hero-390.png" alt="Mobile Flagship Hero Presentation" width="340"/> |
+| *Fluid Headings, Compact Brand Crest & Utility Header* | *Ashoka Chakra Motif, Dual CTAs & 4-Metric Live Grid* |
 
 <br/>
 
-| Mobile Navigation Drawer | Mobile Recipe Collection | Mobile Member Registration | Mobile Contact Hub |
-| :---: | :---: | :---: | :---: |
-| <img src="docs/screenshots/mobile/navigation-mobile.png" alt="Mobile Navigation Drawer" width="210"/> | <img src="docs/screenshots/mobile/recipe-collection-mobile.png" alt="Mobile Recipe Collection" width="210"/> | <img src="docs/screenshots/mobile/registration-mobile.png" alt="Mobile Registration" width="210"/> | <img src="docs/screenshots/mobile/contact-mobile.png" alt="Mobile Contact" width="210"/> |
-| *Luxury Hospitality Drawer with Saffron Accent & Indian Motif* | *Adaptive Dual-View Recipe Cards* | *Client-Side Account Creation* | *Community & Maintainer Inquiries* |
+#### 2. 🧭 Editorial Mobile Navigation & Luxury Hospitality Drawer
+*Inspired by luxury hospitality brands, featuring a warm ivory canvas (`#FAF7F2`), tactile 38px circular action controls, 5 editorial routes with inline SVGs, cultural subtitles, and an active route indicator.*
+
+| Standard Header (Closed) | Hospitality Drawer (Open) | Distinct Active Route State |
+| :---: | :---: | :---: |
+| <img src="docs/screenshots/mobile/navigation-closed-390.png" alt="Standard Mobile Header Closed" width="235"/> | <img src="docs/screenshots/mobile/navigation-open-390.png" alt="Hospitality Drawer Open" width="235"/> | <img src="docs/screenshots/mobile/navigation-active-390.png" alt="Active Route Indicator" width="235"/> |
+| *Compact 56px Header & Badges* | *Curated Routes & Member Access* | *Terracotta Left Accent & Saffron Tint* |
+
+<br/>
+
+#### 3. 🍛 28-State Heritage Food Directory & Interactive Filtering
+*Single-column touch grid displaying authentic regional delicacies with real-time dietary pills and typeahead search filtering.*
+
+| 28-State Culinary Directory | Real-Time Search & Regional Filters |
+| :---: | :---: |
+| <img src="docs/screenshots/mobile/food-menu-390.png" alt="Mobile 28-State Culinary Directory" width="340"/> | <img src="docs/screenshots/mobile/food-menu-filter-390.png" alt="Mobile Food Search and Filtering" width="340"/> |
+| *Adaptive Dish Cards, Local Names & Origin Badges* | *Dynamic Typeahead Search & Region Filter Chips* |
+
+<br/>
+
+#### 4. 🎴 Cascading Recipe Decks, Heritage Details & Kitchen Checklists
+*Interactive 3D card decks paired with in-kitchen ingredient checkboxes designed for effortless culinary preparation.*
+
+| 3D Recipe Card Decks | Recipe Overview & Timelines | In-Kitchen Step Checklists |
+| :---: | :---: | :---: |
+| <img src="docs/screenshots/mobile/recipe-collection-390.png" alt="Mobile 3D Recipe Card Decks" width="235"/> | <img src="docs/screenshots/mobile/recipe-detail-390.png" alt="Mobile Recipe Detail Overview" width="235"/> | <img src="docs/screenshots/mobile/recipe-instructions-390.png" alt="In-Kitchen Step Checklists" width="235"/> |
+| *Stacked Touch Elevation Decks* | *Cooking Metrics & Ancestral Origins* | *Interactive Checkboxes & Step-by-Step Guide* |
+
+<br/>
+
+#### 5. 🛒 Mobile Dynamic Cart & Order Mathematics
+*Interactive quantity steppers with celebration micro-interactions, transparent pricing, and automated 5% GST computation.*
+
+| Signed-Out Empty State | Active Order & Live Tax Tabulation |
+| :---: | :---: |
+| <img src="docs/screenshots/mobile/shopping-cart-empty-390.png" alt="Mobile Empty Cart State" width="340"/> | <img src="docs/screenshots/mobile/shopping-cart-active-390.png" alt="Mobile Active Shopping Cart" width="340"/> |
+| *Friendly Empty State & Sign-In Guidance* | *Dynamic Item Steppers & Automated 5% GST Calculation* |
+
+<br/>
+
+#### 6. 🔔 Real-Time Notification Drawer & Community Hub
+*Real-time alerts for seasonal dishes, harvest announcements, and responsive community contact forms.*
+
+| Notification Drawer | Community Contact Hub |
+| :---: | :---: |
+| <img src="docs/screenshots/mobile/notifications-390.png" alt="Mobile Notification Drawer" width="340"/> | <img src="docs/screenshots/mobile/contact-390.png" alt="Mobile Community Contact Hub" width="340"/> |
+| *Curated Culinary Updates & Unread Badges* | *Touch-Friendly Form & Maintainer Channels* |
+
+<br/>
+
+#### 7. 🔐 Mobile Authentication & Client-Side Session Portals
+*Accessible forms with 16px font sizing to prevent iOS Safari auto-zoom, demo account convenience, and instant validation.*
+
+| Mobile Member Sign-In | Member Registration Portal |
+| :---: | :---: |
+| <img src="docs/screenshots/mobile/sign-in-390.png" alt="Mobile Member Sign-In" width="340"/> | <img src="docs/screenshots/mobile/registration-390.png" alt="Mobile Member Registration" width="340"/> |
+| *16px Form Inputs (No Safari Auto-Zoom) & Demo Prefill* | *Client-Side Account Creation & Field Validation* |
+
+<br/>
+
+#### 8. 🌐 Multi-Viewport Cross-Device Responsive Verification
+*Validated across all 5 major mobile screen dimensions with zero layout clipping and zero horizontal overflow.*
+
+| 320 × 700 (Compact) | 360 × 800 (Android) | 375 × 812 (iPhone SE) |
+| :---: | :---: | :---: |
+| <img src="docs/screenshots/responsive/homepage-320.png" alt="320x700 Compact Viewport" width="235"/> | <img src="docs/screenshots/responsive/homepage-360.png" alt="360x800 Android Viewport" width="235"/> | <img src="docs/screenshots/responsive/homepage-375.png" alt="375x812 iPhone SE Viewport" width="235"/> |
+| *Ultra-Compact Scaling* | *Standard Android Baseline* | *Handheld Apple Baseline* |
+
+| 414 × 896 (iPhone Plus / XR) | 430 × 932 (iPhone Pro Max) |
+| :---: | :---: |
+| <img src="docs/screenshots/responsive/homepage-414.png" alt="414x896 iPhone Plus Viewport" width="340"/> | <img src="docs/screenshots/responsive/homepage-430.png" alt="430x932 iPhone Pro Max Viewport" width="340"/> |
+| *Expanded Mobile Display* | *Flagship High-Density Canvas* |
+
+<br/>
+
+#### 9. 🇮🇳 Heritage Welcome Gateway
+*Celebration of the Indian Tricolor with balanced emblem integration and smooth parallax wave transition.*
+
+| Handheld Welcome Gateway |
+| :---: |
+| <img src="docs/screenshots/mobile/welcome-mobile.png" alt="Mobile Heritage Welcome Gateway" width="340"/> |
+| *Tricolor Gradient, Proportional Emblem & Parallax Transition* |
 
 </div>
 
 <br/>
 
 > [!TIP]
-> **Cross-Device Precision Engineering:** All 30 screenshots above are genuinely captured in headless Chrome DevTools Protocol across actual device viewports. Every layout passed our automated 50-point responsive audit with **zero horizontal overflow** (`document.documentElement.scrollWidth === window.innerWidth`) from 320px ultra-compact phones to 1920px desktop displays.
+> **Cross-Device Precision Engineering:** All 49 screenshots in this repository are genuinely captured in headless Chrome DevTools Protocol across actual device viewports. Every layout passed our automated 80-point responsive audit with **zero horizontal overflow** (`document.documentElement.scrollWidth === window.innerWidth`) from 320px ultra-compact phones to 1920px desktop displays.
 
 ---
 
@@ -356,6 +434,7 @@ cibus/
 │   └── integration/            # HTML integrity, route probe & link validator
 ├── scripts/                    # Build, verification & screenshot capture utilities
 │   ├── verify-build.js         # Production pre-flight verification gate
+│   ├── validate-docs.js        # Documentation & screenshot asset integrity audit
 │   └── capture-screenshots.js  # Chrome headless genuine multi-device screenshot capture
 ├── server.js                   # Minimalist local development HTTP server
 └── vercel.json                 # Vercel Edge routing, clean URLs & security headers
@@ -387,6 +466,9 @@ npm test
 
 # Run HTML integrity and broken link validation (all 11 HTML pages)
 npm run validate:html
+
+# Run documentation and screenshot asset integrity audit
+npm run validate:docs
 
 # Run server route probe (39 HTTP endpoints including Vercel Analytics & Speed Insights mocks)
 npm run test:probe
