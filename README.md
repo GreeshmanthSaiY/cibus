@@ -184,7 +184,7 @@ flowchart TD
 | Mobile Navigation Drawer | Mobile Recipe Collection | Mobile Member Registration | Mobile Contact Hub |
 | :---: | :---: | :---: | :---: |
 | <img src="docs/screenshots/mobile/navigation-mobile.png" alt="Mobile Navigation Drawer" width="210"/> | <img src="docs/screenshots/mobile/recipe-collection-mobile.png" alt="Mobile Recipe Collection" width="210"/> | <img src="docs/screenshots/mobile/registration-mobile.png" alt="Mobile Registration" width="210"/> | <img src="docs/screenshots/mobile/contact-mobile.png" alt="Mobile Contact" width="210"/> |
-| *Smooth Slide-in Mobile Drawer* | *Adaptive Dual-View Recipe Cards* | *Client-Side Account Creation* | *Community & Maintainer Inquiries* |
+| *Luxury Hospitality Drawer with Saffron Accent & Indian Motif* | *Adaptive Dual-View Recipe Cards* | *Client-Side Account Creation* | *Community & Maintainer Inquiries* |
 
 </div>
 
@@ -249,6 +249,15 @@ Explore deep-dive agricultural and Ayurvedic profiles of India's 6 protected her
   - *Shopping Cart:* Tactile micro-stepper physics, price pulse highlights, and smooth row collapse on item removal.
 * **Native Page Transitions:** Fluid 160ms exit glide and entry fade with full `pageshow` (bfcache) support for instantaneous browser back/forward navigation.
 * **Full Reduced-Motion Accessibility:** Automatic detection of `prefers-reduced-motion: reduce`, instantaneously revealing all content with zero-duration transitions. Progressive enhancement ensures 100% content visibility even if JavaScript is unavailable.
+
+### 9. 🏛️ Editorial Mobile Navigation & Luxury Drawer Experience
+* **Hospitality-Grade Visual Architecture:** Inspired by luxury hospitality brands (Taj, Oberoi, Relais & Châteaux), featuring a warm ivory surface canvas (`#FAF7F2` to `#F5EFEB`), deep culinary text tones (`#1E1610`), and warm saffron accents (`#E85A19`).
+* **High-Touch Compact Header:** Tactile 38px circular action controls with bespoke inline SVGs for notifications, shopping cart with dynamic counter badge, and an animated 3-bar hamburger morphing smoothly into a close glyph (`✕`).
+* **Editorial Route Presentation:** 5 rich navigation items with inline SVG icons, distinct page titles, cultural subtitles (*e.g., "28-State Cultural Explorer", "Ancestral Methods & 3D Decks"*), directional chevrons, and minimum 52px comfortable touch targets.
+* **Distinct Active Route Indicator:** Warm saffron gradient highlight, 4px solid terracotta left border accent, inverted white icon inside amber container, and bold title styling across both desktop links and mobile drawer entries.
+* **Cohesive Member Access Panel:** Clean dual-state account card distinguishing active members (with profile avatar, "Active Cibus Member" status pill, password reset modal trigger, and sign-out) from guest visitors (with dual CTAs: rich saffron pill "Create Free Account" and warm outline "Sign In to Account").
+* **Subtle Cultural Heritage Branding:** Centered golden Indian motif separator (`✦`), official CIBUS brand crest, and Ashoka Chakra navy dot heritage watermark.
+* **Fluid Drawer Physics:** Right slide-in dialog physics (`cubic-bezier(0.16, 1, 0.3, 1)` at 320ms) paired with an 8px blurred glassmorphic backdrop overlay (`rgba(30, 22, 16, 0.55)`), background body scroll locking, Escape key dismissal, and WCAG AA accessibility compliance.
 
 ---
 

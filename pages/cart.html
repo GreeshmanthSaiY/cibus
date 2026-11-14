@@ -46,7 +46,10 @@
         <!-- Notifications Bell -->
         <div class="notification-dropdown-wrap">
           <button type="button" class="notification-icon-btn" id="notif-bell-btn" aria-label="Culinary Notifications" aria-expanded="false">
-            🔔
+            <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
             <span class="notification-badge" id="notif-badge" style="display: none;">0</span>
           </button>
           <div class="notification-panel" id="notif-panel" role="dialog" aria-modal="true" style="display: none;">
@@ -69,28 +72,151 @@
         </div>
 
         <a href="./cart.html" class="cart-icon-btn active" aria-label="View Shopping Cart and Favorites">
-          🛒
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
           <span class="cart-badge" style="display: none;">0</span>
         </a>
         <div id="nav-auth-container"></div>
 
         <!-- Mobile Toggle Button -->
         <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Drawer -->
-    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
-      <a href="./home.html" class="nav-link">Home</a>
-      <a href="./food-menu.html" class="nav-link">Food Menu</a>
-      <a href="./recipe-cards.html" class="nav-link">Cook Recipes</a>
-      <a href="./cart.html" class="nav-link active">Shopping Cart / Favorites</a>
-      <a href="./contact.html" class="nav-link">Contact Us</a>
-      <div id="mobile-drawer-auth"></div>
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu" aria-hidden="true">
+      <div class="mobile-drawer-backdrop" aria-hidden="true"></div>
+      <div class="mobile-drawer-dialog">
+
+        <!-- Drawer Header -->
+        <div class="mobile-drawer-header">
+          <div class="drawer-brand-wrap">
+            <img src="../public/assets/images/cibus-logo-header.png" alt="CIBUS" class="drawer-logo-img">
+            <div class="drawer-brand-info">
+              <span class="drawer-brand-title">CIBUS</span>
+              <span class="drawer-brand-tagline">28 Indian States Culinary Heritage</span>
+            </div>
+          </div>
+          <button type="button" class="drawer-close-btn" aria-label="Close navigation menu">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Subtle Indian Motif Separator -->
+        <div class="drawer-separator">
+          <span class="drawer-separator-line"></span>
+          <span class="drawer-separator-motif">&#10022;</span>
+          <span class="drawer-separator-line"></span>
+        </div>
+
+        <!-- Scrollable Drawer Body -->
+        <div class="mobile-drawer-body">
+
+          <div class="drawer-section-label">
+            <span>CULINARY DISCOVERY</span>
+          </div>
+
+          <nav class="drawer-nav-list" aria-label="Mobile Main Navigation">
+            <a href="./home.html" class="drawer-nav-item nav-link" data-page="home">
+              <div class="drawer-item-icon-box">
+                <svg viewBox="0 0 24 24" class="drawer-item-svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </div>
+              <div class="drawer-item-text">
+                <span class="drawer-item-title">Home</span>
+                <span class="drawer-item-subtitle">28-State Cultural Explorer</span>
+              </div>
+              <span class="drawer-item-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+
+            <a href="./food-menu.html" class="drawer-nav-item nav-link" data-page="food-menu">
+              <div class="drawer-item-icon-box">
+                <svg viewBox="0 0 24 24" class="drawer-item-svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M2 12h20"></path>
+                  <path d="M20 12c0 5-4.03 9-9 9s-9-4-9-9"></path>
+                  <path d="M7 8c1-2 2-3 5-3s4 1 5 3"></path>
+                </svg>
+              </div>
+              <div class="drawer-item-text">
+                <span class="drawer-item-title">Food Menu</span>
+                <span class="drawer-item-subtitle">Regional Dishes &amp; Dietary Filters</span>
+              </div>
+              <span class="drawer-item-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+
+            <a href="./recipe-cards.html" class="drawer-nav-item nav-link" data-page="recipe-cards">
+              <div class="drawer-item-icon-box">
+                <svg viewBox="0 0 24 24" class="drawer-item-svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                  <line x1="9" y1="7" x2="15" y2="7"></line>
+                  <line x1="9" y1="11" x2="13" y2="11"></line>
+                </svg>
+              </div>
+              <div class="drawer-item-text">
+                <span class="drawer-item-title">Cook Recipes</span>
+                <span class="drawer-item-subtitle">Ancestral Methods &amp; 3D Decks</span>
+              </div>
+              <span class="drawer-item-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+
+            <a href="./cart.html" class="drawer-nav-item nav-link active" data-page="cart">
+              <div class="drawer-item-icon-box">
+                <svg viewBox="0 0 24 24" class="drawer-item-svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+              </div>
+              <div class="drawer-item-text">
+                <span class="drawer-item-title">Shopping Cart / Favorites</span>
+                <span class="drawer-item-subtitle">Selected Ingredients &amp; Orders</span>
+              </div>
+              <span class="drawer-item-badge cart-badge" style="display: none;">0</span>
+              <span class="drawer-item-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+
+            <a href="./contact.html" class="drawer-nav-item nav-link" data-page="contact">
+              <div class="drawer-item-icon-box">
+                <svg viewBox="0 0 24 24" class="drawer-item-svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="drawer-item-text">
+                <span class="drawer-item-title">Contact Us</span>
+                <span class="drawer-item-subtitle">Culinary Inquiries &amp; Community</span>
+              </div>
+              <span class="drawer-item-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
+          </nav>
+
+          <!-- Account Panel -->
+          <div class="drawer-account-section" id="mobile-drawer-auth"></div>
+
+          <!-- Cultural Heritage Footer Note -->
+          <div class="drawer-footer-note">
+            <div class="drawer-heritage-badge">
+              <span class="drawer-heritage-dot"></span>
+              <span>Living Gastronomy Across 28 States</span>
+            </div>
+            <p class="drawer-heritage-text">&copy; 2026 CIBUS &bull; Handcrafted with devotion to Bharat</p>
+          </div>
+
+        </div>
+      </div>
     </div>
   </header>
 

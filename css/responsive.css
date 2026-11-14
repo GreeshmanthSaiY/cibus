@@ -217,24 +217,12 @@ svg {
   }
 
   .cart-icon-btn,
+  .notification-icon-btn,
   .notification-btn {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    min-height: 40px;
-  }
-
-  .mobile-drawer {
-    top: 64px;
-    height: calc(100vh - 64px);
-    height: calc(100dvh - 64px);
-    padding: var(--space-lg) var(--space-md);
-  }
-
-  .mobile-drawer.open {
-    transform: translateX(0) !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
   }
 
   /* Hero Showcase */
@@ -424,12 +412,6 @@ svg {
     min-width: 36px;
     min-height: 36px;
     padding: 6px;
-  }
-
-  .mobile-drawer {
-    top: 58px;
-    height: calc(100vh - 58px);
-    height: calc(100dvh - 58px);
   }
 
   /* Primary Button touch height */
