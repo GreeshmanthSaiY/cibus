@@ -520,7 +520,6 @@ const RecipesController = {
       .join('');
 
     this.setupScrollSpy();
-    this.setupBackToTop();
   },
 
   setupScrollSpy() {
@@ -546,34 +545,6 @@ const RecipesController = {
     );
 
     articles.forEach((a) => observer.observe(a));
-  },
-
-  setupBackToTop() {
-    let btn = document.getElementById('back-to-top-btn');
-    if (!btn) {
-      btn = document.createElement('button');
-      btn.id = 'back-to-top-btn';
-      btn.className = 'back-to-top-btn';
-      btn.setAttribute('aria-label', 'Back to top of recipes');
-      btn.innerHTML = '&uarr;';
-      document.body.appendChild(btn);
-
-      btn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-
-      window.addEventListener(
-        'scroll',
-        () => {
-          if (window.scrollY > 400) {
-            btn.classList.add('is-visible');
-          } else {
-            btn.classList.remove('is-visible');
-          }
-        },
-        { passive: true }
-      );
-    }
   },
 
   updateIngredientProgress(box) {

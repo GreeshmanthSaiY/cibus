@@ -946,8 +946,8 @@
 /* Floating Universal Back to Top Button */
 .back-to-top-btn {
   position: fixed;
-  bottom: 28px;
-  right: 28px;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  right: calc(24px + env(safe-area-inset-right, 0px));
   width: 48px;
   height: 48px;
   border-radius: var(--radius-full);
@@ -959,24 +959,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+  z-index: 900;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transform: translateY(16px) scale(0.9);
-  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-.back-to-top-btn.visible {
+.back-to-top-btn.visible,
+.back-to-top-btn.is-visible {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
   transform: translateY(0) scale(1);
 }
 
 .back-to-top-btn:hover {
-  transform: translateY(-4px) scale(1.08);
+  transform: translateY(-3px) scale(1.06);
   box-shadow: 0 12px 30px rgba(232, 90, 25, 0.65);
   background: linear-gradient(135deg, #d4430a 0%, #e85a19 100%);
   color: #ffffff;
+}
+
+.back-to-top-btn:focus-visible {
+  outline: 3px solid #C74B16;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(232, 90, 25, 0.3);
 }
 
 .back-to-top-btn svg {
@@ -988,6 +997,24 @@
 
 .back-to-top-btn:hover svg {
   transform: translateY(-2px);
+}
+
+@media (max-width: 576px) {
+  .back-to-top-btn {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    right: calc(16px + env(safe-area-inset-right, 0px));
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top-btn {
+    transition: opacity 0.15s linear !important;
+    transform: none !important;
+  }
 }
 
 /* ==========================================================

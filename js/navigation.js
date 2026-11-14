@@ -150,9 +150,13 @@ const NavigationManager = {
         }
       } else {
         // Not authenticated: Render Sign In and Sign Up buttons
+        const isLanding = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/') || !window.location.pathname.includes('/pages/');
+        const loginUrl = isLanding ? 'pages/login.html' : './login.html';
+        const registerUrl = isLanding ? 'pages/register.html' : './register.html';
+
         authContainer.innerHTML = `
-          <a href="./login.html" class="btn btn-outline btn-sm" style="margin-right: 6px; border-radius: 9999px;">Sign In</a>
-          <a href="./register.html" class="btn btn-primary btn-sm" style="border-radius: 9999px;">Sign Up</a>
+          <a href="${loginUrl}" class="btn btn-outline btn-sm" style="margin-right: 6px; border-radius: 9999px;">Sign In</a>
+          <a href="${registerUrl}" class="btn btn-primary btn-sm" style="border-radius: 9999px;">Sign Up</a>
         `;
       }
     }
@@ -163,28 +167,43 @@ const NavigationManager = {
       if (!drawerAuthSection) {
         drawerAuthSection = document.createElement('div');
         drawerAuthSection.id = 'mobile-drawer-auth';
-        drawerAuthSection.style.marginTop = 'var(--space-md)';
-        drawerAuthSection.style.paddingTop = 'var(--space-md)';
-        drawerAuthSection.style.borderTop = '1px solid var(--color-border)';
-        mobileDrawer.appendChild(drawerAuthSection);
+        drawerAuthSection.className = 'drawer-account-section';
+        const body = mobileDrawer.querySelector('.mobile-drawer-body') || mobileDrawer;
+        body.appendChild(drawerAuthSection);
       }
 
       // Remove old hardcoded mobile login/register buttons if present
-      mobileDrawer.querySelectorAll(':scope > .btn-outline, :scope > .btn-primary').forEach((b) => b.remove());
+      mobileDrawer.querySelectorAll(':scope > .btn-outline, :scope > .btn-primary, :scope > hr').forEach((b) => b.remove());
+
+      const isLanding = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/') || !window.location.pathname.includes('/pages/');
+      const loginUrl = isLanding ? 'pages/login.html' : './login.html';
+      const registerUrl = isLanding ? 'pages/register.html' : './register.html';
 
       if (user && user.name) {
         drawerAuthSection.innerHTML = `
-          <div style="background: rgba(232, 90, 25, 0.08); padding: 12px; border-radius: 12px; margin-bottom: 10px;">
-            <div style="font-size: 0.75rem; color: #059669; font-weight: 700;">🟢 ACTIVE BROWSER SESSION</div>
-            <div style="font-weight: 700; color: #1a1a1a; margin-top: 2px;">👤 ${Utils.escapeHtml(user.name)}</div>
-            <div style="font-size: 0.78rem; color: var(--color-text-muted);">${Utils.escapeHtml(user.email)}</div>
+          <div class="drawer-account-card logged-in">
+            <div class="drawer-account-header">
+              <div class="drawer-account-avatar active">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              </div>
+              <div class="drawer-account-info">
+                <div class="drawer-status-pill">
+                  <span class="status-indicator-dot"></span>
+                  <span>ACTIVE CIBUS MEMBER</span>
+                </div>
+                <div class="drawer-user-name">${Utils.escapeHtml(user.name)}</div>
+                <div class="drawer-user-email">${Utils.escapeHtml(user.email)}</div>
+              </div>
+            </div>
+            <div class="drawer-account-actions session-actions">
+              <button type="button" class="btn-drawer-secondary btn-sm" id="mobile-reset-pass-btn">
+                <span>🔑 Reset Password</span>
+              </button>
+              <button type="button" class="btn-drawer-danger btn-sm" id="mobile-logout-btn">
+                <span>🚪 Sign Out</span>
+              </button>
+            </div>
           </div>
-          <button type="button" class="btn btn-outline btn-block" id="mobile-reset-pass-btn" style="margin-bottom: 8px;">
-            🔑 Reset Password
-          </button>
-          <button type="button" class="btn btn-outline btn-block text-danger" id="mobile-logout-btn">
-            🚪 Sign Out
-          </button>
         `;
 
         const mobileLogout = document.getElementById('mobile-logout-btn');
@@ -211,8 +230,26 @@ const NavigationManager = {
         }
       } else {
         drawerAuthSection.innerHTML = `
-          <a href="./login.html" class="btn btn-outline btn-block" style="margin-bottom: 8px;">Sign In</a>
-          <a href="./register.html" class="btn btn-primary btn-block">Create Free Account</a>
+          <div class="drawer-account-card">
+            <div class="drawer-account-header">
+              <div class="drawer-account-avatar">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              </div>
+              <div class="drawer-account-info">
+                <span class="drawer-account-eyebrow">CULINARY MEMBERSHIP</span>
+                <span class="drawer-account-title">Personal Spice Box &amp; Favorites</span>
+              </div>
+            </div>
+            <div class="drawer-account-actions">
+              <a href="${registerUrl}" class="btn-drawer-primary">
+                <span>Create Free Account</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+              <a href="${loginUrl}" class="btn-drawer-secondary">
+                <span>Sign In to Account</span>
+              </a>
+            </div>
+          </div>
         `;
       }
     }
@@ -311,61 +348,183 @@ const NavigationManager = {
       btn.className = 'back-to-top-btn';
       btn.setAttribute('type', 'button');
       btn.setAttribute('aria-label', 'Back to top of page');
-      btn.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l-7 7h4v9h6v-9h4z"/></svg>`;
+      btn.setAttribute('aria-hidden', 'true');
+      btn.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22" fill="currentColor"><path d="M12 4l-7 7h4v9h6v-9h4z"/></svg>`;
       document.body.appendChild(btn);
     }
 
-    const checkScroll = () => {
-      if (window.scrollY > 250) {
-        btn.classList.add('visible');
-      } else {
-        btn.classList.remove('visible');
-      }
+    const setVisibility = (visible) => {
+      btn.classList.toggle('visible', visible);
+      btn.classList.toggle('is-visible', visible);
+      btn.setAttribute('aria-hidden', String(!visible));
     };
 
-    window.addEventListener('scroll', checkScroll, { passive: true });
+    // Hero boundary detection via IntersectionObserver
+    const heroSelectors = [
+      '.hero-showcase',
+      '.landing-header',
+      '.landing-inner-header',
+      '.food-menu-header',
+      '.section-title-wrap',
+      '.cart-header-section',
+      '.contact-header',
+      '.auth-card',
+      'main > .container > section:first-child'
+    ];
+    const hero = document.querySelector(heroSelectors.join(', '));
+
+    if ('IntersectionObserver' in window && hero) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            // When hero is past the viewport in the scroll direction, show button
+            const pastHero = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+            setVisibility(pastHero);
+          });
+        },
+        { threshold: 0, rootMargin: '0px 0px 0px 0px' }
+      );
+      observer.observe(hero);
+    } else {
+      const checkScroll = () => {
+        const threshold = hero ? Math.max(180, hero.offsetTop + hero.offsetHeight * 0.6) : 250;
+        setVisibility(window.scrollY > threshold);
+      };
+      window.addEventListener('scroll', checkScroll, { passive: true });
+    }
+
+    // Smooth scroll to top on click with reduced-motion awareness
     btn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({
+        top: 0,
+        behavior: prefersReduced ? 'auto' : 'smooth'
+      });
+      // Move keyboard focus back to top of document for screen readers
+      const focusTarget = document.querySelector('header a, .brand-logo, .landing-nav-brand, h1');
+      if (focusTarget && typeof focusTarget.focus === 'function') {
+        focusTarget.focus({ preventScroll: true });
+      }
     });
   },
 
   setupMobileDrawer() {
-    const toggleBtn = document.querySelector('.mobile-nav-toggle');
-    const drawer = document.querySelector('.mobile-drawer');
+    const toggleBtn = document.querySelector('.mobile-nav-toggle, .landing-nav-toggle');
+    const drawer = document.querySelector('.mobile-drawer, .landing-mobile-drawer');
     if (!toggleBtn || !drawer) return;
 
-    toggleBtn.addEventListener('click', () => {
+    const closeBtn = drawer.querySelector('.drawer-close-btn');
+    const backdrop = drawer.querySelector('.mobile-drawer-backdrop');
+
+    const closeDrawer = () => {
+      toggleBtn.classList.remove('open');
+      drawer.classList.remove('open');
+      drawer.classList.remove('instant-open');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      toggleBtn.focus();
+    };
+
+    const openDrawer = (instant = false) => {
+      if (instant) {
+        drawer.classList.add('instant-open');
+      }
+
+      toggleBtn.classList.add('open');
+      drawer.classList.add('open');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      const firstFocusable = drawer.querySelector('.drawer-close-btn, a, button');
+      if (firstFocusable && !instant) {
+        setTimeout(() => firstFocusable.focus(), 100);
+      }
+    };
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isOpen = drawer.classList.contains('open');
-      toggleBtn.classList.toggle('open', !isOpen);
-      drawer.classList.toggle('open', !isOpen);
-      toggleBtn.setAttribute('aria-expanded', String(!isOpen));
+      if (isOpen) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
     });
 
-    // Close drawer when clicking navigation link
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeDrawer();
+      });
+    }
+
+    if (backdrop) {
+      backdrop.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeDrawer();
+      });
+    }
+
+    // Close drawer when clicking any link inside
     drawer.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
-        toggleBtn.classList.remove('open');
-        drawer.classList.remove('open');
-        toggleBtn.setAttribute('aria-expanded', 'false');
+        closeDrawer();
       });
     });
+
+    // Close drawer when clicking outside
+    document.addEventListener('click', (e) => {
+      if (drawer.classList.contains('open') && !drawer.contains(e.target) && !toggleBtn.contains(e.target)) {
+        closeDrawer();
+      }
+    });
+
+    // Close drawer on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) {
+        closeDrawer();
+      }
+    });
+
+    // Auto-close on resize to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 991 && drawer.classList.contains('open')) {
+        closeDrawer();
+      }
+    });
+
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('openMenu') === 'true') {
+        openDrawer(true);
+      }
+    } catch (_) {}
   },
 
   highlightActiveRoute() {
     const currentPath = window.location.pathname.toLowerCase();
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.nav-link, .drawer-nav-item');
 
     navLinks.forEach((link) => {
       const href = link.getAttribute('href');
       if (!href) return;
       const cleanHref = href.replace(/^\.\//, '').toLowerCase();
 
-      if (
-        (currentPath.endsWith(cleanHref) && cleanHref !== '') ||
-        (currentPath.endsWith('/') && cleanHref === 'home.html') ||
-        (currentPath.endsWith('index.html') && cleanHref === 'home.html')
-      ) {
+      const isMatch = (currentPath.endsWith(cleanHref) && cleanHref !== '') ||
+        (cleanHref.includes('home') && (currentPath.endsWith('/') || currentPath.endsWith('home.html') || currentPath.endsWith('index.html'))) ||
+        (cleanHref.includes('food-menu') && currentPath.includes('food-menu')) ||
+        (cleanHref.includes('recipe-cards') && (currentPath.includes('recipe-cards') || currentPath.includes('recipe-detail'))) ||
+        (cleanHref.includes('cart') && currentPath.includes('cart')) ||
+        (cleanHref.includes('contact') && currentPath.includes('contact')) ||
+        (cleanHref.includes('login') && currentPath.includes('login')) ||
+        (cleanHref.includes('register') && currentPath.includes('register'));
+
+      if (isMatch) {
         link.classList.add('active');
+      } else {
+        link.classList.remove('active');
       }
     });
   },

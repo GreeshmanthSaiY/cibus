@@ -207,13 +207,8 @@
           return;
         }
 
-        // Play subtle exit transition
-        event.preventDefault();
+        // Apply subtle leaving state without blocking native browser navigation
         document.body.classList.add('page-is-leaving');
-
-        setTimeout(() => {
-          window.location.href = link.href;
-        }, 160);
       });
 
       // bfcache handler: ensures back/forward browser navigation never gets stuck in leaving state

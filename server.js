@@ -178,7 +178,7 @@ function renderChunkTable(inventory) {
  * Print dev server launch banner (Clean local development output)
  */
 function printLaunchBanner(port) {
-  console.log(`\nCIBUS Development Server\n\nLocal: http://localhost:${port}/\n\nReady for local development.\n`);
+  console.log(`\nCIBUS Development Server\n\nLocal: http://localhost:${port}/\n\nReady.\n`);
 }
 
 /**

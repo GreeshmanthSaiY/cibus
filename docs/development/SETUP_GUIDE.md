@@ -21,8 +21,8 @@ This guide covers everything needed to clone, run, test, and contribute to the C
 git clone https://github.com/GreeshmanthSaiY/cibus.git
 cd cibus
 
-# 2. Check out feature branch
-git checkout feature/vercel-branding-production
+# 2. Check out working branch
+git checkout update
 
 # 3. Verify Node version
 node --version # Should report v20.x or higher
@@ -34,10 +34,13 @@ npm test
 npm start
 ```
 
-The CLI will display the launch banner and open:
+The CLI will display the clean local development launch banner and open:
 ```text
-  Local:   http://localhost:3000
-  Network: http://<your-ip>:3000
+CIBUS Development Server
+
+Local: http://localhost:3000/
+
+Ready.
 ```
 
 ---
